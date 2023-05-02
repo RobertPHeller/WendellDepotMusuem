@@ -8,7 +8,7 @@
 #  Author        : $Author$
 #  Created By    : Robert Heller
 #  Created       : Tue May 2 11:10:49 2023
-#  Last Modified : <230502.1322>
+#  Last Modified : <230502.1420>
 #
 #  Description	
 #
@@ -144,6 +144,29 @@ class PinkFoam(object):
         obj.Label=self.name
         obj.ViewObject.ShapeColor=tuple([255/255,182/255,193/255])
 
+class MasoniteBackdrop(object):
+    _height=24
+    _thickness=1/8
+    def __init__(self,name,origin,length,orientation='horizontal'):
+        self.name = name
+        if not isinstance(origin,Base.Vector):
+            raise RuntimeError("origin is not a Vector!")
+        self.origin = origin
+        self.length = length
+        self.orientation = orientation
+        if self.orientation == 'horizontal':
+            self._body =  Part.makePlane(self.length,self._thickness,self.origin)\
+                        .extrude(Base.Vector(0,0,self._height))
+        elif self.orientation == 'vertical':
+            self._body =  Part.makePlane(self._thickness,self.length,self.origin)\
+                        .extrude(Base.Vector(0,0,self._height))
+    def show(self):
+        doc = App.activeDocument()
+        obj = doc.addObject("Part::Feature",self.name)
+        obj.Shape=self._body
+        obj.Label=self.name
+        obj.ViewObject.ShapeColor=tuple([165/255,42/255,42/255])
+
 class WendellDepot_Benchwork(object):
     _totalWidth=14*12
     _totalHeight=6*12
@@ -258,7 +281,11 @@ class WendellDepot_Benchwork(object):
         self._foam4 = PinkFoam("foam4",foam4O,2,\
                                 self._totalHeight-self._foam2.width,\
                                 self._totalWidth-self._foam1.length)
-        
+        m1O = Base.Vector(h2O.x+L2x4.Width(),30,foam1O.z+self._foam1.thickness)
+        self._m1 = MasoniteBackdrop("m1",m1O,self._totalHeight-30,'vertical')
+        self._m2 = MasoniteBackdrop("m2",m1O,10*12,'horizontal')
+        m3O = m1O.add(Base.Vector(10*12,0,0))
+        self._m3 = MasoniteBackdrop("m3",m3O,self._totalHeight-30,'vertical')
     def show(self):
         self._l1.show()
         self._l2.show()
@@ -284,6 +311,9 @@ class WendellDepot_Benchwork(object):
         self._foam2.show()
         self._foam3.show()
         self._foam4.show()
+        self._m1.show()
+        self._m2.show()
+        self._m3.show()
 
 if __name__ == '__main__':
     App.ActiveDocument=App.newDocument("Temp")
