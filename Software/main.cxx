@@ -8,7 +8,7 @@
 //  Author        : $Author$
 //  Created By    : Robert Heller
 //  Created       : Wed Dec 11 09:18:34 2024
-//  Last Modified : <250105.1431>
+//  Last Modified : <250105.1643>
 //
 //  Description	
 //
@@ -54,11 +54,11 @@ static const char rcsid[] = "@(#) : $Id$";
 #include "nmranet_config.h"
 
 #include "SimpleStackNoCDI.hxx"
-#include "openlcb/ConfiguredConsumer.hxx"
-#include "openlcb/ConfiguredProducer.hxx"
 
 #include "WendellDepot.hxx"
 #include "OpticalLocationSensor.hxx"
+#include "Turnout.hxx"
+#include "RunATrain.hxx"
 
 const openlcb::SimpleNodeStaticValues openlcb::SNIP_STATIC_DATA = {
     4, "Deepwoods Software", "Wendell Depot Musuem", "Linux", "1.00"
@@ -248,6 +248,7 @@ int appl_main(int argc, char *argv[])
         stack.add_gridconnect_port(canserial);
         break;
     }
+    RunATrainFlow runtrains(stack.service(),stack.node());
     stack.loop_executor();
     return 0;
 }

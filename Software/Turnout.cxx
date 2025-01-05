@@ -8,7 +8,7 @@
 //  Author        : $Author$
 //  Created By    : Robert Heller
 //  Created       : Sun Jan 5 09:18:38 2025
-//  Last Modified : <250105.1000>
+//  Last Modified : <250105.1707>
 //
 //  Description	
 //
@@ -50,6 +50,7 @@ static const char rcsid[] = "@(#) : $Id$";
 #include "executor/Notifiable.hxx"
 #include "PointSensor.hxx"
 #include "Turnout.hxx"
+#include "RunATrain.hxx"
 
 void Turnout::handle_identify_global(const openlcb::EventRegistryEntry &registry_entry,
                                 openlcb::EventReport *event,
@@ -146,3 +147,8 @@ void Turnout::SendEvent(openlcb::EventId event,BarrierNotifiable *done)
                        openlcb::eventid_to_buffer(event), done);
 }
 
+void Turnout::SetState(Turnout::State_t newstate)
+{
+    state_ = newstate;
+    parent_->turnout_state(loc_,state_);
+}

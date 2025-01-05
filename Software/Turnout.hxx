@@ -8,7 +8,7 @@
 //  Author        : $Author$
 //  Created By    : Robert Heller
 //  Created       : Sat Jan 4 21:19:15 2025
-//  Last Modified : <250105.0929>
+//  Last Modified : <250105.1704>
 //
 //  Description	
 //
@@ -49,6 +49,9 @@
 #include "openlcb/EventHandlerTemplates.hxx"
 #include "executor/Notifiable.hxx"
 #include "PointSensor.hxx"
+#include "WendellDepot.hxx"
+
+class RunATrainFlow;
 
 class Turnout : public openlcb::SimpleEventHandler
 {
@@ -58,11 +61,15 @@ public:
             openlcb::EventId normal,
             openlcb::EventId reverse,
             openlcb::EventId pointsnormal,
-            openlcb::EventId pointsreverse)
+            openlcb::EventId pointsreverse,
+            WendellDepot::TurnoutIndexes loc,
+            RunATrainFlow *parent)
                 : node_(node)
           , normal_(normal)
           , reverse_(reverse)
           , points_(node,pointsnormal,pointsreverse,this)
+          , loc_(loc)
+          , parent_(parent)
           , state_(UNKNOWN)
     {
         register_handler();
@@ -80,7 +87,7 @@ public:
         SendEvent(reverse_,done);
     }
     State_t State() const {return state_;}
-    void SetState(State_t newstate) {state_ = newstate;}
+    void SetState(State_t newstate);
     void check_state(BarrierNotifiable *done)
     {
         points_.check_sensor(done);
@@ -102,6 +109,8 @@ private:
     openlcb::EventId normal_;
     openlcb::EventId reverse_;
     PointSensor points_;
+    WendellDepot::TurnoutIndexes loc_;
+    RunATrainFlow *parent_;
     State_t state_;
     openlcb::WriteHelper helper_;
 };

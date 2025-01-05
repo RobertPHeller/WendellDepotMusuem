@@ -7,8 +7,8 @@
 //  Date          : $Date$
 //  Author        : $Author$
 //  Created By    : Robert Heller
-//  Created       : Sat Jan 4 21:05:33 2025
-//  Last Modified : <250105.1512>
+//  Created       : Sun Jan 5 14:52:37 2025
+//  Last Modified : <250105.1709>
 //
 //  Description	
 //
@@ -35,44 +35,53 @@
 ///    You should have received a copy of the GNU General Public License
 ///    along with this program; if not, write to the Free Software
 ///    Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
-/// @file OpticalLocationSensor.hxx
+/// @file RunATrain.hxx
 /// @author Robert Heller
-/// @date Sat Jan 4 21:05:33 2025
+/// @date Sun Jan 5 14:52:37 2025
 /// 
 ///
 //////////////////////////////////////////////////////////////////////////////
 
-#ifndef __OPTICALLOCATIONSENSOR_HXX
-#define __OPTICALLOCATIONSENSOR_HXX
+#ifndef __RUNATRAIN_HXX
+#define __RUNATRAIN_HXX
 
-#include "openlcb/EventHandler.hxx"
-#include "openlcb/EventHandlerTemplates.hxx"
-#include "executor/Notifiable.hxx"
-#include "Sensor.hxx"
+#include <unistd.h>
+#include <type_traits>
+#include <functional>
+#include <sys/stat.h>
+
+#include "executor/Service.hxx"
+#include "executor/Timer.hxx"
+#include "utils/Buffer.hxx"
+#include "utils/Queue.hxx"
+#include "utils/LinkedObject.hxx"
+#include "executor/StateFlow.hxx"
+
+#include "OpticalLocationSensor.hxx"
+#include "Turnout.hxx"
 #include "WendellDepot.hxx"
 
-class RunATrainFlow;
+struct RunTrain {
+    uint16_t address;
+    WendellDepot::SensorIndexes startlocation;
+};
 
-class OpticalLocationSensor : public Sensor
+typedef StateFlow<Buffer<RunTrain>, QList<1>> RunATrainFlowBase;
+
+class RunATrainFlow : public RunATrainFlowBase
 {
 public:
-    OpticalLocationSensor(openlcb::Node *node,
-                          openlcb::EventId on,
-                          openlcb::EventId off,
-                          WendellDepot::SensorIndexes loc,
-                          RunATrainFlow *parent)
-                : Sensor(node,on,off)
-          , loc_(loc)
-          , parent_(parent)
-    {
-    }
-    virtual void handle_on(BarrierNotifiable *done);
-    virtual void handle_off(BarrierNotifiable *done);
+    RunATrainFlow(Service *service, openlcb::Node *node);
+    virtual Action entry() override;
+    void turnout_state(WendellDepot::TurnoutIndexes loc, 
+                       Turnout::State_t state);
 private:
-    WendellDepot::SensorIndexes loc_;
-    RunATrainFlow *parent_;
+    openlcb::Node *node_;
+    OpticalLocationSensor *locationSensors_[WendellDepot::NUM_SENSORS];
+    Turnout *turnouts_[WendellDepot::NUM_TURNOUTS];
+    BarrierNotifiable n_;
 };
-    
 
-#endif // __OPTICALLOCATIONSENSOR_HXX
+
+#endif // __RUNATRAIN_HXX
 
