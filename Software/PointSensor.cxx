@@ -7,8 +7,8 @@
 //  Date          : $Date$
 //  Author        : $Author$
 //  Created By    : Robert Heller
-//  Created       : Wed Dec 11 09:18:34 2024
-//  Last Modified : <250105.0812>
+//  Created       : Sun Jan 5 09:03:02 2025
+//  Last Modified : <250105.0906>
 //
 //  Description	
 //
@@ -18,7 +18,7 @@
 //	
 /////////////////////////////////////////////////////////////////////////////
 /// @copyright
-///    Copyright (C) 2024  Robert Heller D/B/A Deepwoods Software
+///    Copyright (C) 2025  Robert Heller D/B/A Deepwoods Software
 ///			51 Locke Hill Road
 ///			Wendell, MA 01379-9728
 ///
@@ -35,33 +35,33 @@
 ///    You should have received a copy of the GNU General Public License
 ///    along with this program; if not, write to the Free Software
 ///    Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
-/// @file main.cxx
+/// @file PointSensor.cxx
 /// @author Robert Heller
-/// @date Wed Dec 11 09:18:34 2024
+/// @date Sun Jan 5 09:03:02 2025
 /// 
 ///
 //////////////////////////////////////////////////////////////////////////////
 
 static const char rcsid[] = "@(#) : $Id$";
 
-#include <fcntl.h>
-#include <getopt.h>
-#include <stdio.h>
-#include <unistd.h>
-#include <string.h>
 
-#include "os/os.h"
-#include "nmranet_config.h"
+    
+#include "openlcb/EventHandler.hxx"
+#include "openlcb/EventHandlerTemplates.hxx"
+#include "executor/Notifiable.hxx"
+#include "Sensor.hxx"
+#include "Turnout.hxx"
+#include "PointSensor.hxx"
 
-#include "openlcb/SimpleStack.hxx"
-#include "openlcb/ConfiguredConsumer.hxx"
-#include "openlcb/ConfiguredProducer.hxx"
-
-#include "WendellDepot.hxx"
-#include "OpticalLocationSensor.hxx"
-
-int appl_main(int argc, char *argv[])
+void PointSensor::handle_on(BarrierNotifiable *done)
 {
-    return 0;
+    parent_->SetState(Turnout::NORMAL);
+    done->notify();
+}
+
+void PointSensor::handle_off(BarrierNotifiable *done)
+{
+    parent_->SetState(Turnout::REVERSE);
+    done->notify();
 }
 

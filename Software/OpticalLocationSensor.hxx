@@ -1,4 +1,4 @@
-// -!- C++ -!- //////////////////////////////////////////////////////////////
+// -!- c++ -!- //////////////////////////////////////////////////////////////
 //
 //  System        : 
 //  Module        : 
@@ -7,8 +7,8 @@
 //  Date          : $Date$
 //  Author        : $Author$
 //  Created By    : Robert Heller
-//  Created       : Wed Dec 11 09:18:34 2024
-//  Last Modified : <250105.0812>
+//  Created       : Sat Jan 4 21:05:33 2025
+//  Last Modified : <250104.2113>
 //
 //  Description	
 //
@@ -18,7 +18,7 @@
 //	
 /////////////////////////////////////////////////////////////////////////////
 /// @copyright
-///    Copyright (C) 2024  Robert Heller D/B/A Deepwoods Software
+///    Copyright (C) 2025  Robert Heller D/B/A Deepwoods Software
 ///			51 Locke Hill Road
 ///			Wendell, MA 01379-9728
 ///
@@ -35,33 +35,44 @@
 ///    You should have received a copy of the GNU General Public License
 ///    along with this program; if not, write to the Free Software
 ///    Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
-/// @file main.cxx
+/// @file OpticalLocationSensor.hxx
 /// @author Robert Heller
-/// @date Wed Dec 11 09:18:34 2024
+/// @date Sat Jan 4 21:05:33 2025
 /// 
 ///
 //////////////////////////////////////////////////////////////////////////////
 
-static const char rcsid[] = "@(#) : $Id$";
+#ifndef __OPTICALLOCATIONSENSOR_HXX
+#define __OPTICALLOCATIONSENSOR_HXX
 
-#include <fcntl.h>
-#include <getopt.h>
-#include <stdio.h>
-#include <unistd.h>
-#include <string.h>
-
-#include "os/os.h"
-#include "nmranet_config.h"
-
-#include "openlcb/SimpleStack.hxx"
-#include "openlcb/ConfiguredConsumer.hxx"
-#include "openlcb/ConfiguredProducer.hxx"
-
+#include "openlcb/EventHandler.hxx"
+#include "openlcb/EventHandlerTemplates.hxx"
+#include "executor/Notifiable.hxx"
+#include "Sensor.hxx"
 #include "WendellDepot.hxx"
-#include "OpticalLocationSensor.hxx"
 
-int appl_main(int argc, char *argv[])
+class RunATrain;
+
+class OpticalLocationSensor : public Sensor
 {
-    return 0;
-}
+public:
+    OpticalLocationSensor(openlcb::Node *node,
+                          openlcb::EventId on,
+                          openlcb::EventId off,
+                          WendellDepot::SensorIndexes loc,
+                          RunATrain *parent)
+                : Sensor(node,on,off)
+          , loc_(loc)
+          , parent_(parent)
+    {
+    }
+    virtual void handle_on(BarrierNotifiable *done);
+    virtual void handle_off(BarrierNotifiable *done);
+private:
+    WendellDepot::SensorIndexes loc_;
+    RunATrain *parent_;
+};
+    
+
+#endif // __OPTICALLOCATIONSENSOR_HXX
 
