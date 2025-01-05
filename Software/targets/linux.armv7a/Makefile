@@ -11,3 +11,13 @@ sh -c "if [ \"X`printenv OPENMRNPATH`\" != \"X\" ]; then printenv OPENMRNPATH; \
 APP_PATH ?= $(realpath ../..)
 -include ../../config.mk
 include $(OPENMRNPATH)/etc/prog.mk
+
+$(EXECUTABLE)$(EXTENTION): WendellDepot.o
+
+WendellDepot.o: WendellDepot.cxx
+
+main.o: WendellDepot.hxx
+
+WendellDepot.hxx WendellDepot.cxx: ../../../WendellDepot.xml ../../LayoutControlDB2ConfigureCXX.tcl
+	tclsh ../../LayoutControlDB2ConfigureCXX.tcl
+

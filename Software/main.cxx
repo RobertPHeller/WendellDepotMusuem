@@ -8,7 +8,7 @@
 //  Author        : $Author$
 //  Created By    : Robert Heller
 //  Created       : Wed Dec 11 09:18:34 2024
-//  Last Modified : <241211.0930>
+//  Last Modified : <250103.2038>
 //
 //  Description	
 //
@@ -57,6 +57,7 @@ static const char rcsid[] = "@(#) : $Id$";
 #include "openlcb/ConfiguredConsumer.hxx"
 #include "openlcb/ConfiguredProducer.hxx"
 
+#include "WendellDepot.hxx"
 
 int appl_main(int argc, char *argv[])
 {
