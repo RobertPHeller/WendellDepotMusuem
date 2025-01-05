@@ -17,5 +17,5 @@ WendellDepot.o: WendellDepot.cxx
 
 main.o: WendellDepot.hxx
 
-WendellDepot.hxx WendellDepot.cxx: ../../../WendellDepot.xml
+WendellDepot.hxx WendellDepot.cxx: ../../../WendellDepot.xml ../../LayoutControlDB2ConfigureCXX.tcl
 	tclsh ../../LayoutControlDB2ConfigureCXX.tcl
