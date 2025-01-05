@@ -1,85 +1,5 @@
 <?xml version='1.0'?>
 <layout>
-  <block>
-    <name>Main Track 2</name>
-    <occupied/>
-    <clear/>
-  </block>
-  <block>
-    <name>Main Track 1</name>
-    <occupied/>
-    <clear/>
-  </block>
-  <block>
-    <name>West Curve Track 1</name>
-    <occupied/>
-    <clear/>
-  </block>
-  <block>
-    <name>West Curve Track 2</name>
-    <occupied/>
-    <clear/>
-  </block>
-  <block>
-    <name>East Curve Track 2</name>
-    <occupied/>
-    <clear/>
-  </block>
-  <block>
-    <name>East Curve Track 1</name>
-    <occupied/>
-    <clear/>
-  </block>
-  <block>
-    <name>Stage Crossover 2 OS</name>
-    <occupied/>
-    <clear/>
-  </block>
-  <block>
-    <name>Stage Crossover 1 OS</name>
-    <occupied/>
-    <clear/>
-  </block>
-  <block>
-    <name>Stage Track 2</name>
-    <occupied/>
-    <clear/>
-  </block>
-  <block>
-    <name>Stage Track 4</name>
-    <occupied/>
-    <clear/>
-  </block>
-  <block>
-    <name>Stage Track 1</name>
-    <occupied/>
-    <clear/>
-  </block>
-  <block>
-    <name>Stage Track 3</name>
-    <occupied/>
-    <clear/>
-  </block>
-  <block>
-    <name>West Stage 1-3 OS</name>
-    <occupied/>
-    <clear/>
-  </block>
-  <block>
-    <name>West Stage 2-4 OS</name>
-    <occupied/>
-    <clear/>
-  </block>
-  <block>
-    <name>East Stage 2-4 OS</name>
-    <occupied/>
-    <clear/>
-  </block>
-  <block>
-    <name>East Stage 1-3 OS</name>
-    <occupied/>
-    <clear/>
-  </block>
   <sensor>
     <name>OpticalSense 2-1</name>
     <on/>
@@ -91,32 +11,12 @@
     <off/>
   </sensor>
   <sensor>
-    <name>OpticalSense 1-3</name>
-    <on/>
-    <off/>
-  </sensor>
-  <sensor>
-    <name>OpticalSense 1-4</name>
-    <on/>
-    <off/>
-  </sensor>
-  <sensor>
     <name>OpticalSense 2-3</name>
     <on/>
     <off/>
   </sensor>
   <sensor>
     <name>OpticalSense 2-4</name>
-    <on/>
-    <off/>
-  </sensor>
-  <sensor>
-    <name>OpticalSense 1-1</name>
-    <on/>
-    <off/>
-  </sensor>
-  <sensor>
-    <name>OpticalSense 1-2</name>
     <on/>
     <off/>
   </sensor>
@@ -160,28 +60,405 @@
     <on/>
     <off/>
   </sensor>
-  <turnout>
-    <name>Stage Crossover 2</name>
-    <motor>
-      <normal/>
-      <reverse/>
-    </motor>
-    <points>
-      <normal/>
-      <reverse/>
-    </points>
-  </turnout>
-  <turnout>
-    <name>Stage Crossover 1</name>
-    <motor>
-      <normal/>
-      <reverse/>
-    </motor>
-    <points>
-      <normal/>
-      <reverse/>
-    </points>
-  </turnout>
+  <sensor>
+    <name>East Double Track entrance</name>
+    <on/>
+    <off/>
+  </sensor>
+  <sensor>
+    <name>East Double Track Entrance</name>
+    <on/>
+    <off/>
+  </sensor>
+  <sensor>
+    <name>East Double Track Frog Stop</name>
+    <on/>
+    <off/>
+  </sensor>
+  <sensor>
+    <name>East Double Track Straight Stop</name>
+    <on/>
+    <off/>
+  </sensor>
+  <sensor>
+    <name>West Double Track Entrance</name>
+    <on/>
+    <off/>
+  </sensor>
+  <sensor>
+    <name>West Double Track Frog Stop</name>
+    <on/>
+    <off/>
+  </sensor>
+  <sensor>
+    <name>West Double Track Straight Stop</name>
+    <on/>
+    <off/>
+  </sensor>
+  <sensor>
+    <name>Stage West 1-3 Entrance</name>
+    <on/>
+    <off/>
+  </sensor>
+  <sensor>
+    <name>Stage West 2-4 Entrance</name>
+    <on/>
+    <off/>
+  </sensor>
+  <sensor>
+    <name>Stage East 1-3 Entrance</name>
+    <on/>
+    <off/>
+  </sensor>
+  <sensor>
+    <name>Stage East 2-4 Entrance</name>
+    <on/>
+    <off/>
+  </sensor>
+  <signal>
+    <name>WestEN</name>
+    <aspect>
+      <name>Stop</name>
+      <event/>
+      <look>Stop</look>
+    </aspect>
+    <aspect>
+      <name>Slow Aproach</name>
+      <event/>
+      <look>Slow Aproach</look>
+    </aspect>
+    <aspect>
+      <name>Slow Clear</name>
+      <event/>
+      <look>Slow Clear</look>
+    </aspect>
+    <aspect>
+      <name>Aproach</name>
+      <event/>
+      <look>Aproach</look>
+    </aspect>
+    <aspect>
+      <name>Clear</name>
+      <event/>
+      <look>Clear</look>
+    </aspect>
+  </signal>
+  <signal>
+    <name>WestF1</name>
+    <aspect>
+      <name>Stop</name>
+      <event/>
+      <look>Stop</look>
+    </aspect>
+    <aspect>
+      <name>Aproach</name>
+      <event/>
+      <look>Aproach</look>
+    </aspect>
+    <aspect>
+      <name>Slow Clear</name>
+      <event/>
+      <look>Slow Clear</look>
+    </aspect>
+  </signal>
+  <signal>
+    <name>WestFM</name>
+    <aspect>
+      <name>Stop</name>
+      <event/>
+      <look>Stop</look>
+    </aspect>
+    <aspect>
+      <name>Aproach</name>
+      <event/>
+      <look>Aproach</look>
+    </aspect>
+    <aspect>
+      <name>Clear</name>
+      <event/>
+      <look>Clear</look>
+    </aspect>
+  </signal>
+  <signal>
+    <name>WestYardEntry1-3</name>
+    <aspect>
+      <name>Stop</name>
+      <event/>
+      <look>Stop</look>
+    </aspect>
+    <aspect>
+      <name>Slow Aproach</name>
+      <event/>
+      <look>Slow Aproach</look>
+    </aspect>
+    <aspect>
+      <name>Slow Clear</name>
+      <event/>
+      <look>Slow Clear</look>
+    </aspect>
+    <aspect>
+      <name>Aproach</name>
+      <event/>
+      <look>Aproach</look>
+    </aspect>
+    <aspect>
+      <name>Clear</name>
+      <event/>
+      <look>Clear</look>
+    </aspect>
+  </signal>
+  <signal>
+    <name>WestYardEntry2-4</name>
+    <aspect>
+      <name>Stop</name>
+      <event/>
+      <look>Stop</look>
+    </aspect>
+    <aspect>
+      <name>Slow Aproach</name>
+      <event/>
+      <look>Slow Aproach</look>
+    </aspect>
+    <aspect>
+      <name>Slow Clear</name>
+      <event/>
+      <look>Slow Clear</look>
+    </aspect>
+    <aspect>
+      <name>Aproach</name>
+      <event/>
+      <look>Aproach</look>
+    </aspect>
+    <aspect>
+      <name>Clear</name>
+      <event/>
+      <look>Clear</look>
+    </aspect>
+  </signal>
+  <signal>
+    <name>EastYardEntry1-3</name>
+    <aspect>
+      <name>Stop</name>
+      <event/>
+      <look>Stop</look>
+    </aspect>
+    <aspect>
+      <name>Slow Aproach</name>
+      <event/>
+      <look>Slow Aproach</look>
+    </aspect>
+    <aspect>
+      <name>Slow Clear</name>
+      <event/>
+      <look>Slow Clear</look>
+    </aspect>
+    <aspect>
+      <name>Aproach</name>
+      <event/>
+      <look>Aproach</look>
+    </aspect>
+    <aspect>
+      <name>Clear</name>
+      <event/>
+      <look>Clear</look>
+    </aspect>
+  </signal>
+  <signal>
+    <name>EastYardEntry2-4</name>
+    <aspect>
+      <name>Stop</name>
+      <event/>
+      <look>Stop</look>
+    </aspect>
+    <aspect>
+      <name>Slow Aproach</name>
+      <event/>
+      <look>Slow Aproach</look>
+    </aspect>
+    <aspect>
+      <name>Slow Clear</name>
+      <event/>
+      <look>Slow Clear</look>
+    </aspect>
+    <aspect>
+      <name>Aproach</name>
+      <event/>
+      <look>Aproach</look>
+    </aspect>
+    <aspect>
+      <name>Clear</name>
+      <event/>
+      <look>Clear</look>
+    </aspect>
+  </signal>
+  <signal>
+    <name>EastExit4 (Dwarf)</name>
+    <aspect>
+      <name>Hold</name>
+      <event/>
+      <look>Hold</look>
+    </aspect>
+    <aspect>
+      <name>Go</name>
+      <event/>
+      <look>Go</look>
+    </aspect>
+  </signal>
+  <signal>
+    <name>EastExit2 (Dwarf)</name>
+    <aspect>
+      <name>Hold</name>
+      <event/>
+      <look>Hold</look>
+    </aspect>
+    <aspect>
+      <name>Go</name>
+      <event/>
+      <look>Go</look>
+    </aspect>
+  </signal>
+  <signal>
+    <name>EastExit1 (Dwarf)</name>
+    <aspect>
+      <name>Hold</name>
+      <event/>
+      <look>Hold</look>
+    </aspect>
+    <aspect>
+      <name>Go</name>
+      <event/>
+      <look>Go</look>
+    </aspect>
+  </signal>
+  <signal>
+    <name>EastExit3 (Dwarf)</name>
+    <aspect>
+      <name>Hold</name>
+      <event/>
+      <look>Hold</look>
+    </aspect>
+    <aspect>
+      <name>Go</name>
+      <event/>
+      <look>Go</look>
+    </aspect>
+  </signal>
+  <signal>
+    <name>WestExit3 (Dwarf)</name>
+    <aspect>
+      <name>Hold</name>
+      <event/>
+      <look>Hold</look>
+    </aspect>
+    <aspect>
+      <name>Go</name>
+      <event/>
+      <look>Go</look>
+    </aspect>
+  </signal>
+  <signal>
+    <name>WestExit1 (Dwarf)</name>
+    <aspect>
+      <name>Hold</name>
+      <event/>
+      <look>Hold</look>
+    </aspect>
+    <aspect>
+      <name>Go</name>
+      <event/>
+      <look>Go</look>
+    </aspect>
+  </signal>
+  <signal>
+    <name>WestExit2 (Dwarf)</name>
+    <aspect>
+      <name>Hold</name>
+      <event/>
+      <look>Hold</look>
+    </aspect>
+    <aspect>
+      <name>Go</name>
+      <event/>
+      <look>Go</look>
+    </aspect>
+  </signal>
+  <signal>
+    <name>WestExit4 (Dwarf)</name>
+    <aspect>
+      <name>Hold</name>
+      <event/>
+      <look>Hold</look>
+    </aspect>
+    <aspect>
+      <name>Go</name>
+      <event/>
+      <look>Go</look>
+    </aspect>
+  </signal>
+  <signal>
+    <name>EastEN</name>
+    <aspect>
+      <name>Stop</name>
+      <event/>
+      <look>Stop</look>
+    </aspect>
+    <aspect>
+      <name>Slow Aproach</name>
+      <event/>
+      <look>Slow Aproach</look>
+    </aspect>
+    <aspect>
+      <name>Slow Clear</name>
+      <event/>
+      <look>Slow Clear</look>
+    </aspect>
+    <aspect>
+      <name>Aproach</name>
+      <event/>
+      <look>Aproach</look>
+    </aspect>
+    <aspect>
+      <name>Clear</name>
+      <event/>
+      <look>Clear</look>
+    </aspect>
+  </signal>
+  <signal>
+    <name>EastF1</name>
+    <aspect>
+      <name>Stop</name>
+      <event/>
+      <look>Stop</look>
+    </aspect>
+    <aspect>
+      <name>Slow Aproach</name>
+      <event/>
+      <look>Slow Aproach</look>
+    </aspect>
+    <aspect>
+      <name>Slow Clear</name>
+      <event/>
+      <look>Slow Clear</look>
+    </aspect>
+  </signal>
+  <signal>
+    <name>EastFM</name>
+    <aspect>
+      <name>Stop</name>
+      <event/>
+      <look>Stop</look>
+    </aspect>
+    <aspect>
+      <name>Aproach</name>
+      <event/>
+      <look>Aproach</look>
+    </aspect>
+    <aspect>
+      <name>Clear</name>
+      <event/>
+      <look>Clear</look>
+    </aspect>
+  </signal>
   <turnout>
     <name>Stage East 1-3</name>
     <motor>
@@ -217,6 +494,28 @@
   </turnout>
   <turnout>
     <name>Stage West 1-3</name>
+    <motor>
+      <normal/>
+      <reverse/>
+    </motor>
+    <points>
+      <normal/>
+      <reverse/>
+    </points>
+  </turnout>
+  <turnout>
+    <name>East Double Track</name>
+    <motor>
+      <normal/>
+      <reverse/>
+    </motor>
+    <points>
+      <normal/>
+      <reverse/>
+    </points>
+  </turnout>
+  <turnout>
+    <name>West Double Track</name>
     <motor>
       <normal/>
       <reverse/>
