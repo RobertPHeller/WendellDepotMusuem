@@ -8,7 +8,7 @@
 //  Author        : $Author$
 //  Created By    : Robert Heller
 //  Created       : Sun Jan 5 14:52:37 2025
-//  Last Modified : <250105.1709>
+//  Last Modified : <250105.1952>
 //
 //  Description	
 //
@@ -59,6 +59,7 @@
 
 #include "OpticalLocationSensor.hxx"
 #include "Turnout.hxx"
+#include "Signal.hxx"
 #include "WendellDepot.hxx"
 
 struct RunTrain {
@@ -75,10 +76,13 @@ public:
     virtual Action entry() override;
     void turnout_state(WendellDepot::TurnoutIndexes loc, 
                        Turnout::State_t state);
+    void EnterLocation(WendellDepot::SensorIndexes loc);
+    void ExitLocation(WendellDepot::SensorIndexes loc);
 private:
     openlcb::Node *node_;
     OpticalLocationSensor *locationSensors_[WendellDepot::NUM_SENSORS];
     Turnout *turnouts_[WendellDepot::NUM_TURNOUTS];
+    Signal *signals_[WendellDepot::NUM_SIGNALS];
     BarrierNotifiable n_;
 };
 
