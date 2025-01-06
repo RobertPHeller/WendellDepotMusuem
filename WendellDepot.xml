@@ -1,44 +1,24 @@
 <?xml version='1.0'?>
 <layout>
   <sensor>
-    <name>OpticalSenseStage 3-1</name>
-    <on/>
-    <off/>
+    <name>West Stage Exit 3</name>
+    <on>05.01.01.01.22.83.00.04</on>
+    <off>05.01.01.01.22.83.00.05</off>
   </sensor>
   <sensor>
-    <name>OpticalSenseStage 3-2</name>
-    <on/>
-    <off/>
+    <name>West Stage Exit 1</name>
+    <on>05.01.01.01.22.83.00.06</on>
+    <off>05.01.01.01.22.83.00.07</off>
   </sensor>
   <sensor>
-    <name>OpticalSenseStage 1-3</name>
-    <on/>
-    <off/>
+    <name>West Stage Exit 2</name>
+    <on>05.01.01.01.22.83.00.10</on>
+    <off>05.01.01.01.22.83.00.11</off>
   </sensor>
   <sensor>
-    <name>OpticalSenseStage 1-4</name>
-    <on/>
-    <off/>
-  </sensor>
-  <sensor>
-    <name>OpticalSenseStage 2-3</name>
-    <on/>
-    <off/>
-  </sensor>
-  <sensor>
-    <name>OpticalSenseStage 2-4</name>
-    <on/>
-    <off/>
-  </sensor>
-  <sensor>
-    <name>OpticalSenseStage 4-1</name>
-    <on/>
-    <off/>
-  </sensor>
-  <sensor>
-    <name>OpticalSenseStage 4-2</name>
-    <on/>
-    <off/>
+    <name>West Stage Exit 4</name>
+    <on>05.01.01.01.22.83.00.12</on>
+    <off>05.01.01.01.22.83.00.13</off>
   </sensor>
   <sensor>
     <name>East Double Track Entrance</name>
@@ -72,28 +52,48 @@
   </sensor>
   <sensor>
     <name>Stage West 1-3 Entrance</name>
-    <on/>
-    <off/>
+    <on>05.01.01.01.22.83.00.00</on>
+    <off>05.01.01.01.22.83.00.01</off>
   </sensor>
   <sensor>
     <name>Stage West 2-4 Entrance</name>
-    <on/>
-    <off/>
+    <on>05.01.01.01.22.83.00.02</on>
+    <off>05.01.01.01.22.83.00.03</off>
   </sensor>
   <sensor>
     <name>Stage East 1-3 Entrance</name>
-    <on/>
-    <off/>
+    <on>05.01.01.01.22.84.00.04</on>
+    <off>05.01.01.01.22.84.00.05</off>
   </sensor>
   <sensor>
     <name>Stage East 2-4 Entrance</name>
-    <on/>
-    <off/>
+    <on>05.01.01.01.22.84.00.06</on>
+    <off>05.01.01.01.22.84.00.07</off>
   </sensor>
   <sensor>
     <name>Wendell Depot Rd Grade Crossing</name>
     <on>05.01.01.01.22.80.00.00</on>
     <off>05.01.01.01.22.80.00.01</off>
+  </sensor>
+  <sensor>
+    <name>East Stage Exit 3</name>
+    <on>05.01.01.01.22.83.00.14</on>
+    <off>05.01.01.01.22.83.00.15</off>
+  </sensor>
+  <sensor>
+    <name>East Stage Exit 1</name>
+    <on>05.01.01.01.22.83.00.16</on>
+    <off>05.01.01.01.22.83.00.17</off>
+  </sensor>
+  <sensor>
+    <name>East Stage Exit 2</name>
+    <on>05.01.01.01.22.84.00.00</on>
+    <off>05.01.01.01.22.84.00.01</off>
+  </sensor>
+  <sensor>
+    <name>East Stage Exit 4</name>
+    <on>05.01.01.01.22.84.00.02</on>
+    <off>05.01.01.01.22.84.00.03</off>
   </sensor>
   <signal>
     <name>WestEN</name>
@@ -163,27 +163,27 @@
     <name>WestYardEntry1-3</name>
     <aspect>
       <name>Stop</name>
-      <event/>
+      <event>05.01.01.01.22.83.00.60</event>
       <look>Stop</look>
     </aspect>
     <aspect>
       <name>Slow Aproach</name>
-      <event/>
+      <event>05.01.01.01.22.83.00.61</event>
       <look>Slow Aproach</look>
     </aspect>
     <aspect>
       <name>Slow Clear</name>
-      <event/>
+      <event>05.01.01.01.22.83.00.62</event>
       <look>Slow Clear</look>
     </aspect>
     <aspect>
       <name>Aproach</name>
-      <event/>
+      <event>05.01.01.01.22.83.00.63</event>
       <look>Aproach</look>
     </aspect>
     <aspect>
       <name>Clear</name>
-      <event/>
+      <event>05.01.01.01.22.83.00.64</event>
       <look>Clear</look>
     </aspect>
   </signal>
@@ -191,27 +191,27 @@
     <name>WestYardEntry2-4</name>
     <aspect>
       <name>Stop</name>
-      <event/>
+      <event>05.01.01.01.22.83.00.70</event>
       <look>Stop</look>
     </aspect>
     <aspect>
       <name>Slow Aproach</name>
-      <event/>
+      <event>05.01.01.01.22.83.00.71</event>
       <look>Slow Aproach</look>
     </aspect>
     <aspect>
       <name>Slow Clear</name>
-      <event/>
+      <event>05.01.01.01.22.83.00.72</event>
       <look>Slow Clear</look>
     </aspect>
     <aspect>
       <name>Aproach</name>
-      <event/>
+      <event>05.01.01.01.22.83.00.73</event>
       <look>Aproach</look>
     </aspect>
     <aspect>
       <name>Clear</name>
-      <event/>
+      <event>05.01.01.01.22.83.00.74</event>
       <look>Clear</look>
     </aspect>
   </signal>
@@ -219,27 +219,27 @@
     <name>EastYardEntry1-3</name>
     <aspect>
       <name>Stop</name>
-      <event/>
+      <event>05.01.01.01.22.83.00.D0</event>
       <look>Stop</look>
     </aspect>
     <aspect>
       <name>Slow Aproach</name>
-      <event/>
+      <event>05.01.01.01.22.83.00.D1</event>
       <look>Slow Aproach</look>
     </aspect>
     <aspect>
       <name>Slow Clear</name>
-      <event/>
+      <event>05.01.01.01.22.83.00.D2</event>
       <look>Slow Clear</look>
     </aspect>
     <aspect>
       <name>Aproach</name>
-      <event/>
+      <event>05.01.01.01.22.83.00.D3</event>
       <look>Aproach</look>
     </aspect>
     <aspect>
       <name>Clear</name>
-      <event/>
+      <event>05.01.01.01.22.83.00.D4</event>
       <look>Clear</look>
     </aspect>
   </signal>
@@ -247,27 +247,27 @@
     <name>EastYardEntry2-4</name>
     <aspect>
       <name>Stop</name>
-      <event/>
+      <event>05.01.01.01.22.83.00.E0</event>
       <look>Stop</look>
     </aspect>
     <aspect>
       <name>Slow Aproach</name>
-      <event/>
+      <event>05.01.01.01.22.83.00.E1</event>
       <look>Slow Aproach</look>
     </aspect>
     <aspect>
       <name>Slow Clear</name>
-      <event/>
+      <event>05.01.01.01.22.83.00.E2</event>
       <look>Slow Clear</look>
     </aspect>
     <aspect>
       <name>Aproach</name>
-      <event/>
+      <event>05.01.01.01.22.83.00.E3</event>
       <look>Aproach</look>
     </aspect>
     <aspect>
       <name>Clear</name>
-      <event/>
+      <event>05.01.01.01.22.83.00.E4</event>
       <look>Clear</look>
     </aspect>
   </signal>
@@ -275,12 +275,12 @@
     <name>EastExit4 (Dwarf)</name>
     <aspect>
       <name>Hold</name>
-      <event/>
+      <event>05.01.01.01.22.83.00.F0</event>
       <look>Hold</look>
     </aspect>
     <aspect>
       <name>Go</name>
-      <event/>
+      <event>05.01.01.01.22.83.00.F1</event>
       <look>Go</look>
     </aspect>
   </signal>
@@ -288,12 +288,12 @@
     <name>EastExit2 (Dwarf)</name>
     <aspect>
       <name>Hold</name>
-      <event/>
+      <event>05.01.01.01.22.83.00.F4</event>
       <look>Hold</look>
     </aspect>
     <aspect>
       <name>Go</name>
-      <event/>
+      <event>05.01.01.01.22.83.00.F5</event>
       <look>Go</look>
     </aspect>
   </signal>
@@ -301,12 +301,12 @@
     <name>EastExit1 (Dwarf)</name>
     <aspect>
       <name>Hold</name>
-      <event/>
+      <event>05.01.01.01.22.83.00.F8</event>
       <look>Hold</look>
     </aspect>
     <aspect>
       <name>Go</name>
-      <event/>
+      <event>05.01.01.01.22.83.00.F9</event>
       <look>Go</look>
     </aspect>
   </signal>
@@ -314,12 +314,12 @@
     <name>EastExit3 (Dwarf)</name>
     <aspect>
       <name>Hold</name>
-      <event/>
+      <event>05.01.01.01.22.83.00.F8</event>
       <look>Hold</look>
     </aspect>
     <aspect>
       <name>Go</name>
-      <event/>
+      <event>05.01.01.01.22.83.00.F9</event>
       <look>Go</look>
     </aspect>
   </signal>
@@ -327,12 +327,12 @@
     <name>WestExit3 (Dwarf)</name>
     <aspect>
       <name>Hold</name>
-      <event/>
+      <event>05.01.01.01.22.83.00.80</event>
       <look>Hold</look>
     </aspect>
     <aspect>
       <name>Go</name>
-      <event/>
+      <event>05.01.01.01.22.83.00.81</event>
       <look>Go</look>
     </aspect>
   </signal>
@@ -340,12 +340,12 @@
     <name>WestExit1 (Dwarf)</name>
     <aspect>
       <name>Hold</name>
-      <event/>
+      <event>05.01.01.01.22.83.00.84</event>
       <look>Hold</look>
     </aspect>
     <aspect>
       <name>Go</name>
-      <event/>
+      <event>05.01.01.01.22.83.00.85</event>
       <look>Go</look>
     </aspect>
   </signal>
@@ -353,12 +353,12 @@
     <name>WestExit2 (Dwarf)</name>
     <aspect>
       <name>Hold</name>
-      <event/>
+      <event>05.01.01.01.22.83.00.88</event>
       <look>Hold</look>
     </aspect>
     <aspect>
       <name>Go</name>
-      <event/>
+      <event>05.01.01.01.22.83.00.89</event>
       <look>Go</look>
     </aspect>
   </signal>
@@ -366,12 +366,12 @@
     <name>WestExit4 (Dwarf)</name>
     <aspect>
       <name>Hold</name>
-      <event/>
+      <event>05.01.01.01.22.83.00.C0</event>
       <look>Hold</look>
     </aspect>
     <aspect>
       <name>Go</name>
-      <event/>
+      <event>05.01.01.01.22.83.00.C1</event>
       <look>Go</look>
     </aspect>
   </signal>
@@ -442,45 +442,45 @@
   <turnout>
     <name>Stage East 1-3</name>
     <motor>
-      <normal/>
-      <reverse/>
+      <normal>05.01.01.01.22.84.00.18</normal>
+      <reverse>05.01.01.01.22.84.00.19</reverse>
     </motor>
     <points>
-      <normal/>
-      <reverse/>
+      <normal>05.01.01.01.22.84.00.30</normal>
+      <reverse>05.01.01.01.22.84.00.31</reverse>
     </points>
   </turnout>
   <turnout>
     <name>Stage East 2-4</name>
     <motor>
-      <normal/>
-      <reverse/>
+      <normal>05.01.01.01.22.84.00.1A</normal>
+      <reverse>05.01.01.01.22.84.00.1B</reverse>
     </motor>
     <points>
-      <normal/>
-      <reverse/>
+      <normal>05.01.01.01.22.84.00.32</normal>
+      <reverse>05.01.01.01.22.84.00.33</reverse>
     </points>
   </turnout>
   <turnout>
     <name>Stage West 2-4</name>
     <motor>
-      <normal/>
-      <reverse/>
+      <normal>05.01.01.01.22.83.00.32</normal>
+      <reverse>05.01.01.01.22.83.00.33</reverse>
     </motor>
     <points>
-      <normal/>
-      <reverse/>
+      <normal>05.01.01.01.22.83.00.50</normal>
+      <reverse>05.01.01.01.22.83.00.51</reverse>
     </points>
   </turnout>
   <turnout>
     <name>Stage West 1-3</name>
     <motor>
-      <normal/>
-      <reverse/>
+      <normal>05.01.01.01.22.83.00.30</normal>
+      <reverse>05.01.01.01.22.83.00.31</reverse>
     </motor>
     <points>
-      <normal/>
-      <reverse/>
+      <normal>05.01.01.01.22.83.00.50</normal>
+      <reverse>05.01.01.01.22.83.00.51</reverse>
     </points>
   </turnout>
   <turnout>
