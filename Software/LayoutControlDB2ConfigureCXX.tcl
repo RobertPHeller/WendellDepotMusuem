@@ -8,7 +8,7 @@
 #  Author        : $Author$
 #  Created By    : Robert Heller
 #  Created       : Fri Jan 3 15:41:13 2025
-#  Last Modified : <250104.1650>
+#  Last Modified : <250106.1106>
 #
 #  Description	
 #
@@ -74,7 +74,7 @@ proc EventID2LongLongHEX {eventid} {
     } else {
         set event [lcc::EventID %AUTO% -eventidstring $eventid]
     }
-    set result {}
+    set result {0X}
     foreach b [$event cget -eventidlist] {
         append result [format {%02X} $b]
     }
