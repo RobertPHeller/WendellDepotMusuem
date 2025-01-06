@@ -1,26 +1,6 @@
 <?xml version='1.0'?>
 <layout>
   <sensor>
-    <name>OpticalSense 2-1</name>
-    <on/>
-    <off/>
-  </sensor>
-  <sensor>
-    <name>OpticalSense 2-2</name>
-    <on/>
-    <off/>
-  </sensor>
-  <sensor>
-    <name>OpticalSense 2-3</name>
-    <on/>
-    <off/>
-  </sensor>
-  <sensor>
-    <name>OpticalSense 2-4</name>
-    <on/>
-    <off/>
-  </sensor>
-  <sensor>
     <name>OpticalSenseStage 3-1</name>
     <on/>
     <off/>
@@ -61,39 +41,34 @@
     <off/>
   </sensor>
   <sensor>
-    <name>East Double Track entrance</name>
-    <on/>
-    <off/>
-  </sensor>
-  <sensor>
     <name>East Double Track Entrance</name>
-    <on/>
-    <off/>
+    <on>05.01.01.01.22.82.00.00</on>
+    <off>05.01.01.01.22.82.00.01</off>
   </sensor>
   <sensor>
     <name>East Double Track Frog Stop</name>
-    <on/>
-    <off/>
+    <on>05.01.01.01.22.82.00.04</on>
+    <off>05.01.01.01.22.82.00.05</off>
   </sensor>
   <sensor>
     <name>East Double Track Straight Stop</name>
-    <on/>
-    <off/>
+    <on>05.01.01.01.22.82.00.02</on>
+    <off>05.01.01.01.22.82.00.03</off>
   </sensor>
   <sensor>
     <name>West Double Track Entrance</name>
-    <on/>
-    <off/>
+    <on>05.01.01.01.22.81.00.00</on>
+    <off>05.01.01.01.22.81.00.01</off>
   </sensor>
   <sensor>
     <name>West Double Track Frog Stop</name>
-    <on/>
-    <off/>
+    <on>05.01.01.01.22.81.00.04</on>
+    <off>05.01.01.01.22.81.00.05</off>
   </sensor>
   <sensor>
     <name>West Double Track Straight Stop</name>
-    <on/>
-    <off/>
+    <on>05.01.01.01.22.81.00.02</on>
+    <off>05.01.01.01.22.81.00.03</off>
   </sensor>
   <sensor>
     <name>Stage West 1-3 Entrance</name>
@@ -115,31 +90,36 @@
     <on/>
     <off/>
   </sensor>
+  <sensor>
+    <name>Wendell Depot Rd Grade Crossing</name>
+    <on>05.01.01.01.22.80.00.00</on>
+    <off>05.01.01.01.22.80.00.01</off>
+  </sensor>
   <signal>
     <name>WestEN</name>
     <aspect>
       <name>Stop</name>
-      <event/>
+      <event>05.01.01.01.22.81.00.40</event>
       <look>Stop</look>
     </aspect>
     <aspect>
       <name>Slow Aproach</name>
-      <event/>
+      <event>05.01.01.01.22.81.00.41</event>
       <look>Slow Aproach</look>
     </aspect>
     <aspect>
       <name>Slow Clear</name>
-      <event/>
+      <event>05.01.01.01.22.81.00.42</event>
       <look>Slow Clear</look>
     </aspect>
     <aspect>
       <name>Aproach</name>
-      <event/>
+      <event>05.01.01.01.22.81.00.43</event>
       <look>Aproach</look>
     </aspect>
     <aspect>
       <name>Clear</name>
-      <event/>
+      <event>05.01.01.01.22.81.00.44</event>
       <look>Clear</look>
     </aspect>
   </signal>
@@ -147,17 +127,17 @@
     <name>WestF1</name>
     <aspect>
       <name>Stop</name>
-      <event/>
+      <event>05.01.01.01.22.81.00.60</event>
       <look>Stop</look>
     </aspect>
     <aspect>
       <name>Aproach</name>
-      <event/>
+      <event>05.01.01.01.22.81.00.61</event>
       <look>Aproach</look>
     </aspect>
     <aspect>
       <name>Slow Clear</name>
-      <event/>
+      <event>05.01.01.01.22.81.00.62</event>
       <look>Slow Clear</look>
     </aspect>
   </signal>
@@ -165,17 +145,17 @@
     <name>WestFM</name>
     <aspect>
       <name>Stop</name>
-      <event/>
+      <event>05.01.01.01.22.81.00.50</event>
       <look>Stop</look>
     </aspect>
     <aspect>
       <name>Aproach</name>
-      <event/>
+      <event>05.01.01.01.22.81.00.51</event>
       <look>Aproach</look>
     </aspect>
     <aspect>
       <name>Clear</name>
-      <event/>
+      <event>05.01.01.01.22.81.00.52</event>
       <look>Clear</look>
     </aspect>
   </signal>
@@ -399,27 +379,27 @@
     <name>EastEN</name>
     <aspect>
       <name>Stop</name>
-      <event/>
+      <event>05.01.01.01.22.82.00.40</event>
       <look>Stop</look>
     </aspect>
     <aspect>
       <name>Slow Aproach</name>
-      <event/>
+      <event>05.01.01.01.22.82.00.41</event>
       <look>Slow Aproach</look>
     </aspect>
     <aspect>
       <name>Slow Clear</name>
-      <event/>
+      <event>05.01.01.01.22.82.00.42</event>
       <look>Slow Clear</look>
     </aspect>
     <aspect>
       <name>Aproach</name>
-      <event/>
+      <event>05.01.01.01.22.82.00.43</event>
       <look>Aproach</look>
     </aspect>
     <aspect>
       <name>Clear</name>
-      <event/>
+      <event>05.01.01.01.22.82.00.44</event>
       <look>Clear</look>
     </aspect>
   </signal>
@@ -427,17 +407,17 @@
     <name>EastF1</name>
     <aspect>
       <name>Stop</name>
-      <event/>
+      <event>05.01.01.01.22.82.00.50</event>
       <look>Stop</look>
     </aspect>
     <aspect>
       <name>Slow Aproach</name>
-      <event/>
+      <event>05.01.01.01.22.82.00.51</event>
       <look>Slow Aproach</look>
     </aspect>
     <aspect>
       <name>Slow Clear</name>
-      <event/>
+      <event>05.01.01.01.22.82.00.52</event>
       <look>Slow Clear</look>
     </aspect>
   </signal>
@@ -445,17 +425,17 @@
     <name>EastFM</name>
     <aspect>
       <name>Stop</name>
-      <event/>
+      <event>05.01.01.01.22.82.00.60</event>
       <look>Stop</look>
     </aspect>
     <aspect>
       <name>Aproach</name>
-      <event/>
+      <event>05.01.01.01.22.82.00.61</event>
       <look>Aproach</look>
     </aspect>
     <aspect>
       <name>Clear</name>
-      <event/>
+      <event>05.01.01.01.22.82.00.62</event>
       <look>Clear</look>
     </aspect>
   </signal>
@@ -506,23 +486,23 @@
   <turnout>
     <name>East Double Track</name>
     <motor>
-      <normal/>
-      <reverse/>
+      <normal>05.01.01.01.22.82.00.18</normal>
+      <reverse>05.01.01.01.22.82.00.19</reverse>
     </motor>
     <points>
-      <normal/>
-      <reverse/>
+      <normal>05.01.01.01.22.82.00.30</normal>
+      <reverse>05.01.01.01.22.82.00.31</reverse>
     </points>
   </turnout>
   <turnout>
     <name>West Double Track</name>
     <motor>
-      <normal/>
-      <reverse/>
+      <normal>05.01.01.01.22.81.00.18</normal>
+      <reverse>05.01.01.01.22.81.00.19</reverse>
     </motor>
     <points>
-      <normal/>
-      <reverse/>
+      <normal>05.01.01.01.22.81.00.30</normal>
+      <reverse>05.01.01.01.22.81.00.31</reverse>
     </points>
   </turnout>
 </layout>
