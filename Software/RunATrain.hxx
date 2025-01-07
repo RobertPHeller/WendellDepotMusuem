@@ -8,7 +8,7 @@
 //  Author        : $Author$
 //  Created By    : Robert Heller
 //  Created       : Sun Jan 5 14:52:37 2025
-//  Last Modified : <250105.1952>
+//  Last Modified : <250106.2016>
 //
 //  Description	
 //
@@ -83,7 +83,7 @@ private:
     OpticalLocationSensor *locationSensors_[WendellDepot::NUM_SENSORS];
     Turnout *turnouts_[WendellDepot::NUM_TURNOUTS];
     Signal *signals_[WendellDepot::NUM_SIGNALS];
-    BarrierNotifiable n_;
+    BarrierNotifiable bn_;
 };
 
 

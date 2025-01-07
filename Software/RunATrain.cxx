@@ -8,7 +8,7 @@
 //  Author        : $Author$
 //  Created By    : Robert Heller
 //  Created       : Sun Jan 5 19:21:30 2025
-//  Last Modified : <250105.1954>
+//  Last Modified : <250106.2015>
 //
 //  Description	
 //
@@ -67,6 +67,7 @@ RunATrainFlow::RunATrainFlow(Service *service, openlcb::Node *node)
       : RunATrainFlowBase(service)
 , node_(node)
 {
+    bn_.reset(this);
     for (int i=0; i < WendellDepot::NUM_SENSORS; i++)
     {
         locationSensors_[i] = 
@@ -75,6 +76,7 @@ RunATrainFlow::RunATrainFlow(Service *service, openlcb::Node *node)
                                         WendellDepot::SensorsCfg[i].off,
                                         (WendellDepot::SensorIndexes)i,
                                         this);
+        locationSensors_[i]->check_sensor(bn_.new_child());
     }
     for (int i=0; i < WendellDepot::NUM_TURNOUTS; i++)
     {
@@ -86,12 +88,14 @@ RunATrainFlow::RunATrainFlow(Service *service, openlcb::Node *node)
                       WendellDepot::TurnoutsCfg[i].points.reverse,
                       (WendellDepot::TurnoutIndexes)i,
                       this);
+        turnouts_[i]->check_state(bn_.new_child());
     }
     for (int i=0; i < WendellDepot::NUM_SIGNALS; i++)
     {
         signals_[i] = 
               new Signal(node_,WendellDepot::SignalsCfg[i]);
     }
+    bn_.maybe_done();
 }
 
 StateFlowBase::Action RunATrainFlow::entry()
