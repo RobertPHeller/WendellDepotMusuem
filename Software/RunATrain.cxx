@@ -8,7 +8,7 @@
 //  Author        : $Author$
 //  Created By    : Robert Heller
 //  Created       : Sun Jan 5 19:21:30 2025
-//  Last Modified : <250106.2015>
+//  Last Modified : <250106.2028>
 //
 //  Description	
 //
@@ -100,19 +100,27 @@ RunATrainFlow::RunATrainFlow(Service *service, openlcb::Node *node)
 
 StateFlowBase::Action RunATrainFlow::entry()
 {
+    // To do:
+    // Wait for all sensors to clear (wait for previous train to complete)
+    // Clear route (set turnouts)
+    // Set route signals to clear
+    // Start train
     return NULL;
 }
 
 void RunATrainFlow::turnout_state(WendellDepot::TurnoutIndexes loc, 
                                   Turnout::State_t state)
 {
+    // Capture turnout states 
 }
 
 void RunATrainFlow::EnterLocation(WendellDepot::SensorIndexes loc)
 {
+    // Optical sensor covered. switch over loc and adjust speed and signals, etc.
 }
 
 void RunATrainFlow::ExitLocation(WendellDepot::SensorIndexes loc)
 {
+    // Optical sensor uncovered. switch over loc and adjust speed and signals, etc.
 }
 
