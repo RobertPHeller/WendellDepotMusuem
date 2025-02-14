@@ -8,7 +8,7 @@
 //  Author        : $Author$
 //  Created By    : Robert Heller
 //  Created       : Sun Jan 5 19:54:43 2025
-//  Last Modified : <250105.2031>
+//  Last Modified : <250213.1510>
 //
 //  Description	
 //
@@ -48,6 +48,7 @@ static const char rcsid[] = "@(#) : $Id$";
 #include "openlcb/EventHandler.hxx"
 #include "openlcb/EventHandlerTemplates.hxx"
 #include "executor/Notifiable.hxx"
+#include "utils/logging.h"
 #include "WendellDepot.hxx"
 #include "Signal.hxx"
 
@@ -55,16 +56,19 @@ void Signal::handle_identify_global(const openlcb::EventRegistryEntry &registry_
                                     openlcb::EventReport *event,
                                     BarrierNotifiable *done)
 {
+    if (event->src_node.id == node_->node_id())
+    {
+        if (currentAspect_ == WendellDepot::SignalConfig::UNUSED)
+        {
+            SetAspect(cfg_.aspects[0].aspect,done->new_child());
+        }
+    }
     if (event->dst_node && event->dst_node != node_)
     {
         return done->notify();
     }
     for (uint i=0; i < WendellDepot::SignalConfig::ASPECTCOUNT; i++)
     {
-        if (cfg_.aspects[i].aspect == WendellDepot::SignalConfig::UNUSED)
-        {
-            break;
-        }
         openlcb::EventState state;
         if (cfg_.aspects[i].aspect == currentAspect_)
         {
@@ -85,6 +89,8 @@ void Signal::handle_identify_producer(const openlcb::EventRegistryEntry &registr
                                       openlcb::EventReport *event,
                                       BarrierNotifiable *done)
 {
+    //LOG(ALWAYS,"*** Signal::handle_identify_producer(): event  is 0X%016lX",event->event);
+    //LOG(ALWAYS,"*** Signal::handle_identify_producer(): source is 0X%012lX",event->src_node.id);
     if (event->src_node.id == node_->node_id())
     {
         // We don't respond to queries from our own node. This is not nice, but
@@ -134,7 +140,9 @@ void Signal::unregister_handler()
 }
 void Signal::SendEvent(openlcb::EventId event,BarrierNotifiable *done)
 {
-    helpers_[0].WriteAsync(node_,openlcb::Defs::MTI_EVENT_REPORT,
+    //LOG(ALWAYS,"*** Signal::SendEvent(): 0X%016lX", event);
+    //LOG(ALWAYS,"*** Signal::SendEvent(): &helpers_[0] = %p",&helpers_[0]);
+    helpers_[WendellDepot::SignalConfig::ASPECTCOUNT].WriteAsync(node_,openlcb::Defs::MTI_EVENT_REPORT,
                           openlcb::WriteHelper::global(),
                           openlcb::eventid_to_buffer(event), done);
 }

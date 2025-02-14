@@ -8,7 +8,7 @@
 //  Author        : $Author$
 //  Created By    : Robert Heller
 //  Created       : Sun Jan 5 14:52:37 2025
-//  Last Modified : <250106.2016>
+//  Last Modified : <250213.1546>
 //
 //  Description	
 //
@@ -62,9 +62,14 @@
 #include "Signal.hxx"
 #include "WendellDepot.hxx"
 
+
 struct RunTrain {
     uint16_t address;
-    WendellDepot::SensorIndexes startlocation;
+    enum Route {EastBound3, 
+              EastBound1, 
+              WestBound4, 
+              WestBound2, 
+              NUM_ROUTES} route;
 };
 
 typedef StateFlow<Buffer<RunTrain>, QList<1>> RunATrainFlowBase;
@@ -83,7 +88,26 @@ private:
     OpticalLocationSensor *locationSensors_[WendellDepot::NUM_SENSORS];
     Turnout *turnouts_[WendellDepot::NUM_TURNOUTS];
     Signal *signals_[WendellDepot::NUM_SIGNALS];
+    RunTrain *currentTrain;
     BarrierNotifiable bn_;
+public:
+    struct RouteSignalState {
+        WendellDepot::SignalIndexes signalIndex;
+        WendellDepot::SignalConfig::Aspect signalAspect;
+    };
+    static constexpr uint SIGNAL_STATES=3;
+    struct RouteTurnoutState {
+        WendellDepot::TurnoutIndexes turnoutIndex;
+        Turnout::State_t state;
+        RouteSignalState signalStates[SIGNAL_STATES];
+    };
+    static constexpr uint TURNOUT_STATES=4;
+    struct RouteTurnoutList {
+        WendellDepot::SensorIndexes exitLocation;
+        RouteTurnoutState turnoutStates[TURNOUT_STATES];
+    };
+private:
+    static const RouteTurnoutList routes_[RunTrain::NUM_ROUTES];
 };
 
 

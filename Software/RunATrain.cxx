@@ -8,7 +8,7 @@
 //  Author        : $Author$
 //  Created By    : Robert Heller
 //  Created       : Sun Jan 5 19:21:30 2025
-//  Last Modified : <250106.2028>
+//  Last Modified : <250213.1556>
 //
 //  Description	
 //
@@ -63,11 +63,324 @@ static const char rcsid[] = "@(#) : $Id$";
 #include "WendellDepot.hxx"
 #include "RunATrain.hxx"
 
+const RunATrainFlow::RouteTurnoutList routes_[RunTrain::NUM_ROUTES] = 
+{
+    {
+        WendellDepot::West_Stage_Exit_3,
+        {
+            {
+                WendellDepot::Stage_West_1_3,
+                Turnout::REVERSE,
+                {
+                    {
+                        WendellDepot::WestYardEntry1_3,
+                        WendellDepot::SignalConfig::Stop
+                    },
+                    {
+                        WendellDepot::WestExit1__Dwarf_,
+                        WendellDepot::SignalConfig::Hold
+                    },
+                    {
+                        WendellDepot::WestExit3__Dwarf_,
+                        WendellDepot::SignalConfig::Go
+                    }
+                }
+            },
+            {
+                WendellDepot::West_Double_Track,
+                Turnout::REVERSE,
+                {
+                    {
+                        WendellDepot::WestEN,
+                        WendellDepot::SignalConfig::Stop
+                    },
+                    {
+                        WendellDepot::WestF1,
+                        WendellDepot::SignalConfig::Slow_Clear
+                    },
+                    {
+                        WendellDepot::WestFM,
+                        WendellDepot::SignalConfig::Stop
+                    }
+                }
+            },
+            {
+                WendellDepot::East_Double_Track,
+                Turnout::NORMAL,
+                {
+                    {
+                        WendellDepot::EastEN,
+                        WendellDepot::SignalConfig::Clear
+                    },
+                    {
+                        WendellDepot::EastF1,
+                        WendellDepot::SignalConfig::Stop
+                    },
+                    {
+                        WendellDepot::EastFM,
+                        WendellDepot::SignalConfig::Stop
+                    }
+                }
+            },
+            {
+                WendellDepot::Stage_East_1_3,
+                Turnout::REVERSE,
+                {
+                    {
+                        WendellDepot::EastYardEntry1_3,
+                        WendellDepot::SignalConfig::Slow_Clear
+                    },
+                    {
+                        WendellDepot::EastExit1__Dwarf_,
+                        WendellDepot::SignalConfig::Hold
+                    },
+                    {
+                        WendellDepot::EastExit3__Dwarf_,
+                        WendellDepot::SignalConfig::Hold
+                    }
+                }
+            }
+        }
+    },
+    {
+        WendellDepot::West_Stage_Exit_1,
+        {
+            {
+                WendellDepot::Stage_West_1_3,
+                Turnout::NORMAL,
+                {
+                    {
+                        WendellDepot::WestYardEntry1_3,
+                        WendellDepot::SignalConfig::Stop
+                    },
+                    {
+                        WendellDepot::WestExit1__Dwarf_,
+                        WendellDepot::SignalConfig::Go
+                    },
+                    {
+                        WendellDepot::WestExit3__Dwarf_,
+                        WendellDepot::SignalConfig::Hold
+                    }
+                }
+            },
+            {
+                WendellDepot::West_Double_Track,
+                Turnout::REVERSE,
+                {
+                    {
+                        WendellDepot::WestEN,
+                        WendellDepot::SignalConfig::Stop
+                    },
+                    {
+                        WendellDepot::WestF1,
+                        WendellDepot::SignalConfig::Slow_Clear
+                    },
+                    {
+                        WendellDepot::WestFM,
+                        WendellDepot::SignalConfig::Stop
+                    }
+                }
+            },
+            {
+                WendellDepot::East_Double_Track,
+                Turnout::NORMAL,
+                {
+                    {
+                        WendellDepot::EastEN,
+                        WendellDepot::SignalConfig::Clear
+                    },
+                    {
+                        WendellDepot::EastF1,
+                        WendellDepot::SignalConfig::Stop
+                    },
+                    {
+                        WendellDepot::EastFM,
+                        WendellDepot::SignalConfig::Stop
+                    }
+                }
+            },
+            {
+                WendellDepot::Stage_East_1_3,
+                Turnout::NORMAL,
+                {
+                    {
+                        WendellDepot::EastYardEntry1_3,
+                        WendellDepot::SignalConfig::Clear
+                    },
+                    {
+                        WendellDepot::EastExit1__Dwarf_,
+                        WendellDepot::SignalConfig::Hold
+                    },
+                    {
+                        WendellDepot::EastExit3__Dwarf_,
+                        WendellDepot::SignalConfig::Hold
+                    }
+                }
+            }
+        }
+    },
+    {
+        WendellDepot::West_Stage_Exit_4,
+        {
+            {
+                WendellDepot::Stage_East_2_4,
+                Turnout::REVERSE,
+                {
+                    {
+                        WendellDepot::EastYardEntry2_4,
+                        WendellDepot::SignalConfig::Stop
+                    },
+                    {
+                        WendellDepot::EastExit2__Dwarf_,
+                        WendellDepot::SignalConfig::Hold
+                    },
+                    {
+                        WendellDepot::EastExit4__Dwarf_,
+                        WendellDepot::SignalConfig::Go
+                    }
+                }
+            },
+            {
+                WendellDepot::East_Double_Track,
+                Turnout::REVERSE,
+                {
+                    {
+                        WendellDepot::EastEN,
+                        WendellDepot::SignalConfig::Stop
+                    },
+                    {
+                        WendellDepot::EastF1,
+                        WendellDepot::SignalConfig::Slow_Clear
+                    },
+                    {
+                        WendellDepot::EastFM,
+                        WendellDepot::SignalConfig::Stop
+                    }
+                }
+            },
+            {
+                WendellDepot::West_Double_Track,
+                Turnout::NORMAL,
+                {
+                    {
+                        WendellDepot::WestEN,
+                        WendellDepot::SignalConfig::Clear
+                    },
+                    {
+                        WendellDepot::WestF1,
+                        WendellDepot::SignalConfig::Stop
+                    },
+                    {
+                        WendellDepot::WestFM,
+                        WendellDepot::SignalConfig::Stop
+                    }
+                }
+            },
+            {
+                WendellDepot::Stage_West_2_4,
+                Turnout::REVERSE,
+                {
+                    {
+                        WendellDepot::WestYardEntry2_4,
+                        WendellDepot::SignalConfig::Slow_Clear
+                    },
+                    {
+                        WendellDepot::WestExit2__Dwarf_,
+                        WendellDepot::SignalConfig::Hold
+                    },
+                    {
+                        WendellDepot::WestExit4__Dwarf_,
+                        WendellDepot::SignalConfig::Hold
+                    }
+                }
+            }
+        }
+    },
+    {
+        WendellDepot::West_Stage_Exit_2,
+        {
+            {
+                WendellDepot::Stage_East_2_4,
+                Turnout::NORMAL,
+                {
+                    {
+                        WendellDepot::EastYardEntry2_4,
+                        WendellDepot::SignalConfig::Stop
+                    },
+                    {
+                        WendellDepot::EastExit2__Dwarf_,
+                        WendellDepot::SignalConfig::Go
+                    },
+                    {
+                        WendellDepot::EastExit4__Dwarf_,
+                        WendellDepot::SignalConfig::Hold
+                    }
+                }
+            },
+            {
+                WendellDepot::East_Double_Track,
+                Turnout::REVERSE,
+                {
+                    {
+                        WendellDepot::EastEN,
+                        WendellDepot::SignalConfig::Stop
+                    },
+                    {
+                        WendellDepot::EastF1,
+                        WendellDepot::SignalConfig::Slow_Clear
+                    },
+                    {
+                        WendellDepot::EastFM,
+                        WendellDepot::SignalConfig::Stop
+                    }
+                }
+            },
+            {
+                WendellDepot::West_Double_Track,
+                Turnout::NORMAL,
+                {
+                    {
+                        WendellDepot::WestEN,
+                        WendellDepot::SignalConfig::Clear
+                    },
+                    {
+                        WendellDepot::WestF1,
+                        WendellDepot::SignalConfig::Stop
+                    },
+                    {
+                        WendellDepot::WestFM,
+                        WendellDepot::SignalConfig::Stop
+                    }
+                }
+            },
+            {
+                WendellDepot::Stage_West_2_4,
+                Turnout::NORMAL,
+                {
+                    {
+                        WendellDepot::WestYardEntry2_4,
+                        WendellDepot::SignalConfig::Clear
+                    },
+                    {
+                        WendellDepot::WestExit2__Dwarf_,
+                        WendellDepot::SignalConfig::Hold
+                    },
+                    {
+                        WendellDepot::WestExit4__Dwarf_,
+                        WendellDepot::SignalConfig::Hold
+                    }
+                }
+            }
+        }
+    }
+};
+
+                
 RunATrainFlow::RunATrainFlow(Service *service, openlcb::Node *node)
       : RunATrainFlowBase(service)
 , node_(node)
+, currentTrain(nullptr)
 {
-    bn_.reset(this);
     for (int i=0; i < WendellDepot::NUM_SENSORS; i++)
     {
         locationSensors_[i] = 
@@ -76,7 +389,6 @@ RunATrainFlow::RunATrainFlow(Service *service, openlcb::Node *node)
                                         WendellDepot::SensorsCfg[i].off,
                                         (WendellDepot::SensorIndexes)i,
                                         this);
-        locationSensors_[i]->check_sensor(bn_.new_child());
     }
     for (int i=0; i < WendellDepot::NUM_TURNOUTS; i++)
     {
@@ -88,22 +400,21 @@ RunATrainFlow::RunATrainFlow(Service *service, openlcb::Node *node)
                       WendellDepot::TurnoutsCfg[i].points.reverse,
                       (WendellDepot::TurnoutIndexes)i,
                       this);
-        turnouts_[i]->check_state(bn_.new_child());
     }
     for (int i=0; i < WendellDepot::NUM_SIGNALS; i++)
     {
         signals_[i] = 
               new Signal(node_,WendellDepot::SignalsCfg[i]);
     }
-    bn_.maybe_done();
 }
 
 StateFlowBase::Action RunATrainFlow::entry()
 {
+    currentTrain = message()->data();
+    //bn_.reset(this);
+    // clear route.
+    //bn_.maybe_done();
     // To do:
-    // Wait for all sensors to clear (wait for previous train to complete)
-    // Clear route (set turnouts)
-    // Set route signals to clear
     // Start train
     return NULL;
 }
@@ -111,7 +422,79 @@ StateFlowBase::Action RunATrainFlow::entry()
 void RunATrainFlow::turnout_state(WendellDepot::TurnoutIndexes loc, 
                                   Turnout::State_t state)
 {
-    // Capture turnout states 
+    //if (currentTrain == nullptr) return;
+    bool needmaybedone = false;
+    if (bn_.is_done())
+    {
+        bn_.reset(this);
+        needmaybedone = true;
+    }
+    switch (loc)
+    {
+    case WendellDepot::Stage_East_1_3:
+        switch (state)
+        {
+        case Turnout::NORMAL:
+            break;
+        case Turnout::REVERSE:
+            break;
+        default: break;
+        }
+        break;
+    case WendellDepot::Stage_East_2_4:
+        switch (state)
+        {
+        case Turnout::NORMAL:
+            break;
+        case Turnout::REVERSE:
+            break;
+        default: break;
+        }
+        break;
+    case WendellDepot::Stage_West_2_4:
+        switch (state)
+        {
+        case Turnout::NORMAL:
+            break;
+        case Turnout::REVERSE:
+            break;
+        default: break;
+        }
+        break;
+    case WendellDepot::Stage_West_1_3:
+        switch (state)
+        {
+        case Turnout::NORMAL:
+            break;
+        case Turnout::REVERSE:
+            break;
+        default: break;
+        }
+        break;
+    case WendellDepot::East_Double_Track:
+        switch (state)
+        {
+        case Turnout::NORMAL:
+            break;
+        case Turnout::REVERSE:
+            break;
+        default: break;
+        }
+        break;
+    case WendellDepot::West_Double_Track:
+        switch (state)
+        {
+        case Turnout::NORMAL:
+            break;
+        case Turnout::REVERSE:
+            break;
+        default: break;
+        }
+        break;
+    default:
+        break;
+    }
+    if (needmaybedone) bn_.maybe_done();
 }
 
 void RunATrainFlow::EnterLocation(WendellDepot::SensorIndexes loc)

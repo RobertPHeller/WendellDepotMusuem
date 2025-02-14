@@ -314,12 +314,12 @@
     <name>EastExit3 (Dwarf)</name>
     <aspect>
       <name>Hold</name>
-      <event>05.01.01.01.22.83.00.F8</event>
+      <event>05.01.01.01.22.83.00.FC</event>
       <look>Hold</look>
     </aspect>
     <aspect>
       <name>Go</name>
-      <event>05.01.01.01.22.83.00.F9</event>
+      <event>05.01.01.01.22.83.00.FD</event>
       <look>Go</look>
     </aspect>
   </signal>

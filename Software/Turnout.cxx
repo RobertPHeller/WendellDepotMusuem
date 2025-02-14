@@ -8,7 +8,7 @@
 //  Author        : $Author$
 //  Created By    : Robert Heller
 //  Created       : Sun Jan 5 09:18:38 2025
-//  Last Modified : <250105.1707>
+//  Last Modified : <250213.1008>
 //
 //  Description	
 //
@@ -56,6 +56,14 @@ void Turnout::handle_identify_global(const openlcb::EventRegistryEntry &registry
                                 openlcb::EventReport *event,
                                 BarrierNotifiable *done)
 {
+    if (event->src_node.id == node_->node_id())
+    {
+        // We don't respond to queries from our own node. This is not nice, but
+        // we
+        // want to avoid to answering our own Query command.
+        done->notify();
+        return;
+    }
     if (event->dst_node && event->dst_node != node_)
     {
         return done->notify();

@@ -8,7 +8,7 @@
 //  Author        : $Author$
 //  Created By    : Robert Heller
 //  Created       : Sun Jan 5 19:42:44 2025
-//  Last Modified : <250105.2030>
+//  Last Modified : <250213.1428>
 //
 //  Description	
 //
@@ -74,10 +74,10 @@ public:
             if (cfg_.aspects[i].aspect == aspect)
             {
                 SendEvent(cfg_.aspects[i].eventid, done);
+                currentAspect_ = aspect;
                 break;
             }
         }
-        done->notify();
     }
 protected:
     virtual void 
@@ -95,7 +95,7 @@ private:
     openlcb::Node *node_;
     const WendellDepot::SignalConfig cfg_;
     WendellDepot::SignalConfig::Aspect currentAspect_;
-    openlcb::WriteHelper helpers_[WendellDepot::SignalConfig::ASPECTCOUNT];
+    openlcb::WriteHelper helpers_[WendellDepot::SignalConfig::ASPECTCOUNT+1];
 };
            
 

@@ -8,7 +8,7 @@
 //  Author        : $Author$
 //  Created By    : Robert Heller
 //  Created       : Sat Jan 4 19:53:25 2025
-//  Last Modified : <250105.0917>
+//  Last Modified : <250213.2022>
 //
 //  Description	
 //
@@ -59,6 +59,7 @@ public:
                 : node_(node)
           , on_(on)
           , off_(off)
+          , init_(false)
     {
         register_handler();
     }
@@ -66,9 +67,8 @@ public:
     {
         unregister_handler();
     }
-    virtual void handle_on(BarrierNotifiable *done) = 0;
-    virtual void handle_off(BarrierNotifiable *done) = 0;
-    void check_sensor(BarrierNotifiable *done);
+    virtual void handle_on() = 0;
+    virtual void handle_off() = 0;
 protected:
     virtual void handle_event_report(const openlcb::EventRegistryEntry &registry_entry,
                                      openlcb::EventReport *event,
@@ -79,16 +79,19 @@ protected:
     virtual void 
           handle_identify_global(const openlcb::EventRegistryEntry &registry_entry,
                                  openlcb::EventReport *event,
-                                 BarrierNotifiable *done)
-    {
-        done->notify();
-    }
+                                 BarrierNotifiable *done);
+    virtual void 
+          handle_identify_consumer(const openlcb::EventRegistryEntry &registry_entry,
+                                 openlcb::EventReport *event,
+                                 BarrierNotifiable *done);
+    void SendConsumerIdentified(openlcb::EventReport *event, BarrierNotifiable *done);
 private:
     void register_handler();
     void unregister_handler();
     openlcb::Node *node_;
     openlcb::EventId on_;
     openlcb::EventId off_;
+    bool init_;
     openlcb::WriteHelper helpers_[2];
 };
 

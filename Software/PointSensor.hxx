@@ -8,7 +8,7 @@
 //  Author        : $Author$
 //  Created By    : Robert Heller
 //  Created       : Sat Jan 4 21:13:45 2025
-//  Last Modified : <250105.0811>
+//  Last Modified : <250213.0944>
 //
 //  Description	
 //
@@ -63,8 +63,8 @@ public:
           , parent_(parent)
     {
     }
-    virtual void handle_on(BarrierNotifiable *done);
-    virtual void handle_off(BarrierNotifiable *done);
+    virtual void handle_on();
+    virtual void handle_off();
 private:
     Turnout *parent_;
 };

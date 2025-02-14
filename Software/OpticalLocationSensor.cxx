@@ -8,7 +8,7 @@
 //  Author        : $Author$
 //  Created By    : Robert Heller
 //  Created       : Sun Jan 5 19:36:09 2025
-//  Last Modified : <250105.1940>
+//  Last Modified : <250213.0945>
 //
 //  Description	
 //
@@ -53,15 +53,13 @@ static const char rcsid[] = "@(#) : $Id$";
 #include "OpticalLocationSensor.hxx"
 #include "RunATrain.hxx"
 
-void OpticalLocationSensor::handle_on(BarrierNotifiable *done)
+void OpticalLocationSensor::handle_on()
 {
     parent_->EnterLocation(loc_);
-    done->notify();
 }
 
-void OpticalLocationSensor::handle_off(BarrierNotifiable *done)
+void OpticalLocationSensor::handle_off()
 {
     parent_->ExitLocation(loc_);
-    done->notify();
 }
 

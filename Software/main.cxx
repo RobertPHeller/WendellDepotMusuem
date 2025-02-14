@@ -8,7 +8,7 @@
 //  Author        : $Author$
 //  Created By    : Robert Heller
 //  Created       : Wed Dec 11 09:18:34 2024
-//  Last Modified : <250105.1643>
+//  Last Modified : <250213.1357>
 //
 //  Description	
 //
@@ -53,12 +53,13 @@ static const char rcsid[] = "@(#) : $Id$";
 #include "os/os.h"
 #include "nmranet_config.h"
 
-#include "SimpleStackNoCDI.hxx"
+#include "openlcb/SimpleStack.hxx"
 
 #include "WendellDepot.hxx"
 #include "OpticalLocationSensor.hxx"
 #include "Turnout.hxx"
 #include "RunATrain.hxx"
+#include "WendellDepotWebserver.hxx"
 
 const openlcb::SimpleNodeStaticValues openlcb::SNIP_STATIC_DATA = {
     4, "Deepwoods Software", "Wendell Depot Musuem", "Linux", "1.00"
@@ -229,7 +230,7 @@ int appl_main(int argc, char *argv[])
     // Parse command line.
     parse_args(argc, argv);
     
-    openlcb::SimpleCanStackNoCDI stack(NODE_ID);
+    openlcb::SimpleCanStack stack(NODE_ID);
 #ifdef PRINT_ALL_PACKETS
     // Causes all packets to be dumped to stdout.
     stack.print_all_packets();
@@ -249,6 +250,8 @@ int appl_main(int argc, char *argv[])
         break;
     }
     RunATrainFlow runtrains(stack.service(),stack.node());
+    Executor<1> httpd_executor("httpd_executor", 0, 1024);
+    WendellDepotWebserver webserver(&httpd_executor,8080,"/home/heller/WendellDepotMusuem/Software/static");
     stack.loop_executor();
     return 0;
 }

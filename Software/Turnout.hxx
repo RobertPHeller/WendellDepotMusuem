@@ -8,7 +8,7 @@
 //  Author        : $Author$
 //  Created By    : Robert Heller
 //  Created       : Sat Jan 4 21:19:15 2025
-//  Last Modified : <250105.1704>
+//  Last Modified : <250213.2018>
 //
 //  Description	
 //
@@ -88,10 +88,6 @@ public:
     }
     State_t State() const {return state_;}
     void SetState(State_t newstate);
-    void check_state(BarrierNotifiable *done)
-    {
-        points_.check_sensor(done);
-    }
 protected:
     virtual void 
           handle_identify_global(const openlcb::EventRegistryEntry &registry_entry,
