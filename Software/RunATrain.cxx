@@ -8,7 +8,7 @@
 //  Author        : $Author$
 //  Created By    : Robert Heller
 //  Created       : Sun Jan 5 19:21:30 2025
-//  Last Modified : <250213.1556>
+//  Last Modified : <250220.1031>
 //
 //  Description	
 //
@@ -63,10 +63,12 @@ static const char rcsid[] = "@(#) : $Id$";
 #include "WendellDepot.hxx"
 #include "RunATrain.hxx"
 
-const RunATrainFlow::RouteTurnoutList routes_[RunTrain::NUM_ROUTES] = 
+const RunATrainFlow::RouteTurnoutList RunATrainFlow::routes_[RunTrain::NUM_ROUTES] = 
 {
     {
         WendellDepot::West_Stage_Exit_3,
+        RunATrainFlow::RouteTurnoutList::Right,
+        WendellDepot::East_Stage_Exit_3,
         {
             {
                 WendellDepot::Stage_West_1_3,
@@ -144,6 +146,8 @@ const RunATrainFlow::RouteTurnoutList routes_[RunTrain::NUM_ROUTES] =
     },
     {
         WendellDepot::West_Stage_Exit_1,
+        RunATrainFlow::RouteTurnoutList::Right,
+        WendellDepot::East_Stage_Exit_1,
         {
             {
                 WendellDepot::Stage_West_1_3,
@@ -220,6 +224,8 @@ const RunATrainFlow::RouteTurnoutList routes_[RunTrain::NUM_ROUTES] =
         }
     },
     {
+        WendellDepot::East_Stage_Exit_4,
+        RunATrainFlow::RouteTurnoutList::Left,
         WendellDepot::West_Stage_Exit_4,
         {
             {
@@ -297,6 +303,8 @@ const RunATrainFlow::RouteTurnoutList routes_[RunTrain::NUM_ROUTES] =
         }
     },
     {
+        WendellDepot::East_Stage_Exit_2,
+        RunATrainFlow::RouteTurnoutList::Left,
         WendellDepot::West_Stage_Exit_2,
         {
             {
@@ -375,7 +383,25 @@ const RunATrainFlow::RouteTurnoutList routes_[RunTrain::NUM_ROUTES] =
     }
 };
 
-                
+const RunATrainFlow::BlockProtectionSignals_t 
+          RunATrainFlow::BlockProtectionSignals = {
+{WendellDepot::West_Stage_Exit_3, {WendellDepot::WestExit3__Dwarf_,WendellDepot::SignalConfig::Hold}},
+{WendellDepot::West_Stage_Exit_1, {WendellDepot::WestExit1__Dwarf_,WendellDepot::SignalConfig::Hold}},
+{WendellDepot::West_Stage_Exit_4, {WendellDepot::WestExit4__Dwarf_,WendellDepot::SignalConfig::Hold}},
+{WendellDepot::West_Stage_Exit_2, {WendellDepot::WestExit2__Dwarf_,WendellDepot::SignalConfig::Hold}},
+{WendellDepot::Stage_West_1_3_Entrance, {WendellDepot::WestYardEntry1_3, WendellDepot::SignalConfig::Stop}},
+{WendellDepot::Stage_West_2_4_Entrance, {WendellDepot::WestYardEntry2_4, WendellDepot::SignalConfig::Stop}},
+{WendellDepot::Stage_East_1_3_Entrance, {WendellDepot::EastYardEntry1_3, WendellDepot::SignalConfig::Stop}},
+{WendellDepot::Stage_East_2_4_Entrance, {WendellDepot::EastYardEntry2_4, WendellDepot::SignalConfig::Stop}},
+{WendellDepot::West_Double_Track_Entrance, {WendellDepot::WestEN, WendellDepot::SignalConfig::Stop}},
+{WendellDepot::West_Double_Track_Straight_Stop, {WendellDepot::WestFM, WendellDepot::SignalConfig::Stop}},
+{WendellDepot::West_Double_Track_Frog_Stop, {WendellDepot::WestFM, WendellDepot::SignalConfig::Stop}},
+{WendellDepot::East_Double_Track_Entrance, {WendellDepot::EastEN, WendellDepot::SignalConfig::Stop}},
+{WendellDepot::East_Double_Track_Straight_Stop, {WendellDepot::EastFM, WendellDepot::SignalConfig::Stop}},
+{WendellDepot::East_Double_Track_Frog_Stop, {WendellDepot::EastFM, WendellDepot::SignalConfig::Stop}},
+};
+
+
 RunATrainFlow::RunATrainFlow(Service *service, openlcb::Node *node)
       : RunATrainFlowBase(service)
 , node_(node)
@@ -411,14 +437,61 @@ RunATrainFlow::RunATrainFlow(Service *service, openlcb::Node *node)
 StateFlowBase::Action RunATrainFlow::entry()
 {
     currentTrain = message()->data();
-    //bn_.reset(this);
-    // clear route.
-    //bn_.maybe_done();
-    // To do:
-    // Start train
-    return NULL;
+    currentRoute = &routes_[(uint)(currentTrain->route)];
+    terminal = currentRoute->terminalLocation;
+    currentTurnout = 0;
+    bn_.reset(this);
+    return call_immediately(STATE(setTurnout));
 }
 
+StateFlowBase::Action RunATrainFlow::setTurnout()
+{
+    if (currentTurnout == TURNOUT_STATES)
+    {
+        return call_immediately(STATE(startTrain));
+    }
+    else
+    {
+        const RouteTurnoutState *ct = &currentRoute->turnoutStates[currentTurnout];
+        switch (ct->state)
+        {
+        case Turnout::NORMAL:
+            turnouts_[(uint)(ct->turnoutIndex)]->Normal(bn_.new_child());
+            break;
+        case Turnout::REVERSE:
+            turnouts_[(uint)(ct->turnoutIndex)]->Reverse(bn_.new_child());
+            break;
+        default:
+            break;
+        }
+        currentSignal = 0;
+        return wait_and_call(STATE(setSignal));
+    }
+}
+
+StateFlowBase::Action RunATrainFlow::setSignal()
+{
+    if (currentSignal == SIGNAL_STATES)
+    {
+        currentTurnout++;
+        return call_immediately(STATE(setTurnout));
+    }
+    else
+    {
+        const RouteTurnoutState *ct = &currentRoute->turnoutStates[currentTurnout];
+        const RouteSignalState *cs = &(ct->signalStates[currentSignal]);
+        signals_[(uint)(cs->signalIndex)]->SetAspect(cs->signalAspect,bn_.new_child());
+        currentSignal++;
+        return wait_and_call(STATE(setSignal));
+    }
+}
+
+StateFlowBase::Action RunATrainFlow::startTrain()
+{
+    return release_and_exit(); // temp for now
+}
+        
+        
 void RunATrainFlow::turnout_state(WendellDepot::TurnoutIndexes loc, 
                                   Turnout::State_t state)
 {
@@ -497,12 +570,12 @@ void RunATrainFlow::turnout_state(WendellDepot::TurnoutIndexes loc,
     if (needmaybedone) bn_.maybe_done();
 }
 
-void RunATrainFlow::EnterLocation(WendellDepot::SensorIndexes loc)
+void RunATrainFlow::Covered(WendellDepot::SensorIndexes loc)
 {
     // Optical sensor covered. switch over loc and adjust speed and signals, etc.
 }
 
-void RunATrainFlow::ExitLocation(WendellDepot::SensorIndexes loc)
+void RunATrainFlow::Uncovered(WendellDepot::SensorIndexes loc)
 {
     // Optical sensor uncovered. switch over loc and adjust speed and signals, etc.
 }

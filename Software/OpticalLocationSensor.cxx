@@ -8,7 +8,7 @@
 //  Author        : $Author$
 //  Created By    : Robert Heller
 //  Created       : Sun Jan 5 19:36:09 2025
-//  Last Modified : <250213.0945>
+//  Last Modified : <250220.0947>
 //
 //  Description	
 //
@@ -55,11 +55,11 @@ static const char rcsid[] = "@(#) : $Id$";
 
 void OpticalLocationSensor::handle_on()
 {
-    parent_->EnterLocation(loc_);
+    parent_->Covered(loc_);
 }
 
 void OpticalLocationSensor::handle_off()
 {
-    parent_->ExitLocation(loc_);
+    parent_->Uncovered(loc_);
 }
 
