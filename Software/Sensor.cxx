@@ -8,7 +8,7 @@
 //  Author        : $Author$
 //  Created By    : Robert Heller
 //  Created       : Sat Jan 4 20:14:16 2025
-//  Last Modified : <250213.2023>
+//  Last Modified : <250221.1004>
 //
 //  Description	
 //
@@ -58,13 +58,13 @@ void Sensor::handle_event_report(const openlcb::EventRegistryEntry &registry_ent
 {
     if (event->event == on_)
     {
-        handle_on();
+        handle_on(event,done);
     }
     else if (event->event == off_)
     {
-        handle_off();
+        handle_off(event,done);
     }
-    done->notify();
+    done->maybe_done();
     
 }
 void Sensor::handle_producer_identified(const openlcb::EventRegistryEntry &registry_entry,
@@ -91,18 +91,18 @@ void Sensor::handle_producer_identified(const openlcb::EventRegistryEntry &regis
     //LOG(ALWAYS,"*** Sensor::handle_producer_identified(): value is %d",value);
     if (event->event == on_ && value)
     {
-        handle_on();
+        handle_on(event,done);
     }
     else if (event->event == off_ && value)
     {
-        handle_off();
+        handle_off(event,done);
     }
     else
     {
         done->notify();
         return;
     }
-    done->notify();
+    done->maybe_done();
     return;
 }
 

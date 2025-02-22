@@ -8,7 +8,7 @@
 //  Author        : $Author$
 //  Created By    : Robert Heller
 //  Created       : Sun Jan 5 14:52:37 2025
-//  Last Modified : <250220.1033>
+//  Last Modified : <250221.1433>
 //
 //  Description	
 //
@@ -56,6 +56,8 @@
 #include "utils/Queue.hxx"
 #include "utils/LinkedObject.hxx"
 #include "executor/StateFlow.hxx"
+#include "openlcb/TractionThrottle.hxx"
+#include "openlcb/TrainInterface.hxx"
 
 #include "OpticalLocationSensor.hxx"
 #include "Turnout.hxx"
@@ -79,9 +81,15 @@ class RunATrainFlow : public RunATrainFlowBase
 public:
     RunATrainFlow(Service *service, openlcb::Node *node);
     void turnout_state(WendellDepot::TurnoutIndexes loc, 
-                       Turnout::State_t state);
-    void Covered(WendellDepot::SensorIndexes loc);
-    void Uncovered(WendellDepot::SensorIndexes loc);
+                       Turnout::State_t state,
+                       openlcb::EventReport *event,
+                       BarrierNotifiable *done);
+    void Covered(WendellDepot::SensorIndexes loc,
+                 openlcb::EventReport *event,
+                 BarrierNotifiable *done);
+    void Uncovered(WendellDepot::SensorIndexes loc,
+                   openlcb::EventReport *event,
+                   BarrierNotifiable *done);
     struct RouteSignalState {
         WendellDepot::SignalIndexes signalIndex;
         WendellDepot::SignalConfig::Aspect signalAspect;
@@ -95,29 +103,80 @@ public:
     static constexpr uint TURNOUT_STATES=4;
     struct RouteTurnoutList {
         WendellDepot::SensorIndexes exitLocation;
-        enum direction_t {Left, Right} direction;
         WendellDepot::SensorIndexes terminalLocation;
         RouteTurnoutState turnoutStates[TURNOUT_STATES];
     };
+    enum direction_t {Left, Right};
+    enum opticalSensorState_t {IsCovered, IsUncovered};
     typedef std::map<WendellDepot::SensorIndexes,RouteSignalState> 
           BlockProtectionSignals_t;
+    struct SpeedKey {
+        SpeedKey(WendellDepot::SensorIndexes sensor, direction_t dir, 
+                 opticalSensorState_t state)
+                    : sensor(sensor)
+              , dir(dir)
+              , state(state)
+        {
+        }
+        WendellDepot::SensorIndexes sensor;
+        direction_t dir;
+        opticalSensorState_t state;
+    };
+    enum Speeds_t {
+        StopSpeed = 0,
+        LowSpeed = 10,
+              RestrictedSpeed = 20,
+              SlowSpeed = 30,
+              ReducedSpeed = 40,
+              NormalSpeed = 50};
+    struct SpeedKeyCompare {
+        bool operator()(const SpeedKey &lhs, const SpeedKey &rhs) const {
+            if (lhs.sensor == rhs.sensor)
+            {
+                if (lhs.dir == rhs.dir)
+                {
+                    return lhs.state < rhs.state;
+                }
+                else
+                {
+                    return lhs.dir < rhs.dir;
+                }
+            }
+            else
+            {
+                return lhs.sensor < rhs.sensor;
+            }
+        }
+    };
+    
+    typedef std::map<SpeedKey,openlcb::SpeedType,SpeedKeyCompare> 
+          SpeedUpdateMap_t;
 private:
     openlcb::Node *node_;
     OpticalLocationSensor *locationSensors_[WendellDepot::NUM_SENSORS];
     Turnout *turnouts_[WendellDepot::NUM_TURNOUTS];
     Signal *signals_[WendellDepot::NUM_SIGNALS];
     RunTrain *currentTrain;
+    direction_t currentDirection;
+    openlcb::TractionThrottle throttle_;
+    openlcb::TractionThrottleInput throttleMessage_;
     const RouteTurnoutList *currentRoute;
     WendellDepot::SensorIndexes terminal;
     uint currentTurnout;
+    Turnout::State_t desiredState_;
     uint currentSignal;
     BarrierNotifiable bn_;
     virtual Action entry() override;
     Action setTurnout();
+    Action waitForPoints();
     Action setSignal();
     Action startTrain();
+    Action startTrain1();
+    Action endTrainRun();
+    Action endTrainRun1();
     static const RouteTurnoutList routes_[RunTrain::NUM_ROUTES];
     static const BlockProtectionSignals_t BlockProtectionSignals;
+    static const SpeedUpdateMap_t SpeedUpdateMap;
 };
 
 

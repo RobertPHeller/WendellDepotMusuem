@@ -8,7 +8,7 @@
 //  Author        : $Author$
 //  Created By    : Robert Heller
 //  Created       : Sun Jan 5 19:21:30 2025
-//  Last Modified : <250220.1031>
+//  Last Modified : <250221.1439>
 //
 //  Description	
 //
@@ -67,7 +67,6 @@ const RunATrainFlow::RouteTurnoutList RunATrainFlow::routes_[RunTrain::NUM_ROUTE
 {
     {
         WendellDepot::West_Stage_Exit_3,
-        RunATrainFlow::RouteTurnoutList::Right,
         WendellDepot::East_Stage_Exit_3,
         {
             {
@@ -146,7 +145,6 @@ const RunATrainFlow::RouteTurnoutList RunATrainFlow::routes_[RunTrain::NUM_ROUTE
     },
     {
         WendellDepot::West_Stage_Exit_1,
-        RunATrainFlow::RouteTurnoutList::Right,
         WendellDepot::East_Stage_Exit_1,
         {
             {
@@ -225,7 +223,6 @@ const RunATrainFlow::RouteTurnoutList RunATrainFlow::routes_[RunTrain::NUM_ROUTE
     },
     {
         WendellDepot::East_Stage_Exit_4,
-        RunATrainFlow::RouteTurnoutList::Left,
         WendellDepot::West_Stage_Exit_4,
         {
             {
@@ -304,7 +301,6 @@ const RunATrainFlow::RouteTurnoutList RunATrainFlow::routes_[RunTrain::NUM_ROUTE
     },
     {
         WendellDepot::East_Stage_Exit_2,
-        RunATrainFlow::RouteTurnoutList::Left,
         WendellDepot::West_Stage_Exit_2,
         {
             {
@@ -401,11 +397,50 @@ const RunATrainFlow::BlockProtectionSignals_t
 {WendellDepot::East_Double_Track_Frog_Stop, {WendellDepot::EastFM, WendellDepot::SignalConfig::Stop}},
 };
 
+const RunATrainFlow::SpeedUpdateMap_t RunATrainFlow::SpeedUpdateMap = {
+    {{WendellDepot::West_Stage_Exit_3, RunATrainFlow::Right, RunATrainFlow::IsCovered},
+        {RunATrainFlow::SlowSpeed}},
+    {{WendellDepot::West_Stage_Exit_1, RunATrainFlow::Right, RunATrainFlow::IsCovered},
+        {RunATrainFlow::ReducedSpeed}},
+    {{WendellDepot::West_Double_Track_Frog_Stop, RunATrainFlow::Right, RunATrainFlow::IsCovered},
+        {RunATrainFlow::RestrictedSpeed}},
+    {{WendellDepot::West_Double_Track_Entrance, RunATrainFlow::Right, RunATrainFlow::IsUncovered},
+        {RunATrainFlow::NormalSpeed}},
+    {{WendellDepot::East_Double_Track_Straight_Stop, RunATrainFlow::Right, RunATrainFlow::IsCovered},
+        {RunATrainFlow::ReducedSpeed}},
+    {{WendellDepot::East_Double_Track_Straight_Stop, RunATrainFlow::Right, RunATrainFlow::IsUncovered},
+        {RunATrainFlow::SlowSpeed}},
+    {{WendellDepot::Stage_East_1_3_Entrance, RunATrainFlow::Right, RunATrainFlow::IsCovered},
+        {RunATrainFlow::LowSpeed}},
+    {{WendellDepot::East_Stage_Exit_3, RunATrainFlow::Right, RunATrainFlow::IsUncovered},
+        {RunATrainFlow::StopSpeed}},
+    {{WendellDepot::East_Stage_Exit_1, RunATrainFlow::Right, RunATrainFlow::IsUncovered},
+        {RunATrainFlow::StopSpeed}},
+    {{WendellDepot::East_Stage_Exit_4, RunATrainFlow::Left, RunATrainFlow::IsCovered},
+        {RunATrainFlow::SlowSpeed}},
+    {{WendellDepot::East_Stage_Exit_2, RunATrainFlow::Left, RunATrainFlow::IsCovered},
+        {RunATrainFlow::ReducedSpeed}},
+    {{WendellDepot::East_Double_Track_Frog_Stop, RunATrainFlow::Left, RunATrainFlow::IsCovered},
+        {RunATrainFlow::RestrictedSpeed}},
+    {{WendellDepot::East_Double_Track_Entrance, RunATrainFlow::Left, RunATrainFlow::IsUncovered},
+        {RunATrainFlow::NormalSpeed}},
+    {{WendellDepot::West_Double_Track_Straight_Stop, RunATrainFlow::Left, RunATrainFlow::IsCovered},
+        {RunATrainFlow::ReducedSpeed}},
+    {{WendellDepot::West_Double_Track_Straight_Stop, RunATrainFlow::Left, RunATrainFlow::IsUncovered},
+        {RunATrainFlow::SlowSpeed}},
+    {{WendellDepot::Stage_West_2_4_Entrance, RunATrainFlow::Left, RunATrainFlow::IsCovered},
+        {RunATrainFlow::LowSpeed}},
+    {{WendellDepot::West_Stage_Exit_4, RunATrainFlow::Left, RunATrainFlow::IsUncovered},
+        {RunATrainFlow::StopSpeed}},
+    {{WendellDepot::West_Stage_Exit_2, RunATrainFlow::Left, RunATrainFlow::IsUncovered},
+        {RunATrainFlow::StopSpeed}},
+};
 
 RunATrainFlow::RunATrainFlow(Service *service, openlcb::Node *node)
       : RunATrainFlowBase(service)
 , node_(node)
 , currentTrain(nullptr)
+, throttle_(node_)
 {
     for (int i=0; i < WendellDepot::NUM_SENSORS; i++)
     {
@@ -440,7 +475,15 @@ StateFlowBase::Action RunATrainFlow::entry()
     currentRoute = &routes_[(uint)(currentTrain->route)];
     terminal = currentRoute->terminalLocation;
     currentTurnout = 0;
-    bn_.reset(this);
+    if (currentTrain->route == RunTrain::EastBound1 || 
+        currentTrain->route == RunTrain::EastBound3)
+    {
+        currentDirection = Right;
+    }
+    else
+    {
+        currentDirection = Left;
+    }
     return call_immediately(STATE(setTurnout));
 }
 
@@ -464,9 +507,15 @@ StateFlowBase::Action RunATrainFlow::setTurnout()
         default:
             break;
         }
-        currentSignal = 0;
-        return wait_and_call(STATE(setSignal));
+        desiredState_ = ct->state;
+        return wait_and_call(STATE(waitForPoints));
     }
+}
+
+StateFlowBase::Action RunATrainFlow::waitForPoints()
+{
+    currentSignal = 0;
+    return call_immediately(STATE(setSignal));
 }
 
 StateFlowBase::Action RunATrainFlow::setSignal()
@@ -488,95 +537,80 @@ StateFlowBase::Action RunATrainFlow::setSignal()
 
 StateFlowBase::Action RunATrainFlow::startTrain()
 {
-    return release_and_exit(); // temp for now
+    return allocate_and_call(&throttle_,STATE(startTrain1));
+}
+
+StateFlowBase::Action RunATrainFlow::startTrain1()
+{
+    Buffer<openlcb::TractionThrottleInput> *buffer = 
+          get_allocation_result(&throttle_);
+    buffer->data()->reset(openlcb::TractionThrottleCommands::ASSIGN_TRAIN,
+                           0x06010000C000 | currentTrain->address,true);
+    throttle_.send(buffer);
+    throttle_.set_speed(openlcb::SpeedType(SlowSpeed));
+    return wait_and_call(STATE(endTrainRun));
+}
+
+StateFlowBase::Action RunATrainFlow::endTrainRun()
+{
+    throttle_.set_speed(openlcb::SpeedType(StopSpeed));
+    return allocate_and_call(&throttle_,STATE(endTrainRun1));
+}
+
+StateFlowBase::Action RunATrainFlow::endTrainRun1()
+{
+    Buffer<openlcb::TractionThrottleInput> *buffer =
+          get_allocation_result(&throttle_);
+    buffer->data()->reset(openlcb::TractionThrottleCommands::RELEASE_TRAIN);
+    throttle_.send(buffer);
+    return release_and_exit();
 }
         
         
 void RunATrainFlow::turnout_state(WendellDepot::TurnoutIndexes loc, 
-                                  Turnout::State_t state)
+                                  Turnout::State_t state,
+                                  openlcb::EventReport *event,
+                                  BarrierNotifiable *done)
 {
-    //if (currentTrain == nullptr) return;
-    bool needmaybedone = false;
-    if (bn_.is_done())
+    if ((WendellDepot::TurnoutIndexes)currentTurnout == loc &&
+        state == desiredState_)
     {
-        bn_.reset(this);
-        needmaybedone = true;
+        notify();
     }
-    switch (loc)
-    {
-    case WendellDepot::Stage_East_1_3:
-        switch (state)
-        {
-        case Turnout::NORMAL:
-            break;
-        case Turnout::REVERSE:
-            break;
-        default: break;
-        }
-        break;
-    case WendellDepot::Stage_East_2_4:
-        switch (state)
-        {
-        case Turnout::NORMAL:
-            break;
-        case Turnout::REVERSE:
-            break;
-        default: break;
-        }
-        break;
-    case WendellDepot::Stage_West_2_4:
-        switch (state)
-        {
-        case Turnout::NORMAL:
-            break;
-        case Turnout::REVERSE:
-            break;
-        default: break;
-        }
-        break;
-    case WendellDepot::Stage_West_1_3:
-        switch (state)
-        {
-        case Turnout::NORMAL:
-            break;
-        case Turnout::REVERSE:
-            break;
-        default: break;
-        }
-        break;
-    case WendellDepot::East_Double_Track:
-        switch (state)
-        {
-        case Turnout::NORMAL:
-            break;
-        case Turnout::REVERSE:
-            break;
-        default: break;
-        }
-        break;
-    case WendellDepot::West_Double_Track:
-        switch (state)
-        {
-        case Turnout::NORMAL:
-            break;
-        case Turnout::REVERSE:
-            break;
-        default: break;
-        }
-        break;
-    default:
-        break;
-    }
-    if (needmaybedone) bn_.maybe_done();
 }
 
-void RunATrainFlow::Covered(WendellDepot::SensorIndexes loc)
+void RunATrainFlow::Covered(WendellDepot::SensorIndexes loc,
+                            openlcb::EventReport *event,
+                            BarrierNotifiable *done)
 {
-    // Optical sensor covered. switch over loc and adjust speed and signals, etc.
+    auto bps_iter = BlockProtectionSignals.find(loc);
+    if (bps_iter != BlockProtectionSignals.end())
+    {
+        RouteSignalState s = bps_iter->second;
+        signals_[(uint)s.signalIndex]->SetAspect(s.signalAspect,done->new_child());
+    }
+    SpeedKey key(loc,currentDirection,IsCovered);
+    auto newspeed_iter = SpeedUpdateMap.find(key);
+    if (newspeed_iter != SpeedUpdateMap.end())
+    {
+        throttle_.set_speed(newspeed_iter->second);
+    }
+    
 }
 
-void RunATrainFlow::Uncovered(WendellDepot::SensorIndexes loc)
+void RunATrainFlow::Uncovered(WendellDepot::SensorIndexes loc,
+                              openlcb::EventReport *event,
+                              BarrierNotifiable *done)
 {
-    // Optical sensor uncovered. switch over loc and adjust speed and signals, etc.
+    SpeedKey key(loc,currentDirection,IsUncovered);
+    auto newspeed_iter = SpeedUpdateMap.find(key);
+    if (newspeed_iter != SpeedUpdateMap.end())
+    {
+        throttle_.set_speed(newspeed_iter->second);
+    }
+    if (loc == terminal)
+    {
+        notify();
+    }
 }
 

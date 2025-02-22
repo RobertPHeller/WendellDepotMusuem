@@ -8,7 +8,7 @@
 //  Author        : $Author$
 //  Created By    : Robert Heller
 //  Created       : Sun Jan 5 09:18:38 2025
-//  Last Modified : <250213.1008>
+//  Last Modified : <250221.1012>
 //
 //  Description	
 //
@@ -155,8 +155,8 @@ void Turnout::SendEvent(openlcb::EventId event,BarrierNotifiable *done)
                        openlcb::eventid_to_buffer(event), done);
 }
 
-void Turnout::SetState(Turnout::State_t newstate)
+void Turnout::SetState(Turnout::State_t newstate,openlcb::EventReport *event,BarrierNotifiable *done)
 {
     state_ = newstate;
-    parent_->turnout_state(loc_,state_);
+    parent_->turnout_state(loc_,state_,event,done);
 }

@@ -8,7 +8,7 @@
 //  Author        : $Author$
 //  Created By    : Robert Heller
 //  Created       : Sun Jan 5 09:03:02 2025
-//  Last Modified : <250213.0944>
+//  Last Modified : <250221.1009>
 //
 //  Description	
 //
@@ -53,13 +53,13 @@ static const char rcsid[] = "@(#) : $Id$";
 #include "Turnout.hxx"
 #include "PointSensor.hxx"
 
-void PointSensor::handle_on()
+void PointSensor::handle_on(openlcb::EventReport *event,BarrierNotifiable *done)
 {
-    parent_->SetState(Turnout::NORMAL);
+    parent_->SetState(Turnout::NORMAL,event,done);
 }
 
-void PointSensor::handle_off()
+void PointSensor::handle_off(openlcb::EventReport *event,BarrierNotifiable *done)
 {
-    parent_->SetState(Turnout::REVERSE);
+    parent_->SetState(Turnout::REVERSE,event,done);
 }
 

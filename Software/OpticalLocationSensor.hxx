@@ -8,7 +8,7 @@
 //  Author        : $Author$
 //  Created By    : Robert Heller
 //  Created       : Sat Jan 4 21:05:33 2025
-//  Last Modified : <250213.0944>
+//  Last Modified : <250221.1007>
 //
 //  Description	
 //
@@ -66,8 +66,8 @@ public:
           , parent_(parent)
     {
     }
-    virtual void handle_on();
-    virtual void handle_off();
+    virtual void handle_on(openlcb::EventReport *event,BarrierNotifiable *done);
+    virtual void handle_off(openlcb::EventReport *event,BarrierNotifiable *done);
 private:
     WendellDepot::SensorIndexes loc_;
     RunATrainFlow *parent_;

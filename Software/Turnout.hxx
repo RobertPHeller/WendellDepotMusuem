@@ -8,7 +8,7 @@
 //  Author        : $Author$
 //  Created By    : Robert Heller
 //  Created       : Sat Jan 4 21:19:15 2025
-//  Last Modified : <250213.2018>
+//  Last Modified : <250221.1011>
 //
 //  Description	
 //
@@ -87,7 +87,7 @@ public:
         SendEvent(reverse_,done);
     }
     State_t State() const {return state_;}
-    void SetState(State_t newstate);
+    void SetState(State_t newstate,openlcb::EventReport *event,BarrierNotifiable *done);
 protected:
     virtual void 
           handle_identify_global(const openlcb::EventRegistryEntry &registry_entry,

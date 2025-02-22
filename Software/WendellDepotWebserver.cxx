@@ -8,7 +8,7 @@
 //  Author        : $Author$
 //  Created By    : Robert Heller
 //  Created       : Wed Feb 12 09:22:42 2025
-//  Last Modified : <250212.1213>
+//  Last Modified : <250222.1127>
 //
 //  Description	
 //
@@ -55,7 +55,10 @@ static const char rcsid[] = "@(#) : $Id$";
 #include "httpd/Uri.hxx"
 #include "httpd/mimetable.hxx"
 #include "WendellDepotWebserver.hxx"
+#include "utils/logging.h"
 #include <string>
+#include <map>
+#include <regex>
 #include <unistd.h>
 #include <stdio.h>
 
@@ -94,18 +97,23 @@ void WendellDepotWebserver::commandUriHandler(const HTTPD::HttpRequest *request,
 {
     string Uri = request->RequestUri();
     string Query = request->Query();
+    ParseQuery formdata(Query);
     reply->SetStatus(200);
     reply->SetContentType("text/html");
     reply->Puts("<HTML><HEAD><TITLE>Command</TITLE></HEAD>\r\n");
     reply->Puts(String("<BODY><H1>")+Uri+"</H1>\r\n");
-    reply->Puts(String("Query string is '")+Query+"'</BODY></HTML>\r\n");
+    for (auto i = formdata.begin(); i != formdata.end(); i++)
+    {
+        reply->Puts(String("<p>")+i->first+" = "+i->second+"</p>");
+    }
+    reply->Puts("</body></html>");
     reply->SendReply();
 }
 
 void WendellDepotWebserver::staticFileUriHandler(const HTTPD::HttpRequest *request, HTTPD::HttpReply *reply)
 {
     String path = docRoot_ + request->RequestUri();
-    fprintf(stderr,"*** WendellDepotWebserver::staticFileUriHandler() path is '%s'\n",path.c_str());
+    //fprintf(stderr,"*** WendellDepotWebserver::staticFileUriHandler() path is '%s'\n",path.c_str());
     if (access(path.c_str(),F_OK))
     {
         reply->SetStatus(404);
@@ -162,3 +170,57 @@ void WendellDepotWebserver::staticFileUriHandler(const HTTPD::HttpRequest *reque
 
 
                     
+WendellDepotWebserver::ParseQuery::ParseQuery(const String queryString)
+{
+    size_t amp = 0;
+    for (size_t istart=0;
+         istart < queryString.length(); 
+         istart = amp+1)
+    {
+        //LOG(ALWAYS,"*** WendellDepotWebserver::ParseQuery: istart = %d",(int)istart);
+        amp = queryString.find('&',istart);
+        //LOG(ALWAYS,"*** WendellDepotWebserver::ParseQuery: amp = %d",(int)amp);
+        if (amp == String::npos)
+        {
+            amp = queryString.length();
+        }
+        String q = queryString.substr(istart,amp-istart);
+        //LOG(ALWAYS,"*** WendellDepotWebserver::ParseQuery: q = '%s'",q.c_str());
+        size_t eq = q.find('=');
+        String name = q.substr(0,eq);
+        String value = q.substr(eq+1);
+        //LOG(ALWAYS,"*** WendellDepotWebserver::ParseQuery: name = '%s' and value = '%s'",name.c_str(),value.c_str());
+        parsedFormData_.insert(std::pair<String,String>(name,unquoteInput_(value)));
+    }
+}
+
+const String WendellDepotWebserver::ParseQuery::unquoteInput_(const String s) const
+{
+    //LOG(ALWAYS,"*** WendellDepotWebserver::ParseQuery::unquoteInput_(%s)",s.c_str());
+    std::regex newline("%0d%0a", std::regex_constants::icase);
+    String result = std::regex_replace(s,newline,"\n");
+    std::regex percentEscapes("%[a-f0-9][a-f0-9]",std::regex_constants::icase);
+    String temp = result;
+    auto percent_begin = std::sregex_iterator(temp.begin(),temp.end(),percentEscapes);
+    auto percent_end = std::sregex_iterator();
+    //LOG(ALWAYS,"*** WendellDepotWebserver::ParseQuery::unquoteInput_: %d percent escapes",(int) std::distance(percent_begin,percent_end));
+    if (std::distance(percent_begin,percent_end) > 0)
+    {
+        result = "";
+        String lastSuffix = "";
+        //int index = 0;
+        for (std::sregex_iterator i = percent_begin; i != percent_end; ++i)
+        {
+            std::smatch match = *i;
+            //LOG(ALWAYS,"*** WendellDepotWebserver::ParseQuery::unquoteInput_: match %d: str is '%s', prefix is '%s', suffix is '%s'",
+            //    index++,match.str().c_str(),match.prefix().str().c_str(),match.suffix().str().c_str());
+            result += match.prefix().str();
+            size_t unused = 0;
+            result += (char)std::stoi(match.str().substr(1),&unused,16);
+            lastSuffix = match.suffix().str();
+        }
+        result += lastSuffix;
+        //LOG(ALWAYS,"*** WendellDepotWebserver::ParseQuery::unquoteInput_: result is '%s'",result.c_str());
+    }
+    return result;
+}

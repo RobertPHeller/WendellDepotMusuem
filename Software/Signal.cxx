@@ -8,7 +8,7 @@
 //  Author        : $Author$
 //  Created By    : Robert Heller
 //  Created       : Sun Jan 5 19:54:43 2025
-//  Last Modified : <250213.1510>
+//  Last Modified : <250221.1643>
 //
 //  Description	
 //
@@ -138,12 +138,16 @@ void Signal::unregister_handler()
 {
     openlcb::EventRegistry::instance()->unregister_handler(this);
 }
-void Signal::SendEvent(openlcb::EventId event,BarrierNotifiable *done)
+void Signal::SendEvent(openlcb::EventId eventid,
+                       BarrierNotifiable *done)
 {
     //LOG(ALWAYS,"*** Signal::SendEvent(): 0X%016lX", event);
     //LOG(ALWAYS,"*** Signal::SendEvent(): &helpers_[0] = %p",&helpers_[0]);
-    helpers_[WendellDepot::SignalConfig::ASPECTCOUNT].WriteAsync(node_,openlcb::Defs::MTI_EVENT_REPORT,
-                          openlcb::WriteHelper::global(),
-                          openlcb::eventid_to_buffer(event), done);
+    helpers_[WendellDepot::SignalConfig::ASPECTCOUNT].WriteAsync(
+                  node_,
+                  openlcb::Defs::MTI_EVENT_REPORT,
+                  openlcb::WriteHelper::global(),
+                  openlcb::eventid_to_buffer(eventid), 
+                  done);
 }
 

@@ -8,7 +8,7 @@
 //  Author        : $Author$
 //  Created By    : Robert Heller
 //  Created       : Sun Jan 5 19:42:44 2025
-//  Last Modified : <250213.1428>
+//  Last Modified : <250221.1641>
 //
 //  Description	
 //
@@ -91,7 +91,7 @@ protected:
 private:
     void register_handler();
     void unregister_handler();
-    void SendEvent(openlcb::EventId event,BarrierNotifiable *done); 
+    void SendEvent(openlcb::EventId eventid,BarrierNotifiable *done); 
     openlcb::Node *node_;
     const WendellDepot::SignalConfig cfg_;
     WendellDepot::SignalConfig::Aspect currentAspect_;

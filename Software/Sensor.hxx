@@ -8,7 +8,7 @@
 //  Author        : $Author$
 //  Created By    : Robert Heller
 //  Created       : Sat Jan 4 19:53:25 2025
-//  Last Modified : <250213.2022>
+//  Last Modified : <250221.1005>
 //
 //  Description	
 //
@@ -67,8 +67,8 @@ public:
     {
         unregister_handler();
     }
-    virtual void handle_on() = 0;
-    virtual void handle_off() = 0;
+    virtual void handle_on(openlcb::EventReport *event,BarrierNotifiable *done) = 0;
+    virtual void handle_off(openlcb::EventReport *event,BarrierNotifiable *done) = 0;
 protected:
     virtual void handle_event_report(const openlcb::EventRegistryEntry &registry_entry,
                                      openlcb::EventReport *event,

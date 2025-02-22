@@ -8,7 +8,7 @@
 //  Author        : $Author$
 //  Created By    : Robert Heller
 //  Created       : Wed Feb 12 09:10:33 2025
-//  Last Modified : <250212.1057>
+//  Last Modified : <250222.1116>
 //
 //  Description	
 //
@@ -54,6 +54,7 @@
 #include "httpd/HttpReply.hxx"
 #include "httpd/Uri.hxx"
 #include <string>
+#include <map>
 
 using String = std::string;
 
@@ -62,7 +63,46 @@ public:
     WendellDepotWebserver(ExecutorBase *executor, uint16_t port, 
                           const char *doc_root);
     ~WendellDepotWebserver() {}
+    typedef std::map<String,String> FormData_t;
 private:
+    class ParseQuery {
+    public:
+        ParseQuery(const String queryString);
+        const String Value(const String name) const {
+            auto i = parsedFormData_.find(name);
+            if (i == parsedFormData_.end()) {
+                return "";
+            }
+            else
+            {
+                return i->second;
+            }
+        }
+        int IValue(const String name) const {
+            const String s = Value(name);
+            if (s == "")
+            {
+                return 0;
+            }
+            else
+            {
+                try 
+                {
+                    int result = std::stoi(s);
+                    return result;
+                }
+                catch (const std::exception& e) 
+                {
+                    return 0;
+                }
+            }
+        }
+        const FormData_t::const_iterator begin() const {return parsedFormData_.cbegin();}
+        const FormData_t::const_iterator end() const {return parsedFormData_.cend();}
+    private:
+        FormData_t parsedFormData_;
+        const String unquoteInput_(const String s) const;
+    };
     HTTPD::Httpd server_;
     String docRoot_;
     void staticFileUriHandler(const HTTPD::HttpRequest *request, HTTPD::HttpReply *reply);
