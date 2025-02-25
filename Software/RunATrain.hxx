@@ -8,7 +8,7 @@
 //  Author        : $Author$
 //  Created By    : Robert Heller
 //  Created       : Sun Jan 5 14:52:37 2025
-//  Last Modified : <250221.1433>
+//  Last Modified : <250225.1145>
 //
 //  Description	
 //
@@ -67,11 +67,11 @@
 
 struct RunTrain {
     uint16_t address;
-    enum Route {EastBound3, 
-              EastBound1, 
+    enum Route {EastBound3,               EastBound1, 
               WestBound4, 
               WestBound2, 
               NUM_ROUTES} route;
+    BarrierNotifiable done;
 };
 
 typedef StateFlow<Buffer<RunTrain>, QList<1>> RunATrainFlowBase;
@@ -163,12 +163,15 @@ private:
     const RouteTurnoutList *currentRoute;
     WendellDepot::SensorIndexes terminal;
     uint currentTurnout;
+    WendellDepot::TurnoutIndexes turnoutIndx_;
     Turnout::State_t desiredState_;
     uint currentSignal;
     BarrierNotifiable bn_;
     virtual Action entry() override;
     Action setTurnout();
     Action waitForPoints();
+    Action pointsSetNotify();
+    Action pointsSet();
     Action setSignal();
     Action startTrain();
     Action startTrain1();

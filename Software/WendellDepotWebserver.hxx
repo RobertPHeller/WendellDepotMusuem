@@ -8,7 +8,7 @@
 //  Author        : $Author$
 //  Created By    : Robert Heller
 //  Created       : Wed Feb 12 09:10:33 2025
-//  Last Modified : <250222.1116>
+//  Last Modified : <250224.1353>
 //
 //  Description	
 //
@@ -49,10 +49,12 @@
 #include "utils/macros.h"
 #include "executor/Executor.hxx"
 #include "executor/Service.hxx"
+#include "executor/StateFlow.hxx"
 #include "httpd/Httpd.hxx"
 #include "httpd/HttpRequest.hxx"
 #include "httpd/HttpReply.hxx"
 #include "httpd/Uri.hxx"
+#include "RunATrain.hxx"
 #include <string>
 #include <map>
 
@@ -60,11 +62,27 @@ using String = std::string;
 
 class WendellDepotWebserver {
 public:
-    WendellDepotWebserver(ExecutorBase *executor, uint16_t port, 
-                          const char *doc_root);
+    WendellDepotWebserver(ExecutorBase *executor,
+                          uint16_t port, const char *doc_root, 
+                          RunATrainFlow &trainFlow);
     ~WendellDepotWebserver() {}
     typedef std::map<String,String> FormData_t;
+    enum Function_t {NoFunction = -1, QueueTrains};
 private:
+    typedef std::map<String,Function_t> FunctionMap_t;
+    static const FunctionMap_t FunctionMap;
+    static inline Function_t FindFunction(const String f)
+    {
+        auto i = FunctionMap.find(f);
+        if (i == FunctionMap.end())
+        {
+            return NoFunction;
+        }
+        else
+        {
+            return i->second;
+        }
+    }
     class ParseQuery {
     public:
         ParseQuery(const String queryString);
@@ -103,10 +121,42 @@ private:
         FormData_t parsedFormData_;
         const String unquoteInput_(const String s) const;
     };
+    class RunTrains : public StateFlowBase {
+    public:
+        RunTrains(Service *service, RunTrain *trains, uint count, 
+                  uint loopcount, RunATrainFlow &trainFlow,
+                  WendellDepotWebserver* parent);
+        virtual ~RunTrains();
+        void CancelTrains();
+        bool TrainsAreRunning();
+    private:
+        RunTrain trains_[RunTrain::NUM_ROUTES];
+        uint numTrains_;
+        uint loopcount_;
+        RunATrainFlow &trainFlow_;
+        WendellDepotWebserver *parent_;
+        uint loopIndex_;
+        uint trainNum_;
+        virtual Action entry();
+        Action allocateTrain();
+        Action startTrain();
+        Action nextTrain();
+        
+    };
+    friend class RunTrains;
     HTTPD::Httpd server_;
     String docRoot_;
+    RunTrains *trainRunner_;
+    enum Status_t {idle, runningtrains} status_;
+    RunATrainFlow &trainFlow_;
+    void resetTrainRunner()
+    {
+        trainRunner_ = nullptr;
+        status_ = idle;
+    }
     void staticFileUriHandler(const HTTPD::HttpRequest *request, HTTPD::HttpReply *reply);
     void commandUriHandler(const HTTPD::HttpRequest *request, HTTPD::HttpReply *reply);
+    void homepageHandler(const HTTPD::HttpRequest *request, HTTPD::HttpReply *reply);
 };
     
 

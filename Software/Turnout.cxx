@@ -8,7 +8,7 @@
 //  Author        : $Author$
 //  Created By    : Robert Heller
 //  Created       : Sun Jan 5 09:18:38 2025
-//  Last Modified : <250221.1012>
+//  Last Modified : <250224.2007>
 //
 //  Description	
 //
@@ -148,7 +148,7 @@ void Turnout::unregister_handler()
 {
     openlcb::EventRegistry::instance()->unregister_handler(this);
 }
-void Turnout::SendEvent(openlcb::EventId event,BarrierNotifiable *done)
+void Turnout::SendEvent(openlcb::EventId event,Notifiable *done)
 {
     helper_.WriteAsync(node_,openlcb::Defs::MTI_EVENT_REPORT,
                        openlcb::WriteHelper::global(), 

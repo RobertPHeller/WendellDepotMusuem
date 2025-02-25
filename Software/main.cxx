@@ -8,7 +8,7 @@
 //  Author        : $Author$
 //  Created By    : Robert Heller
 //  Created       : Wed Dec 11 09:18:34 2024
-//  Last Modified : <250213.1357>
+//  Last Modified : <250224.1144>
 //
 //  Description	
 //
@@ -251,7 +251,7 @@ int appl_main(int argc, char *argv[])
     }
     RunATrainFlow runtrains(stack.service(),stack.node());
     Executor<1> httpd_executor("httpd_executor", 0, 1024);
-    WendellDepotWebserver webserver(&httpd_executor,8080,"/home/heller/WendellDepotMusuem/Software/static");
+    WendellDepotWebserver webserver(&httpd_executor,8080,"/home/heller/WendellDepotMusuem/Software/static",runtrains);
     stack.loop_executor();
     return 0;
 }

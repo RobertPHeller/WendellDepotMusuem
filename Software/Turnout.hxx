@@ -8,7 +8,7 @@
 //  Author        : $Author$
 //  Created By    : Robert Heller
 //  Created       : Sat Jan 4 21:19:15 2025
-//  Last Modified : <250221.1011>
+//  Last Modified : <250224.2007>
 //
 //  Description	
 //
@@ -78,11 +78,11 @@ public:
     {
         unregister_handler();
     }
-    void Normal(BarrierNotifiable *done)
+    void Normal(Notifiable *done)
     {
         SendEvent(normal_,done);
     }
-    void Reverse(BarrierNotifiable *done)
+    void Reverse(Notifiable *done)
     {
         SendEvent(reverse_,done);
     }
@@ -100,7 +100,7 @@ protected:
 private:
     void register_handler();
     void unregister_handler();
-    void SendEvent(openlcb::EventId event,BarrierNotifiable *done);
+    void SendEvent(openlcb::EventId event,Notifiable *done);
     openlcb::Node *node_;
     openlcb::EventId normal_;
     openlcb::EventId reverse_;

@@ -8,7 +8,7 @@
 //  Author        : $Author$
 //  Created By    : Robert Heller
 //  Created       : Sun Jan 5 19:54:43 2025
-//  Last Modified : <250221.1643>
+//  Last Modified : <250224.2008>
 //
 //  Description	
 //
@@ -139,7 +139,7 @@ void Signal::unregister_handler()
     openlcb::EventRegistry::instance()->unregister_handler(this);
 }
 void Signal::SendEvent(openlcb::EventId eventid,
-                       BarrierNotifiable *done)
+                       Notifiable *done)
 {
     //LOG(ALWAYS,"*** Signal::SendEvent(): 0X%016lX", event);
     //LOG(ALWAYS,"*** Signal::SendEvent(): &helpers_[0] = %p",&helpers_[0]);

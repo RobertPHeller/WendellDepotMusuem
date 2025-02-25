@@ -8,7 +8,7 @@
 //  Author        : $Author$
 //  Created By    : Robert Heller
 //  Created       : Wed Feb 12 09:22:42 2025
-//  Last Modified : <250222.1127>
+//  Last Modified : <250225.1108>
 //
 //  Description	
 //
@@ -66,18 +66,20 @@ using String = std::string;
 
 WendellDepotWebserver::WendellDepotWebserver(ExecutorBase *executor, 
                                              uint16_t port,
-                                             const char *doc_root)
+                                             const char *doc_root,
+                                             RunATrainFlow &trainFlow)
       : server_(executor,port)
 , docRoot_(doc_root)
+, trainRunner_(nullptr)
+, status_(idle)
+, trainFlow_(trainFlow)
 {
     server_.add_uri(HTTPD::Uri("/"),[](const HTTPD::HttpRequest *request, 
                                        HTTPD::HttpReply *reply,
                                        void *userContext)
                 {
-                    reply->SetStatus(302);
-                    reply->SetHeader("Location","/index.html");
-                    reply->SendReply();
-                },NULL);
+                    ((WendellDepotWebserver *)userContext)->homepageHandler(request,reply);
+                },this);
     server_.add_uri(HTTPD::UriGlob("/command*"),[](const HTTPD::HttpRequest *request,
                                                    HTTPD::HttpReply *reply,
                                                    void *userContext)
@@ -93,27 +95,60 @@ WendellDepotWebserver::WendellDepotWebserver(ExecutorBase *executor,
                 },this);
 }
 
+const WendellDepotWebserver::FunctionMap_t WendellDepotWebserver::FunctionMap = {
+    {
+        "QueueTrains", 
+        WendellDepotWebserver::QueueTrains
+    }
+};
+
 void WendellDepotWebserver::commandUriHandler(const HTTPD::HttpRequest *request, HTTPD::HttpReply *reply)
 {
     string Uri = request->RequestUri();
     string Query = request->Query();
     ParseQuery formdata(Query);
-    reply->SetStatus(200);
-    reply->SetContentType("text/html");
-    reply->Puts("<HTML><HEAD><TITLE>Command</TITLE></HEAD>\r\n");
-    reply->Puts(String("<BODY><H1>")+Uri+"</H1>\r\n");
-    for (auto i = formdata.begin(); i != formdata.end(); i++)
+    switch (FindFunction(formdata.Value("function")))
     {
-        reply->Puts(String("<p>")+i->first+" = "+i->second+"</p>");
+    case QueueTrains:
+        {
+            RunTrain *trains = new RunTrain[RunTrain::NUM_ROUTES];
+            trains[0].address = formdata.IValue("train1");
+            trains[0].route = (RunTrain::Route) formdata.IValue("route1");
+            trains[1].address = formdata.IValue("train2");
+            trains[1].route = (RunTrain::Route) formdata.IValue("route2");
+            trains[2].address = formdata.IValue("train3");
+            trains[2].route = (RunTrain::Route) formdata.IValue("route3");
+            trains[3].address = formdata.IValue("train4");
+            trains[3].route = (RunTrain::Route) formdata.IValue("route4");
+            uint numtrains = 4;
+            uint loopcount = formdata.IValue("loopcount");
+            trainRunner_ = new RunTrains(&server_,trains,numtrains,
+                                         loopcount,trainFlow_,this);
+            delete[] trains;
+            status_ = runningtrains;
+            reply->SetStatus(302);
+            reply->SetHeader("Location","/command?function=runningtrains");
+        }
+        break;
+    case NoFunction:
+        reply->SetStatus(500);
+        reply->SetContentType("text/html");
+        reply->Puts("<HTML><HEAD><TITLE>Unknown Function</TITLE></HEAD>\r\n");
+        reply->Puts(String("<BODY><H1>")+Uri+"</H1>\r\n");
+        for (auto i = formdata.begin(); i != formdata.end(); i++)
+        {
+            reply->Puts(String("<p>")+i->first+" = "+i->second+"</p>");
+        }
+        reply->Puts("</body></html>");
+        break;
     }
-    reply->Puts("</body></html>");
     reply->SendReply();
 }
 
 void WendellDepotWebserver::staticFileUriHandler(const HTTPD::HttpRequest *request, HTTPD::HttpReply *reply)
 {
     String path = docRoot_ + request->RequestUri();
-    //fprintf(stderr,"*** WendellDepotWebserver::staticFileUriHandler() path is '%s'\n",path.c_str());
+    LOG(ALWAYS,"*** WendellDepotWebserver::staticFileUriHandler() path is '%s'\n",path.c_str());
     if (access(path.c_str(),F_OK))
     {
         reply->SetStatus(404);
@@ -223,4 +258,119 @@ const String WendellDepotWebserver::ParseQuery::unquoteInput_(const String s) co
         //LOG(ALWAYS,"*** WendellDepotWebserver::ParseQuery::unquoteInput_: result is '%s'",result.c_str());
     }
     return result;
+}
+
+void WendellDepotWebserver::homepageHandler(const HTTPD::HttpRequest *request, HTTPD::HttpReply *reply)
+{
+    if (status_ == idle)
+    {
+        reply->SetStatus(302);
+        reply->SetHeader("Location","/index.html");
+        reply->SendReply();
+    }
+    else if (status_ == runningtrains)
+    {
+        reply->SetStatus(302);
+        reply->SetHeader("Location","/command?function=runningtrains");
+        reply->SendReply();
+    }
+}
+
+WendellDepotWebserver::RunTrains::RunTrains(Service *service,
+                                            RunTrain *trains, uint count, 
+                                            uint loopcount, 
+                                            RunATrainFlow &trainFlow, 
+                                            WendellDepotWebserver* parent)
+      : StateFlowBase(service)
+, numTrains_(count)
+, loopcount_(loopcount)
+, trainFlow_(trainFlow)
+, parent_(parent)
+{
+    for (uint i = 0;i < numTrains_;i++)
+    {
+        trains_[i].address = trains[i].address;
+        trains_[i].route   = trains[i].route;
+    }
+    start_flow(STATE(entry));
+}
+
+WendellDepotWebserver::RunTrains::~RunTrains()
+{
+    parent_->resetTrainRunner();
+}
+
+StateFlowBase::Action WendellDepotWebserver::RunTrains::entry()
+{
+    LOG(ALWAYS,"WendellDepotWebserver::RunTrains::entry()");
+    loopIndex_ = 0;
+    trainNum_ = 0;
+    return call_immediately(STATE(allocateTrain));
+}
+
+StateFlowBase::Action WendellDepotWebserver::RunTrains::allocateTrain()
+{
+    LOG(ALWAYS,"WendellDepotWebserver::RunTrains::allocateTrain()");
+    return allocate_and_call(&trainFlow_,STATE(startTrain));
+}
+
+StateFlowBase::Action WendellDepotWebserver::RunTrains::startTrain()
+{
+    LOG(ALWAYS,"WendellDepotWebserver::RunTrains::startTrain()");
+    Buffer<RunTrain> *buffer = get_allocation_result(&trainFlow_);
+    buffer->data()->address = trains_[trainNum_].address;
+    buffer->data()->route   = trains_[trainNum_].route;
+    buffer->data()->done.reset(this);
+    if (buffer->data()->address == 0)
+    {
+        trainNum_++;
+        if (trainNum_ < numTrains_)
+        {
+            return again();
+        }
+        else
+        {
+            trainNum_ = 0;
+            loopIndex_++;
+            
+            if (loopcount_ > 0 && loopIndex_ >= loopcount_)
+            {
+                return call_immediately(STATE(delete_this));
+            }
+            else
+            {
+                return again();
+            }
+        }
+    }
+    else
+    {
+        LOG(ALWAYS,"WendellDepotWebserver::RunTrains::startTrain(): buffer->data()->address is %d, buffer->data()->route is %d",buffer->data()->address,buffer->data()->route);
+        trainFlow_.send(buffer);
+        return wait_and_call(STATE(nextTrain));
+    }
+}
+
+StateFlowBase::Action WendellDepotWebserver::RunTrains::nextTrain()
+{
+    LOG(ALWAYS,"WendellDepotWebserver::RunTrains::nextTrain()");
+    trainNum_++;
+    if (trainNum_ < numTrains_)
+    {        
+        return call_immediately(STATE(allocateTrain));
+    }
+    else
+    {
+        trainNum_ = 0;
+        loopIndex_++;
+        if (loopcount_ > 0 && loopIndex_ >= loopcount_)
+        {
+            return call_immediately(STATE(delete_this));
+        }
+        else
+        {
+            return call_immediately(STATE(allocateTrain));
+        }
+    }
+    // return call_immediately(STATE(delete_this)); // never gets here. Keep the compiler happy.
 }

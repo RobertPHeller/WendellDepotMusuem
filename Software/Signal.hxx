@@ -8,7 +8,7 @@
 //  Author        : $Author$
 //  Created By    : Robert Heller
 //  Created       : Sun Jan 5 19:42:44 2025
-//  Last Modified : <250221.1641>
+//  Last Modified : <250224.2008>
 //
 //  Description	
 //
@@ -67,7 +67,7 @@ public:
         unregister_handler();
     }
     void SetAspect(WendellDepot::SignalConfig::Aspect aspect,
-                   BarrierNotifiable *done)
+                   Notifiable *done)
     {
         for (uint i=0; i < WendellDepot::SignalConfig::ASPECTCOUNT; i++)
         {
@@ -91,7 +91,7 @@ protected:
 private:
     void register_handler();
     void unregister_handler();
-    void SendEvent(openlcb::EventId eventid,BarrierNotifiable *done); 
+    void SendEvent(openlcb::EventId eventid,Notifiable *done); 
     openlcb::Node *node_;
     const WendellDepot::SignalConfig cfg_;
     WendellDepot::SignalConfig::Aspect currentAspect_;
