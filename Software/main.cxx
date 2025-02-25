@@ -8,7 +8,7 @@
 //  Author        : $Author$
 //  Created By    : Robert Heller
 //  Created       : Wed Dec 11 09:18:34 2024
-//  Last Modified : <250224.1144>
+//  Last Modified : <250225.1219>
 //
 //  Description	
 //
@@ -77,18 +77,20 @@ OVERRIDE_CONST(gc_generate_newlines, 1);
 static openlcb::NodeID NODE_ID = DefaultNODEID;
 #define DEFAULT_CAN_SOCKET "can0"
 #define DEFAULT_CAN_SERIAL "/dev/ttyACM0"
+#define DEFAULT_DOCROOT "/home/heller/WendellDepotMusuem/Software/static"
 
 enum LCCMode {SERVER, GCCLIENT, CANCLIENT, CANSERIAL};
 LCCMode lccmode = LCCMode::CANSERIAL;
 const char *gchost = "localhost";
 const char *cansocket = DEFAULT_CAN_SOCKET;
 const char *canserial = DEFAULT_CAN_SERIAL;
+const char *docroot   = DEFAULT_DOCROOT;
 
 // CLI Usage output.
 
 void usage(const char *e)
 {
-    fprintf(stderr, "Usage: %s [-n NID] [-c CAN_SOCKET] [-m mode] [-g host] [-s port]", e);
+    fprintf(stderr, "Usage: %s [-n NID] [-c CAN_SOCKET] [-m mode] [-g host] [-s port] [-d docroot]", e);
     fprintf(stderr, "\n\n");
     fprintf(stderr, "Wendell Depot Train Runner.\n\n");
     fprintf(stderr, "\nOptions:\n");
@@ -97,6 +99,7 @@ void usage(const char *e)
     fprintf(stderr, "\t[-g host]\n");
     fprintf(stderr, "\t[-c can_socketname]\n");
     fprintf(stderr, "\t[-s portname]\n");
+    fprintf(stderr, "\t[-d docroot]\n");
     fprintf(stderr, "Where:\n");
     fprintf(stderr, "\tnodeid is the node id, as a 12 hex digit number (optionally with colons between pairs of hex digits.\n");
     fprintf(stderr, "\tmode is the LCC connection mode.  One of:\n");
@@ -107,6 +110,7 @@ void usage(const char *e)
     fprintf(stderr, "\thost the GC hub server to connect to\n");
     fprintf(stderr, "\tcan_socketname the CAN socket\n");
     fprintf(stderr, "\tportname the USB Serial port\n");
+    fprintf(stderr, "\tdocroot is the document root for static content\n");
     exit(1);
 }
 
@@ -165,7 +169,7 @@ openlcb::NodeID parseNodeID(const char *nidstring)
 void parse_args(int argc, char *argv[])
 {
     int opt;
-#define OPTSTRING "hn:c:m:g:s:"
+#define OPTSTRING "hn:c:m:g:s:d:"
     while ((opt = getopt(argc, argv, OPTSTRING)) >= 0)
     {
         switch (opt)
@@ -191,6 +195,9 @@ void parse_args(int argc, char *argv[])
             break;
         case 'g':
             gchost = optarg;
+            break;
+        case 'd':
+            docroot = optarg;
             break;
         case 'm':
             if (strncasecmp(optarg,"server",strlen(optarg)) == 0)
@@ -251,7 +258,7 @@ int appl_main(int argc, char *argv[])
     }
     RunATrainFlow runtrains(stack.service(),stack.node());
     Executor<1> httpd_executor("httpd_executor", 0, 1024);
-    WendellDepotWebserver webserver(&httpd_executor,8080,"/home/heller/WendellDepotMusuem/Software/static",runtrains);
+    WendellDepotWebserver webserver(&httpd_executor,8080,docroot,runtrains);
     stack.loop_executor();
     return 0;
 }
