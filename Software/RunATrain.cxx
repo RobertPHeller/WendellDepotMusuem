@@ -8,7 +8,7 @@
 //  Author        : $Author$
 //  Created By    : Robert Heller
 //  Created       : Sun Jan 5 19:21:30 2025
-//  Last Modified : <250225.1147>
+//  Last Modified : <250225.1432>
 //
 //  Description	
 //
@@ -537,7 +537,7 @@ StateFlowBase::Action RunATrainFlow::setTurnout()
             }
             //bn.maybe_done();
             LOG(ALWAYS,"*** RunATrainFlow::setTurnout(): event sent");
-            return call_immediately(STATE(waitForPoints));
+            return wait_and_call(STATE(waitForPoints));
         }
     }
 }
@@ -546,14 +546,12 @@ StateFlowBase::Action RunATrainFlow::waitForPoints()
 {
     LOG(ALWAYS,"*** RunATrainFlow::waitForPoints(): desiredState is %d",desiredState_);
     /* something goes here to cause things to wait (sleep?) */
-    bn_.reset(this);
     return wait_and_call(STATE(pointsSetNotify));
 }
 
 StateFlowBase::Action RunATrainFlow::pointsSetNotify()
 {
-    LOG(ALWAYS,"*** RunATrainFlow::pointsSetNotify(): is done: %d",bn_.is_done());
-    bn_.maybe_done();
+    LOG(ALWAYS,"*** RunATrainFlow::pointsSetNotify()");
     return call_immediately(STATE(pointsSet));
 }
 
@@ -612,9 +610,14 @@ StateFlowBase::Action RunATrainFlow::startTrain1()
                           train,true);
     LOG(ALWAYS,"*** RunATrainFlow::startTrain1(): sending ASSIGN_TRAIN command");
     throttle_.send(buffer);
-    LOG(ALWAYS,"*** RunATrainFlow::startTrain1(): sending SlowSpeed");
+    return wait_and_call(STATE(trainAssigned));
+}
+
+StateFlowBase::Action RunATrainFlow::trainAssigned()
+{
+    LOG(ALWAYS,"*** RunATrainFlow::trainAssigned(): sending SlowSpeed");
     throttle_.set_speed(openlcb::SpeedType(SlowSpeed));
-    LOG(ALWAYS,"*** RunATrainFlow::startTrain1(): waiting for train to complete trip");
+    LOG(ALWAYS,"*** RunATrainFlow::trainAssigned(): waiting for train to complete trip");
     return wait_and_call(STATE(endTrainRun));
 }
 
@@ -622,7 +625,12 @@ StateFlowBase::Action RunATrainFlow::endTrainRun()
 {
     LOG(ALWAYS,"*** RunATrainFlow::endTrainRun(): Sending StopSpeed");
     throttle_.set_speed(openlcb::SpeedType(StopSpeed));
-    LOG(ALWAYS,"*** RunATrainFlow::endTrainRun(): allocating buffer to RELEASE_TRAIN");
+    return wait_and_call(STATE(trainStopped));
+}
+
+StateFlowBase::Action RunATrainFlow::trainStopped()
+{
+    LOG(ALWAYS,"*** RunATrainFlow::trainStopped(): allocating buffer to RELEASE_TRAIN");
     return allocate_and_call(&throttle_,STATE(endTrainRun1));
 }
 
@@ -635,6 +643,7 @@ StateFlowBase::Action RunATrainFlow::endTrainRun1()
     LOG(ALWAYS,"*** RunATrainFlow::endTrainRun1(): sending RELEASE_TRAIN command");
     throttle_.send(buffer);
     LOG(ALWAYS,"*** RunATrainFlow::endTrainRun1(): reseting variables");
+    currentTrain->done.notify();
     currentTrain = nullptr;
     currentRoute = nullptr;
     terminal = WendellDepot::NUM_SENSORS;
@@ -655,7 +664,7 @@ void RunATrainFlow::turnout_state(WendellDepot::TurnoutIndexes loc,
     LOG(ALWAYS,"*** RunATrainFlow::turnout_state(): turnoutIndx_ = %d, desiredState_ = %d",turnoutIndx_,desiredState_);
     if (turnoutIndx_ == loc && state == desiredState_)
     {
-        bn_.notify();
+        notify();
     }
 }
 

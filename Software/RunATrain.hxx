@@ -8,7 +8,7 @@
 //  Author        : $Author$
 //  Created By    : Robert Heller
 //  Created       : Sun Jan 5 14:52:37 2025
-//  Last Modified : <250225.1145>
+//  Last Modified : <250225.1428>
 //
 //  Description	
 //
@@ -79,6 +79,11 @@ typedef StateFlow<Buffer<RunTrain>, QList<1>> RunATrainFlowBase;
 class RunATrainFlow : public RunATrainFlowBase
 {
 public:
+    void notify() override {
+        LOG(ALWAYS, "*** RunATrainFlow::notify(): %p", this);
+        RunATrainFlowBase::notify();
+    }
+    
     RunATrainFlow(Service *service, openlcb::Node *node);
     void turnout_state(WendellDepot::TurnoutIndexes loc, 
                        Turnout::State_t state,
@@ -175,7 +180,9 @@ private:
     Action setSignal();
     Action startTrain();
     Action startTrain1();
+    Action trainAssigned();
     Action endTrainRun();
+    Action trainStopped();
     Action endTrainRun1();
     static const RouteTurnoutList routes_[RunTrain::NUM_ROUTES];
     static const BlockProtectionSignals_t BlockProtectionSignals;
