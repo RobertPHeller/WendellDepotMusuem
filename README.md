@@ -10,7 +10,7 @@ near the "west" end.  Also a portion of Wendell Depot Road, West Orange Road,
 and Kentfield Road and the various buildings that make up the village of 
 Wendell Depot.
 
-The layout is actually a oval that is 6 ft. by 14 ft., with 12 ft. "visible" 
+The layout is actually a oval that is 6 ft. by 14 ft., with 10 ft. "visible" 
 and the rest of the layout "hidden".  At the back is a four track "staging" 
 yard, where up to 4 trains (two eastbound and two westbound) can be made up. 
 The layout will be set up with automated operation, with the 4 trains running 
