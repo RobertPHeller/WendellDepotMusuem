@@ -8,7 +8,7 @@
 //  Author        : $Author$
 //  Created By    : Robert Heller
 //  Created       : Sun Jan 5 14:52:37 2025
-//  Last Modified : <250225.1428>
+//  Last Modified : <250226.0919>
 //
 //  Description	
 //
@@ -171,7 +171,7 @@ private:
     WendellDepot::TurnoutIndexes turnoutIndx_;
     Turnout::State_t desiredState_;
     uint currentSignal;
-    BarrierNotifiable bn_;
+    bool atTerminal_;
     virtual Action entry() override;
     Action setTurnout();
     Action waitForPoints();

@@ -8,7 +8,7 @@
 //  Author        : $Author$
 //  Created By    : Robert Heller
 //  Created       : Sun Jan 5 19:21:30 2025
-//  Last Modified : <250225.1432>
+//  Last Modified : <250226.0939>
 //
 //  Description	
 //
@@ -447,6 +447,7 @@ RunATrainFlow::RunATrainFlow(Service *service, openlcb::Node *node)
 , turnoutIndx_(WendellDepot::NUM_TURNOUTS)
 , desiredState_(Turnout::UNKNOWN)
 , currentSignal(RunATrainFlow::SIGNAL_STATES)
+, atTerminal_(false)
 {
     for (int i=0; i < WendellDepot::NUM_SENSORS; i++)
     {
@@ -588,16 +589,17 @@ StateFlowBase::Action RunATrainFlow::setSignal()
 StateFlowBase::Action RunATrainFlow::startTrain()
 {
     LOG(ALWAYS,"*** RunATrainFlow::startTrain()");
-    currentTrain->done.notify();
-    currentTrain = nullptr;
-    currentRoute = nullptr;
-    terminal = WendellDepot::NUM_SENSORS;
-    currentTurnout = RunATrainFlow::TURNOUT_STATES;
-    turnoutIndx_ = WendellDepot::NUM_TURNOUTS;
-    desiredState_ = Turnout::UNKNOWN;
-    currentSignal = RunATrainFlow::SIGNAL_STATES;
-    return release_and_exit();
-    //return allocate_and_call(&throttle_,STATE(startTrain1));
+    return allocate_and_call(&throttle_,STATE(startTrain1));
+    //currentTrain->done.notify();
+    //currentTrain = nullptr;
+    //currentRoute = nullptr;
+    //terminal = WendellDepot::NUM_SENSORS;
+    //currentTurnout = RunATrainFlow::TURNOUT_STATES;
+    //turnoutIndx_ = WendellDepot::NUM_TURNOUTS;
+    //desiredState_ = Turnout::UNKNOWN;
+    //currentSignal = RunATrainFlow::SIGNAL_STATES;
+    //atTerminal_ = false;
+    //return release_and_exit();
 }
 
 StateFlowBase::Action RunATrainFlow::startTrain1()
@@ -608,6 +610,7 @@ StateFlowBase::Action RunATrainFlow::startTrain1()
           get_allocation_result(&throttle_);
     buffer->data()->reset(openlcb::TractionThrottleCommands::ASSIGN_TRAIN,
                           train,true);
+    buffer->data()->done.reset(this);
     LOG(ALWAYS,"*** RunATrainFlow::startTrain1(): sending ASSIGN_TRAIN command");
     throttle_.send(buffer);
     return wait_and_call(STATE(trainAssigned));
@@ -624,8 +627,12 @@ StateFlowBase::Action RunATrainFlow::trainAssigned()
 StateFlowBase::Action RunATrainFlow::endTrainRun()
 {
     LOG(ALWAYS,"*** RunATrainFlow::endTrainRun(): Sending StopSpeed");
+    if (!atTerminal_)
+    {
+        wait();
+    }
     throttle_.set_speed(openlcb::SpeedType(StopSpeed));
-    return wait_and_call(STATE(trainStopped));
+    return call_immediately(STATE(trainStopped));
 }
 
 StateFlowBase::Action RunATrainFlow::trainStopped()
@@ -640,6 +647,7 @@ StateFlowBase::Action RunATrainFlow::endTrainRun1()
     Buffer<openlcb::TractionThrottleInput> *buffer =
           get_allocation_result(&throttle_);
     buffer->data()->reset(openlcb::TractionThrottleCommands::RELEASE_TRAIN);
+    buffer->data()->done.reset(this);
     LOG(ALWAYS,"*** RunATrainFlow::endTrainRun1(): sending RELEASE_TRAIN command");
     throttle_.send(buffer);
     LOG(ALWAYS,"*** RunATrainFlow::endTrainRun1(): reseting variables");
@@ -651,6 +659,7 @@ StateFlowBase::Action RunATrainFlow::endTrainRun1()
     turnoutIndx_ = WendellDepot::NUM_TURNOUTS;
     desiredState_ = Turnout::UNKNOWN;
     currentSignal = RunATrainFlow::SIGNAL_STATES;
+    atTerminal_ = false;
     return release_and_exit();
 }
         
@@ -672,6 +681,7 @@ void RunATrainFlow::Covered(WendellDepot::SensorIndexes loc,
                             openlcb::EventReport *event,
                             BarrierNotifiable *done)
 {
+    if (currentTrain == nullptr) return;
     auto bps_iter = BlockProtectionSignals.find(loc);
     if (bps_iter != BlockProtectionSignals.end())
     {
@@ -691,6 +701,7 @@ void RunATrainFlow::Uncovered(WendellDepot::SensorIndexes loc,
                               openlcb::EventReport *event,
                               BarrierNotifiable *done)
 {
+    if (currentTrain == nullptr) return;
     SpeedKey key(loc,currentDirection,IsUncovered);
     auto newspeed_iter = SpeedUpdateMap.find(key);
     if (newspeed_iter != SpeedUpdateMap.end())
@@ -699,6 +710,7 @@ void RunATrainFlow::Uncovered(WendellDepot::SensorIndexes loc,
     }
     if (loc == terminal)
     {
+        atTerminal_ = true;
         notify();
     }
 }
