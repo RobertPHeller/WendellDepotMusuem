@@ -6,6 +6,8 @@ WendellDepot.tcl is a CTC Dispatcher panel node, generated with the Deepwoods
 Software Dispatcher program that is part of the Model Railroad System. It
 implements a virtual CTC panel for the layout.
 
+- Screenshot of CTC Panel: ![Screenshot of CTC Panel](https://github.com/RobertPHeller/WendellDepotMusuem/blob/main/Software/WendellDepotCTC.png)
+
 ## Automatic train runner
 
 The C++ code in this directory contains the code that implements an automatic
