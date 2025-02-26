@@ -1,13 +1,23 @@
-# Wendell Depot Musuem Layout (proposed)
+# Wendell Historical Society Musuem at Wendell Depot
 
-This is a layout I am proposing for the Wendell Depot Musuem that Ed Hines is
-planning to house in the old Wendell Depot store/post office that was run by
-the late Anna Hartjens.
+This is a proposed model railroad layout at the Wendell Historical Society
+Musuem at Wendell Depot. It models the section of the old B&M Railroad that
+goes through Wendell Depot. It will be placed at the large display windows at
+the from of the musuem. The view will be the view south from a point just
+north of the tracks, centered on Wendell Depot Road. Features include crossing
+gates across Wendell Depot Road and a railroad bridge over the Millers River
+near the "west" end.  Also a portion of Wendell Depot Road, West Orange Road, 
+and Kentfield Road and the various buildings that make up the village of 
+Wendell Depot.
 
-It is a double oval, with a 10'x3.5' section to be visible in the store's 
-display windows.  This section is a model of about 1000' of the B&M main line 
-(in its former double track state), centered on the grade crossing at Wendell 
-Depot Road.  Being an oval, it can be set up as continious running trains in a 
-loop with one to four trains running across the "visible" portion in both 
-directions at intervals.  The grade crossing will have working lights and 
-bells and maybe gates.
+The layout is actually a oval that is 6 ft. by 14 ft., with 12 ft. "visible" 
+and the rest of the layout "hidden".  At the back is a four track "staging" 
+yard, where up to 4 trains (two eastbound and two westbound) can be made up. 
+The layout will be set up with automated operation, with the 4 trains running 
+one at a time through the "visible" section in alterniting directions.
+
+- ![Satelite View](https://github.com/RobertPHeller/WendellDepotMusuem/blob/main/WendellDepotSateliteMap.png)
+
+- ![Map View](https://github.com/RobertPHeller/WendellDepotMusuem/blob/main/WendellDepot.png)
+
+- ![Layout](https://github.com/RobertPHeller/WendellDepotMusuem/blob/main/WendellDepotLayout.png)
