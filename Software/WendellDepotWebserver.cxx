@@ -8,7 +8,7 @@
 //  Author        : $Author$
 //  Created By    : Robert Heller
 //  Created       : Wed Feb 12 09:22:42 2025
-//  Last Modified : <250227.0855>
+//  Last Modified : <250227.1036>
 //
 //  Description	
 //
@@ -103,6 +103,10 @@ const WendellDepotWebserver::FunctionMap_t WendellDepotWebserver::FunctionMap = 
     {
         "RunningTrains",
         WendellDepotWebserver::RunningTrains
+    },
+    {
+        "CancelTrainsRunning",
+        WendellDepotWebserver::CancelTrainsRunning
     }
 };
 
@@ -147,6 +151,7 @@ void WendellDepotWebserver::commandUriHandler(const HTTPD::HttpRequest *request,
             reply->Puts("<HTML><HEAD><TITLE>Trains Are Running</TITLE>\r\n");
             reply->Puts("<link rel='stylesheet' href='/CSS/WendellDepot.css' />\r\n");
             reply->Puts("<script id='WendellDepot' type='text/javascript' src='/JS/WendellDepot.js'></script>\r\n");
+            reply->Puts("<meta http-equiv='refresh' content='30'>\r\n");
             reply->Puts("</HEAD>\r\n<BODY>\r\n");
             reply->Puts("<FORM  ACTION='/command' METHOD='GET'>\r\n");
             reply->Puts(String("<SPAN>Currently running train ")+std::to_string(trainRunner_->CurrentTrainAddress())+" on route");
@@ -160,8 +165,21 @@ void WendellDepotWebserver::commandUriHandler(const HTTPD::HttpRequest *request,
             }
             reply->Puts("</SPAN>\r\n");
             reply->Puts("<BUTTON TYPE='SUBMIT' NAME='function' VALUE='RunningTrains'>Refresh</BUTTON>\r\n");
-            reply->Puts("<BUTTON TYPE='SUBMIT' NAME='function' VALUE='Cancel'>Cancel</BUTTON>\r\n");
+            reply->Puts("<BUTTON TYPE='SUBMIT' NAME='function' VALUE='CancelTrainsRunning'>Cancel Trains</BUTTON>\r\n");
             reply->Puts("</FORM></BODY></HTML>");
+        }
+        break;
+    case CancelTrainsRunning:
+        if (status_ != runningtrains)
+        {
+            reply->SetStatus(302);
+            reply->SetHeader("Location","/");
+        }
+        else
+        {
+            trainRunner_->StopTrains();
+            reply->SetStatus(302);
+            reply->SetHeader("Location","/");
         }
         break;
     case NoFunction:
@@ -320,6 +338,7 @@ WendellDepotWebserver::RunTrains::RunTrains(Service *service,
 , loopcount_(loopcount)
 , trainFlow_(trainFlow)
 , parent_(parent)
+, scheduleStop_(false)
 {
     for (uint i = 0;i < numTrains_;i++)
     {
@@ -388,6 +407,10 @@ StateFlowBase::Action WendellDepotWebserver::RunTrains::startTrain()
 StateFlowBase::Action WendellDepotWebserver::RunTrains::nextTrain()
 {
     LOG(VERBOSE,"WendellDepotWebserver::RunTrains::nextTrain()");
+    if (scheduleStop_) 
+    {
+        return call_immediately(STATE(delete_this));
+    }
     trainNum_++;
     if (trainNum_ < numTrains_)
     {        

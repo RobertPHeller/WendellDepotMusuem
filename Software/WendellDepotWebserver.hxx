@@ -8,7 +8,7 @@
 //  Author        : $Author$
 //  Created By    : Robert Heller
 //  Created       : Wed Feb 12 09:10:33 2025
-//  Last Modified : <250225.1534>
+//  Last Modified : <250227.1031>
 //
 //  Description	
 //
@@ -67,7 +67,8 @@ public:
                           RunATrainFlow &trainFlow);
     ~WendellDepotWebserver() {}
     typedef std::map<String,String> FormData_t;
-    enum Function_t {NoFunction = -1, QueueTrains, RunningTrains};
+    enum Function_t {NoFunction = -1, QueueTrains, RunningTrains, 
+              CancelTrainsRunning};
 private:
     typedef std::map<String,Function_t> FunctionMap_t;
     static const FunctionMap_t FunctionMap;
@@ -151,6 +152,10 @@ private:
                 return trains_[trainNum_].route;
             }
         }
+        void StopTrains()
+        {
+            scheduleStop_ = true;
+        }
     private:
         RunTrain trains_[RunTrain::NUM_ROUTES];
         uint numTrains_;
@@ -159,6 +164,7 @@ private:
         WendellDepotWebserver *parent_;
         uint loopIndex_;
         uint trainNum_;
+        bool scheduleStop_;    
         virtual Action entry();
         Action allocateTrain();
         Action startTrain();
