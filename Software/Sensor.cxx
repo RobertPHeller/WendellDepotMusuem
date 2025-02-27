@@ -8,7 +8,7 @@
 //  Author        : $Author$
 //  Created By    : Robert Heller
 //  Created       : Sat Jan 4 20:14:16 2025
-//  Last Modified : <250221.1004>
+//  Last Modified : <250227.0850>
 //
 //  Description	
 //
@@ -71,9 +71,9 @@ void Sensor::handle_producer_identified(const openlcb::EventRegistryEntry &regis
                                         openlcb::EventReport *event, 
                                         BarrierNotifiable *done)
 {
-    //LOG(ALWAYS,"*** Sensor::handle_producer_identified(): event  is 0X%016lX",event->event);
-    //LOG(ALWAYS,"*** Sensor::handle_producer_identified(): source is 0X%012lX",event->src_node.id);
-    //LOG(ALWAYS,"*** Sensor::handle_producer_identified(): state is %d",(int)event->state);
+    LOG(VERBOSE,"*** Sensor::handle_producer_identified(): event  is 0X%016lX",event->event);
+    LOG(VERBOSE,"*** Sensor::handle_producer_identified(): source is 0X%012lX",event->src_node.id);
+    LOG(VERBOSE,"*** Sensor::handle_producer_identified(): state is %d",(int)event->state);
     bool value;
     if (event->state == openlcb::EventState::VALID)
     {
@@ -88,7 +88,7 @@ void Sensor::handle_producer_identified(const openlcb::EventRegistryEntry &regis
         done->notify();
         return; // nothing to learn from this message.
     }
-    //LOG(ALWAYS,"*** Sensor::handle_producer_identified(): value is %d",value);
+    LOG(VERBOSE,"*** Sensor::handle_producer_identified(): value is %d",value);
     if (event->event == on_ && value)
     {
         handle_on(event,done);
@@ -144,7 +144,7 @@ void Sensor::SendConsumerIdentified(openlcb::EventReport *event,
                                     BarrierNotifiable *done)
 {
     openlcb::Defs::MTI mti = openlcb::Defs::MTI_CONSUMER_IDENTIFIED_UNKNOWN;
-    //LOG(ALWAYS,"*** Sensor::SendConsumerIdentified() event->event is 0X%016lX",event->event);
+    LOG(VERBOSE,"*** Sensor::SendConsumerIdentified() event->event is 0X%016lX",event->event);
     if (event->event == on_ || event->event == 0ll)
     {
         event->event_write_helper<3>()->WriteAsync(node_, mti,

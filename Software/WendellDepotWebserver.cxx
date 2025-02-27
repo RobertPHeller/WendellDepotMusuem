@@ -8,7 +8,7 @@
 //  Author        : $Author$
 //  Created By    : Robert Heller
 //  Created       : Wed Feb 12 09:22:42 2025
-//  Last Modified : <250225.1536>
+//  Last Modified : <250227.0855>
 //
 //  Description	
 //
@@ -182,7 +182,7 @@ void WendellDepotWebserver::commandUriHandler(const HTTPD::HttpRequest *request,
 void WendellDepotWebserver::staticFileUriHandler(const HTTPD::HttpRequest *request, HTTPD::HttpReply *reply)
 {
     String path = docRoot_ + request->RequestUri();
-    LOG(ALWAYS,"*** WendellDepotWebserver::staticFileUriHandler() path is '%s'\n",path.c_str());
+    LOG(VERBOSE,"*** WendellDepotWebserver::staticFileUriHandler() path is '%s'\n",path.c_str());
     if (access(path.c_str(),F_OK))
     {
         reply->SetStatus(404);
@@ -246,50 +246,50 @@ WendellDepotWebserver::ParseQuery::ParseQuery(const String queryString)
          istart < queryString.length(); 
          istart = amp+1)
     {
-        //LOG(ALWAYS,"*** WendellDepotWebserver::ParseQuery: istart = %d",(int)istart);
+        LOG(VERBOSE,"*** WendellDepotWebserver::ParseQuery: istart = %d",(int)istart);
         amp = queryString.find('&',istart);
-        //LOG(ALWAYS,"*** WendellDepotWebserver::ParseQuery: amp = %d",(int)amp);
+        LOG(VERBOSE,"*** WendellDepotWebserver::ParseQuery: amp = %d",(int)amp);
         if (amp == String::npos)
         {
             amp = queryString.length();
         }
         String q = queryString.substr(istart,amp-istart);
-        //LOG(ALWAYS,"*** WendellDepotWebserver::ParseQuery: q = '%s'",q.c_str());
+        LOG(VERBOSE,"*** WendellDepotWebserver::ParseQuery: q = '%s'",q.c_str());
         size_t eq = q.find('=');
         String name = q.substr(0,eq);
         String value = q.substr(eq+1);
-        //LOG(ALWAYS,"*** WendellDepotWebserver::ParseQuery: name = '%s' and value = '%s'",name.c_str(),value.c_str());
+        LOG(VERBOSE,"*** WendellDepotWebserver::ParseQuery: name = '%s' and value = '%s'",name.c_str(),value.c_str());
         parsedFormData_.insert(std::pair<String,String>(name,unquoteInput_(value)));
     }
 }
 
 const String WendellDepotWebserver::ParseQuery::unquoteInput_(const String s) const
 {
-    //LOG(ALWAYS,"*** WendellDepotWebserver::ParseQuery::unquoteInput_(%s)",s.c_str());
+    LOG(VERBOSE,"*** WendellDepotWebserver::ParseQuery::unquoteInput_(%s)",s.c_str());
     std::regex newline("%0d%0a", std::regex_constants::icase);
     String result = std::regex_replace(s,newline,"\n");
     std::regex percentEscapes("%[a-f0-9][a-f0-9]",std::regex_constants::icase);
     String temp = result;
     auto percent_begin = std::sregex_iterator(temp.begin(),temp.end(),percentEscapes);
     auto percent_end = std::sregex_iterator();
-    //LOG(ALWAYS,"*** WendellDepotWebserver::ParseQuery::unquoteInput_: %d percent escapes",(int) std::distance(percent_begin,percent_end));
+    LOG(VERBOSE,"*** WendellDepotWebserver::ParseQuery::unquoteInput_: %d percent escapes",(int) std::distance(percent_begin,percent_end));
     if (std::distance(percent_begin,percent_end) > 0)
     {
         result = "";
         String lastSuffix = "";
-        //int index = 0;
+        int index = 0;
         for (std::sregex_iterator i = percent_begin; i != percent_end; ++i)
         {
             std::smatch match = *i;
-            //LOG(ALWAYS,"*** WendellDepotWebserver::ParseQuery::unquoteInput_: match %d: str is '%s', prefix is '%s', suffix is '%s'",
-            //    index++,match.str().c_str(),match.prefix().str().c_str(),match.suffix().str().c_str());
+            LOG(VERBOSE,"*** WendellDepotWebserver::ParseQuery::unquoteInput_: match %d: str is '%s', prefix is '%s', suffix is '%s'",
+                index++,match.str().c_str(),match.prefix().str().c_str(),match.suffix().str().c_str());
             result += match.prefix().str();
             size_t unused = 0;
             result += (char)std::stoi(match.str().substr(1),&unused,16);
             lastSuffix = match.suffix().str();
         }
         result += lastSuffix;
-        //LOG(ALWAYS,"*** WendellDepotWebserver::ParseQuery::unquoteInput_: result is '%s'",result.c_str());
+        LOG(VERBOSE,"*** WendellDepotWebserver::ParseQuery::unquoteInput_: result is '%s'",result.c_str());
     }
     return result;
 }
@@ -336,7 +336,7 @@ WendellDepotWebserver::RunTrains::~RunTrains()
 
 StateFlowBase::Action WendellDepotWebserver::RunTrains::entry()
 {
-    LOG(ALWAYS,"WendellDepotWebserver::RunTrains::entry()");
+    LOG(VERBOSE,"WendellDepotWebserver::RunTrains::entry()");
     loopIndex_ = 0;
     trainNum_ = 0;
     return call_immediately(STATE(allocateTrain));
@@ -344,13 +344,13 @@ StateFlowBase::Action WendellDepotWebserver::RunTrains::entry()
 
 StateFlowBase::Action WendellDepotWebserver::RunTrains::allocateTrain()
 {
-    LOG(ALWAYS,"WendellDepotWebserver::RunTrains::allocateTrain()");
+    LOG(VERBOSE,"WendellDepotWebserver::RunTrains::allocateTrain()");
     return allocate_and_call(&trainFlow_,STATE(startTrain));
 }
 
 StateFlowBase::Action WendellDepotWebserver::RunTrains::startTrain()
 {
-    LOG(ALWAYS,"WendellDepotWebserver::RunTrains::startTrain()");
+    LOG(VERBOSE,"WendellDepotWebserver::RunTrains::startTrain()");
     Buffer<RunTrain> *buffer = get_allocation_result(&trainFlow_);
     buffer->data()->address = trains_[trainNum_].address;
     buffer->data()->route   = trains_[trainNum_].route;
@@ -379,7 +379,7 @@ StateFlowBase::Action WendellDepotWebserver::RunTrains::startTrain()
     }
     else
     {
-        LOG(ALWAYS,"WendellDepotWebserver::RunTrains::startTrain(): buffer->data()->address is %d, buffer->data()->route is %d",buffer->data()->address,buffer->data()->route);
+        LOG(VERBOSE,"WendellDepotWebserver::RunTrains::startTrain(): buffer->data()->address is %d, buffer->data()->route is %d",buffer->data()->address,buffer->data()->route);
         trainFlow_.send(buffer);
         return wait_and_call(STATE(nextTrain));
     }
@@ -387,7 +387,7 @@ StateFlowBase::Action WendellDepotWebserver::RunTrains::startTrain()
 
 StateFlowBase::Action WendellDepotWebserver::RunTrains::nextTrain()
 {
-    LOG(ALWAYS,"WendellDepotWebserver::RunTrains::nextTrain()");
+    LOG(VERBOSE,"WendellDepotWebserver::RunTrains::nextTrain()");
     trainNum_++;
     if (trainNum_ < numTrains_)
     {        

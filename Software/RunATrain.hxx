@@ -8,7 +8,7 @@
 //  Author        : $Author$
 //  Created By    : Robert Heller
 //  Created       : Sun Jan 5 14:52:37 2025
-//  Last Modified : <250226.0919>
+//  Last Modified : <250227.0845>
 //
 //  Description	
 //
@@ -80,7 +80,7 @@ class RunATrainFlow : public RunATrainFlowBase
 {
 public:
     void notify() override {
-        LOG(ALWAYS, "*** RunATrainFlow::notify(): %p", this);
+        LOG(VERBOSE, "*** RunATrainFlow::notify(): %p", this);
         RunATrainFlowBase::notify();
     }
     

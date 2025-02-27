@@ -8,7 +8,7 @@
 //  Author        : $Author$
 //  Created By    : Robert Heller
 //  Created       : Sun Jan 5 19:21:30 2025
-//  Last Modified : <250226.0939>
+//  Last Modified : <250227.0847>
 //
 //  Description	
 //
@@ -478,7 +478,7 @@ RunATrainFlow::RunATrainFlow(Service *service, openlcb::Node *node)
 
 StateFlowBase::Action RunATrainFlow::entry()
 {
-    LOG(ALWAYS,"*** RunATrainFlow::entry()");
+    LOG(VERBOSE,"*** RunATrainFlow::entry()");
     currentTrain = message()->data();
     currentRoute = &routes_[(uint)(currentTrain->route)];
     terminal = currentRoute->terminalLocation;
@@ -492,15 +492,15 @@ StateFlowBase::Action RunATrainFlow::entry()
     {
         currentDirection = Left;
     }
-    LOG(ALWAYS,"*** RunATrainFlow::entry(): currentTrain->address = %d",(int)(currentTrain->address));
-    LOG(ALWAYS,"*** RunATrainFlow::entry(): currentRoute is %d",(int)(currentTrain->route));
-    LOG(ALWAYS,"*** RunATrainFlow::entry(): currentDirection = %d",currentDirection);
+    LOG(VERBOSE,"*** RunATrainFlow::entry(): currentTrain->address = %d",(int)(currentTrain->address));
+    LOG(VERBOSE,"*** RunATrainFlow::entry(): currentRoute is %d",(int)(currentTrain->route));
+    LOG(VERBOSE,"*** RunATrainFlow::entry(): currentDirection = %d",currentDirection);
     return call_immediately(STATE(setTurnout));
 }
 
 StateFlowBase::Action RunATrainFlow::setTurnout()
 {
-    LOG(ALWAYS,"*** RunATrainFlow::setTurnout() currentTurnout is %d",currentTurnout);
+    LOG(VERBOSE,"*** RunATrainFlow::setTurnout() currentTurnout is %d",currentTurnout);
     if (currentTurnout == TURNOUT_STATES) // end of turnouts to set for route
     {
         // all turnouts and signals set, go start the train
@@ -509,11 +509,11 @@ StateFlowBase::Action RunATrainFlow::setTurnout()
     else
     {
         const RouteTurnoutState *ct = &currentRoute->turnoutStates[currentTurnout];
-        LOG(ALWAYS,"*** RunATrainFlow::setTurnout(): ct->turnoutIndex is %d",ct->turnoutIndex);
-        LOG(ALWAYS,"*** RunATrainFlow::setTurnout(): ct->state is %d",ct->state);
+        LOG(VERBOSE,"*** RunATrainFlow::setTurnout(): ct->turnoutIndex is %d",ct->turnoutIndex);
+        LOG(VERBOSE,"*** RunATrainFlow::setTurnout(): ct->state is %d",ct->state);
         turnoutIndx_ = ct->turnoutIndex;
         desiredState_ = ct->state;
-        LOG(ALWAYS,"*** RunATrainFlow::setTurnout(): turnouts_[turnoutIndx_]->State() is %d",turnouts_[turnoutIndx_]->State());
+        LOG(VERBOSE,"*** RunATrainFlow::setTurnout(): turnouts_[turnoutIndx_]->State() is %d",turnouts_[turnoutIndx_]->State());
         // Are points already set?
         if (desiredState_ == turnouts_[turnoutIndx_]->State())
         {
@@ -523,7 +523,7 @@ StateFlowBase::Action RunATrainFlow::setTurnout()
         else
         {
             // Send event to move the points.
-            LOG(ALWAYS,"*** RunATrainFlow::setTurnout(): About to send event to move points");
+            LOG(VERBOSE,"*** RunATrainFlow::setTurnout(): About to send event to move points");
             //BarrierNotifiable bn(this);
             switch (desiredState_)
             {
@@ -537,7 +537,7 @@ StateFlowBase::Action RunATrainFlow::setTurnout()
                 break;
             }
             //bn.maybe_done();
-            LOG(ALWAYS,"*** RunATrainFlow::setTurnout(): event sent");
+            LOG(VERBOSE,"*** RunATrainFlow::setTurnout(): event sent");
             return wait_and_call(STATE(waitForPoints));
         }
     }
@@ -545,20 +545,20 @@ StateFlowBase::Action RunATrainFlow::setTurnout()
 
 StateFlowBase::Action RunATrainFlow::waitForPoints()
 {
-    LOG(ALWAYS,"*** RunATrainFlow::waitForPoints(): desiredState is %d",desiredState_);
+    LOG(VERBOSE,"*** RunATrainFlow::waitForPoints(): desiredState is %d",desiredState_);
     /* something goes here to cause things to wait (sleep?) */
     return wait_and_call(STATE(pointsSetNotify));
 }
 
 StateFlowBase::Action RunATrainFlow::pointsSetNotify()
 {
-    LOG(ALWAYS,"*** RunATrainFlow::pointsSetNotify()");
+    LOG(VERBOSE,"*** RunATrainFlow::pointsSetNotify()");
     return call_immediately(STATE(pointsSet));
 }
 
 StateFlowBase::Action RunATrainFlow::pointsSet()
 {
-    LOG(ALWAYS,"*** RunATrainFlow::pointsSet()");
+    LOG(VERBOSE,"*** RunATrainFlow::pointsSet()");
     // Points moved, start setting the signals around the turnout
     currentSignal = 0;
     return call_immediately(STATE(setSignal));
@@ -566,7 +566,7 @@ StateFlowBase::Action RunATrainFlow::pointsSet()
 
 StateFlowBase::Action RunATrainFlow::setSignal()
 {
-    LOG(ALWAYS,"*** RunATrainFlow::setSignal(): currentSignal = %d",currentSignal);
+    LOG(VERBOSE,"*** RunATrainFlow::setSignal(): currentSignal = %d",currentSignal);
     if (currentSignal == SIGNAL_STATES)
     {
         // finished with this turnouts signals, go to the next turnout in the route.
@@ -588,7 +588,7 @@ StateFlowBase::Action RunATrainFlow::setSignal()
 
 StateFlowBase::Action RunATrainFlow::startTrain()
 {
-    LOG(ALWAYS,"*** RunATrainFlow::startTrain()");
+    LOG(VERBOSE,"*** RunATrainFlow::startTrain()");
     return allocate_and_call(&throttle_,STATE(startTrain1));
     //currentTrain->done.notify();
     //currentTrain = nullptr;
@@ -605,28 +605,28 @@ StateFlowBase::Action RunATrainFlow::startTrain()
 StateFlowBase::Action RunATrainFlow::startTrain1()
 {
     openlcb::NodeID train = 0x06010000C000 | currentTrain->address;
-    LOG(ALWAYS,"*** RunATrainFlow::startTrain1(): train = 0X%012lX",train);
+    LOG(VERBOSE,"*** RunATrainFlow::startTrain1(): train = 0X%012lX",train);
     Buffer<openlcb::TractionThrottleInput> *buffer = 
           get_allocation_result(&throttle_);
     buffer->data()->reset(openlcb::TractionThrottleCommands::ASSIGN_TRAIN,
                           train,true);
     buffer->data()->done.reset(this);
-    LOG(ALWAYS,"*** RunATrainFlow::startTrain1(): sending ASSIGN_TRAIN command");
+    LOG(VERBOSE,"*** RunATrainFlow::startTrain1(): sending ASSIGN_TRAIN command");
     throttle_.send(buffer);
     return wait_and_call(STATE(trainAssigned));
 }
 
 StateFlowBase::Action RunATrainFlow::trainAssigned()
 {
-    LOG(ALWAYS,"*** RunATrainFlow::trainAssigned(): sending SlowSpeed");
+    LOG(VERBOSE,"*** RunATrainFlow::trainAssigned(): sending SlowSpeed");
     throttle_.set_speed(openlcb::SpeedType(SlowSpeed));
-    LOG(ALWAYS,"*** RunATrainFlow::trainAssigned(): waiting for train to complete trip");
+    LOG(VERBOSE,"*** RunATrainFlow::trainAssigned(): waiting for train to complete trip");
     return wait_and_call(STATE(endTrainRun));
 }
 
 StateFlowBase::Action RunATrainFlow::endTrainRun()
 {
-    LOG(ALWAYS,"*** RunATrainFlow::endTrainRun(): Sending StopSpeed");
+    LOG(VERBOSE,"*** RunATrainFlow::endTrainRun(): Sending StopSpeed");
     if (!atTerminal_)
     {
         wait();
@@ -637,20 +637,20 @@ StateFlowBase::Action RunATrainFlow::endTrainRun()
 
 StateFlowBase::Action RunATrainFlow::trainStopped()
 {
-    LOG(ALWAYS,"*** RunATrainFlow::trainStopped(): allocating buffer to RELEASE_TRAIN");
+    LOG(VERBOSE,"*** RunATrainFlow::trainStopped(): allocating buffer to RELEASE_TRAIN");
     return allocate_and_call(&throttle_,STATE(endTrainRun1));
 }
 
 StateFlowBase::Action RunATrainFlow::endTrainRun1()
 {
-    LOG(ALWAYS,"*** RunATrainFlow::endTrainRun1()");
+    LOG(VERBOSE,"*** RunATrainFlow::endTrainRun1()");
     Buffer<openlcb::TractionThrottleInput> *buffer =
           get_allocation_result(&throttle_);
     buffer->data()->reset(openlcb::TractionThrottleCommands::RELEASE_TRAIN);
     buffer->data()->done.reset(this);
-    LOG(ALWAYS,"*** RunATrainFlow::endTrainRun1(): sending RELEASE_TRAIN command");
+    LOG(VERBOSE,"*** RunATrainFlow::endTrainRun1(): sending RELEASE_TRAIN command");
     throttle_.send(buffer);
-    LOG(ALWAYS,"*** RunATrainFlow::endTrainRun1(): reseting variables");
+    LOG(VERBOSE,"*** RunATrainFlow::endTrainRun1(): reseting variables");
     currentTrain->done.notify();
     currentTrain = nullptr;
     currentRoute = nullptr;
@@ -669,8 +669,8 @@ void RunATrainFlow::turnout_state(WendellDepot::TurnoutIndexes loc,
                                   openlcb::EventReport *event,
                                   BarrierNotifiable *done)
 {
-    LOG(ALWAYS,"*** RunATrainFlow::turnout_state(%d,%d.%p%p)",loc,state,event,done);
-    LOG(ALWAYS,"*** RunATrainFlow::turnout_state(): turnoutIndx_ = %d, desiredState_ = %d",turnoutIndx_,desiredState_);
+    LOG(VERBOSE,"*** RunATrainFlow::turnout_state(%d,%d.%p%p)",loc,state,event,done);
+    LOG(VERBOSE,"*** RunATrainFlow::turnout_state(): turnoutIndx_ = %d, desiredState_ = %d",turnoutIndx_,desiredState_);
     if (turnoutIndx_ == loc && state == desiredState_)
     {
         notify();

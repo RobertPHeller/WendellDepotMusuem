@@ -8,7 +8,7 @@
 //  Author        : $Author$
 //  Created By    : Robert Heller
 //  Created       : Sun Jan 5 19:54:43 2025
-//  Last Modified : <250224.2008>
+//  Last Modified : <250227.0853>
 //
 //  Description	
 //
@@ -89,8 +89,8 @@ void Signal::handle_identify_producer(const openlcb::EventRegistryEntry &registr
                                       openlcb::EventReport *event,
                                       BarrierNotifiable *done)
 {
-    //LOG(ALWAYS,"*** Signal::handle_identify_producer(): event  is 0X%016lX",event->event);
-    //LOG(ALWAYS,"*** Signal::handle_identify_producer(): source is 0X%012lX",event->src_node.id);
+    LOG(VERBOSE,"*** Signal::handle_identify_producer(): event  is 0X%016lX",event->event);
+    LOG(VERBOSE,"*** Signal::handle_identify_producer(): source is 0X%012lX",event->src_node.id);
     if (event->src_node.id == node_->node_id())
     {
         // We don't respond to queries from our own node. This is not nice, but
@@ -141,8 +141,8 @@ void Signal::unregister_handler()
 void Signal::SendEvent(openlcb::EventId eventid,
                        Notifiable *done)
 {
-    //LOG(ALWAYS,"*** Signal::SendEvent(): 0X%016lX", event);
-    //LOG(ALWAYS,"*** Signal::SendEvent(): &helpers_[0] = %p",&helpers_[0]);
+    LOG(VERBOSE,"*** Signal::SendEvent(): 0X%016lX", eventid);
+    LOG(VERBOSE,"*** Signal::SendEvent(): &helpers_[0] = %p",&helpers_[0]);
     helpers_[WendellDepot::SignalConfig::ASPECTCOUNT].WriteAsync(
                   node_,
                   openlcb::Defs::MTI_EVENT_REPORT,
