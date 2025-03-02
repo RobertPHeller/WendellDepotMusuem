@@ -1,55 +1,63 @@
 <HTML>
     <HEAD>
-        <TITLE>Run Trains</TITLE>
+        <TITLE>Wendell Depot Auto Train Runner</TITLE>
         <link rel="stylesheet" href="/CSS/WendellDepot.css" />
         <script id="WendellDepot" type="text/javascript" src="/JS/WendellDepot.js"></script>
     </HEAD>
     <BODY>
+    <h1>Wendell Depot Auto Train Runner</h1>
+    <p>Enter the DCC address of the engine and the route the train is set up for.</p>
     <form  action="/command" method="get">
-    <label for="train1">Train 1:</label>
-    <input type="number" min="1" max="10239" maxlength="5" id="train1" name="train1" />
-    <label for="route1">&nbsp;Route:</label>
-    <select id="route1" name="route1">
-        <option value="0">East Bound from track 3</option>
-        <option value="1">East Bound from track 1</option>
-        <option value="2">West Bound from track 4</option>
-        <option value="3">West Bound from track 2</option>
-    </select><br />
-    <label for="train2">Train 2:</label>
-    <input type="number" min="1" max="10239" maxlength="5" id="train2" name="train2" />
-    <label for="route2">&nbsp;Route:</label>
-    <select id="route2" name="route2">
-        <option value="0">East Bound from track 3</option>
-        <option value="1">East Bound from track 1</option>
-        <option value="2">West Bound from track 4</option>
-        <option value="3">West Bound from track 2</option>
-    </select><br />
-    <label for="train3">Train 3:</label>
-    <input type="number" min="1" max="10239" maxlength="5" id="train3" name="train3" />
-    <label for="route3">&nbsp;Route:</label>
-    <select id="route3" name="route3">
-        <option value="0">East Bound from track 3</option>
-        <option value="1">East Bound from track 1</option>
-        <option value="2">West Bound from track 4</option>
-        <option value="3">West Bound from track 2</option>
-    </select><br />
-    <label for="train4">Train 4:</label>
-    <input type="number" min="1" max="10239" maxlength="5" id="train4" name="train4" />
-    <label for="route4">&nbsp;Route:</label>
-    <select id="route4" name="route4">
-        <option value="0">East Bound from track 3</option>
-        <option value="1">East Bound from track 1</option>
-        <option value="2">West Bound from track 4</option>
-        <option value="3">West Bound from track 2</option>
-    </select><br />
-    <label for="loopcount">&nbsp;Loop Count:</label>
-    <select id="loopcount" name="loopcount">
-        <option value="0" selected="selected">Forever</option>
-        <option value="1">Once</option>
-        <option value="4">Four Times</option>
-        <option value="10">Ten times</option>
-    </select><br />
-    <button type="submit" name="function" value="QueueTrains">Run Trains</button>
+    <table class="train-runner-form">
+        <thead><tr><th class="left">Train Address</th>
+            <th class="right">Route</th></tr></thead>
+        <tbody>
+        <tr><td class="left">1:&nbsp;<input type="number" min="1" max="10239" maxlength="5" id="train1" name="train1" /></td>
+            <td class="right"><select id="route1" name="route1">
+                    <option value="0">East Bound from track 3</option>
+                    <option value="1">East Bound from track 1</option>
+                    <option value="2">West Bound from track 4</option>
+                    <option value="3">West Bound from track 2</option>
+                  </select>
+              </td>
+          </tr>
+          <tr><td class="left">2:&nbsp;<input type="number" min="1" max="10239" maxlength="5" id="train2" name="train2" /></td>
+              <td class="right"><select id="route2" name="route2">
+                      <option value="0">East Bound from track 3</option>
+                      <option value="1">East Bound from track 1</option>
+                      <option value="2">West Bound from track 4</option>
+                      <option value="3">West Bound from track 2</option>
+                  </select>
+              </td>
+          </tr>
+          <tr><td class="left">3:&nbsp;<input type="number" min="1" max="10239" maxlength="5" id="train3" name="train3" /></td>
+              <td class="right"><select id="route3" name="route3">
+                      <option value="0">East Bound from track 3</option>
+                      <option value="1">East Bound from track 1</option>
+                      <option value="2">West Bound from track 4</option>
+                      <option value="3">West Bound from track 2</option>
+                  </select>
+                </td>
+           </tr>
+           <tr><td class="left">4:&nbsp;<input type="number" min="1" max="10239" maxlength="5" id="train4" name="train4" /></td>
+               <td class="right"><select id="route4" name="route4">
+                       <option value="0">East Bound from track 3</option>
+                       <option value="1">East Bound from track 1</option>
+                       <option value="2">West Bound from track 4</option>
+                       <option value="3">West Bound from track 2</option>
+                   </select>
+                </td>
+            </tr>
+            <tr><td class="left"><label for="loopcount">&nbsp;Loop Count:</label></td>
+                <td class="right"><select id="loopcount" name="loopcount">
+                        <option value="0" selected="selected">Forever</option>
+                        <option value="1">Once</option>
+                        <option value="4">Four Times</option>
+                        <option value="10">Ten times</option>
+                    </select>
+                </td>
+            </tr>
+            <tr><td colspan="2" class="buttons"><button type="submit" name="function" value="QueueTrains">Run Trains</button></td></tr></tbody></table>
     </form>
     </BODY>
 </HTML>

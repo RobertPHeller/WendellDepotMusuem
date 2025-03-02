@@ -8,7 +8,7 @@
 //  Author        : $Author$
 //  Created By    : Robert Heller
 //  Created       : Wed Feb 12 09:22:42 2025
-//  Last Modified : <250227.1036>
+//  Last Modified : <250301.1500>
 //
 //  Description	
 //
@@ -153,8 +153,12 @@ void WendellDepotWebserver::commandUriHandler(const HTTPD::HttpRequest *request,
             reply->Puts("<script id='WendellDepot' type='text/javascript' src='/JS/WendellDepot.js'></script>\r\n");
             reply->Puts("<meta http-equiv='refresh' content='30'>\r\n");
             reply->Puts("</HEAD>\r\n<BODY>\r\n");
+            reply->Puts("<H1>Trains are Running</H1>\r\n");
+            reply->Puts("<p>There are trains currently running.</p>\r\n");
             reply->Puts("<FORM  ACTION='/command' METHOD='GET'>\r\n");
-            reply->Puts(String("<SPAN>Currently running train ")+std::to_string(trainRunner_->CurrentTrainAddress())+" on route");
+            reply->Puts("<table class='train-runner-form'>\r\n");
+            reply->Puts("<thead><tr><th class='left'>");
+            reply->Puts(String("Currently running train ")+std::to_string(trainRunner_->CurrentTrainAddress())+" on route");
             switch (trainRunner_->CurrentTrainRoute())
             {
             case RunTrain::EastBound3: reply->Puts("East Bound from track 3"); break;
@@ -163,10 +167,12 @@ void WendellDepotWebserver::commandUriHandler(const HTTPD::HttpRequest *request,
             case RunTrain::WestBound2: reply->Puts("West Bound from track 2"); break;
             default: break;
             }
-            reply->Puts("</SPAN>\r\n");
-            reply->Puts("<BUTTON TYPE='SUBMIT' NAME='function' VALUE='RunningTrains'>Refresh</BUTTON>\r\n");
-            reply->Puts("<BUTTON TYPE='SUBMIT' NAME='function' VALUE='CancelTrainsRunning'>Cancel Trains</BUTTON>\r\n");
-            reply->Puts("</FORM></BODY></HTML>");
+            reply->Puts("</th></tr></thead>\r\n");
+            reply->Puts("<tbody><tr><td class='buttons'>");
+            reply->Puts("<BUTTON TYPE='SUBMIT' NAME='function' VALUE='RunningTrains'>Refresh</BUTTON></td></tr>\r\n");
+            reply->Puts("<tr><td class='buttons'>");
+            reply->Puts("<BUTTON TYPE='SUBMIT' NAME='function' VALUE='CancelTrainsRunning'>Cancel Trains</BUTTON></td></tr></tbody>\r\n");
+            reply->Puts("</table></FORM></BODY></HTML>");
         }
         break;
     case CancelTrainsRunning:

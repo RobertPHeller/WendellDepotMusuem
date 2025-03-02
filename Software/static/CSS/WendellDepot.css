@@ -1,7 +1,13 @@
-body {
+.left {
+    width: 50%;
+    text-align: right;
+}
+.right {
+    width: 50%;
+    text-align: left;
 }
 
-form {
+.buttons {
+    width: 100%;
+    text-align: center;
 }
-
-
