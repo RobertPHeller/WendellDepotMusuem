@@ -10,4 +10,56 @@
 .buttons {
     width: 100%;
     text-align: center;
+    background: orange;
 }
+
+button {
+    background: inherit;
+    color: inherit;
+    width: inherit;
+}
+
+.header {
+    background: black;
+    color: white;
+}
+
+.train1 {
+    background: green;
+    color: white;
+}
+td {
+    background: inherit;
+    color: inherit;
+}
+input {
+    background: inherit;
+    color: inherit;
+}
+select {
+    background: inherit;
+    color: inherit;
+}
+
+.train2 {
+    background: yellow;
+}
+
+.train3 {
+    background: cyan;
+}
+
+.train4 {
+    background: blue;
+    color: white;
+}
+
+.route {
+    background: red;
+    color: white;
+}
+
+.buttons {
+}
+
+

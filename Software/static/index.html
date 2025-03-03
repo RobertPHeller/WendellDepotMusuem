@@ -9,46 +9,46 @@
     <p>Enter the DCC address of the engine and the route the train is set up for.</p>
     <form  action="/command" method="get">
     <table class="train-runner-form">
-        <thead><tr><th class="left">Train Address</th>
+        <thead><tr class="header"><th class="left">Train Address</th>
             <th class="right">Route</th></tr></thead>
         <tbody>
-        <tr><td class="left">1:&nbsp;<input type="number" min="1" max="10239" maxlength="5" id="train1" name="train1" /></td>
+        <tr class="train1"><td class="left">1:&nbsp;<input type="number" min="1" max="10239" maxlength="5" id="train1" name="train1" /></td>
             <td class="right"><select id="route1" name="route1">
-                    <option value="0">East Bound from track 3</option>
+                    <option value="0" selected="selected">East Bound from track 3</option>
                     <option value="1">East Bound from track 1</option>
                     <option value="2">West Bound from track 4</option>
                     <option value="3">West Bound from track 2</option>
                   </select>
               </td>
           </tr>
-          <tr><td class="left">2:&nbsp;<input type="number" min="1" max="10239" maxlength="5" id="train2" name="train2" /></td>
+          <tr class="train2"><td class="left">2:&nbsp;<input type="number" min="1" max="10239" maxlength="5" id="train2" name="train2" /></td>
               <td class="right"><select id="route2" name="route2">
                       <option value="0">East Bound from track 3</option>
                       <option value="1">East Bound from track 1</option>
-                      <option value="2">West Bound from track 4</option>
+                      <option value="2" selected="selected">West Bound from track 4</option>
                       <option value="3">West Bound from track 2</option>
                   </select>
               </td>
           </tr>
-          <tr><td class="left">3:&nbsp;<input type="number" min="1" max="10239" maxlength="5" id="train3" name="train3" /></td>
+          <tr class="train3"><td class="left">3:&nbsp;<input type="number" min="1" max="10239" maxlength="5" id="train3" name="train3" /></td>
               <td class="right"><select id="route3" name="route3">
                       <option value="0">East Bound from track 3</option>
-                      <option value="1">East Bound from track 1</option>
+                      <option value="1" selected="selected">East Bound from track 1</option>
                       <option value="2">West Bound from track 4</option>
                       <option value="3">West Bound from track 2</option>
                   </select>
                 </td>
            </tr>
-           <tr><td class="left">4:&nbsp;<input type="number" min="1" max="10239" maxlength="5" id="train4" name="train4" /></td>
+           <tr class="train4"><td class="left">4:&nbsp;<input type="number" min="1" max="10239" maxlength="5" id="train4" name="train4" /></td>
                <td class="right"><select id="route4" name="route4">
                        <option value="0">East Bound from track 3</option>
                        <option value="1">East Bound from track 1</option>
                        <option value="2">West Bound from track 4</option>
-                       <option value="3">West Bound from track 2</option>
+                       <option value="3" selected="selected">West Bound from track 2</option>
                    </select>
                 </td>
             </tr>
-            <tr><td class="left"><label for="loopcount">&nbsp;Loop Count:</label></td>
+            <tr class="route"><td class="left"><label for="loopcount">&nbsp;Loop Count:</label></td>
                 <td class="right"><select id="loopcount" name="loopcount">
                         <option value="0" selected="selected">Forever</option>
                         <option value="1">Once</option>
