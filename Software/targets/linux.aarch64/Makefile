@@ -9,7 +9,10 @@ sh -c "if [ \"X`printenv OPENMRNPATH`\" != \"X\" ]; then printenv OPENMRNPATH; \
 )
 
 APP_PATH ?= $(realpath ../..)
--include ../../config.mk
+-include $(APP_PATH)/config.mk
+-include local_config.mk
+INCLUDES += -I$(realpath ../../httpd)
+SUBDIRS = httpd
 include $(OPENMRNPATH)/etc/prog.mk
 $(EXECUTABLE)$(EXTENTION): WendellDepot.o
 

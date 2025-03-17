@@ -1,0 +1,3 @@
+[submodule "Software/httpd"]
+	path = Software/httpd
+	url = git@github.com:RobertPHeller/openmrn-httpd.git
