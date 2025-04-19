@@ -19,9 +19,11 @@
   <SIGNALTEMPLATE TEMPLATEKIND="Lamp" TEMPLATEHEADS="1" TEMPLATENAME="Dwarf Exit">
     <ASPECTMAP R281="green" R282="green" R284="green" RES_NORM="flashing red" R285="red" R283="green" R283A="green" R283B="green" RES_MED="flashing red" R286="red" R287="green" C423="green" C424="green" RES_SLO="flashing red" R288="red" R292="red" R291="red" />
   </SIGNALTEMPLATE>
-  <SIGNALTEMPLATE TEMPLATEKIND="Lamp" TEMPLATEHEADS="2" TEMPLATENAME="CP Entrence" />
   <SIGNALTEMPLATE TEMPLATEKIND="Lamp" TEMPLATEHEADS="1" TEMPLATENAME="Frog">
     <ASPECTMAP R281="green" R282="green" R284="green" RES_NORM="flashing red" R285="yellow" R283="green" R283A="green" R283B="green" RES_MED="flashing red" R286="yellow" R287="green" C423="green" C424="green" RES_SLO="flashing red" R288="yellow" R292="red" R291="red" />
+  </SIGNALTEMPLATE>
+  <SIGNALTEMPLATE TEMPLATEKIND="Lamp" TEMPLATEHEADS="2" TEMPLATENAME="CP Entrence">
+    <ASPECTMAP R281="green|red" R282="yellow|yellow" R284="yellow|yellow" RES_NORM="flashing red|red" R285="yellow|red" R283="red|green" R283A="red|green" R283B="red|green" RES_MED="red|flashing red" R286="red|yellow" R287="red|green" C423="red|green" C424="red|green" RES_SLO="red|flashing red" R288="red|yellow" R292="red|red" R291="red|red" />
   </SIGNALTEMPLATE>
   <TRAINSTORE>
     <TRAINEDIT>
@@ -111,7 +113,7 @@
         <BLOCK NAME="Stage Track 3" STATION="Staging" DISCIPLINE="CTC" VISIBLE="true" />
         <SECSIGNAL>
           WestExit3 (Dwarf)
-          <PANELSIGNAL SIGLOCATION="LEFTUP" SIGORIENT="RIGHT" SIGPANTYPE="LAMP1" />
+          <PANELSIGNAL SIGLOCATION="LEFTCENT" SIGORIENT="RIGHT" SIGPANTYPE="LAMP1" />
           <PHYSIGNAL>
             Dwarf Exit
             <ASPECTTBL>
@@ -181,6 +183,11 @@
       </TRACKGROUP>
       <SEC_EDGE EDGE="RIGHT">
         <BLOCK />
+        <SECSIGNAL>
+          WestEN
+          <PANELSIGNAL SIGLOCATION="LEFTUP" SIGORIENT="LEFT" SIGPANTYPE="LAMP2" />
+          <PHYSIGNAL>CP Entrence</PHYSIGNAL>
+        </SECSIGNAL>
       </SEC_EDGE>
       <SEC_EDGE EDGE="LEFT" />
     </SECTION>
