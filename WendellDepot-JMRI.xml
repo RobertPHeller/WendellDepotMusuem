@@ -1,122 +1,138 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet href="/xml/XSLT/panelfile-4-19-2.xsl" type="text/xsl"?>
-<layout-config xsi:noNamespaceSchemaLocation="http://jmri.org/xml/schema/layout-4-19-2.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<?xml-stylesheet href="/xml/XSLT/panelfile-5-5-5.xsl" type="text/xsl"?>
+<layout-config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://jmri.org/xml/schema/layout-5-5-5.xsd">
   <jmriversion>
-    <major>4</major>
-    <minor>22</minor>
-    <test>0</test>
-    <modifier/>
+    <major>5</major>
+    <minor>11</minor>
+    <test>2</test>
+    <modifier />
   </jmriversion>
   <sensors class="jmri.jmrix.openlcb.configurexml.OlcbSensorManagerXml">
-    <sensor>
-      <systemName>MS05.01.01.01.22.84.00.30;05.01.01.01.22.84.00.31</systemName>
-      <userName>Stage East 1-3_points</userName>
-    </sensor>
-    <sensor>
-      <systemName>MS05.01.01.01.22.84.00.32;05.01.01.01.22.84.00.33</systemName>
-      <userName>Stage East 2-4_points</userName>
-    </sensor>
-    <sensor>
-      <systemName>MS05.01.01.01.22.83.00.52;05.01.01.01.22.83.00.53</systemName>
-      <userName>Stage West 2-4_points</userName>
-    </sensor>
-    <sensor>
-      <systemName>MS05.01.01.01.22.83.00.50;05.01.01.01.22.83.00.51</systemName>
-      <userName>Stage West 1-3_points</userName>
-    </sensor>
-    <sensor>
-      <systemName>MS05.01.01.01.22.82.00.30;05.01.01.01.22.82.00.31</systemName>
-      <userName>East Double Track_points</userName>
-    </sensor>
-    <sensor>
-      <systemName>MS05.01.01.01.22.81.00.30;05.01.01.01.22.81.00.31</systemName>
-      <userName>West Double Track_points</userName>
-    </sensor>
-    <sensor>
-      <systemName>MS05.01.01.01.22.83.00.04;05.01.01.01.22.83.00.05</systemName>
-      <userName>West Stage Exit 3</userName>
-    </sensor>
-    <sensor>
-      <systemName>MS05.01.01.01.22.83.00.06;05.01.01.01.22.83.00.07</systemName>
-      <userName>West Stage Exit 1</userName>
-    </sensor>
-    <sensor>
-      <systemName>MS05.01.01.01.22.83.00.10;05.01.01.01.22.83.00.11</systemName>
-      <userName>West Stage Exit 2</userName>
-    </sensor>
-    <sensor>
-      <systemName>MS05.01.01.01.22.83.00.12;05.01.01.01.22.83.00.13</systemName>
-      <userName>West Stage Exit 4</userName>
-    </sensor>
-    <sensor>
-      <systemName>MS05.01.01.01.22.82.00.00;05.01.01.01.22.82.00.01</systemName>
-      <userName>East Double Track Entrance</userName>
-    </sensor>
-    <sensor>
-      <systemName>MS05.01.01.01.22.82.00.04;05.01.01.01.22.82.00.05</systemName>
-      <userName>East Double Track Frog Stop</userName>
-    </sensor>
-    <sensor>
-      <systemName>MS05.01.01.01.22.82.00.02;05.01.01.01.22.82.00.03</systemName>
-      <userName>East Double Track Straight Stop</userName>
-    </sensor>
-    <sensor>
-      <systemName>MS05.01.01.01.22.81.00.00;05.01.01.01.22.81.00.01</systemName>
-      <userName>West Double Track Entrance</userName>
-    </sensor>
-    <sensor>
-      <systemName>MS05.01.01.01.22.81.00.04;05.01.01.01.22.81.00.05</systemName>
-      <userName>West Double Track Frog Stop</userName>
-    </sensor>
-    <sensor>
-      <systemName>MS05.01.01.01.22.81.00.02;05.01.01.01.22.81.00.03</systemName>
-      <userName>West Double Track Straight Stop</userName>
-    </sensor>
-    <sensor>
-      <systemName>MS05.01.01.01.22.83.00.00;05.01.01.01.22.83.00.01</systemName>
-      <userName>Stage West 1-3 Entrance</userName>
-    </sensor>
-    <sensor>
-      <systemName>MS05.01.01.01.22.83.00.02;05.01.01.01.22.83.00.03</systemName>
-      <userName>Stage West 2-4 Entrance</userName>
-    </sensor>
-    <sensor>
-      <systemName>MS05.01.01.01.22.84.00.04;05.01.01.01.22.84.00.05</systemName>
-      <userName>Stage East 1-3 Entrance</userName>
-    </sensor>
-    <sensor>
-      <systemName>MS05.01.01.01.22.84.00.06;05.01.01.01.22.84.00.07</systemName>
-      <userName>Stage East 2-4 Entrance</userName>
-    </sensor>
-    <sensor>
+    <sensor inverted="false">
       <systemName>MS05.01.01.01.22.80.00.00;05.01.01.01.22.80.00.01</systemName>
       <userName>Wendell Depot Rd Grade Crossing</userName>
     </sensor>
-    <sensor>
+    <sensor inverted="false">
+      <systemName>MS05.01.01.01.22.81.00.00;05.01.01.01.22.81.00.01</systemName>
+      <userName>West Double Track Entrance</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>MS05.01.01.01.22.81.00.02;05.01.01.01.22.81.00.03</systemName>
+      <userName>West Double Track Straight Stop</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>MS05.01.01.01.22.81.00.04;05.01.01.01.22.81.00.05</systemName>
+      <userName>West Double Track Frog Stop</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>MS05.01.01.01.22.81.00.30;05.01.01.01.22.81.00.31</systemName>
+      <userName>West Double Track_points</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>MS05.01.01.01.22.82.00.00;05.01.01.01.22.82.00.01</systemName>
+      <userName>East Double Track Entrance</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>MS05.01.01.01.22.82.00.02;05.01.01.01.22.82.00.03</systemName>
+      <userName>East Double Track Straight Stop</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>MS05.01.01.01.22.82.00.04;05.01.01.01.22.82.00.05</systemName>
+      <userName>East Double Track Frog Stop</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>MS05.01.01.01.22.82.00.30;05.01.01.01.22.82.00.31</systemName>
+      <userName>East Double Track_points</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>MS05.01.01.01.22.83.00.00;05.01.01.01.22.83.00.01</systemName>
+      <userName>Stage West 1-3 Entrance</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>MS05.01.01.01.22.83.00.02;05.01.01.01.22.83.00.03</systemName>
+      <userName>Stage West 2-4 Entrance</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>MS05.01.01.01.22.83.00.04;05.01.01.01.22.83.00.05</systemName>
+      <userName>West Stage Exit 3</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>MS05.01.01.01.22.83.00.06;05.01.01.01.22.83.00.07</systemName>
+      <userName>West Stage Exit 1</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>MS05.01.01.01.22.83.00.10;05.01.01.01.22.83.00.11</systemName>
+      <userName>West Stage Exit 2</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>MS05.01.01.01.22.83.00.12;05.01.01.01.22.83.00.13</systemName>
+      <userName>West Stage Exit 4</userName>
+    </sensor>
+    <sensor inverted="false">
       <systemName>MS05.01.01.01.22.83.00.14;05.01.01.01.22.83.00.15</systemName>
       <userName>East Stage Exit 3</userName>
     </sensor>
-    <sensor>
+    <sensor inverted="false">
       <systemName>MS05.01.01.01.22.83.00.16;05.01.01.01.22.83.00.17</systemName>
       <userName>East Stage Exit 1</userName>
     </sensor>
-    <sensor>
+    <sensor inverted="false">
+      <systemName>MS05.01.01.01.22.83.00.50;05.01.01.01.22.83.00.51</systemName>
+      <userName>Stage West 1-3_points</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>MS05.01.01.01.22.83.00.52;05.01.01.01.22.83.00.53</systemName>
+      <userName>Stage West 2-4_points</userName>
+    </sensor>
+    <sensor inverted="false">
       <systemName>MS05.01.01.01.22.84.00.00;05.01.01.01.22.84.00.01</systemName>
       <userName>East Stage Exit 2</userName>
     </sensor>
-    <sensor>
+    <sensor inverted="false">
       <systemName>MS05.01.01.01.22.84.00.02;05.01.01.01.22.84.00.03</systemName>
       <userName>East Stage Exit 4</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>MS05.01.01.01.22.84.00.04;05.01.01.01.22.84.00.05</systemName>
+      <userName>Stage East 1-3 Entrance</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>MS05.01.01.01.22.84.00.06;05.01.01.01.22.84.00.07</systemName>
+      <userName>Stage East 2-4 Entrance</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>MS05.01.01.01.22.84.00.30;05.01.01.01.22.84.00.31</systemName>
+      <userName>Stage East 1-3_points</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>MS05.01.01.01.22.84.00.32;05.01.01.01.22.84.00.33</systemName>
+      <userName>Stage East 2-4_points</userName>
     </sensor>
   </sensors>
   <turnouts class="jmri.jmrix.openlcb.configurexml.OlcbTurnoutManagerXml">
     <operations automate="false">
-      <operation maxtries="2" interval="300" name="NoFeedback" class="jmri.configurexml.turnoutoperations.NoFeedbackTurnoutOperationXml"/>
-      <operation maxtries="1" interval="300" name="Raw" class="jmri.configurexml.turnoutoperations.RawTurnoutOperationXml"/>
-      <operation maxtries="3" interval="300" name="Sensor" class="jmri.configurexml.turnoutoperations.SensorTurnoutOperationXml"/>
+      <operation name="NoFeedback" class="jmri.configurexml.turnoutoperations.NoFeedbackTurnoutOperationXml" interval="300" maxtries="2" />
+      <operation name="Raw" class="jmri.configurexml.turnoutoperations.RawTurnoutOperationXml" interval="300" maxtries="1" />
+      <operation name="Sensor" class="jmri.configurexml.turnoutoperations.SensorTurnoutOperationXml" interval="300" maxtries="3" />
     </operations>
     <defaultclosedspeed>Normal</defaultclosedspeed>
     <defaultthrownspeed>Restricted</defaultthrownspeed>
+    <turnout feedback="ONESENSOR" sensor1="West Double Track_points" inverted="false" automate="Off">
+      <systemName>MT05.01.01.01.22.81.00.18;05.01.01.01.22.81.00.19</systemName>
+      <userName>West Double Track</userName>
+    </turnout>
+    <turnout feedback="ONESENSOR" sensor1="East Double Track_points" inverted="false" automate="Off">
+      <systemName>MT05.01.01.01.22.82.00.18;05.01.01.01.22.82.00.19</systemName>
+      <userName>East Double Track</userName>
+    </turnout>
+    <turnout feedback="ONESENSOR" sensor1="Stage West 1-3_points" inverted="false" automate="Off">
+      <systemName>MT05.01.01.01.22.83.00.30;05.01.01.01.22.83.00.31</systemName>
+      <userName>Stage West 1-3</userName>
+    </turnout>
+    <turnout feedback="ONESENSOR" sensor1="Stage West 2-4_points" inverted="false" automate="Off">
+      <systemName>MT05.01.01.01.22.83.00.32;05.01.01.01.22.83.00.33</systemName>
+      <userName>Stage West 2-4</userName>
+    </turnout>
     <turnout feedback="ONESENSOR" sensor1="Stage East 1-3_points" inverted="false" automate="Off">
       <systemName>MT05.01.01.01.22.84.00.18;05.01.01.01.22.84.00.19</systemName>
       <userName>Stage East 1-3</userName>
@@ -125,42 +141,567 @@
       <systemName>MT05.01.01.01.22.84.00.1A;05.01.01.01.22.84.00.1B</systemName>
       <userName>Stage East 2-4</userName>
     </turnout>
-    <turnout feedback="ONESENSOR" sensor1="Stage West 2-4_points" inverted="false" automate="Off">
-      <systemName>MT05.01.01.01.22.83.00.32;05.01.01.01.22.83.00.33</systemName>
-      <userName>Stage West 2-4</userName>
-    </turnout>
-    <turnout feedback="ONESENSOR" sensor1="Stage West 1-3_points" inverted="false" automate="Off">
-      <systemName>MT05.01.01.01.22.83.00.30;05.01.01.01.22.83.00.31</systemName>
-      <userName>Stage West 1-3</userName>
-    </turnout>
-    <turnout feedback="ONESENSOR" sensor1="East Double Track_points" inverted="false" automate="Off">
-      <systemName>MT05.01.01.01.22.82.00.18;05.01.01.01.22.82.00.19</systemName>
-      <userName>East Double Track</userName>
-    </turnout>
-    <turnout feedback="ONESENSOR" sensor1="West Double Track_points" inverted="false" automate="Off">
-      <systemName>MT05.01.01.01.22.81.00.18;05.01.01.01.22.81.00.19</systemName>
-      <userName>West Double Track</userName>
-    </turnout>
   </turnouts>
-  <lights class="jmri.jmrix.openlcb.configurexml.OlcbLightManagerXml"/>
-  <reporters class="jmri.jmrix.internal.configurexml.InternalReporterManagerXml"/>
-  <signalmasts class="jmri.managers.configurexml.DefaultSignalMastManagerXml"/>
-  <blocks class="jmri.configurexml.BlockManagerXml">
-    <defaultspeed>Normal</defaultspeed>
-  </blocks>
+  <signalmasts class="jmri.managers.configurexml.DefaultSignalMastManagerXml">
+    <olcbsignalmast class="jmri.jmrix.openlcb.configurexml.OlcbSignalMastXml">
+      <systemName>MF$olm:basic:one-low($0008)</systemName>
+      <userName>EastExit4 (Dwarf)</userName>
+      <lit>
+        <lit>00.00.00.00.00.00.00.00</lit>
+        <notlit>00.00.00.00.00.00.00.00</notlit>
+      </lit>
+      <held>
+        <held>00.00.00.00.00.00.00.00</held>
+        <notheld>00.00.00.00.00.00.00.00</notheld>
+      </held>
+      <aspect defines="Clear">
+        <event>05.01.01.01.22.83.00.F1</event>
+      </aspect>
+      <aspect defines="Approach">
+        <event>00.00.00.00.00.00.00.00</event>
+      </aspect>
+      <aspect defines="Stop">
+        <event>05.01.01.01.22.83.00.F0</event>
+      </aspect>
+      <aspect defines="Unlit">
+        <event>00.00.00.00.00.00.00.00</event>
+      </aspect>
+      <disabledAspects>
+        <disabledAspect>Approach</disabledAspect>
+        <disabledAspect>Unlit</disabledAspect>
+      </disabledAspects>
+    </olcbsignalmast>
+    <olcbsignalmast class="jmri.jmrix.openlcb.configurexml.OlcbSignalMastXml">
+      <systemName>MF$olm:basic:one-low($0009)</systemName>
+      <userName>EastExit2 (Dwarf)</userName>
+      <lit>
+        <lit>00.00.00.00.00.00.00.00</lit>
+        <notlit>00.00.00.00.00.00.00.00</notlit>
+      </lit>
+      <held>
+        <held>00.00.00.00.00.00.00.00</held>
+        <notheld>00.00.00.00.00.00.00.00</notheld>
+      </held>
+      <aspect defines="Clear">
+        <event>05.01.01.01.22.83.00.F5</event>
+      </aspect>
+      <aspect defines="Approach">
+        <event>00.00.00.00.00.00.00.00</event>
+      </aspect>
+      <aspect defines="Stop">
+        <event>05.01.01.01.22.83.00.F4</event>
+      </aspect>
+      <aspect defines="Unlit">
+        <event>00.00.00.00.00.00.00.00</event>
+      </aspect>
+      <disabledAspects>
+        <disabledAspect>Approach</disabledAspect>
+        <disabledAspect>Unlit</disabledAspect>
+      </disabledAspects>
+    </olcbsignalmast>
+    <olcbsignalmast class="jmri.jmrix.openlcb.configurexml.OlcbSignalMastXml">
+      <systemName>MF$olm:basic:one-low($0010)</systemName>
+      <userName>EastExit1 (Dwarf)</userName>
+      <lit>
+        <lit>00.00.00.00.00.00.00.00</lit>
+        <notlit>00.00.00.00.00.00.00.00</notlit>
+      </lit>
+      <held>
+        <held>00.00.00.00.00.00.00.00</held>
+        <notheld>00.00.00.00.00.00.00.00</notheld>
+      </held>
+      <aspect defines="Clear">
+        <event>05.01.01.01.22.83.00.F9</event>
+      </aspect>
+      <aspect defines="Approach">
+        <event>00.00.00.00.00.00.00.00</event>
+      </aspect>
+      <aspect defines="Stop">
+        <event>05.01.01.01.22.83.00.F8</event>
+      </aspect>
+      <aspect defines="Unlit">
+        <event>00.00.00.00.00.00.00.00</event>
+      </aspect>
+      <disabledAspects>
+        <disabledAspect>Approach</disabledAspect>
+        <disabledAspect>Unlit</disabledAspect>
+      </disabledAspects>
+    </olcbsignalmast>
+    <olcbsignalmast class="jmri.jmrix.openlcb.configurexml.OlcbSignalMastXml">
+      <systemName>MF$olm:basic:one-low($0011)</systemName>
+      <userName>EastExit3 (Dwarf)</userName>
+      <lit>
+        <lit>00.00.00.00.00.00.00.00</lit>
+        <notlit>00.00.00.00.00.00.00.00</notlit>
+      </lit>
+      <held>
+        <held>00.00.00.00.00.00.00.00</held>
+        <notheld>00.00.00.00.00.00.00.00</notheld>
+      </held>
+      <aspect defines="Clear">
+        <event>05.01.01.01.22.83.00.FD</event>
+      </aspect>
+      <aspect defines="Approach">
+        <event>00.00.00.00.00.00.00.00</event>
+      </aspect>
+      <aspect defines="Stop">
+        <event>05.01.01.01.22.83.00.FC</event>
+      </aspect>
+      <aspect defines="Unlit">
+        <event>00.00.00.00.00.00.00.00</event>
+      </aspect>
+      <disabledAspects>
+        <disabledAspect>Approach</disabledAspect>
+        <disabledAspect>Unlit</disabledAspect>
+      </disabledAspects>
+    </olcbsignalmast>
+    <olcbsignalmast class="jmri.jmrix.openlcb.configurexml.OlcbSignalMastXml">
+      <systemName>MF$olm:basic:one-low($0012)</systemName>
+      <userName>WestExit3 (Dwarf)</userName>
+      <lit>
+        <lit>00.00.00.00.00.00.00.00</lit>
+        <notlit>00.00.00.00.00.00.00.00</notlit>
+      </lit>
+      <held>
+        <held>00.00.00.00.00.00.00.00</held>
+        <notheld>00.00.00.00.00.00.00.00</notheld>
+      </held>
+      <aspect defines="Clear">
+        <event>05.01.01.01.22.83.00.81</event>
+      </aspect>
+      <aspect defines="Approach">
+        <event>00.00.00.00.00.00.00.00</event>
+      </aspect>
+      <aspect defines="Stop">
+        <event>05.01.01.01.22.83.00.80</event>
+      </aspect>
+      <aspect defines="Unlit">
+        <event>00.00.00.00.00.00.00.00</event>
+      </aspect>
+      <disabledAspects>
+        <disabledAspect>Approach</disabledAspect>
+        <disabledAspect>Unlit</disabledAspect>
+      </disabledAspects>
+    </olcbsignalmast>
+    <olcbsignalmast class="jmri.jmrix.openlcb.configurexml.OlcbSignalMastXml">
+      <systemName>MF$olm:basic:one-low($0013)</systemName>
+      <userName>WestExit1 (Dwarf)</userName>
+      <lit>
+        <lit>00.00.00.00.00.00.00.00</lit>
+        <notlit>00.00.00.00.00.00.00.00</notlit>
+      </lit>
+      <held>
+        <held>00.00.00.00.00.00.00.00</held>
+        <notheld>00.00.00.00.00.00.00.00</notheld>
+      </held>
+      <aspect defines="Clear">
+        <event>05.01.01.01.22.83.00.85</event>
+      </aspect>
+      <aspect defines="Approach">
+        <event>00.00.00.00.00.00.00.00</event>
+      </aspect>
+      <aspect defines="Stop">
+        <event>05.01.01.01.22.83.00.84</event>
+      </aspect>
+      <aspect defines="Unlit">
+        <event>00.00.00.00.00.00.00.00</event>
+      </aspect>
+      <disabledAspects>
+        <disabledAspect>Approach</disabledAspect>
+        <disabledAspect>Unlit</disabledAspect>
+      </disabledAspects>
+    </olcbsignalmast>
+    <olcbsignalmast class="jmri.jmrix.openlcb.configurexml.OlcbSignalMastXml">
+      <systemName>MF$olm:basic:one-low($0014)</systemName>
+      <userName>WestExit2 (Dwarf)</userName>
+      <lit>
+        <lit>00.00.00.00.00.00.00.00</lit>
+        <notlit>00.00.00.00.00.00.00.00</notlit>
+      </lit>
+      <held>
+        <held>00.00.00.00.00.00.00.00</held>
+        <notheld>00.00.00.00.00.00.00.00</notheld>
+      </held>
+      <aspect defines="Clear">
+        <event>05.01.01.01.22.83.00.89</event>
+      </aspect>
+      <aspect defines="Approach">
+        <event>00.00.00.00.00.00.00.00</event>
+      </aspect>
+      <aspect defines="Stop">
+        <event>05.01.01.01.22.83.00.88</event>
+      </aspect>
+      <aspect defines="Unlit">
+        <event>00.00.00.00.00.00.00.00</event>
+      </aspect>
+      <disabledAspects>
+        <disabledAspect>Approach</disabledAspect>
+        <disabledAspect>Unlit</disabledAspect>
+      </disabledAspects>
+    </olcbsignalmast>
+    <olcbsignalmast class="jmri.jmrix.openlcb.configurexml.OlcbSignalMastXml">
+      <systemName>MF$olm:basic:one-low($0015)</systemName>
+      <userName>WestExit4 (Dwarf)</userName>
+      <lit>
+        <lit>00.00.00.00.00.00.00.00</lit>
+        <notlit>00.00.00.00.00.00.00.00</notlit>
+      </lit>
+      <held>
+        <held>00.00.00.00.00.00.00.00</held>
+        <notheld>00.00.00.00.00.00.00.00</notheld>
+      </held>
+      <aspect defines="Clear">
+        <event>05.01.01.01.22.83.00.C1</event>
+      </aspect>
+      <aspect defines="Approach">
+        <event>00.00.00.00.00.00.00.00</event>
+      </aspect>
+      <aspect defines="Stop">
+        <event>05.01.01.01.22.83.00.C0</event>
+      </aspect>
+      <aspect defines="Unlit">
+        <event>00.00.00.00.00.00.00.00</event>
+      </aspect>
+      <disabledAspects>
+        <disabledAspect>Approach</disabledAspect>
+        <disabledAspect>Unlit</disabledAspect>
+      </disabledAspects>
+    </olcbsignalmast>
+    <olcbsignalmast class="jmri.jmrix.openlcb.configurexml.OlcbSignalMastXml">
+      <systemName>MF$olm:basic:one-searchlight($0002)</systemName>
+      <userName>WestF1</userName>
+      <lit>
+        <lit>00.00.00.00.00.00.00.00</lit>
+        <notlit>00.00.00.00.00.00.00.00</notlit>
+      </lit>
+      <held>
+        <held>00.00.00.00.00.00.00.00</held>
+        <notheld>00.00.00.00.00.00.00.00</notheld>
+      </held>
+      <aspect defines="Clear">
+        <event>05.01.01.01.22.81.00.62</event>
+      </aspect>
+      <aspect defines="Approach">
+        <event>05.01.01.01.22.81.00.61</event>
+      </aspect>
+      <aspect defines="Stop">
+        <event>05.01.01.01.22.81.00.60</event>
+      </aspect>
+      <aspect defines="Unlit">
+        <event>00.00.00.00.00.00.00.00</event>
+      </aspect>
+      <disabledAspects>
+        <disabledAspect>Unlit</disabledAspect>
+      </disabledAspects>
+    </olcbsignalmast>
+    <olcbsignalmast class="jmri.jmrix.openlcb.configurexml.OlcbSignalMastXml">
+      <systemName>MF$olm:basic:one-searchlight($0003)</systemName>
+      <userName>WestFM</userName>
+      <lit>
+        <lit>00.00.00.00.00.00.00.00</lit>
+        <notlit>00.00.00.00.00.00.00.00</notlit>
+      </lit>
+      <held>
+        <held>00.00.00.00.00.00.00.00</held>
+        <notheld>00.00.00.00.00.00.00.00</notheld>
+      </held>
+      <aspect defines="Clear">
+        <event>05.01.01.01.22.81.00.62</event>
+      </aspect>
+      <aspect defines="Approach">
+        <event>05.01.01.01.22.81.00.61</event>
+      </aspect>
+      <aspect defines="Stop">
+        <event>05.01.01.01.22.81.00.60</event>
+      </aspect>
+      <aspect defines="Unlit">
+        <event>00.00.00.00.00.00.00.00</event>
+      </aspect>
+      <disabledAspects>
+        <disabledAspect>Unlit</disabledAspect>
+      </disabledAspects>
+    </olcbsignalmast>
+    <olcbsignalmast class="jmri.jmrix.openlcb.configurexml.OlcbSignalMastXml">
+      <systemName>MF$olm:basic:one-searchlight($0017)</systemName>
+      <userName>EastF1</userName>
+      <lit>
+        <lit>00.00.00.00.00.00.00.00</lit>
+        <notlit>00.00.00.00.00.00.00.00</notlit>
+      </lit>
+      <held>
+        <held>00.00.00.00.00.00.00.00</held>
+        <notheld>00.00.00.00.00.00.00.00</notheld>
+      </held>
+      <aspect defines="Clear">
+        <event>05.01.01.01.22.82.00.52</event>
+      </aspect>
+      <aspect defines="Approach">
+        <event>05.01.01.01.22.82.00.51</event>
+      </aspect>
+      <aspect defines="Stop">
+        <event>05.01.01.01.22.82.00.50</event>
+      </aspect>
+      <aspect defines="Unlit">
+        <event>00.00.00.00.00.00.00.00</event>
+      </aspect>
+      <disabledAspects>
+        <disabledAspect>Unlit</disabledAspect>
+      </disabledAspects>
+    </olcbsignalmast>
+    <olcbsignalmast class="jmri.jmrix.openlcb.configurexml.OlcbSignalMastXml">
+      <systemName>MF$olm:basic:one-searchlight($0018)</systemName>
+      <userName>EastFM</userName>
+      <lit>
+        <lit>00.00.00.00.00.00.00.00</lit>
+        <notlit>00.00.00.00.00.00.00.00</notlit>
+      </lit>
+      <held>
+        <held>00.00.00.00.00.00.00.00</held>
+        <notheld>00.00.00.00.00.00.00.00</notheld>
+      </held>
+      <aspect defines="Clear">
+        <event>05.01.01.01.22.82.00.62</event>
+      </aspect>
+      <aspect defines="Approach">
+        <event>05.01.01.01.22.82.00.61</event>
+      </aspect>
+      <aspect defines="Stop">
+        <event>05.01.01.01.22.82.00.60</event>
+      </aspect>
+      <aspect defines="Unlit">
+        <event>00.00.00.00.00.00.00.00</event>
+      </aspect>
+    </olcbsignalmast>
+    <olcbsignalmast class="jmri.jmrix.openlcb.configurexml.OlcbSignalMastXml">
+      <systemName>MF$olm:basic:two-searchlight($0001)</systemName>
+      <userName>WestEN</userName>
+      <lit>
+        <lit>00.00.00.00.00.00.00.00</lit>
+        <notlit>00.00.00.00.00.00.00.00</notlit>
+      </lit>
+      <held>
+        <held>00.00.00.00.00.00.00.00</held>
+        <notheld>00.00.00.00.00.00.00.00</notheld>
+      </held>
+      <aspect defines="Clear">
+        <event>05.01.01.01.22.81.00.44</event>
+      </aspect>
+      <aspect defines="Approach">
+        <event>05.01.01.01.22.81.00.43</event>
+      </aspect>
+      <aspect defines="Stop">
+        <event>05.01.01.01.22.81.00.40</event>
+      </aspect>
+      <aspect defines="Diverging Clear">
+        <event>05.01.01.01.22.81.00.42</event>
+      </aspect>
+      <aspect defines="Diverging Approach">
+        <event>05.01.01.01.22.81.00.41</event>
+      </aspect>
+      <aspect defines="Unlit">
+        <event>00.00.00.00.00.00.00.00</event>
+      </aspect>
+      <disabledAspects>
+        <disabledAspect>Unlit</disabledAspect>
+      </disabledAspects>
+    </olcbsignalmast>
+    <olcbsignalmast class="jmri.jmrix.openlcb.configurexml.OlcbSignalMastXml">
+      <systemName>MF$olm:basic:two-searchlight($0004)</systemName>
+      <userName>WestYardEntry1-3</userName>
+      <lit>
+        <lit>00.00.00.00.00.00.00.00</lit>
+        <notlit>00.00.00.00.00.00.00.00</notlit>
+      </lit>
+      <held>
+        <held>00.00.00.00.00.00.00.00</held>
+        <notheld>00.00.00.00.00.00.00.00</notheld>
+      </held>
+      <aspect defines="Clear">
+        <event>05.01.01.01.22.83.00.64</event>
+      </aspect>
+      <aspect defines="Approach">
+        <event>05.01.01.01.22.83.00.63</event>
+      </aspect>
+      <aspect defines="Stop">
+        <event>05.01.01.01.22.83.00.60</event>
+      </aspect>
+      <aspect defines="Diverging Clear">
+        <event>05.01.01.01.22.83.00.62</event>
+      </aspect>
+      <aspect defines="Diverging Approach">
+        <event>05.01.01.01.22.83.00.61</event>
+      </aspect>
+      <aspect defines="Unlit">
+        <event>00.00.00.00.00.00.00.00</event>
+      </aspect>
+      <disabledAspects>
+        <disabledAspect>Unlit</disabledAspect>
+      </disabledAspects>
+    </olcbsignalmast>
+    <olcbsignalmast class="jmri.jmrix.openlcb.configurexml.OlcbSignalMastXml">
+      <systemName>MF$olm:basic:two-searchlight($0005)</systemName>
+      <userName>WestYardEntry2-4</userName>
+      <lit>
+        <lit>00.00.00.00.00.00.00.00</lit>
+        <notlit>00.00.00.00.00.00.00.00</notlit>
+      </lit>
+      <held>
+        <held>00.00.00.00.00.00.00.00</held>
+        <notheld>00.00.00.00.00.00.00.00</notheld>
+      </held>
+      <aspect defines="Clear">
+        <event>05.01.01.01.22.83.00.74</event>
+      </aspect>
+      <aspect defines="Approach">
+        <event>05.01.01.01.22.83.00.73</event>
+      </aspect>
+      <aspect defines="Stop">
+        <event>05.01.01.01.22.83.00.70</event>
+      </aspect>
+      <aspect defines="Diverging Clear">
+        <event>05.01.01.01.22.83.00.72</event>
+      </aspect>
+      <aspect defines="Diverging Approach">
+        <event>05.01.01.01.22.83.00.71</event>
+      </aspect>
+      <aspect defines="Unlit">
+        <event>00.00.00.00.00.00.00.00</event>
+      </aspect>
+      <disabledAspects>
+        <disabledAspect>Unlit</disabledAspect>
+      </disabledAspects>
+    </olcbsignalmast>
+    <olcbsignalmast class="jmri.jmrix.openlcb.configurexml.OlcbSignalMastXml">
+      <systemName>MF$olm:basic:two-searchlight($0006)</systemName>
+      <userName>EastYardEntry1-3</userName>
+      <lit>
+        <lit>00.00.00.00.00.00.00.00</lit>
+        <notlit>00.00.00.00.00.00.00.00</notlit>
+      </lit>
+      <held>
+        <held>00.00.00.00.00.00.00.00</held>
+        <notheld>00.00.00.00.00.00.00.00</notheld>
+      </held>
+      <aspect defines="Clear">
+        <event>05.01.01.01.22.83.00.D4</event>
+      </aspect>
+      <aspect defines="Approach">
+        <event>05.01.01.01.22.83.00.D3</event>
+      </aspect>
+      <aspect defines="Stop">
+        <event>05.01.01.01.22.83.00.D0</event>
+      </aspect>
+      <aspect defines="Diverging Clear">
+        <event>05.01.01.01.22.83.00.D2</event>
+      </aspect>
+      <aspect defines="Diverging Approach">
+        <event>05.01.01.01.22.83.00.D1</event>
+      </aspect>
+      <aspect defines="Unlit">
+        <event>00.00.00.00.00.00.00.00</event>
+      </aspect>
+      <disabledAspects>
+        <disabledAspect>Unlit</disabledAspect>
+      </disabledAspects>
+    </olcbsignalmast>
+    <olcbsignalmast class="jmri.jmrix.openlcb.configurexml.OlcbSignalMastXml">
+      <systemName>MF$olm:basic:two-searchlight($0007)</systemName>
+      <userName>EastYardEntry2-4</userName>
+      <lit>
+        <lit>00.00.00.00.00.00.00.00</lit>
+        <notlit>00.00.00.00.00.00.00.00</notlit>
+      </lit>
+      <held>
+        <held>00.00.00.00.00.00.00.00</held>
+        <notheld>00.00.00.00.00.00.00.00</notheld>
+      </held>
+      <aspect defines="Clear">
+        <event>05.01.01.01.22.83.00.E4</event>
+      </aspect>
+      <aspect defines="Approach">
+        <event>05.01.01.01.22.83.00.E3</event>
+      </aspect>
+      <aspect defines="Stop">
+        <event>05.01.01.01.22.83.00.E0</event>
+      </aspect>
+      <aspect defines="Diverging Clear">
+        <event>05.01.01.01.22.83.00.E2</event>
+      </aspect>
+      <aspect defines="Diverging Approach">
+        <event>05.01.01.01.22.83.00.E1</event>
+      </aspect>
+      <aspect defines="Unlit">
+        <event>00.00.00.00.00.00.00.00</event>
+      </aspect>
+      <disabledAspects>
+        <disabledAspect>Unlit</disabledAspect>
+      </disabledAspects>
+    </olcbsignalmast>
+    <olcbsignalmast class="jmri.jmrix.openlcb.configurexml.OlcbSignalMastXml">
+      <systemName>MF$olm:basic:two-searchlight($0016)</systemName>
+      <userName>EastEN</userName>
+      <lit>
+        <lit>00.00.00.00.00.00.00.00</lit>
+        <notlit>00.00.00.00.00.00.00.00</notlit>
+      </lit>
+      <held>
+        <held>00.00.00.00.00.00.00.00</held>
+        <notheld>00.00.00.00.00.00.00.00</notheld>
+      </held>
+      <aspect defines="Clear">
+        <event>05.01.01.01.22.82.00.44</event>
+      </aspect>
+      <aspect defines="Approach">
+        <event>05.01.01.01.22.82.00.43</event>
+      </aspect>
+      <aspect defines="Stop">
+        <event>05.01.01.01.22.82.00.40</event>
+      </aspect>
+      <aspect defines="Diverging Clear">
+        <event>05.01.01.01.22.82.00.42</event>
+      </aspect>
+      <aspect defines="Diverging Approach">
+        <event>05.01.01.01.22.82.00.41</event>
+      </aspect>
+      <aspect defines="Unlit">
+        <event>00.00.00.00.00.00.00.00</event>
+      </aspect>
+      <disabledAspects>
+        <disabledAspect>Unlit</disabledAspect>
+      </disabledAspects>
+    </olcbsignalmast>
+  </signalmasts>
   <signalmastlogics class="jmri.managers.configurexml.DefaultSignalMastLogicManagerXml">
     <logicDelay>500</logicDelay>
   </signalmastlogics>
   <filehistory>
     <operation>
       <type>app</type>
-      <date>Fri Apr 18 16:47:02 EDT 2025</date>
-      <filename>LayoutDB2JMRITable program</filename>
+      <date>Sat Apr 19 12:04:06 EDT 2025</date>
+      <filename>PanelPro (v5.11.2)</filename>
+    </operation>
+    <operation>
+      <type>Load OK</type>
+      <date>Sat Apr 19 12:04:35 EDT 2025</date>
+      <filename>/home/heller/WendellDepotMusuem/WendellDepot-JMRI.xml</filename>
+      <filehistory>
+        <operation>
+          <type>app</type>
+          <date>Fri Apr 18 16:47:02 EDT 2025</date>
+          <filename>LayoutDB2JMRITable program</filename>
+        </operation>
+        <operation>
+          <type>Store</type>
+          <date>Fri Apr 18 16:47:02 EDT 2025</date>
+          <filename>WendellDepot-JMRI.xml</filename>
+        </operation>
+      </filehistory>
     </operation>
     <operation>
       <type>Store</type>
-      <date>Fri Apr 18 16:47:02 EDT 2025</date>
-      <filename>WendellDepot-JMRI.xml</filename>
+      <date>Sat Apr 19 12:31:57 EDT 2025</date>
+      <filename>/home/heller/WendellDepotMusuem/WendellDepot-JMRI.xml</filename>
     </operation>
   </filehistory>
+  <!--Written by JMRI version 5.11.2+R741bb1427e on Sat Apr 19 12:31:57 EDT 2025-->
 </layout-config>
