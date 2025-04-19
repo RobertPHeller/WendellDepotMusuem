@@ -506,18 +506,18 @@
         <SWITCHPOINTS>
           <ROUTEINFO ROUTEID="RIGHT" NORMAL="true">
             <ROUTEREQUEST>
-              <IOSPEC DECADDR="" JMRIDEVICE="Turnout" USER_NAME="Stage East 2-4">close</IOSPEC>
+              <IOSPEC JMRIDEVICE="Turnout" USER_NAME="Stage East 2-4">close</IOSPEC>
             </ROUTEREQUEST>
             <SELECTEDREPORT>
-              <IOSPEC DECADDR="" JMRIDEVICE="Sensor" USER_NAME="Stage East 2-4_points">close</IOSPEC>
+              <IOSPEC JMRIDEVICE="Sensor" USER_NAME="Stage East 2-4_points">close</IOSPEC>
             </SELECTEDREPORT>
           </ROUTEINFO>
           <ROUTEINFO ROUTEID="BOTTOM">
             <ROUTEREQUEST>
-              <IOSPEC DECADDR="" JMRIDEVICE="Sensor" USER_NAME="Stage East 2-4">throw</IOSPEC>
+              <IOSPEC JMRIDEVICE="Turnout" USER_NAME="Stage East 2-4">throw</IOSPEC>
             </ROUTEREQUEST>
             <SELECTEDREPORT>
-              <IOSPEC DECADDR="" JMRIDEVICE="Sensor" USER_NAME="Stage East 2-4_points">throw</IOSPEC>
+              <IOSPEC JMRIDEVICE="Sensor" USER_NAME="Stage East 2-4_points">throw</IOSPEC>
             </SELECTEDREPORT>
           </ROUTEINFO>
         </SWITCHPOINTS>
