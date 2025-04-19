@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="/xml/XSLT/panelfile-4-19-2.xsl" type="text/xsl"?>
+<layout-config xsi:noNamespaceSchemaLocation="http://jmri.org/xml/schema/layout-4-19-2.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <jmriversion>
+    <major>4</major>
+    <minor>22</minor>
+    <test>0</test>
+    <modifier/>
+  </jmriversion>
+  <sensors class="jmri.jmrix.openlcb.configurexml.OlcbSensorManagerXml">
+    <sensor>
+      <systemName>MS05.01.01.01.22.84.00.30;05.01.01.01.22.84.00.31</systemName>
+      <userName>Stage East 1-3_points</userName>
+    </sensor>
+    <sensor>
+      <systemName>MS05.01.01.01.22.84.00.32;05.01.01.01.22.84.00.33</systemName>
+      <userName>Stage East 2-4_points</userName>
+    </sensor>
+    <sensor>
+      <systemName>MS05.01.01.01.22.83.00.52;05.01.01.01.22.83.00.53</systemName>
+      <userName>Stage West 2-4_points</userName>
+    </sensor>
+    <sensor>
+      <systemName>MS05.01.01.01.22.83.00.50;05.01.01.01.22.83.00.51</systemName>
+      <userName>Stage West 1-3_points</userName>
+    </sensor>
+    <sensor>
+      <systemName>MS05.01.01.01.22.82.00.30;05.01.01.01.22.82.00.31</systemName>
+      <userName>East Double Track_points</userName>
+    </sensor>
+    <sensor>
+      <systemName>MS05.01.01.01.22.81.00.30;05.01.01.01.22.81.00.31</systemName>
+      <userName>West Double Track_points</userName>
+    </sensor>
+    <sensor>
+      <systemName>MS05.01.01.01.22.83.00.04;05.01.01.01.22.83.00.05</systemName>
+      <userName>West Stage Exit 3</userName>
+    </sensor>
+    <sensor>
+      <systemName>MS05.01.01.01.22.83.00.06;05.01.01.01.22.83.00.07</systemName>
+      <userName>West Stage Exit 1</userName>
+    </sensor>
+    <sensor>
+      <systemName>MS05.01.01.01.22.83.00.10;05.01.01.01.22.83.00.11</systemName>
+      <userName>West Stage Exit 2</userName>
+    </sensor>
+    <sensor>
+      <systemName>MS05.01.01.01.22.83.00.12;05.01.01.01.22.83.00.13</systemName>
+      <userName>West Stage Exit 4</userName>
+    </sensor>
+    <sensor>
+      <systemName>MS05.01.01.01.22.82.00.00;05.01.01.01.22.82.00.01</systemName>
+      <userName>East Double Track Entrance</userName>
+    </sensor>
+    <sensor>
+      <systemName>MS05.01.01.01.22.82.00.04;05.01.01.01.22.82.00.05</systemName>
+      <userName>East Double Track Frog Stop</userName>
+    </sensor>
+    <sensor>
+      <systemName>MS05.01.01.01.22.82.00.02;05.01.01.01.22.82.00.03</systemName>
+      <userName>East Double Track Straight Stop</userName>
+    </sensor>
+    <sensor>
+      <systemName>MS05.01.01.01.22.81.00.00;05.01.01.01.22.81.00.01</systemName>
+      <userName>West Double Track Entrance</userName>
+    </sensor>
+    <sensor>
+      <systemName>MS05.01.01.01.22.81.00.04;05.01.01.01.22.81.00.05</systemName>
+      <userName>West Double Track Frog Stop</userName>
+    </sensor>
+    <sensor>
+      <systemName>MS05.01.01.01.22.81.00.02;05.01.01.01.22.81.00.03</systemName>
+      <userName>West Double Track Straight Stop</userName>
+    </sensor>
+    <sensor>
+      <systemName>MS05.01.01.01.22.83.00.00;05.01.01.01.22.83.00.01</systemName>
+      <userName>Stage West 1-3 Entrance</userName>
+    </sensor>
+    <sensor>
+      <systemName>MS05.01.01.01.22.83.00.02;05.01.01.01.22.83.00.03</systemName>
+      <userName>Stage West 2-4 Entrance</userName>
+    </sensor>
+    <sensor>
+      <systemName>MS05.01.01.01.22.84.00.04;05.01.01.01.22.84.00.05</systemName>
+      <userName>Stage East 1-3 Entrance</userName>
+    </sensor>
+    <sensor>
+      <systemName>MS05.01.01.01.22.84.00.06;05.01.01.01.22.84.00.07</systemName>
+      <userName>Stage East 2-4 Entrance</userName>
+    </sensor>
+    <sensor>
+      <systemName>MS05.01.01.01.22.80.00.00;05.01.01.01.22.80.00.01</systemName>
+      <userName>Wendell Depot Rd Grade Crossing</userName>
+    </sensor>
+    <sensor>
+      <systemName>MS05.01.01.01.22.83.00.14;05.01.01.01.22.83.00.15</systemName>
+      <userName>East Stage Exit 3</userName>
+    </sensor>
+    <sensor>
+      <systemName>MS05.01.01.01.22.83.00.16;05.01.01.01.22.83.00.17</systemName>
+      <userName>East Stage Exit 1</userName>
+    </sensor>
+    <sensor>
+      <systemName>MS05.01.01.01.22.84.00.00;05.01.01.01.22.84.00.01</systemName>
+      <userName>East Stage Exit 2</userName>
+    </sensor>
+    <sensor>
+      <systemName>MS05.01.01.01.22.84.00.02;05.01.01.01.22.84.00.03</systemName>
+      <userName>East Stage Exit 4</userName>
+    </sensor>
+  </sensors>
+  <turnouts class="jmri.jmrix.openlcb.configurexml.OlcbTurnoutManagerXml">
+    <operations automate="false">
+      <operation maxtries="2" interval="300" name="NoFeedback" class="jmri.configurexml.turnoutoperations.NoFeedbackTurnoutOperationXml"/>
+      <operation maxtries="1" interval="300" name="Raw" class="jmri.configurexml.turnoutoperations.RawTurnoutOperationXml"/>
+      <operation maxtries="3" interval="300" name="Sensor" class="jmri.configurexml.turnoutoperations.SensorTurnoutOperationXml"/>
+    </operations>
+    <defaultclosedspeed>Normal</defaultclosedspeed>
+    <defaultthrownspeed>Restricted</defaultthrownspeed>
+    <turnout feedback="ONESENSOR" sensor1="Stage East 1-3_points" inverted="false" automate="Off">
+      <systemName>MT05.01.01.01.22.84.00.18;05.01.01.01.22.84.00.19</systemName>
+      <userName>Stage East 1-3</userName>
+    </turnout>
+    <turnout feedback="ONESENSOR" sensor1="Stage East 2-4_points" inverted="false" automate="Off">
+      <systemName>MT05.01.01.01.22.84.00.1A;05.01.01.01.22.84.00.1B</systemName>
+      <userName>Stage East 2-4</userName>
+    </turnout>
+    <turnout feedback="ONESENSOR" sensor1="Stage West 2-4_points" inverted="false" automate="Off">
+      <systemName>MT05.01.01.01.22.83.00.32;05.01.01.01.22.83.00.33</systemName>
+      <userName>Stage West 2-4</userName>
+    </turnout>
+    <turnout feedback="ONESENSOR" sensor1="Stage West 1-3_points" inverted="false" automate="Off">
+      <systemName>MT05.01.01.01.22.83.00.30;05.01.01.01.22.83.00.31</systemName>
+      <userName>Stage West 1-3</userName>
+    </turnout>
+    <turnout feedback="ONESENSOR" sensor1="East Double Track_points" inverted="false" automate="Off">
+      <systemName>MT05.01.01.01.22.82.00.18;05.01.01.01.22.82.00.19</systemName>
+      <userName>East Double Track</userName>
+    </turnout>
+    <turnout feedback="ONESENSOR" sensor1="West Double Track_points" inverted="false" automate="Off">
+      <systemName>MT05.01.01.01.22.81.00.18;05.01.01.01.22.81.00.19</systemName>
+      <userName>West Double Track</userName>
+    </turnout>
+  </turnouts>
+  <lights class="jmri.jmrix.openlcb.configurexml.OlcbLightManagerXml"/>
+  <reporters class="jmri.jmrix.internal.configurexml.InternalReporterManagerXml"/>
+  <signalmasts class="jmri.managers.configurexml.DefaultSignalMastManagerXml"/>
+  <blocks class="jmri.configurexml.BlockManagerXml">
+    <defaultspeed>Normal</defaultspeed>
+  </blocks>
+  <signalmastlogics class="jmri.managers.configurexml.DefaultSignalMastLogicManagerXml">
+    <logicDelay>500</logicDelay>
+  </signalmastlogics>
+  <filehistory>
+    <operation>
+      <type>app</type>
+      <date>Fri Apr 18 16:47:02 EDT 2025</date>
+      <filename>LayoutDB2JMRITable program</filename>
+    </operation>
+    <operation>
+      <type>Store</type>
+      <date>Fri Apr 18 16:47:02 EDT 2025</date>
+      <filename>WendellDepot-JMRI.xml</filename>
+    </operation>
+  </filehistory>
+</layout-config>
