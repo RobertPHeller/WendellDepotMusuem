@@ -16,6 +16,13 @@
   <COUNTER NAME="CODEDELAY" VALUE="0" />
   <COUNTER NAME="LNGOVERNOR" VALUE="1" />
   <COUNTER NAME="DEBOUNCE" VALUE="0" />
+  <SIGNALTEMPLATE TEMPLATEKIND="Lamp" TEMPLATEHEADS="1" TEMPLATENAME="Dwarf Exit">
+    <ASPECTMAP R281="green" R282="green" R284="green" RES_NORM="flashing red" R285="red" R283="green" R283A="green" R283B="green" RES_MED="flashing red" R286="red" R287="green" C423="green" C424="green" RES_SLO="flashing red" R288="red" R292="red" R291="red" />
+  </SIGNALTEMPLATE>
+  <SIGNALTEMPLATE TEMPLATEKIND="Lamp" TEMPLATEHEADS="2" TEMPLATENAME="CP Entrence" />
+  <SIGNALTEMPLATE TEMPLATEKIND="Lamp" TEMPLATEHEADS="1" TEMPLATENAME="Frog">
+    <ASPECTMAP R281="green" R282="green" R284="green" RES_NORM="flashing red" R285="yellow" R283="green" R283A="green" R283B="green" RES_MED="flashing red" R286="yellow" R287="green" C423="green" C424="green" RES_SLO="flashing red" R288="yellow" R292="red" R291="red" />
+  </SIGNALTEMPLATE>
   <TRAINSTORE>
     <TRAINEDIT>
       <EDITRECORD FIELD_KEY="TRAIN_NAME" FIELD_VISIBLE="true" FIELDLABEL="TRAIN_NAME" FIELD_EDIT="true" FIELD_MANDATORY="true" FIELD_WIDTH="125" ALIGNMENT="CENTER" FIELD_DEFAULT="" FIELD_CLASS="String" />
@@ -93,7 +100,7 @@
       </TRACKGROUP>
       <SEC_EDGE EDGE="RIGHT" />
       <SEC_EDGE EDGE="LEFT">
-        <BLOCK NAME="Stage Track 3" STATION="Staging" DISCIPLINE="CTC" VISIBLE="true" />
+        <SHARED X="13" Y="2">RIGHT</SHARED>
       </SEC_EDGE>
     </SECTION>
     <SECTION X="2" Y="1">
@@ -101,7 +108,17 @@
         <TRACK SPEED="Slow">LOWERBACKSLASH</TRACK>
       </TRACKGROUP>
       <SEC_EDGE EDGE="BOTTOM">
-        <BLOCK />
+        <BLOCK NAME="Stage Track 3" STATION="Staging" DISCIPLINE="CTC" VISIBLE="true" />
+        <SECSIGNAL>
+          WestExit3 (Dwarf)
+          <PANELSIGNAL SIGLOCATION="LEFTUP" SIGORIENT="RIGHT" SIGPANTYPE="LAMP1" />
+          <PHYSIGNAL>
+            Dwarf Exit
+            <ASPECTTBL>
+              <HEADSTATES />
+            </ASPECTTBL>
+          </PHYSIGNAL>
+        </SECSIGNAL>
       </SEC_EDGE>
       <SEC_EDGE EDGE="LEFT" />
     </SECTION>
@@ -111,9 +128,19 @@
       </TRACKGROUP>
       <SEC_EDGE EDGE="RIGHT">
         <BLOCK NAME="Stage Track 1" STATION="Staging" DISCIPLINE="CTC" VISIBLE="true" />
+        <SECSIGNAL>
+          WestExit1 (Dwarf)
+          <PANELSIGNAL SIGLOCATION="RIGHTUP" SIGORIENT="RIGHT" SIGPANTYPE="LAMP1" />
+          <PHYSIGNAL>
+            Dwarf Exit
+            <ASPECTTBL>
+              <HEADSTATES />
+            </ASPECTTBL>
+          </PHYSIGNAL>
+        </SECSIGNAL>
       </SEC_EDGE>
       <SEC_EDGE EDGE="LEFT">
-        <BLOCK />
+        <SHARED X="13" Y="3">RIGHT</SHARED>
       </SEC_EDGE>
     </SECTION>
     <SECTION X="2" Y="2">
@@ -181,14 +208,16 @@
       </TRACKGROUP>
       <SEC_EDGE EDGE="RIGHT" />
       <SEC_EDGE EDGE="BOTTOM">
-        <BLOCK NAME="Stage Track 3" STATION="Staging" DISCIPLINE="CTC" VISIBLE="true" />
+        <BLOCK />
       </SEC_EDGE>
     </SECTION>
     <SECTION X="13" Y="2">
       <TRACKGROUP>
         <TRACK SPEED="Slow">HORIZONTAL</TRACK>
       </TRACKGROUP>
-      <SEC_EDGE EDGE="RIGHT" />
+      <SEC_EDGE EDGE="RIGHT">
+        <SHARED X="1" Y="1">LEFT</SHARED>
+      </SEC_EDGE>
       <SEC_EDGE EDGE="LEFT" />
     </SECTION>
     <SECTION X="1" Y="3">
@@ -196,10 +225,10 @@
         <TRACK SPEED="Slow">HORIZONTAL</TRACK>
       </TRACKGROUP>
       <SEC_EDGE EDGE="RIGHT">
-        <BLOCK NAME="Stage Track 2" STATION="Staging" DISCIPLINE="Unknown" VISIBLE="true" />
+        <BLOCK NAME="Stage Track 2" STATION="Staging" DISCIPLINE="CTC" VISIBLE="true" />
       </SEC_EDGE>
       <SEC_EDGE EDGE="LEFT">
-        <BLOCK />
+        <SHARED X="13" Y="4">RIGHT</SHARED>
       </SEC_EDGE>
     </SECTION>
     <SECTION X="2" Y="3">
@@ -263,18 +292,18 @@
         <SWITCHPOINTS>
           <ROUTEINFO ROUTEID="LEFT" NORMAL="true">
             <ROUTEREQUEST>
-              <IOSPEC JMRIDEVICE="Turnout" USER_NAME="West Double Track">close</IOSPEC>
+              <IOSPEC DECADDR="" JMRIDEVICE="Turnout" USER_NAME="West Double Track">close</IOSPEC>
             </ROUTEREQUEST>
             <SELECTEDREPORT>
-              <IOSPEC JMRIDEVICE="Sensor" USER_NAME="West Double Track_points">close</IOSPEC>
+              <IOSPEC DECADDR="" JMRIDEVICE="Sensor" USER_NAME="West Double Track_points">close</IOSPEC>
             </SELECTEDREPORT>
           </ROUTEINFO>
           <ROUTEINFO ROUTEID="TOP">
             <ROUTEREQUEST>
-              <IOSPEC JMRIDEVICE="Turnout" USER_NAME="West Double Track">throw</IOSPEC>
+              <IOSPEC DECADDR="" JMRIDEVICE="Turnout" USER_NAME="West Double Track">throw</IOSPEC>
             </ROUTEREQUEST>
             <SELECTEDREPORT>
-              <IOSPEC JMRIDEVICE="Sensor" USER_NAME="West Double Track_points">throw</IOSPEC>
+              <IOSPEC DECADDR="" JMRIDEVICE="Sensor" USER_NAME="West Double Track_points">throw</IOSPEC>
             </SELECTEDREPORT>
           </ROUTEINFO>
         </SWITCHPOINTS>
@@ -300,7 +329,7 @@
         <TRACK>HORIZONTAL</TRACK>
       </TRACKGROUP>
       <SEC_EDGE EDGE="RIGHT">
-        <BLOCK NAME="Main" STATION="Wendell Depot" DISCIPLINE="Unknown" VISIBLE="true" />
+        <BLOCK NAME="Main" STATION="Wendell Depot" DISCIPLINE="CTC" VISIBLE="true" />
       </SEC_EDGE>
       <SEC_EDGE EDGE="LEFT">
         <BLOCK />
@@ -330,18 +359,18 @@
         <SWITCHPOINTS>
           <ROUTEINFO ROUTEID="RIGHT" NORMAL="true">
             <ROUTEREQUEST>
-              <IOSPEC JMRIDEVICE="Turnout" USER_NAME="East Double Track">close</IOSPEC>
+              <IOSPEC DECADDR="" JMRIDEVICE="Turnout" USER_NAME="East Double Track">close</IOSPEC>
             </ROUTEREQUEST>
             <SELECTEDREPORT>
-              <IOSPEC JMRIDEVICE="Sensor" USER_NAME="East Double Track_points">close</IOSPEC>
+              <IOSPEC DECADDR="" JMRIDEVICE="Sensor" USER_NAME="East Double Track_points">close</IOSPEC>
             </SELECTEDREPORT>
           </ROUTEINFO>
           <ROUTEINFO ROUTEID="BOTTOM">
             <ROUTEREQUEST>
-              <IOSPEC JMRIDEVICE="Turnout" USER_NAME="East Double Track">throw</IOSPEC>
+              <IOSPEC DECADDR="" JMRIDEVICE="Turnout" USER_NAME="East Double Track">throw</IOSPEC>
             </ROUTEREQUEST>
             <SELECTEDREPORT>
-              <IOSPEC JMRIDEVICE="Sensor" USER_NAME="East Double Track_points">throw</IOSPEC>
+              <IOSPEC DECADDR="" JMRIDEVICE="Sensor" USER_NAME="East Double Track_points">throw</IOSPEC>
             </SELECTEDREPORT>
           </ROUTEINFO>
         </SWITCHPOINTS>
@@ -364,7 +393,7 @@
       </TRACKGROUP>
       <SEC_EDGE EDGE="RIGHT" />
       <SEC_EDGE EDGE="LEFT">
-        <BLOCK NAME="OS East Stage 1-3" STATION="STaging" DISCIPLINE="CTC" VISIBLE="true" />
+        <BLOCK NAME="OS East Stage 1-3" STATION="Staging" DISCIPLINE="CTC" VISIBLE="true" />
       </SEC_EDGE>
     </SECTION>
     <SECTION X="12" Y="3">
@@ -379,18 +408,18 @@
         <SWITCHPOINTS>
           <ROUTEINFO ROUTEID="RIGHT" NORMAL="true">
             <ROUTEREQUEST>
-              <IOSPEC JMRIDEVICE="Turnout" USER_NAME="Stage East 1-3">close</IOSPEC>
+              <IOSPEC DECADDR="" JMRIDEVICE="Turnout" USER_NAME="Stage East 1-3">close</IOSPEC>
             </ROUTEREQUEST>
             <SELECTEDREPORT>
-              <IOSPEC JMRIDEVICE="Sensor" USER_NAME="Stage East 1-3_points">close</IOSPEC>
+              <IOSPEC DECADDR="" JMRIDEVICE="Sensor" USER_NAME="Stage East 1-3_points">close</IOSPEC>
             </SELECTEDREPORT>
           </ROUTEINFO>
           <ROUTEINFO ROUTEID="TOP">
             <ROUTEREQUEST>
-              <IOSPEC JMRIDEVICE="Turnout" USER_NAME="Stage East 1-3">throw</IOSPEC>
+              <IOSPEC DECADDR="" JMRIDEVICE="Turnout" USER_NAME="Stage East 1-3">throw</IOSPEC>
             </ROUTEREQUEST>
             <SELECTEDREPORT>
-              <IOSPEC JMRIDEVICE="Sensor" USER_NAME="Stage East 1-3_points">throw</IOSPEC>
+              <IOSPEC DECADDR="" JMRIDEVICE="Sensor" USER_NAME="Stage East 1-3_points">throw</IOSPEC>
             </SELECTEDREPORT>
           </ROUTEINFO>
         </SWITCHPOINTS>
@@ -403,9 +432,11 @@
       <TRACKGROUP>
         <TRACK SPEED="Slow">HORIZONTAL</TRACK>
       </TRACKGROUP>
-      <SEC_EDGE EDGE="RIGHT" />
+      <SEC_EDGE EDGE="RIGHT">
+        <SHARED X="1" Y="2">LEFT</SHARED>
+      </SEC_EDGE>
       <SEC_EDGE EDGE="LEFT">
-        <BLOCK NAME="Stage Track 1" STATION="Staging" DISCIPLINE="CTC" VISIBLE="true" />
+        <BLOCK />
       </SEC_EDGE>
     </SECTION>
     <SECTION X="1" Y="4">
@@ -414,7 +445,7 @@
       </TRACKGROUP>
       <SEC_EDGE EDGE="RIGHT" />
       <SEC_EDGE EDGE="LEFT">
-        <BLOCK NAME="Stage Track 4" STATION="Staging" DISCIPLINE="Unknown" VISIBLE="true" />
+        <SHARED X="13" Y="5">RIGHT</SHARED>
       </SEC_EDGE>
     </SECTION>
     <SECTION X="2" Y="4">
@@ -423,7 +454,7 @@
       </TRACKGROUP>
       <SEC_EDGE EDGE="LEFT" />
       <SEC_EDGE EDGE="TOP">
-        <BLOCK />
+        <BLOCK NAME="Stage Track 4" STATION="Staging" DISCIPLINE="CTC" VISIBLE="true" />
       </SEC_EDGE>
     </SECTION>
     <SECTION X="9" Y="4">
@@ -468,18 +499,18 @@
         <SWITCHPOINTS>
           <ROUTEINFO ROUTEID="RIGHT" NORMAL="true">
             <ROUTEREQUEST>
-              <IOSPEC JMRIDEVICE="Turnout" USER_NAME="Stage East 2-4">close</IOSPEC>
+              <IOSPEC DECADDR="" JMRIDEVICE="Turnout" USER_NAME="Stage East 2-4">close</IOSPEC>
             </ROUTEREQUEST>
             <SELECTEDREPORT>
-              <IOSPEC JMRIDEVICE="Sensor" USER_NAME="Stage East 2-4_points">close</IOSPEC>
+              <IOSPEC DECADDR="" JMRIDEVICE="Sensor" USER_NAME="Stage East 2-4_points">close</IOSPEC>
             </SELECTEDREPORT>
           </ROUTEINFO>
           <ROUTEINFO ROUTEID="BOTTOM">
             <ROUTEREQUEST>
-              <IOSPEC JMRIDEVICE="Sensor" USER_NAME="Stage East 2-4">throw</IOSPEC>
+              <IOSPEC DECADDR="" JMRIDEVICE="Sensor" USER_NAME="Stage East 2-4">throw</IOSPEC>
             </ROUTEREQUEST>
             <SELECTEDREPORT>
-              <IOSPEC JMRIDEVICE="Sensor" USER_NAME="Stage East 2-4_points">throw</IOSPEC>
+              <IOSPEC DECADDR="" JMRIDEVICE="Sensor" USER_NAME="Stage East 2-4_points">throw</IOSPEC>
             </SELECTEDREPORT>
           </ROUTEINFO>
         </SWITCHPOINTS>
@@ -489,9 +520,11 @@
       <TRACKGROUP>
         <TRACK SPEED="Slow">HORIZONTAL</TRACK>
       </TRACKGROUP>
-      <SEC_EDGE EDGE="RIGHT" />
+      <SEC_EDGE EDGE="RIGHT">
+        <SHARED X="1" Y="3">LEFT</SHARED>
+      </SEC_EDGE>
       <SEC_EDGE EDGE="LEFT">
-        <BLOCK NAME="Stage Track 2" STATION="Staging" DISCIPLINE="CTC" VISIBLE="true" />
+        <BLOCK />
       </SEC_EDGE>
     </SECTION>
     <SECTION X="12" Y="5">
@@ -500,14 +533,16 @@
       </TRACKGROUP>
       <SEC_EDGE EDGE="RIGHT" />
       <SEC_EDGE EDGE="TOP">
-        <BLOCK NAME="Stage Track 4" STATION="Staging" DISCIPLINE="CTC" VISIBLE="true" />
+        <BLOCK />
       </SEC_EDGE>
     </SECTION>
     <SECTION X="13" Y="5">
       <TRACKGROUP>
         <TRACK SPEED="Slow">HORIZONTAL</TRACK>
       </TRACKGROUP>
-      <SEC_EDGE EDGE="RIGHT" />
+      <SEC_EDGE EDGE="RIGHT">
+        <SHARED X="1" Y="4">LEFT</SHARED>
+      </SEC_EDGE>
       <SEC_EDGE EDGE="LEFT" />
     </SECTION>
   </TRACKPLAN>
