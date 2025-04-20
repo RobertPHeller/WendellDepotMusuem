@@ -16,14 +16,14 @@
   <COUNTER NAME="CODEDELAY" VALUE="0" />
   <COUNTER NAME="LNGOVERNOR" VALUE="1" />
   <COUNTER NAME="DEBOUNCE" VALUE="0" />
-  <SIGNALTEMPLATE TEMPLATEKIND="Lamp" TEMPLATEHEADS="1" TEMPLATENAME="Dwarf Exit">
-    <ASPECTMAP R281="green" R282="green" R284="green" RES_NORM="flashing red" R285="red" R283="green" R283A="green" R283B="green" RES_MED="flashing red" R286="red" R287="green" C423="green" C424="green" RES_SLO="flashing red" R288="red" R292="red" R291="red" />
+  <SIGNALTEMPLATE TEMPLATEKIND="Lamp" TEMPLATEHEADS="1" TEMPLATENAME="Frog" R281="Clear" R282="Clear" R284="Clear" R285="Approach" R283="Clear" R283A="Clear" R283B="Clear" R286="Approach" R287="Clear" C423="Clear" C424="Clear" R288="Approach" R292="Stop" R291="Stop">
+    <ASPECTMAP R281="green" R281B="green" R282="green" R284="green" RES_NORM="flashing red" ADV_NORM="green" R285="yellow" R281C="green" C412="green" C413="green" C414="green" RES_LIM="flashing red" ADV_LIM="green" R281D="yellow" R283="green" C417="green" R283A="green" R283B="green" RES_MED="flashing red" ADV_MED="green" R286="yellow" R287="green" C422="green" C423="green" C424="green" RES_SLO="flashing red" ADV_SLO="green" R288="yellow" R292="red" R291="red" />
   </SIGNALTEMPLATE>
-  <SIGNALTEMPLATE TEMPLATEKIND="Lamp" TEMPLATEHEADS="1" TEMPLATENAME="Frog">
-    <ASPECTMAP R281="green" R282="green" R284="green" RES_NORM="flashing red" R285="yellow" R283="green" R283A="green" R283B="green" RES_MED="flashing red" R286="yellow" R287="green" C423="green" C424="green" RES_SLO="flashing red" R288="yellow" R292="red" R291="red" />
+  <SIGNALTEMPLATE TEMPLATEKIND="Lamp" TEMPLATEHEADS="1" TEMPLATENAME="Dwarf Exit" R281="clear" R282="clear" R284="clear" R285="stop" R283="clear" R283A="clear" R283B="clear" R286="stop" R287="clear" C423="clear" C424="clear" R288="stop" R292="stop" R291="stop">
+    <ASPECTMAP R281="green" R282="green" R284="green" RES_NORM="off" R285="red" R283="green" R283A="green" R283B="green" RES_MED="off" R286="red" R287="green" C423="green" C424="green" RES_SLO="off" R288="red" R292="red" R291="red" />
   </SIGNALTEMPLATE>
-  <SIGNALTEMPLATE TEMPLATEKIND="Lamp" TEMPLATEHEADS="2" TEMPLATENAME="CP Entrence">
-    <ASPECTMAP R281="green|red" R282="yellow|yellow" R284="yellow|yellow" RES_NORM="flashing red|red" R285="yellow|red" R283="red|green" R283A="red|green" R283B="red|green" RES_MED="red|flashing red" R286="red|yellow" R287="red|green" C423="red|green" C424="red|green" RES_SLO="red|flashing red" R288="red|yellow" R292="red|red" R291="red|red" />
+  <SIGNALTEMPLATE TEMPLATEKIND="Lamp" TEMPLATEHEADS="2" TEMPLATENAME="CP Entrence" R281="clear" R282="clear" R284="clear" R285="Arrroach" R283="Diverging Clear" R283A="Diverging Clear" R283B="Diverging Clear" R286="Diverging Arrroach" R287="Diverging Clear" C423="Diverging Clear" C424="Diverging Clear" R288="Diverging Arrroach" R292="stop" R291="stop">
+    <ASPECTMAP R281="green|red" R282="green|red" R284="green|red" RES_NORM="off|off" R285="yellow|red" R283="red|green" R283A="red|green" R283B="red|green" RES_MED="off|off" R286="red|yellow" R287="red|green" C423="red|green" C424="red|green" RES_SLO="off|off" R288="red|yellow" R292="red|red" R291="red|red" />
   </SIGNALTEMPLATE>
   <TRAINSTORE>
     <TRAINEDIT>
@@ -117,14 +117,7 @@
           <PHYSIGNAL>
             Dwarf Exit
             <ASPECTTBL>
-              <HEADSTATES>
-                <ASPECTCOMMAND PLABEL="green">
-                  <IOSPEC JMRIDEVICE="Head" USER_NAME="WestExit3 (Dwarf)">throw</IOSPEC>
-                </ASPECTCOMMAND>
-                <ASPECTCOMMAND PLABEL="red">
-                  <IOSPEC JMRIDEVICE="Head" USER_NAME="WestExit3 (Dwarf)">close</IOSPEC>
-                </ASPECTCOMMAND>
-              </HEADSTATES>
+              <HEADSTATES />
             </ASPECTTBL>
           </PHYSIGNAL>
         </SECSIGNAL>
@@ -213,6 +206,11 @@
       </TRACKGROUP>
       <SEC_EDGE EDGE="BOTTOM">
         <BLOCK />
+        <SECSIGNAL>
+          WestF1
+          <PANELSIGNAL SIGLOCATION="LEFTCENT" SIGORIENT="RIGHT" SIGPANTYPE="LAMP1" />
+          <PHYSIGNAL>Frog</PHYSIGNAL>
+        </SECSIGNAL>
       </SEC_EDGE>
       <SEC_EDGE EDGE="LEFT" />
     </SECTION>
@@ -223,6 +221,11 @@
       <SEC_EDGE EDGE="RIGHT" />
       <SEC_EDGE EDGE="BOTTOM">
         <BLOCK />
+        <SECSIGNAL>
+          EastExit3 (Dwarf)
+          <PANELSIGNAL SIGLOCATION="RIGHTCENT" SIGORIENT="LEFT" SIGPANTYPE="LAMP1" />
+          <PHYSIGNAL>Dwarf Exit</PHYSIGNAL>
+        </SECSIGNAL>
       </SEC_EDGE>
     </SECTION>
     <SECTION X="13" Y="2">
@@ -240,6 +243,11 @@
       </TRACKGROUP>
       <SEC_EDGE EDGE="RIGHT">
         <BLOCK NAME="Stage Track 2" STATION="Staging" DISCIPLINE="CTC" VISIBLE="true" />
+        <SECSIGNAL>
+          WestExit2 (Dwarf)
+          <PANELSIGNAL SIGLOCATION="RIGHTUP" SIGORIENT="RIGHT" SIGPANTYPE="LAMP1" />
+          <PHYSIGNAL>Dwarf Exit</PHYSIGNAL>
+        </SECSIGNAL>
       </SEC_EDGE>
       <SEC_EDGE EDGE="LEFT">
         <SHARED X="13" Y="4">RIGHT</SHARED>
@@ -283,6 +291,11 @@
       </TRACKGROUP>
       <SEC_EDGE EDGE="RIGHT">
         <BLOCK />
+        <SECSIGNAL>
+          WestYardEntry2-4
+          <PANELSIGNAL SIGLOCATION="LEFTLOW" SIGORIENT="LEFT" SIGPANTYPE="LAMP2" />
+          <PHYSIGNAL>CP Entrence</PHYSIGNAL>
+        </SECSIGNAL>
       </SEC_EDGE>
       <SEC_EDGE EDGE="LEFT" />
     </SECTION>
@@ -295,6 +308,11 @@
       </SEC_EDGE>
       <SEC_EDGE EDGE="LEFT">
         <BLOCK />
+        <SECSIGNAL>
+          WestFM
+          <PANELSIGNAL SIGLOCATION="RIGHTUP" SIGORIENT="RIGHT" SIGPANTYPE="LAMP1" />
+          <PHYSIGNAL>Frog</PHYSIGNAL>
+        </SECSIGNAL>
       </SEC_EDGE>
     </SECTION>
     <SECTION X="5" Y="3">
@@ -335,6 +353,11 @@
       </TRACKGROUP>
       <SEC_EDGE EDGE="RIGHT">
         <BLOCK />
+        <SECSIGNAL>
+          WestEN
+          <PANELSIGNAL SIGLOCATION="LEFTUP" SIGORIENT="LEFT" SIGPANTYPE="LAMP2" />
+          <PHYSIGNAL>CP Entrence</PHYSIGNAL>
+        </SECSIGNAL>
       </SEC_EDGE>
       <SEC_EDGE EDGE="LEFT" />
     </SECTION>
@@ -356,6 +379,11 @@
       <SEC_EDGE EDGE="RIGHT" />
       <SEC_EDGE EDGE="LEFT">
         <BLOCK NAME="OS East Double" STATION="East Double" DISCIPLINE="CTC" VISIBLE="true" />
+        <SECSIGNAL>
+          EastEN
+          <PANELSIGNAL SIGLOCATION="RIGHTLOW" SIGORIENT="RIGHT" SIGPANTYPE="LAMP2" />
+          <PHYSIGNAL>CP Entrence</PHYSIGNAL>
+        </SECSIGNAL>
       </SEC_EDGE>
     </SECTION>
     <SECTION X="9" Y="3">
@@ -399,6 +427,11 @@
       </SEC_EDGE>
       <SEC_EDGE EDGE="LEFT">
         <BLOCK />
+        <SECSIGNAL>
+          EastFM
+          <PANELSIGNAL SIGLOCATION="LEFTUP" SIGORIENT="LEFT" SIGPANTYPE="LAMP1" />
+          <PHYSIGNAL>Frog</PHYSIGNAL>
+        </SECSIGNAL>
       </SEC_EDGE>
     </SECTION>
     <SECTION X="11" Y="3">
@@ -408,6 +441,11 @@
       <SEC_EDGE EDGE="RIGHT" />
       <SEC_EDGE EDGE="LEFT">
         <BLOCK NAME="OS East Stage 1-3" STATION="Staging" DISCIPLINE="CTC" VISIBLE="true" />
+        <SECSIGNAL>
+          EastYardEntry1-3
+          <PANELSIGNAL SIGLOCATION="RIGHTUP" SIGORIENT="RIGHT" SIGPANTYPE="LAMP2" />
+          <PHYSIGNAL>CP Entrence</PHYSIGNAL>
+        </SECSIGNAL>
       </SEC_EDGE>
     </SECTION>
     <SECTION X="12" Y="3">
@@ -451,6 +489,11 @@
       </SEC_EDGE>
       <SEC_EDGE EDGE="LEFT">
         <BLOCK />
+        <SECSIGNAL>
+          EastExit1 (Dwarf)
+          <PANELSIGNAL SIGLOCATION="LEFTUP" SIGORIENT="LEFT" SIGPANTYPE="LAMP1" />
+          <PHYSIGNAL>Dwarf Exit</PHYSIGNAL>
+        </SECSIGNAL>
       </SEC_EDGE>
     </SECTION>
     <SECTION X="1" Y="4">
@@ -469,6 +512,11 @@
       <SEC_EDGE EDGE="LEFT" />
       <SEC_EDGE EDGE="TOP">
         <BLOCK NAME="Stage Track 4" STATION="Staging" DISCIPLINE="CTC" VISIBLE="true" />
+        <SECSIGNAL>
+          WestExit4 (Dwarf)
+          <PANELSIGNAL SIGLOCATION="LEFTLOW" SIGORIENT="RIGHT" SIGPANTYPE="LAMP1" />
+          <PHYSIGNAL>Dwarf Exit</PHYSIGNAL>
+        </SECSIGNAL>
       </SEC_EDGE>
     </SECTION>
     <SECTION X="9" Y="4">
@@ -478,6 +526,11 @@
       <SEC_EDGE EDGE="RIGHT" />
       <SEC_EDGE EDGE="TOP">
         <BLOCK NAME="East Track 2" STATION="East Double" DISCIPLINE="CTC" VISIBLE="true" />
+        <SECSIGNAL>
+          EastF1
+          <PANELSIGNAL SIGLOCATION="RIGHTLOW" SIGORIENT="LEFT" SIGPANTYPE="LAMP1" />
+          <PHYSIGNAL>Frog</PHYSIGNAL>
+        </SECSIGNAL>
       </SEC_EDGE>
     </SECTION>
     <SECTION X="10" Y="4">
@@ -496,6 +549,11 @@
       <SEC_EDGE EDGE="RIGHT" />
       <SEC_EDGE EDGE="LEFT">
         <BLOCK NAME="OS East Staging 2-4" STATION="Staging" DISCIPLINE="CTC" VISIBLE="true" />
+        <SECSIGNAL>
+          EastYardEntry2-4
+          <PANELSIGNAL SIGLOCATION="RIGHTLOW" SIGORIENT="RIGHT" SIGPANTYPE="LAMP2" />
+          <PHYSIGNAL>CP Entrence</PHYSIGNAL>
+        </SECSIGNAL>
       </SEC_EDGE>
     </SECTION>
     <SECTION X="12" Y="4">
@@ -513,18 +571,18 @@
         <SWITCHPOINTS>
           <ROUTEINFO ROUTEID="RIGHT" NORMAL="true">
             <ROUTEREQUEST>
-              <IOSPEC JMRIDEVICE="Turnout" USER_NAME="Stage East 2-4">close</IOSPEC>
+              <IOSPEC DECADDR="" JMRIDEVICE="Turnout" USER_NAME="Stage East 2-4">close</IOSPEC>
             </ROUTEREQUEST>
             <SELECTEDREPORT>
-              <IOSPEC JMRIDEVICE="Sensor" USER_NAME="Stage East 2-4_points">close</IOSPEC>
+              <IOSPEC DECADDR="" JMRIDEVICE="Sensor" USER_NAME="Stage East 2-4_points">close</IOSPEC>
             </SELECTEDREPORT>
           </ROUTEINFO>
           <ROUTEINFO ROUTEID="BOTTOM">
             <ROUTEREQUEST>
-              <IOSPEC JMRIDEVICE="Turnout" USER_NAME="Stage East 2-4">throw</IOSPEC>
+              <IOSPEC DECADDR="" JMRIDEVICE="Turnout" USER_NAME="Stage East 2-4">throw</IOSPEC>
             </ROUTEREQUEST>
             <SELECTEDREPORT>
-              <IOSPEC JMRIDEVICE="Sensor" USER_NAME="Stage East 2-4_points">throw</IOSPEC>
+              <IOSPEC DECADDR="" JMRIDEVICE="Sensor" USER_NAME="Stage East 2-4_points">throw</IOSPEC>
             </SELECTEDREPORT>
           </ROUTEINFO>
         </SWITCHPOINTS>
@@ -539,6 +597,11 @@
       </SEC_EDGE>
       <SEC_EDGE EDGE="LEFT">
         <BLOCK />
+        <SECSIGNAL>
+          EastExit2 (Dwarf)
+          <PANELSIGNAL SIGLOCATION="LEFTUP" SIGORIENT="LEFT" SIGPANTYPE="LAMP1" />
+          <PHYSIGNAL>Dwarf Exit</PHYSIGNAL>
+        </SECSIGNAL>
       </SEC_EDGE>
     </SECTION>
     <SECTION X="12" Y="5">
@@ -548,6 +611,11 @@
       <SEC_EDGE EDGE="RIGHT" />
       <SEC_EDGE EDGE="TOP">
         <BLOCK />
+        <SECSIGNAL>
+          EastExit4 (Dwarf)
+          <PANELSIGNAL SIGLOCATION="RIGHTUP" SIGORIENT="LEFT" SIGPANTYPE="LAMP1" />
+          <PHYSIGNAL>Dwarf Exit</PHYSIGNAL>
+        </SECSIGNAL>
       </SEC_EDGE>
     </SECTION>
     <SECTION X="13" Y="5">
