@@ -142,6 +142,44 @@
       <userName>Stage East 2-4</userName>
     </turnout>
   </turnouts>
+  <memories class="jmri.managers.configurexml.DefaultMemoryManagerXml">
+    <memory value="0">
+      <systemName>IMDECODER_ACTIVE_1</systemName>
+    </memory>
+    <memory value="0">
+      <systemName>IMDECODER_ACTIVE_2</systemName>
+    </memory>
+    <memory value="0">
+      <systemName>IMDECODER_ACTIVE_3</systemName>
+    </memory>
+    <memory value="0">
+      <systemName>IMDECODER_ACTIVE_4</systemName>
+    </memory>
+    <memory value="0">
+      <systemName>IMDECODER_ACTIVE_5</systemName>
+    </memory>
+    <memory value="0">
+      <systemName>IMDECODER_ACTIVE_max</systemName>
+    </memory>
+    <memory value="0">
+      <systemName>IMDECODER_INACTIVE_1</systemName>
+    </memory>
+    <memory value="0">
+      <systemName>IMDECODER_INACTIVE_2</systemName>
+    </memory>
+    <memory value="0">
+      <systemName>IMDECODER_INACTIVE_3</systemName>
+    </memory>
+    <memory value="0">
+      <systemName>IMDECODER_INACTIVE_4</systemName>
+    </memory>
+    <memory value="0">
+      <systemName>IMDECODER_INACTIVE_5</systemName>
+    </memory>
+    <memory value="0">
+      <systemName>IMDECODER_INACTIVE_max</systemName>
+    </memory>
+  </memories>
   <signalmasts class="jmri.managers.configurexml.DefaultSignalMastManagerXml">
     <olcbsignalmast class="jmri.jmrix.openlcb.configurexml.OlcbSignalMastXml">
       <systemName>MF$olm:basic:one-low($0008)</systemName>
@@ -406,13 +444,13 @@
         <notheld>00.00.00.00.00.00.00.00</notheld>
       </held>
       <aspect defines="Clear">
-        <event>05.01.01.01.22.81.00.62</event>
+        <event>05.01.01.01.22.81.00.52</event>
       </aspect>
       <aspect defines="Approach">
-        <event>05.01.01.01.22.81.00.61</event>
+        <event>05.01.01.01.22.81.00.51</event>
       </aspect>
       <aspect defines="Stop">
-        <event>05.01.01.01.22.81.00.60</event>
+        <event>05.01.01.01.22.81.00.50</event>
       </aspect>
       <aspect defines="Unlit">
         <event>00.00.00.00.00.00.00.00</event>
@@ -677,31 +715,48 @@
   <filehistory>
     <operation>
       <type>app</type>
-      <date>Sat Apr 19 12:04:06 EDT 2025</date>
-      <filename>PanelPro (v5.11.2)</filename>
+      <date>Tue Apr 22 09:12:19 EDT 2025</date>
+      <filename>CATS (v5.11.2)</filename>
     </operation>
     <operation>
       <type>Load OK</type>
-      <date>Sat Apr 19 12:04:35 EDT 2025</date>
+      <date>Tue Apr 22 09:12:24 EDT 2025</date>
       <filename>/home/heller/WendellDepotMusuem/WendellDepot-JMRI.xml</filename>
       <filehistory>
         <operation>
           <type>app</type>
-          <date>Fri Apr 18 16:47:02 EDT 2025</date>
-          <filename>LayoutDB2JMRITable program</filename>
+          <date>Sat Apr 19 12:04:06 EDT 2025</date>
+          <filename>PanelPro (v5.11.2)</filename>
+        </operation>
+        <operation>
+          <type>Load OK</type>
+          <date>Sat Apr 19 12:04:35 EDT 2025</date>
+          <filename>/home/heller/WendellDepotMusuem/WendellDepot-JMRI.xml</filename>
+          <filehistory>
+            <operation>
+              <type>app</type>
+              <date>Fri Apr 18 16:47:02 EDT 2025</date>
+              <filename>LayoutDB2JMRITable program</filename>
+            </operation>
+            <operation>
+              <type>Store</type>
+              <date>Fri Apr 18 16:47:02 EDT 2025</date>
+              <filename>WendellDepot-JMRI.xml</filename>
+            </operation>
+          </filehistory>
         </operation>
         <operation>
           <type>Store</type>
-          <date>Fri Apr 18 16:47:02 EDT 2025</date>
-          <filename>WendellDepot-JMRI.xml</filename>
+          <date>Sat Apr 19 12:31:57 EDT 2025</date>
+          <filename>/home/heller/WendellDepotMusuem/WendellDepot-JMRI.xml</filename>
         </operation>
       </filehistory>
     </operation>
     <operation>
       <type>Store</type>
-      <date>Sat Apr 19 12:31:57 EDT 2025</date>
+      <date>Tue Apr 22 09:21:19 EDT 2025</date>
       <filename>/home/heller/WendellDepotMusuem/WendellDepot-JMRI.xml</filename>
     </operation>
   </filehistory>
-  <!--Written by JMRI version 5.11.2+R741bb1427e on Sat Apr 19 12:31:57 EDT 2025-->
+  <!--Written by JMRI version 5.11.2+R741bb1427e on Tue Apr 22 09:21:19 EDT 2025-->
 </layout-config>
