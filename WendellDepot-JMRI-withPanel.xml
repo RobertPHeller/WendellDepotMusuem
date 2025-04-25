@@ -1,0 +1,2965 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="/xml/XSLT/panelfile-5-5-5.xsl" type="text/xsl"?>
+<layout-config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://jmri.org/xml/schema/layout-5-5-5.xsd">
+  <jmriversion>
+    <major>5</major>
+    <minor>11</minor>
+    <test>2</test>
+    <modifier />
+  </jmriversion>
+  <sensors class="jmri.jmrix.openlcb.configurexml.OlcbSensorManagerXml">
+    <sensor inverted="false">
+      <systemName>MS05.01.01.01.22.80.00.00;05.01.01.01.22.80.00.01</systemName>
+      <userName>Wendell Depot Rd Grade Crossing</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>MS05.01.01.01.22.81.00.00;05.01.01.01.22.81.00.01</systemName>
+      <userName>West Double Track Entrance</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>MS05.01.01.01.22.81.00.02;05.01.01.01.22.81.00.03</systemName>
+      <userName>West Double Track Straight Stop</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>MS05.01.01.01.22.81.00.04;05.01.01.01.22.81.00.05</systemName>
+      <userName>West Double Track Frog Stop</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>MS05.01.01.01.22.81.00.30;05.01.01.01.22.81.00.31</systemName>
+      <userName>West Double Track_points</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>MS05.01.01.01.22.82.00.00;05.01.01.01.22.82.00.01</systemName>
+      <userName>East Double Track Entrance</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>MS05.01.01.01.22.82.00.02;05.01.01.01.22.82.00.03</systemName>
+      <userName>East Double Track Straight Stop</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>MS05.01.01.01.22.82.00.04;05.01.01.01.22.82.00.05</systemName>
+      <userName>East Double Track Frog Stop</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>MS05.01.01.01.22.82.00.30;05.01.01.01.22.82.00.31</systemName>
+      <userName>East Double Track_points</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>MS05.01.01.01.22.83.00.00;05.01.01.01.22.83.00.01</systemName>
+      <userName>Stage West 1-3 Entrance</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>MS05.01.01.01.22.83.00.02;05.01.01.01.22.83.00.03</systemName>
+      <userName>Stage West 2-4 Entrance</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>MS05.01.01.01.22.83.00.04;05.01.01.01.22.83.00.05</systemName>
+      <userName>West Stage Exit 3</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>MS05.01.01.01.22.83.00.06;05.01.01.01.22.83.00.07</systemName>
+      <userName>West Stage Exit 1</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>MS05.01.01.01.22.83.00.10;05.01.01.01.22.83.00.11</systemName>
+      <userName>West Stage Exit 2</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>MS05.01.01.01.22.83.00.12;05.01.01.01.22.83.00.13</systemName>
+      <userName>West Stage Exit 4</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>MS05.01.01.01.22.83.00.14;05.01.01.01.22.83.00.15</systemName>
+      <userName>East Stage Exit 3</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>MS05.01.01.01.22.83.00.16;05.01.01.01.22.83.00.17</systemName>
+      <userName>East Stage Exit 1</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>MS05.01.01.01.22.83.00.50;05.01.01.01.22.83.00.51</systemName>
+      <userName>Stage West 1-3_points</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>MS05.01.01.01.22.83.00.52;05.01.01.01.22.83.00.53</systemName>
+      <userName>Stage West 2-4_points</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>MS05.01.01.01.22.84.00.00;05.01.01.01.22.84.00.01</systemName>
+      <userName>East Stage Exit 2</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>MS05.01.01.01.22.84.00.02;05.01.01.01.22.84.00.03</systemName>
+      <userName>East Stage Exit 4</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>MS05.01.01.01.22.84.00.04;05.01.01.01.22.84.00.05</systemName>
+      <userName>Stage East 1-3 Entrance</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>MS05.01.01.01.22.84.00.06;05.01.01.01.22.84.00.07</systemName>
+      <userName>Stage East 2-4 Entrance</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>MS05.01.01.01.22.84.00.30;05.01.01.01.22.84.00.31</systemName>
+      <userName>Stage East 1-3_points</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>MS05.01.01.01.22.84.00.32;05.01.01.01.22.84.00.33</systemName>
+      <userName>Stage East 2-4_points</userName>
+    </sensor>
+  </sensors>
+  <sensors class="jmri.jmrix.internal.configurexml.InternalSensorManagerXml">
+    <defaultInitialState>unknown</defaultInitialState>
+    <sensor inverted="false">
+      <systemName>IS03</systemName>
+      <userName>Stage West 1-3 Lever</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>IS04</systemName>
+      <userName>Stage West 1-3 Code Button</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>IS05</systemName>
+      <userName>Stage West 2-4 Lever</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>IS06</systemName>
+      <userName>Stage West 2-4 Code Button</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>IS07</systemName>
+      <userName>West Double Track Lever</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>IS08</systemName>
+      <userName>West Double Track Code Button</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>IS11</systemName>
+      <userName>East Double Track Lever</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>IS12</systemName>
+      <userName>East Double Track Code Button</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>IS13</systemName>
+      <userName>Stage East 1-3 Lever</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>IS14</systemName>
+      <userName>Stage East 1-3 Code Button</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>IS15</systemName>
+      <userName>Stage East 2-4 Lever</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>IS16</systemName>
+      <userName>Stage East 2-4 Code Button</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>IS41</systemName>
+      <userName>Signal Lever Stage West 1-3L</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>IS42</systemName>
+      <userName>Signal Lever Stage West 1-3C</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>IS43</systemName>
+      <userName>Signal Lever Stage West 1-3R</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>IS44</systemName>
+      <userName>Signal Lamp Stage West 1-3L</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>IS45</systemName>
+      <userName>Signal Lamp Stage West 1-3C</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>IS46</systemName>
+      <userName>Signal Lamp Stage West 1-3R</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>IS61</systemName>
+      <userName>Signal Lever Stage West 2-4L</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>IS62</systemName>
+      <userName>Signal Lever Stage West 2-4C</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>IS63</systemName>
+      <userName>Signal Lever Stage West 2-4R</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>IS64</systemName>
+      <userName>Signal Lamp Stage West 2-4L</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>IS65</systemName>
+      <userName>Signal Lamp Stage West 2-4C</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>IS66</systemName>
+      <userName>Signal Lamp Stage West 2-4R</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>IS81</systemName>
+      <userName>Signal Lever West DoubleL</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>IS82</systemName>
+      <userName>Signal Lever West DoubleC</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>IS83</systemName>
+      <userName>Signal Lever West DoubleR</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>IS84</systemName>
+      <userName>Signal Lamp West DoubleL</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>IS85</systemName>
+      <userName>Signal Lamp West DoubleC</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>IS86</systemName>
+      <userName>Signal Lamp West DoubleR</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>IS121</systemName>
+      <userName>Signal Lever East DoubleL</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>IS122</systemName>
+      <userName>Signal Lever East DoubleC</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>IS123</systemName>
+      <userName>Signal Lever East DoubleR</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>IS124</systemName>
+      <userName>Signal Lamp East DoubleL</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>IS125</systemName>
+      <userName>Signal Lamp East DoubleC</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>IS126</systemName>
+      <userName>Signal Lamp East DoubleR</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>IS141</systemName>
+      <userName>Signal Lever Stage East 1-3L</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>IS142</systemName>
+      <userName>Signal Lever Stage East 1-3C</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>IS143</systemName>
+      <userName>Signal Lever Stage East 1-3R</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>IS144</systemName>
+      <userName>Signal Lamp Stage East 1-3L</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>IS145</systemName>
+      <userName>Signal Lamp Stage East 1-3C</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>IS146</systemName>
+      <userName>Signal Lamp Stage East 1-3R</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>IS161</systemName>
+      <userName>Signal Lever Stage East 2-4L</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>IS162</systemName>
+      <userName>Signal Lever Stage East 2-4C</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>IS163</systemName>
+      <userName>Signal Lever Stage East 2-4R</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>IS164</systemName>
+      <userName>Signal Lamp Stage East 2-4L</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>IS165</systemName>
+      <userName>Signal Lamp Stage East 2-4C</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>IS166</systemName>
+      <userName>Signal Lamp STage East 2-4R</userName>
+    </sensor>
+  </sensors>
+  <turnouts class="jmri.jmrix.openlcb.configurexml.OlcbTurnoutManagerXml">
+    <operations automate="false">
+      <operation name="NoFeedback" class="jmri.configurexml.turnoutoperations.NoFeedbackTurnoutOperationXml" interval="300" maxtries="2" />
+      <operation name="Raw" class="jmri.configurexml.turnoutoperations.RawTurnoutOperationXml" interval="300" maxtries="1" />
+      <operation name="Sensor" class="jmri.configurexml.turnoutoperations.SensorTurnoutOperationXml" interval="300" maxtries="3" />
+    </operations>
+    <defaultclosedspeed>Normal</defaultclosedspeed>
+    <defaultthrownspeed>Restricted</defaultthrownspeed>
+    <turnout feedback="ONESENSOR" sensor1="West Double Track_points" inverted="false" automate="Off">
+      <systemName>MT05.01.01.01.22.81.00.18;05.01.01.01.22.81.00.19</systemName>
+      <userName>West Double Track</userName>
+    </turnout>
+    <turnout feedback="ONESENSOR" sensor1="East Double Track_points" inverted="false" automate="Off">
+      <systemName>MT05.01.01.01.22.82.00.18;05.01.01.01.22.82.00.19</systemName>
+      <userName>East Double Track</userName>
+    </turnout>
+    <turnout feedback="ONESENSOR" sensor1="Stage West 1-3_points" inverted="false" automate="Off">
+      <systemName>MT05.01.01.01.22.83.00.30;05.01.01.01.22.83.00.31</systemName>
+      <userName>Stage West 1-3</userName>
+    </turnout>
+    <turnout feedback="ONESENSOR" sensor1="Stage West 2-4_points" inverted="false" automate="Off">
+      <systemName>MT05.01.01.01.22.83.00.32;05.01.01.01.22.83.00.33</systemName>
+      <userName>Stage West 2-4</userName>
+    </turnout>
+    <turnout feedback="ONESENSOR" sensor1="Stage East 1-3_points" inverted="false" automate="Off">
+      <systemName>MT05.01.01.01.22.84.00.18;05.01.01.01.22.84.00.19</systemName>
+      <userName>Stage East 1-3</userName>
+    </turnout>
+    <turnout feedback="ONESENSOR" sensor1="Stage East 2-4_points" inverted="false" automate="Off">
+      <systemName>MT05.01.01.01.22.84.00.1A;05.01.01.01.22.84.00.1B</systemName>
+      <userName>Stage East 2-4</userName>
+    </turnout>
+  </turnouts>
+  <memories class="jmri.managers.configurexml.DefaultMemoryManagerXml">
+    <memory value="0">
+      <systemName>IMDECODER_ACTIVE_1</systemName>
+    </memory>
+    <memory value="0">
+      <systemName>IMDECODER_ACTIVE_2</systemName>
+    </memory>
+    <memory value="0">
+      <systemName>IMDECODER_ACTIVE_3</systemName>
+    </memory>
+    <memory value="0">
+      <systemName>IMDECODER_ACTIVE_4</systemName>
+    </memory>
+    <memory value="0">
+      <systemName>IMDECODER_ACTIVE_5</systemName>
+    </memory>
+    <memory value="0">
+      <systemName>IMDECODER_ACTIVE_max</systemName>
+    </memory>
+    <memory value="0">
+      <systemName>IMDECODER_INACTIVE_1</systemName>
+    </memory>
+    <memory value="0">
+      <systemName>IMDECODER_INACTIVE_2</systemName>
+    </memory>
+    <memory value="0">
+      <systemName>IMDECODER_INACTIVE_3</systemName>
+    </memory>
+    <memory value="0">
+      <systemName>IMDECODER_INACTIVE_4</systemName>
+    </memory>
+    <memory value="0">
+      <systemName>IMDECODER_INACTIVE_5</systemName>
+    </memory>
+    <memory value="0">
+      <systemName>IMDECODER_INACTIVE_max</systemName>
+    </memory>
+  </memories>
+  <signalmasts class="jmri.managers.configurexml.DefaultSignalMastManagerXml">
+    <olcbsignalmast class="jmri.jmrix.openlcb.configurexml.OlcbSignalMastXml">
+      <systemName>MF$olm:basic:one-low($0008)</systemName>
+      <userName>EastExit4 (Dwarf)</userName>
+      <lit>
+        <lit>00.00.00.00.00.00.00.00</lit>
+        <notlit>00.00.00.00.00.00.00.00</notlit>
+      </lit>
+      <held>
+        <held>00.00.00.00.00.00.00.00</held>
+        <notheld>00.00.00.00.00.00.00.00</notheld>
+      </held>
+      <aspect defines="Clear">
+        <event>05.01.01.01.22.83.00.F1</event>
+      </aspect>
+      <aspect defines="Approach">
+        <event>00.00.00.00.00.00.00.00</event>
+      </aspect>
+      <aspect defines="Stop">
+        <event>05.01.01.01.22.83.00.F0</event>
+      </aspect>
+      <aspect defines="Unlit">
+        <event>00.00.00.00.00.00.00.00</event>
+      </aspect>
+      <disabledAspects>
+        <disabledAspect>Approach</disabledAspect>
+        <disabledAspect>Unlit</disabledAspect>
+      </disabledAspects>
+    </olcbsignalmast>
+    <olcbsignalmast class="jmri.jmrix.openlcb.configurexml.OlcbSignalMastXml">
+      <systemName>MF$olm:basic:one-low($0009)</systemName>
+      <userName>EastExit2 (Dwarf)</userName>
+      <lit>
+        <lit>00.00.00.00.00.00.00.00</lit>
+        <notlit>00.00.00.00.00.00.00.00</notlit>
+      </lit>
+      <held>
+        <held>00.00.00.00.00.00.00.00</held>
+        <notheld>00.00.00.00.00.00.00.00</notheld>
+      </held>
+      <aspect defines="Clear">
+        <event>05.01.01.01.22.83.00.F5</event>
+      </aspect>
+      <aspect defines="Approach">
+        <event>00.00.00.00.00.00.00.00</event>
+      </aspect>
+      <aspect defines="Stop">
+        <event>05.01.01.01.22.83.00.F4</event>
+      </aspect>
+      <aspect defines="Unlit">
+        <event>00.00.00.00.00.00.00.00</event>
+      </aspect>
+      <disabledAspects>
+        <disabledAspect>Approach</disabledAspect>
+        <disabledAspect>Unlit</disabledAspect>
+      </disabledAspects>
+    </olcbsignalmast>
+    <olcbsignalmast class="jmri.jmrix.openlcb.configurexml.OlcbSignalMastXml">
+      <systemName>MF$olm:basic:one-low($0010)</systemName>
+      <userName>EastExit1 (Dwarf)</userName>
+      <lit>
+        <lit>00.00.00.00.00.00.00.00</lit>
+        <notlit>00.00.00.00.00.00.00.00</notlit>
+      </lit>
+      <held>
+        <held>00.00.00.00.00.00.00.00</held>
+        <notheld>00.00.00.00.00.00.00.00</notheld>
+      </held>
+      <aspect defines="Clear">
+        <event>05.01.01.01.22.83.00.F9</event>
+      </aspect>
+      <aspect defines="Approach">
+        <event>00.00.00.00.00.00.00.00</event>
+      </aspect>
+      <aspect defines="Stop">
+        <event>05.01.01.01.22.83.00.F8</event>
+      </aspect>
+      <aspect defines="Unlit">
+        <event>00.00.00.00.00.00.00.00</event>
+      </aspect>
+      <disabledAspects>
+        <disabledAspect>Approach</disabledAspect>
+        <disabledAspect>Unlit</disabledAspect>
+      </disabledAspects>
+    </olcbsignalmast>
+    <olcbsignalmast class="jmri.jmrix.openlcb.configurexml.OlcbSignalMastXml">
+      <systemName>MF$olm:basic:one-low($0011)</systemName>
+      <userName>EastExit3 (Dwarf)</userName>
+      <lit>
+        <lit>00.00.00.00.00.00.00.00</lit>
+        <notlit>00.00.00.00.00.00.00.00</notlit>
+      </lit>
+      <held>
+        <held>00.00.00.00.00.00.00.00</held>
+        <notheld>00.00.00.00.00.00.00.00</notheld>
+      </held>
+      <aspect defines="Clear">
+        <event>05.01.01.01.22.83.00.FD</event>
+      </aspect>
+      <aspect defines="Approach">
+        <event>00.00.00.00.00.00.00.00</event>
+      </aspect>
+      <aspect defines="Stop">
+        <event>05.01.01.01.22.83.00.FC</event>
+      </aspect>
+      <aspect defines="Unlit">
+        <event>00.00.00.00.00.00.00.00</event>
+      </aspect>
+      <disabledAspects>
+        <disabledAspect>Approach</disabledAspect>
+        <disabledAspect>Unlit</disabledAspect>
+      </disabledAspects>
+    </olcbsignalmast>
+    <olcbsignalmast class="jmri.jmrix.openlcb.configurexml.OlcbSignalMastXml">
+      <systemName>MF$olm:basic:one-low($0012)</systemName>
+      <userName>WestExit3 (Dwarf)</userName>
+      <lit>
+        <lit>00.00.00.00.00.00.00.00</lit>
+        <notlit>00.00.00.00.00.00.00.00</notlit>
+      </lit>
+      <held>
+        <held>00.00.00.00.00.00.00.00</held>
+        <notheld>00.00.00.00.00.00.00.00</notheld>
+      </held>
+      <aspect defines="Clear">
+        <event>05.01.01.01.22.83.00.81</event>
+      </aspect>
+      <aspect defines="Approach">
+        <event>00.00.00.00.00.00.00.00</event>
+      </aspect>
+      <aspect defines="Stop">
+        <event>05.01.01.01.22.83.00.80</event>
+      </aspect>
+      <aspect defines="Unlit">
+        <event>00.00.00.00.00.00.00.00</event>
+      </aspect>
+      <disabledAspects>
+        <disabledAspect>Approach</disabledAspect>
+        <disabledAspect>Unlit</disabledAspect>
+      </disabledAspects>
+    </olcbsignalmast>
+    <olcbsignalmast class="jmri.jmrix.openlcb.configurexml.OlcbSignalMastXml">
+      <systemName>MF$olm:basic:one-low($0013)</systemName>
+      <userName>WestExit1 (Dwarf)</userName>
+      <lit>
+        <lit>00.00.00.00.00.00.00.00</lit>
+        <notlit>00.00.00.00.00.00.00.00</notlit>
+      </lit>
+      <held>
+        <held>00.00.00.00.00.00.00.00</held>
+        <notheld>00.00.00.00.00.00.00.00</notheld>
+      </held>
+      <aspect defines="Clear">
+        <event>05.01.01.01.22.83.00.85</event>
+      </aspect>
+      <aspect defines="Approach">
+        <event>00.00.00.00.00.00.00.00</event>
+      </aspect>
+      <aspect defines="Stop">
+        <event>05.01.01.01.22.83.00.84</event>
+      </aspect>
+      <aspect defines="Unlit">
+        <event>00.00.00.00.00.00.00.00</event>
+      </aspect>
+      <disabledAspects>
+        <disabledAspect>Approach</disabledAspect>
+        <disabledAspect>Unlit</disabledAspect>
+      </disabledAspects>
+    </olcbsignalmast>
+    <olcbsignalmast class="jmri.jmrix.openlcb.configurexml.OlcbSignalMastXml">
+      <systemName>MF$olm:basic:one-low($0014)</systemName>
+      <userName>WestExit2 (Dwarf)</userName>
+      <lit>
+        <lit>00.00.00.00.00.00.00.00</lit>
+        <notlit>00.00.00.00.00.00.00.00</notlit>
+      </lit>
+      <held>
+        <held>00.00.00.00.00.00.00.00</held>
+        <notheld>00.00.00.00.00.00.00.00</notheld>
+      </held>
+      <aspect defines="Clear">
+        <event>05.01.01.01.22.83.00.89</event>
+      </aspect>
+      <aspect defines="Approach">
+        <event>00.00.00.00.00.00.00.00</event>
+      </aspect>
+      <aspect defines="Stop">
+        <event>05.01.01.01.22.83.00.88</event>
+      </aspect>
+      <aspect defines="Unlit">
+        <event>00.00.00.00.00.00.00.00</event>
+      </aspect>
+      <disabledAspects>
+        <disabledAspect>Approach</disabledAspect>
+        <disabledAspect>Unlit</disabledAspect>
+      </disabledAspects>
+    </olcbsignalmast>
+    <olcbsignalmast class="jmri.jmrix.openlcb.configurexml.OlcbSignalMastXml">
+      <systemName>MF$olm:basic:one-low($0015)</systemName>
+      <userName>WestExit4 (Dwarf)</userName>
+      <lit>
+        <lit>00.00.00.00.00.00.00.00</lit>
+        <notlit>00.00.00.00.00.00.00.00</notlit>
+      </lit>
+      <held>
+        <held>00.00.00.00.00.00.00.00</held>
+        <notheld>00.00.00.00.00.00.00.00</notheld>
+      </held>
+      <aspect defines="Clear">
+        <event>05.01.01.01.22.83.00.C1</event>
+      </aspect>
+      <aspect defines="Approach">
+        <event>00.00.00.00.00.00.00.00</event>
+      </aspect>
+      <aspect defines="Stop">
+        <event>05.01.01.01.22.83.00.C0</event>
+      </aspect>
+      <aspect defines="Unlit">
+        <event>00.00.00.00.00.00.00.00</event>
+      </aspect>
+      <disabledAspects>
+        <disabledAspect>Approach</disabledAspect>
+        <disabledAspect>Unlit</disabledAspect>
+      </disabledAspects>
+    </olcbsignalmast>
+    <olcbsignalmast class="jmri.jmrix.openlcb.configurexml.OlcbSignalMastXml">
+      <systemName>MF$olm:basic:one-searchlight($0002)</systemName>
+      <userName>WestF1</userName>
+      <lit>
+        <lit>00.00.00.00.00.00.00.00</lit>
+        <notlit>00.00.00.00.00.00.00.00</notlit>
+      </lit>
+      <held>
+        <held>00.00.00.00.00.00.00.00</held>
+        <notheld>00.00.00.00.00.00.00.00</notheld>
+      </held>
+      <aspect defines="Clear">
+        <event>05.01.01.01.22.81.00.62</event>
+      </aspect>
+      <aspect defines="Approach">
+        <event>05.01.01.01.22.81.00.61</event>
+      </aspect>
+      <aspect defines="Stop">
+        <event>05.01.01.01.22.81.00.60</event>
+      </aspect>
+      <aspect defines="Unlit">
+        <event>00.00.00.00.00.00.00.00</event>
+      </aspect>
+      <disabledAspects>
+        <disabledAspect>Unlit</disabledAspect>
+      </disabledAspects>
+    </olcbsignalmast>
+    <olcbsignalmast class="jmri.jmrix.openlcb.configurexml.OlcbSignalMastXml">
+      <systemName>MF$olm:basic:one-searchlight($0003)</systemName>
+      <userName>WestFM</userName>
+      <lit>
+        <lit>00.00.00.00.00.00.00.00</lit>
+        <notlit>00.00.00.00.00.00.00.00</notlit>
+      </lit>
+      <held>
+        <held>00.00.00.00.00.00.00.00</held>
+        <notheld>00.00.00.00.00.00.00.00</notheld>
+      </held>
+      <aspect defines="Clear">
+        <event>05.01.01.01.22.81.00.52</event>
+      </aspect>
+      <aspect defines="Approach">
+        <event>05.01.01.01.22.81.00.51</event>
+      </aspect>
+      <aspect defines="Stop">
+        <event>05.01.01.01.22.81.00.50</event>
+      </aspect>
+      <aspect defines="Unlit">
+        <event>00.00.00.00.00.00.00.00</event>
+      </aspect>
+      <disabledAspects>
+        <disabledAspect>Unlit</disabledAspect>
+      </disabledAspects>
+    </olcbsignalmast>
+    <olcbsignalmast class="jmri.jmrix.openlcb.configurexml.OlcbSignalMastXml">
+      <systemName>MF$olm:basic:one-searchlight($0017)</systemName>
+      <userName>EastF1</userName>
+      <lit>
+        <lit>00.00.00.00.00.00.00.00</lit>
+        <notlit>00.00.00.00.00.00.00.00</notlit>
+      </lit>
+      <held>
+        <held>00.00.00.00.00.00.00.00</held>
+        <notheld>00.00.00.00.00.00.00.00</notheld>
+      </held>
+      <aspect defines="Clear">
+        <event>05.01.01.01.22.82.00.52</event>
+      </aspect>
+      <aspect defines="Approach">
+        <event>05.01.01.01.22.82.00.51</event>
+      </aspect>
+      <aspect defines="Stop">
+        <event>05.01.01.01.22.82.00.50</event>
+      </aspect>
+      <aspect defines="Unlit">
+        <event>00.00.00.00.00.00.00.00</event>
+      </aspect>
+      <disabledAspects>
+        <disabledAspect>Unlit</disabledAspect>
+      </disabledAspects>
+    </olcbsignalmast>
+    <olcbsignalmast class="jmri.jmrix.openlcb.configurexml.OlcbSignalMastXml">
+      <systemName>MF$olm:basic:one-searchlight($0018)</systemName>
+      <userName>EastFM</userName>
+      <lit>
+        <lit>00.00.00.00.00.00.00.00</lit>
+        <notlit>00.00.00.00.00.00.00.00</notlit>
+      </lit>
+      <held>
+        <held>00.00.00.00.00.00.00.00</held>
+        <notheld>00.00.00.00.00.00.00.00</notheld>
+      </held>
+      <aspect defines="Clear">
+        <event>05.01.01.01.22.82.00.62</event>
+      </aspect>
+      <aspect defines="Approach">
+        <event>05.01.01.01.22.82.00.61</event>
+      </aspect>
+      <aspect defines="Stop">
+        <event>05.01.01.01.22.82.00.60</event>
+      </aspect>
+      <aspect defines="Unlit">
+        <event>00.00.00.00.00.00.00.00</event>
+      </aspect>
+    </olcbsignalmast>
+    <olcbsignalmast class="jmri.jmrix.openlcb.configurexml.OlcbSignalMastXml">
+      <systemName>MF$olm:basic:two-searchlight($0001)</systemName>
+      <userName>WestEN</userName>
+      <lit>
+        <lit>00.00.00.00.00.00.00.00</lit>
+        <notlit>00.00.00.00.00.00.00.00</notlit>
+      </lit>
+      <held>
+        <held>00.00.00.00.00.00.00.00</held>
+        <notheld>00.00.00.00.00.00.00.00</notheld>
+      </held>
+      <aspect defines="Clear">
+        <event>05.01.01.01.22.81.00.44</event>
+      </aspect>
+      <aspect defines="Approach">
+        <event>05.01.01.01.22.81.00.43</event>
+      </aspect>
+      <aspect defines="Stop">
+        <event>05.01.01.01.22.81.00.40</event>
+      </aspect>
+      <aspect defines="Diverging Clear">
+        <event>05.01.01.01.22.81.00.42</event>
+      </aspect>
+      <aspect defines="Diverging Approach">
+        <event>05.01.01.01.22.81.00.41</event>
+      </aspect>
+      <aspect defines="Unlit">
+        <event>00.00.00.00.00.00.00.00</event>
+      </aspect>
+      <disabledAspects>
+        <disabledAspect>Unlit</disabledAspect>
+      </disabledAspects>
+    </olcbsignalmast>
+    <olcbsignalmast class="jmri.jmrix.openlcb.configurexml.OlcbSignalMastXml">
+      <systemName>MF$olm:basic:two-searchlight($0004)</systemName>
+      <userName>WestYardEntry1-3</userName>
+      <lit>
+        <lit>00.00.00.00.00.00.00.00</lit>
+        <notlit>00.00.00.00.00.00.00.00</notlit>
+      </lit>
+      <held>
+        <held>00.00.00.00.00.00.00.00</held>
+        <notheld>00.00.00.00.00.00.00.00</notheld>
+      </held>
+      <aspect defines="Clear">
+        <event>05.01.01.01.22.83.00.64</event>
+      </aspect>
+      <aspect defines="Approach">
+        <event>05.01.01.01.22.83.00.63</event>
+      </aspect>
+      <aspect defines="Stop">
+        <event>05.01.01.01.22.83.00.60</event>
+      </aspect>
+      <aspect defines="Diverging Clear">
+        <event>05.01.01.01.22.83.00.62</event>
+      </aspect>
+      <aspect defines="Diverging Approach">
+        <event>05.01.01.01.22.83.00.61</event>
+      </aspect>
+      <aspect defines="Unlit">
+        <event>00.00.00.00.00.00.00.00</event>
+      </aspect>
+      <disabledAspects>
+        <disabledAspect>Unlit</disabledAspect>
+      </disabledAspects>
+    </olcbsignalmast>
+    <olcbsignalmast class="jmri.jmrix.openlcb.configurexml.OlcbSignalMastXml">
+      <systemName>MF$olm:basic:two-searchlight($0005)</systemName>
+      <userName>WestYardEntry2-4</userName>
+      <lit>
+        <lit>00.00.00.00.00.00.00.00</lit>
+        <notlit>00.00.00.00.00.00.00.00</notlit>
+      </lit>
+      <held>
+        <held>00.00.00.00.00.00.00.00</held>
+        <notheld>00.00.00.00.00.00.00.00</notheld>
+      </held>
+      <aspect defines="Clear">
+        <event>05.01.01.01.22.83.00.74</event>
+      </aspect>
+      <aspect defines="Approach">
+        <event>05.01.01.01.22.83.00.73</event>
+      </aspect>
+      <aspect defines="Stop">
+        <event>05.01.01.01.22.83.00.70</event>
+      </aspect>
+      <aspect defines="Diverging Clear">
+        <event>05.01.01.01.22.83.00.72</event>
+      </aspect>
+      <aspect defines="Diverging Approach">
+        <event>05.01.01.01.22.83.00.71</event>
+      </aspect>
+      <aspect defines="Unlit">
+        <event>00.00.00.00.00.00.00.00</event>
+      </aspect>
+      <disabledAspects>
+        <disabledAspect>Unlit</disabledAspect>
+      </disabledAspects>
+    </olcbsignalmast>
+    <olcbsignalmast class="jmri.jmrix.openlcb.configurexml.OlcbSignalMastXml">
+      <systemName>MF$olm:basic:two-searchlight($0006)</systemName>
+      <userName>EastYardEntry1-3</userName>
+      <lit>
+        <lit>00.00.00.00.00.00.00.00</lit>
+        <notlit>00.00.00.00.00.00.00.00</notlit>
+      </lit>
+      <held>
+        <held>00.00.00.00.00.00.00.00</held>
+        <notheld>00.00.00.00.00.00.00.00</notheld>
+      </held>
+      <aspect defines="Clear">
+        <event>05.01.01.01.22.83.00.D4</event>
+      </aspect>
+      <aspect defines="Approach">
+        <event>05.01.01.01.22.83.00.D3</event>
+      </aspect>
+      <aspect defines="Stop">
+        <event>05.01.01.01.22.83.00.D0</event>
+      </aspect>
+      <aspect defines="Diverging Clear">
+        <event>05.01.01.01.22.83.00.D2</event>
+      </aspect>
+      <aspect defines="Diverging Approach">
+        <event>05.01.01.01.22.83.00.D1</event>
+      </aspect>
+      <aspect defines="Unlit">
+        <event>00.00.00.00.00.00.00.00</event>
+      </aspect>
+      <disabledAspects>
+        <disabledAspect>Unlit</disabledAspect>
+      </disabledAspects>
+    </olcbsignalmast>
+    <olcbsignalmast class="jmri.jmrix.openlcb.configurexml.OlcbSignalMastXml">
+      <systemName>MF$olm:basic:two-searchlight($0007)</systemName>
+      <userName>EastYardEntry2-4</userName>
+      <lit>
+        <lit>00.00.00.00.00.00.00.00</lit>
+        <notlit>00.00.00.00.00.00.00.00</notlit>
+      </lit>
+      <held>
+        <held>00.00.00.00.00.00.00.00</held>
+        <notheld>00.00.00.00.00.00.00.00</notheld>
+      </held>
+      <aspect defines="Clear">
+        <event>05.01.01.01.22.83.00.E4</event>
+      </aspect>
+      <aspect defines="Approach">
+        <event>05.01.01.01.22.83.00.E3</event>
+      </aspect>
+      <aspect defines="Stop">
+        <event>05.01.01.01.22.83.00.E0</event>
+      </aspect>
+      <aspect defines="Diverging Clear">
+        <event>05.01.01.01.22.83.00.E2</event>
+      </aspect>
+      <aspect defines="Diverging Approach">
+        <event>05.01.01.01.22.83.00.E1</event>
+      </aspect>
+      <aspect defines="Unlit">
+        <event>00.00.00.00.00.00.00.00</event>
+      </aspect>
+      <disabledAspects>
+        <disabledAspect>Unlit</disabledAspect>
+      </disabledAspects>
+    </olcbsignalmast>
+    <olcbsignalmast class="jmri.jmrix.openlcb.configurexml.OlcbSignalMastXml">
+      <systemName>MF$olm:basic:two-searchlight($0016)</systemName>
+      <userName>EastEN</userName>
+      <lit>
+        <lit>00.00.00.00.00.00.00.00</lit>
+        <notlit>00.00.00.00.00.00.00.00</notlit>
+      </lit>
+      <held>
+        <held>00.00.00.00.00.00.00.00</held>
+        <notheld>00.00.00.00.00.00.00.00</notheld>
+      </held>
+      <aspect defines="Clear">
+        <event>05.01.01.01.22.82.00.44</event>
+      </aspect>
+      <aspect defines="Approach">
+        <event>05.01.01.01.22.82.00.43</event>
+      </aspect>
+      <aspect defines="Stop">
+        <event>05.01.01.01.22.82.00.40</event>
+      </aspect>
+      <aspect defines="Diverging Clear">
+        <event>05.01.01.01.22.82.00.42</event>
+      </aspect>
+      <aspect defines="Diverging Approach">
+        <event>05.01.01.01.22.82.00.41</event>
+      </aspect>
+      <aspect defines="Unlit">
+        <event>00.00.00.00.00.00.00.00</event>
+      </aspect>
+      <disabledAspects>
+        <disabledAspect>Unlit</disabledAspect>
+      </disabledAspects>
+    </olcbsignalmast>
+  </signalmasts>
+  <signalmastlogics class="jmri.managers.configurexml.DefaultSignalMastLogicManagerXml">
+    <logicDelay>500</logicDelay>
+  </signalmastlogics>
+  <logixs class="jmri.managers.configurexml.DefaultLogixManagerXml">
+    <logix userName="Stage West 1-3 Lever" enabled="yes">
+      <systemName>IX03</systemName>
+      <userName>Stage West 1-3 Lever</userName>
+      <logixConditional systemName="IX03C1" order="0" />
+      <logixConditional systemName="IX03C2" order="1" />
+    </logix>
+    <logix userName="Signal 04" enabled="yes">
+      <systemName>IX04</systemName>
+      <userName>Signal 04</userName>
+      <logixConditional systemName="IX04C1" order="0" />
+      <logixConditional systemName="IX04C2" order="1" />
+      <logixConditional systemName="IX04C7" order="2" />
+      <logixConditional systemName="IX04C4" order="3" />
+      <logixConditional systemName="IX04C8" order="4" />
+      <logixConditional systemName="IX04C5" order="5" />
+      <logixConditional systemName="IX04C9" order="6" />
+      <logixConditional systemName="IX04C6" order="7" />
+      <logixConditional systemName="IX04C10" order="8" />
+    </logix>
+    <logix userName="Stage West 2-4 Lever" enabled="yes">
+      <systemName>IX05</systemName>
+      <userName>Stage West 2-4 Lever</userName>
+      <logixConditional systemName="IX05C1" order="0" />
+      <logixConditional systemName="IX05C2" order="1" />
+    </logix>
+    <logix userName="Signal 06" enabled="yes">
+      <systemName>IX06</systemName>
+      <userName>Signal 06</userName>
+      <logixConditional systemName="IX06C1" order="0" />
+      <logixConditional systemName="IX06C2" order="1" />
+      <logixConditional systemName="IX06C3" order="2" />
+      <logixConditional systemName="IX06C4" order="3" />
+      <logixConditional systemName="IX06C5" order="4" />
+      <logixConditional systemName="IX06C6" order="5" />
+      <logixConditional systemName="IX06C7" order="6" />
+      <logixConditional systemName="IX06C8" order="7" />
+      <logixConditional systemName="IX06C9" order="8" />
+    </logix>
+    <logix userName="West Double Lever" enabled="yes">
+      <systemName>IX07</systemName>
+      <userName>West Double Lever</userName>
+      <logixConditional systemName="IX07C1" order="0" />
+      <logixConditional systemName="IX07C2" order="1" />
+    </logix>
+    <logix userName="Signal 08" enabled="yes">
+      <systemName>IX08</systemName>
+      <userName>Signal 08</userName>
+      <logixConditional systemName="IX08C1" order="0" />
+      <logixConditional systemName="IX08C2" order="1" />
+      <logixConditional systemName="IX08C3" order="2" />
+      <logixConditional systemName="IX08C4" order="3" />
+      <logixConditional systemName="IX08C5" order="4" />
+      <logixConditional systemName="IX08C6" order="5" />
+      <logixConditional systemName="IX08C7" order="6" />
+      <logixConditional systemName="IX08C8" order="7" />
+      <logixConditional systemName="IX08C9" order="8" />
+    </logix>
+    <logix userName="East Double Lever" enabled="yes">
+      <systemName>IX11</systemName>
+      <userName>East Double Lever</userName>
+      <logixConditional systemName="IX11C1" order="0" />
+      <logixConditional systemName="IX11C2" order="1" />
+    </logix>
+    <logix userName="Signal 12" enabled="yes">
+      <systemName>IX12</systemName>
+      <userName>Signal 12</userName>
+      <logixConditional systemName="IX12C1" order="0" />
+      <logixConditional systemName="IX12C2" order="1" />
+      <logixConditional systemName="IX12C3" order="2" />
+      <logixConditional systemName="IX12C4" order="3" />
+      <logixConditional systemName="IX12C5" order="4" />
+      <logixConditional systemName="IX12C6" order="5" />
+      <logixConditional systemName="IX12C7" order="6" />
+      <logixConditional systemName="IX12C8" order="7" />
+      <logixConditional systemName="IX12C9" order="8" />
+    </logix>
+    <logix userName="Stage East 1-3 Lever" enabled="yes">
+      <systemName>IX13</systemName>
+      <userName>Stage East 1-3 Lever</userName>
+      <logixConditional systemName="IX13C1" order="0" />
+      <logixConditional systemName="IX13C2" order="1" />
+    </logix>
+    <logix userName="Signal 14" enabled="yes">
+      <systemName>IX14</systemName>
+      <userName>Signal 14</userName>
+      <logixConditional systemName="IX14C1" order="0" />
+      <logixConditional systemName="IX14C2" order="1" />
+      <logixConditional systemName="IX14C3" order="2" />
+      <logixConditional systemName="IX14C4" order="3" />
+      <logixConditional systemName="IX14C5" order="4" />
+      <logixConditional systemName="IX14C6" order="5" />
+      <logixConditional systemName="IX14C7" order="6" />
+      <logixConditional systemName="IX14C8" order="7" />
+      <logixConditional systemName="IX14C9" order="8" />
+    </logix>
+    <logix userName="Stage East 2-4 Lever" enabled="yes">
+      <systemName>IX15</systemName>
+      <userName>Stage East 2-4 Lever</userName>
+      <logixConditional systemName="IX15C1" order="0" />
+      <logixConditional systemName="IX15C2" order="1" />
+    </logix>
+    <logix userName="Signal 16" enabled="yes">
+      <systemName>IX16</systemName>
+      <userName>Signal 16</userName>
+      <logixConditional systemName="IX16C1" order="0" />
+      <logixConditional systemName="IX16C2" order="1" />
+      <logixConditional systemName="IX16C3" order="2" />
+      <logixConditional systemName="IX16C4" order="3" />
+      <logixConditional systemName="IX16C5" order="4" />
+      <logixConditional systemName="IX16C6" order="5" />
+      <logixConditional systemName="IX16C7" order="6" />
+      <logixConditional systemName="IX16C8" order="7" />
+      <logixConditional systemName="IX16C9" order="8" />
+    </logix>
+    <logix userName="System Logix" enabled="yes">
+      <systemName>IX:SYS</systemName>
+      <userName>System Logix</userName>
+      <logixConditional systemName="IX:SYS_SGC_Sig 04" order="0" />
+      <logixConditional systemName="IX:SYS_SGC_Sig 06" order="1" />
+      <logixConditional systemName="IX:SYS_SGC_Sig 08" order="2" />
+      <logixConditional systemName="IX:SYS_SGC_Sig 12" order="3" />
+      <logixConditional systemName="IX:SYS_SGC_Sig 14" order="4" />
+      <logixConditional systemName="IX:SYS_SGC_Sig 16" order="5" />
+    </logix>
+  </logixs>
+  <conditionals class="jmri.managers.configurexml.DefaultConditionalManagerXml">
+    <conditional systemName="IX03C1" userName="Lever Normal" antecedent="R1 and R2" logicType="1" triggerOnChange="yes">
+      <systemName>IX03C1</systemName>
+      <userName>Lever Normal</userName>
+      <conditionalStateVariable operator="4" negated="no" type="1" systemName="Stage West 1-3 Lever" dataString="" num1="0" num2="0" triggersCalc="no" />
+      <conditionalStateVariable operator="1" negated="no" type="1" systemName="Stage West 1-3 Code Button" dataString="" num1="0" num2="0" triggersCalc="yes" />
+      <conditionalAction option="1" type="2" systemName="Stage West 1-3" data="2" delay="0" string="" />
+    </conditional>
+    <conditional systemName="IX03C2" userName="Lever Reversed" antecedent="R1 and R2" logicType="1" triggerOnChange="yes">
+      <systemName>IX03C2</systemName>
+      <userName>Lever Reversed</userName>
+      <conditionalStateVariable operator="4" negated="no" type="2" systemName="Stage West 1-3 Lever" dataString="" num1="0" num2="0" triggersCalc="no" />
+      <conditionalStateVariable operator="1" negated="no" type="1" systemName="Stage West 1-3 Code Button" dataString="" num1="0" num2="0" triggersCalc="yes" />
+      <conditionalAction option="1" type="2" systemName="Stage West 1-3" data="4" delay="0" string="" />
+    </conditional>
+    <conditional systemName="IX04C1" userName="Stop" antecedent="R1 and R2" logicType="1" triggerOnChange="yes">
+      <systemName>IX04C1</systemName>
+      <userName>Stop</userName>
+      <conditionalStateVariable operator="4" negated="no" type="1" systemName="Signal Lever Stage West 1-3C" dataString="" num1="0" num2="0" triggersCalc="no" />
+      <conditionalStateVariable operator="1" negated="no" type="1" systemName="Stage West 1-3 Code Button" dataString="" num1="0" num2="0" triggersCalc="yes" />
+      <conditionalAction option="1" type="9" systemName="Signal Lamp Stage West 1-3C" data="2" delay="0" string="" />
+      <conditionalAction option="1" type="37" systemName="WestExit1 (Dwarf)" data="-1" delay="0" string="Stop" />
+      <conditionalAction option="1" type="37" systemName="WestExit3 (Dwarf)" data="-1" delay="0" string="Stop" />
+      <conditionalAction option="1" type="37" systemName="WestYardEntry1-3" data="-1" delay="0" string="Stop" />
+    </conditional>
+    <conditional systemName="IX04C2" userName="Right from Stage 1" antecedent="R1 and R2 and R3" logicType="1" triggerOnChange="yes">
+      <systemName>IX04C2</systemName>
+      <userName>Right from Stage 1</userName>
+      <conditionalStateVariable operator="4" negated="no" type="1" systemName="Stage West 1-3_points" dataString="" num1="0" num2="0" triggersCalc="no" />
+      <conditionalStateVariable operator="1" negated="no" type="1" systemName="Signal Lever Stage West 1-3R" dataString="" num1="0" num2="0" triggersCalc="no" />
+      <conditionalStateVariable operator="1" negated="no" type="1" systemName="Stage West 1-3 Code Button" dataString="" num1="0" num2="0" triggersCalc="yes" />
+      <conditionalAction option="1" type="9" systemName="Signal Lamp Stage West 1-3R" data="2" delay="0" string="" />
+      <conditionalAction option="1" type="37" systemName="WestExit1 (Dwarf)" data="-1" delay="0" string="Clear" />
+      <conditionalAction option="1" type="37" systemName="WestExit3 (Dwarf)" data="-1" delay="0" string="Stop" />
+      <conditionalAction option="1" type="37" systemName="WestYardEntry1-3" data="-1" delay="0" string="Stop" />
+    </conditional>
+    <conditional systemName="IX04C4" userName="Right from Stage 3" antecedent="R1 and R2 and R3" logicType="1" triggerOnChange="yes">
+      <systemName>IX04C4</systemName>
+      <userName>Right from Stage 3</userName>
+      <conditionalStateVariable operator="4" negated="no" type="1" systemName="Signal Lever Stage West 1-3R" dataString="" num1="0" num2="0" triggersCalc="no" />
+      <conditionalStateVariable operator="1" negated="no" type="2" systemName="Stage West 1-3_points" dataString="" num1="0" num2="0" triggersCalc="no" />
+      <conditionalStateVariable operator="1" negated="no" type="1" systemName="Stage West 1-3 Code Button" dataString="" num1="0" num2="0" triggersCalc="yes" />
+      <conditionalAction option="1" type="9" systemName="Signal Lamp Stage West 1-3R" data="2" delay="0" string="" />
+      <conditionalAction option="1" type="37" systemName="WestExit3 (Dwarf)" data="-1" delay="0" string="Clear" />
+      <conditionalAction option="1" type="37" systemName="WestExit1 (Dwarf)" data="-1" delay="0" string="Stop" />
+      <conditionalAction option="1" type="37" systemName="WestYardEntry1-3" data="-1" delay="0" string="Stop" />
+    </conditional>
+    <conditional systemName="IX04C5" userName="Left to Stage 1" antecedent="R1 and R2 and R3" logicType="1" triggerOnChange="yes">
+      <systemName>IX04C5</systemName>
+      <userName>Left to Stage 1</userName>
+      <conditionalStateVariable operator="4" negated="no" type="1" systemName="Signal Lever Stage West 1-3L" dataString="" num1="0" num2="0" triggersCalc="no" />
+      <conditionalStateVariable operator="1" negated="no" type="1" systemName="Stage West 1-3_points" dataString="" num1="0" num2="0" triggersCalc="no" />
+      <conditionalStateVariable operator="1" negated="no" type="1" systemName="Stage West 1-3 Code Button" dataString="" num1="0" num2="0" triggersCalc="yes" />
+      <conditionalAction option="1" type="9" systemName="Signal Lamp Stage West 1-3L" data="2" delay="0" string="" />
+      <conditionalAction option="1" type="37" systemName="WestExit1 (Dwarf)" data="-1" delay="0" string="Stop" />
+      <conditionalAction option="1" type="37" systemName="WestExit3 (Dwarf)" data="-1" delay="0" string="Stop" />
+      <conditionalAction option="1" type="37" systemName="WestYardEntry1-3" data="-1" delay="0" string="Clear" />
+    </conditional>
+    <conditional systemName="IX04C6" userName="Left to Stage 3" antecedent="R1 and R2 and R3" logicType="1" triggerOnChange="yes">
+      <systemName>IX04C6</systemName>
+      <userName>Left to Stage 3</userName>
+      <conditionalStateVariable operator="4" negated="no" type="1" systemName="Signal Lever Stage West 1-3L" dataString="" num1="0" num2="0" triggersCalc="no" />
+      <conditionalStateVariable operator="1" negated="no" type="2" systemName="Stage West 1-3_points" dataString="" num1="0" num2="0" triggersCalc="no" />
+      <conditionalStateVariable operator="1" negated="no" type="1" systemName="Stage West 1-3 Code Button" dataString="" num1="0" num2="0" triggersCalc="yes" />
+      <conditionalAction option="1" type="9" systemName="Signal Lamp Stage West 1-3L" data="2" delay="0" string="" />
+      <conditionalAction option="1" type="37" systemName="WestExit1 (Dwarf)" data="-1" delay="0" string="Stop" />
+      <conditionalAction option="1" type="37" systemName="WestExit3 (Dwarf)" data="-1" delay="0" string="Stop" />
+      <conditionalAction option="1" type="37" systemName="WestYardEntry1-3" data="-1" delay="0" string="Diverging Clear" />
+    </conditional>
+    <conditional systemName="IX04C7" userName="Right from Stage 1 After Points Settle" antecedent="R1 and R2" logicType="1" triggerOnChange="yes">
+      <systemName>IX04C7</systemName>
+      <userName>Right from Stage 1 After Points Settle</userName>
+      <conditionalStateVariable operator="4" negated="no" type="1" systemName="Stage West 1-3_points" dataString="" num1="0" num2="0" triggersCalc="yes" />
+      <conditionalStateVariable operator="1" negated="no" type="1" systemName="Signal Lamp Stage West 1-3R" dataString="" num1="0" num2="0" triggersCalc="no" />
+      <conditionalAction option="1" type="37" systemName="WestExit1 (Dwarf)" data="-1" delay="0" string="Clear" />
+      <conditionalAction option="1" type="37" systemName="WestExit3 (Dwarf)" data="-1" delay="0" string="Stop" />
+    </conditional>
+    <conditional systemName="IX04C8" userName="Right from Stage 3 After Points Settle" antecedent="R1 and R2" logicType="1" triggerOnChange="yes">
+      <systemName>IX04C8</systemName>
+      <userName>Right from Stage 3 After Points Settle</userName>
+      <conditionalStateVariable operator="4" negated="no" type="2" systemName="Stage West 1-3_points" dataString="" num1="0" num2="0" triggersCalc="yes" />
+      <conditionalStateVariable operator="1" negated="no" type="1" systemName="Signal Lamp Stage West 1-3R" dataString="" num1="0" num2="0" triggersCalc="no" />
+      <conditionalAction option="1" type="37" systemName="WestExit1 (Dwarf)" data="-1" delay="0" string="Stop" />
+      <conditionalAction option="1" type="37" systemName="WestExit3 (Dwarf)" data="-1" delay="0" string="Clear" />
+    </conditional>
+    <conditional systemName="IX04C9" userName="Left to Stage 1 after Points Settle" antecedent="R1 and R2" logicType="1" triggerOnChange="yes">
+      <systemName>IX04C9</systemName>
+      <userName>Left to Stage 1 after Points Settle</userName>
+      <conditionalStateVariable operator="4" negated="no" type="1" systemName="Stage West 1-3_points" dataString="" num1="0" num2="0" triggersCalc="yes" />
+      <conditionalStateVariable operator="1" negated="no" type="1" systemName="Signal Lamp Stage West 1-3L" dataString="" num1="0" num2="0" triggersCalc="no" />
+      <conditionalAction option="1" type="37" systemName="WestYardEntry1-3" data="-1" delay="0" string="Clear" />
+    </conditional>
+    <conditional systemName="IX04C10" userName="Left to Stage 3 after Points Settle" antecedent="R1 and R2" logicType="1" triggerOnChange="yes">
+      <systemName>IX04C10</systemName>
+      <userName>Left to Stage 3 after Points Settle</userName>
+      <conditionalStateVariable operator="4" negated="no" type="2" systemName="Stage West 1-3_points" dataString="" num1="0" num2="0" triggersCalc="yes" />
+      <conditionalStateVariable operator="1" negated="no" type="1" systemName="Signal Lamp Stage West 1-3L" dataString="" num1="0" num2="0" triggersCalc="no" />
+      <conditionalAction option="1" type="37" systemName="WestYardEntry1-3" data="-1" delay="0" string="Diverging Clear" />
+    </conditional>
+    <conditional systemName="IX05C1" userName="Lever Normal" antecedent="R1 and R2" logicType="1" triggerOnChange="yes">
+      <systemName>IX05C1</systemName>
+      <userName>Lever Normal</userName>
+      <conditionalStateVariable operator="4" negated="no" type="1" systemName="Stage West 2-4 Lever" dataString="" num1="0" num2="0" triggersCalc="no" />
+      <conditionalStateVariable operator="1" negated="no" type="2" systemName="Stage West 2-4 Code Button" dataString="" num1="0" num2="0" triggersCalc="yes" />
+      <conditionalAction option="1" type="2" systemName="Stage West 2-4" data="2" delay="0" string="" />
+    </conditional>
+    <conditional systemName="IX05C2" userName="Lever Reversed" antecedent="R1 and R2" logicType="1" triggerOnChange="yes">
+      <systemName>IX05C2</systemName>
+      <userName>Lever Reversed</userName>
+      <conditionalStateVariable operator="4" negated="no" type="2" systemName="Stage West 2-4 Lever" dataString="" num1="0" num2="0" triggersCalc="no" />
+      <conditionalStateVariable operator="1" negated="no" type="1" systemName="Stage West 2-4 Code Button" dataString="" num1="0" num2="0" triggersCalc="yes" />
+      <conditionalAction option="1" type="2" systemName="Stage West 2-4" data="4" delay="0" string="" />
+    </conditional>
+    <conditional systemName="IX06C1" userName="Stop" antecedent="R1 and R2" logicType="1" triggerOnChange="yes">
+      <systemName>IX06C1</systemName>
+      <userName>Stop</userName>
+      <conditionalStateVariable operator="4" negated="no" type="1" systemName="Signal Lever Stage West 2-4C" dataString="" num1="0" num2="0" triggersCalc="no" />
+      <conditionalStateVariable operator="1" negated="no" type="1" systemName="Stage West 2-4 Code Button" dataString="" num1="0" num2="0" triggersCalc="yes" />
+      <conditionalAction option="1" type="9" systemName="Signal Lamp Stage West 2-4C" data="2" delay="0" string="" />
+      <conditionalAction option="1" type="37" systemName="WestExit2 (Dwarf)" data="-1" delay="0" string="Stop" />
+      <conditionalAction option="1" type="37" systemName="WestExit4 (Dwarf)" data="-1" delay="0" string="Stop" />
+      <conditionalAction option="1" type="37" systemName="WestYardEntry2-4" data="-1" delay="0" string="Stop" />
+    </conditional>
+    <conditional systemName="IX06C2" userName="Right from Stage 1" antecedent="R1 and R2 and R3" logicType="1" triggerOnChange="yes">
+      <systemName>IX06C2</systemName>
+      <userName>Right from Stage 1</userName>
+      <conditionalStateVariable operator="4" negated="no" type="1" systemName="Stage West 2-4_points" dataString="" num1="0" num2="0" triggersCalc="no" />
+      <conditionalStateVariable operator="1" negated="no" type="1" systemName="Signal Lever Stage West 2-4R" dataString="" num1="0" num2="0" triggersCalc="no" />
+      <conditionalStateVariable operator="1" negated="no" type="1" systemName="Stage West 2-4 Code Button" dataString="" num1="0" num2="0" triggersCalc="yes" />
+      <conditionalAction option="1" type="9" systemName="Signal Lamp Stage West 2-4R" data="2" delay="0" string="" />
+      <conditionalAction option="1" type="37" systemName="WestExit2 (Dwarf)" data="-1" delay="0" string="Clear" />
+      <conditionalAction option="1" type="37" systemName="WestExit4 (Dwarf)" data="-1" delay="0" string="Stop" />
+      <conditionalAction option="1" type="37" systemName="WestYardEntry2-4" data="-1" delay="0" string="Stop" />
+    </conditional>
+    <conditional systemName="IX06C3" userName="Right from Stage 1 After Points Settle" antecedent="R1 and R2" logicType="1" triggerOnChange="yes">
+      <systemName>IX06C3</systemName>
+      <userName>Right from Stage 1 After Points Settle</userName>
+      <conditionalStateVariable operator="4" negated="no" type="1" systemName="Stage West 2-4_points" dataString="" num1="0" num2="0" triggersCalc="yes" />
+      <conditionalStateVariable operator="1" negated="no" type="1" systemName="Signal Lamp Stage West 2-4R" dataString="" num1="0" num2="0" triggersCalc="no" />
+      <conditionalAction option="1" type="37" systemName="WestExit2 (Dwarf)" data="-1" delay="0" string="Clear" />
+      <conditionalAction option="1" type="37" systemName="WestExit4 (Dwarf)" data="-1" delay="0" string="Stop" />
+    </conditional>
+    <conditional systemName="IX06C4" userName="Right from Stage 3" antecedent="R1 and R2 and R3" logicType="1" triggerOnChange="yes">
+      <systemName>IX06C4</systemName>
+      <userName>Right from Stage 3</userName>
+      <conditionalStateVariable operator="4" negated="no" type="1" systemName="Signal Lever Stage West 2-4R" dataString="" num1="0" num2="0" triggersCalc="no" />
+      <conditionalStateVariable operator="1" negated="no" type="2" systemName="Stage West 2-4_points" dataString="" num1="0" num2="0" triggersCalc="no" />
+      <conditionalStateVariable operator="1" negated="no" type="1" systemName="Stage West 2-4 Code Button" dataString="" num1="0" num2="0" triggersCalc="yes" />
+      <conditionalAction option="1" type="9" systemName="Signal Lamp Stage West 2-4R" data="2" delay="0" string="" />
+      <conditionalAction option="1" type="37" systemName="WestExit4 (Dwarf)" data="-1" delay="0" string="Clear" />
+      <conditionalAction option="1" type="37" systemName="WestExit2 (Dwarf)" data="-1" delay="0" string="Stop" />
+      <conditionalAction option="1" type="37" systemName="WestYardEntry2-4" data="-1" delay="0" string="Stop" />
+    </conditional>
+    <conditional systemName="IX06C5" userName="Right from Stage 3 After Points Settle" antecedent="R1 and R2" logicType="1" triggerOnChange="yes">
+      <systemName>IX06C5</systemName>
+      <userName>Right from Stage 3 After Points Settle</userName>
+      <conditionalStateVariable operator="4" negated="no" type="2" systemName="Stage West 2-4_points" dataString="" num1="0" num2="0" triggersCalc="yes" />
+      <conditionalStateVariable operator="1" negated="no" type="1" systemName="Signal Lamp Stage West 2-4R" dataString="" num1="0" num2="0" triggersCalc="no" />
+      <conditionalAction option="1" type="37" systemName="WestExit2 (Dwarf)" data="-1" delay="0" string="Stop" />
+      <conditionalAction option="1" type="37" systemName="WestExit4 (Dwarf)" data="-1" delay="0" string="Clear" />
+    </conditional>
+    <conditional systemName="IX06C6" userName="Left to Stage 1" antecedent="R1 and R2 and R3" logicType="1" triggerOnChange="yes">
+      <systemName>IX06C6</systemName>
+      <userName>Left to Stage 1</userName>
+      <conditionalStateVariable operator="4" negated="no" type="1" systemName="Signal Lever Stage West 2-4L" dataString="" num1="0" num2="0" triggersCalc="no" />
+      <conditionalStateVariable operator="1" negated="no" type="1" systemName="Stage West 2-4_points" dataString="" num1="0" num2="0" triggersCalc="no" />
+      <conditionalStateVariable operator="1" negated="no" type="1" systemName="Stage West 2-4 Code Button" dataString="" num1="0" num2="0" triggersCalc="yes" />
+      <conditionalAction option="1" type="9" systemName="Signal Lamp Stage West 2-4L" data="2" delay="0" string="" />
+      <conditionalAction option="1" type="37" systemName="WestExit2 (Dwarf)" data="-1" delay="0" string="Stop" />
+      <conditionalAction option="1" type="37" systemName="WestExit4 (Dwarf)" data="-1" delay="0" string="Stop" />
+      <conditionalAction option="1" type="37" systemName="WestYardEntry2-4" data="-1" delay="0" string="Clear" />
+    </conditional>
+    <conditional systemName="IX06C7" userName="Left to Stage 1 after Points Settle" antecedent="R1 and R2" logicType="1" triggerOnChange="yes">
+      <systemName>IX06C7</systemName>
+      <userName>Left to Stage 1 after Points Settle</userName>
+      <conditionalStateVariable operator="4" negated="no" type="1" systemName="Stage West 2-4_points" dataString="" num1="0" num2="0" triggersCalc="yes" />
+      <conditionalStateVariable operator="1" negated="no" type="1" systemName="Signal Lamp Stage West 2-4L" dataString="" num1="0" num2="0" triggersCalc="no" />
+      <conditionalAction option="1" type="37" systemName="WestYardEntry2-4" data="-1" delay="0" string="Clear" />
+    </conditional>
+    <conditional systemName="IX06C8" userName="Left to Stage 3" antecedent="R1 and R2 and R3" logicType="1" triggerOnChange="yes">
+      <systemName>IX06C8</systemName>
+      <userName>Left to Stage 3</userName>
+      <conditionalStateVariable operator="4" negated="no" type="1" systemName="Signal Lever Stage West 2-4L" dataString="" num1="0" num2="0" triggersCalc="no" />
+      <conditionalStateVariable operator="1" negated="no" type="2" systemName="Stage West 2-4_points" dataString="" num1="0" num2="0" triggersCalc="no" />
+      <conditionalStateVariable operator="1" negated="no" type="1" systemName="Stage West 2-4 Code Button" dataString="" num1="0" num2="0" triggersCalc="yes" />
+      <conditionalAction option="1" type="9" systemName="Signal Lamp Stage West 2-4L" data="2" delay="0" string="" />
+      <conditionalAction option="1" type="37" systemName="WestExit2 (Dwarf)" data="-1" delay="0" string="Stop" />
+      <conditionalAction option="1" type="37" systemName="WestExit4 (Dwarf)" data="-1" delay="0" string="Stop" />
+      <conditionalAction option="1" type="37" systemName="WestYardEntry2-4" data="-1" delay="0" string="Diverging Clear" />
+    </conditional>
+    <conditional systemName="IX06C9" userName="Left to Stage 3 after Points Settle" antecedent="R1 and R2" logicType="1" triggerOnChange="yes">
+      <systemName>IX06C9</systemName>
+      <userName>Left to Stage 3 after Points Settle</userName>
+      <conditionalStateVariable operator="4" negated="no" type="2" systemName="Stage West 2-4_points" dataString="" num1="0" num2="0" triggersCalc="yes" />
+      <conditionalStateVariable operator="1" negated="no" type="1" systemName="Signal Lamp Stage West 2-4L" dataString="" num1="0" num2="0" triggersCalc="no" />
+      <conditionalAction option="1" type="37" systemName="WestYardEntry2-4" data="-1" delay="0" string="Diverging Clear" />
+    </conditional>
+    <conditional systemName="IX07C1" userName="Lever Normal" antecedent="R1 and R2" logicType="1" triggerOnChange="yes">
+      <systemName>IX07C1</systemName>
+      <userName>Lever Normal</userName>
+      <conditionalStateVariable operator="4" negated="no" type="1" systemName="West Double Track Lever" dataString="" num1="0" num2="0" triggersCalc="no" />
+      <conditionalStateVariable operator="1" negated="no" type="1" systemName="West Double Track Code Button" dataString="" num1="0" num2="0" triggersCalc="yes" />
+      <conditionalAction option="1" type="2" systemName="West Double Track" data="2" delay="0" string="" />
+    </conditional>
+    <conditional systemName="IX07C2" userName="Lever Reversed" antecedent="R1 and R2" logicType="1" triggerOnChange="yes">
+      <systemName>IX07C2</systemName>
+      <userName>Lever Reversed</userName>
+      <conditionalStateVariable operator="4" negated="no" type="2" systemName="West Double Track Lever" dataString="" num1="0" num2="0" triggersCalc="no" />
+      <conditionalStateVariable operator="1" negated="no" type="1" systemName="West Double Track Code Button" dataString="" num1="0" num2="0" triggersCalc="yes" />
+      <conditionalAction option="1" type="2" systemName="West Double Track" data="4" delay="0" string="" />
+    </conditional>
+    <conditional systemName="IX08C1" userName="Stop" antecedent="R1 and R2" logicType="1" triggerOnChange="yes">
+      <systemName>IX08C1</systemName>
+      <userName>Stop</userName>
+      <conditionalStateVariable operator="4" negated="no" type="1" systemName="Signal Lever West DoubleC" dataString="" num1="0" num2="0" triggersCalc="no" />
+      <conditionalStateVariable operator="1" negated="no" type="1" systemName="West Double Track Code Button" dataString="" num1="0" num2="0" triggersCalc="yes" />
+      <conditionalAction option="1" type="9" systemName="Signal Lamp West DoubleC" data="2" delay="0" string="" />
+      <conditionalAction option="1" type="37" systemName="WestFM" data="-1" delay="0" string="Stop" />
+      <conditionalAction option="1" type="37" systemName="WestF1" data="-1" delay="0" string="Stop" />
+      <conditionalAction option="1" type="37" systemName="WestEN" data="-1" delay="0" string="Stop" />
+    </conditional>
+    <conditional systemName="IX08C2" userName="Right from West Double 2" antecedent="R1 and R2 and R3" logicType="1" triggerOnChange="yes">
+      <systemName>IX08C2</systemName>
+      <userName>Right from West Double 2</userName>
+      <conditionalStateVariable operator="4" negated="no" type="1" systemName="West Double Track_points" dataString="" num1="0" num2="0" triggersCalc="no" />
+      <conditionalStateVariable operator="1" negated="no" type="1" systemName="Signal Lever West DoubleR" dataString="" num1="0" num2="0" triggersCalc="no" />
+      <conditionalStateVariable operator="1" negated="no" type="1" systemName="West Double Track Code Button" dataString="" num1="0" num2="0" triggersCalc="yes" />
+      <conditionalAction option="1" type="9" systemName="Signal Lamp West DoubleR" data="2" delay="0" string="" />
+      <conditionalAction option="1" type="37" systemName="WestFM" data="-1" delay="0" string="Clear" />
+      <conditionalAction option="1" type="37" systemName="WestF1" data="-1" delay="0" string="Stop" />
+      <conditionalAction option="1" type="37" systemName="WestEN" data="-1" delay="0" string="Stop" />
+    </conditional>
+    <conditional systemName="IX08C3" userName="Right from West Double 2 After Points Settle" antecedent="R1 and R2" logicType="1" triggerOnChange="yes">
+      <systemName>IX08C3</systemName>
+      <userName>Right from West Double 2 After Points Settle</userName>
+      <conditionalStateVariable operator="4" negated="no" type="1" systemName="West Double Track_points" dataString="" num1="0" num2="0" triggersCalc="yes" />
+      <conditionalStateVariable operator="1" negated="no" type="1" systemName="Signal Lamp West DoubleR" dataString="" num1="0" num2="0" triggersCalc="no" />
+      <conditionalAction option="1" type="37" systemName="WestFM" data="-1" delay="0" string="Clear" />
+      <conditionalAction option="1" type="37" systemName="WestF1" data="-1" delay="0" string="Stop" />
+    </conditional>
+    <conditional systemName="IX08C4" userName="Right from West Double 1" antecedent="R1 and R2 and R3" logicType="1" triggerOnChange="yes">
+      <systemName>IX08C4</systemName>
+      <userName>Right from West Double 1</userName>
+      <conditionalStateVariable operator="4" negated="no" type="1" systemName="Signal Lever West DoubleR" dataString="" num1="0" num2="0" triggersCalc="no" />
+      <conditionalStateVariable operator="1" negated="no" type="2" systemName="West Double Track_points" dataString="" num1="0" num2="0" triggersCalc="no" />
+      <conditionalStateVariable operator="1" negated="no" type="1" systemName="West Double Track Code Button" dataString="" num1="0" num2="0" triggersCalc="yes" />
+      <conditionalAction option="1" type="9" systemName="Signal Lamp West DoubleR" data="2" delay="0" string="" />
+      <conditionalAction option="1" type="37" systemName="WestF1" data="-1" delay="0" string="Clear" />
+      <conditionalAction option="1" type="37" systemName="WestFM" data="-1" delay="0" string="Stop" />
+      <conditionalAction option="1" type="37" systemName="WestEN" data="-1" delay="0" string="Stop" />
+    </conditional>
+    <conditional systemName="IX08C5" userName="Right from West Double 1 After Points Settle" antecedent="R1 and R2" logicType="1" triggerOnChange="yes">
+      <systemName>IX08C5</systemName>
+      <userName>Right from West Double 1 After Points Settle</userName>
+      <conditionalStateVariable operator="4" negated="no" type="2" systemName="West Double Track_points" dataString="" num1="0" num2="0" triggersCalc="yes" />
+      <conditionalStateVariable operator="1" negated="no" type="1" systemName="Signal Lamp West DoubleR" dataString="" num1="0" num2="0" triggersCalc="no" />
+      <conditionalAction option="1" type="37" systemName="WestFM" data="-1" delay="0" string="Stop" />
+      <conditionalAction option="1" type="37" systemName="WestF1" data="-1" delay="0" string="Clear" />
+    </conditional>
+    <conditional systemName="IX08C6" userName="Left to West Double 2" antecedent="R1 and R2 and R3" logicType="1" triggerOnChange="yes">
+      <systemName>IX08C6</systemName>
+      <userName>Left to West Double 2</userName>
+      <conditionalStateVariable operator="4" negated="no" type="1" systemName="Signal Lever West DoubleL" dataString="" num1="0" num2="0" triggersCalc="no" />
+      <conditionalStateVariable operator="1" negated="no" type="1" systemName="West Double Track_points" dataString="" num1="0" num2="0" triggersCalc="no" />
+      <conditionalStateVariable operator="1" negated="no" type="1" systemName="West Double Track Code Button" dataString="" num1="0" num2="0" triggersCalc="yes" />
+      <conditionalAction option="1" type="9" systemName="Signal Lamp West DoubleL" data="2" delay="0" string="" />
+      <conditionalAction option="1" type="37" systemName="WestF1" data="-1" delay="0" string="Stop" />
+      <conditionalAction option="1" type="37" systemName="WestFM" data="-1" delay="0" string="Stop" />
+      <conditionalAction option="1" type="37" systemName="WestEN" data="-1" delay="0" string="Clear" />
+    </conditional>
+    <conditional systemName="IX08C7" userName="Left to West Double 2 after Points Settle" antecedent="R1 and R2" logicType="1" triggerOnChange="yes">
+      <systemName>IX08C7</systemName>
+      <userName>Left to West Double 2 after Points Settle</userName>
+      <conditionalStateVariable operator="4" negated="no" type="1" systemName="West Double Track_points" dataString="" num1="0" num2="0" triggersCalc="yes" />
+      <conditionalStateVariable operator="1" negated="no" type="1" systemName="Signal Lever West DoubleL" dataString="" num1="0" num2="0" triggersCalc="no" />
+      <conditionalAction option="1" type="37" systemName="WestEN" data="-1" delay="0" string="Clear" />
+    </conditional>
+    <conditional systemName="IX08C8" userName="Left to West Double 1" antecedent="R1 and R2 and R3" logicType="1" triggerOnChange="yes">
+      <systemName>IX08C8</systemName>
+      <userName>Left to West Double 1</userName>
+      <conditionalStateVariable operator="4" negated="no" type="1" systemName="Signal Lever West DoubleL" dataString="" num1="0" num2="0" triggersCalc="no" />
+      <conditionalStateVariable operator="1" negated="no" type="2" systemName="West Double Track_points" dataString="" num1="0" num2="0" triggersCalc="no" />
+      <conditionalStateVariable operator="1" negated="no" type="1" systemName="West Double Track Code Button" dataString="" num1="0" num2="0" triggersCalc="yes" />
+      <conditionalAction option="1" type="9" systemName="Signal Lamp West DoubleL" data="2" delay="0" string="" />
+      <conditionalAction option="1" type="37" systemName="WestF1" data="-1" delay="0" string="Stop" />
+      <conditionalAction option="1" type="37" systemName="WestFM" data="-1" delay="0" string="Stop" />
+      <conditionalAction option="1" type="37" systemName="WestEN" data="-1" delay="0" string="Diverging Clear" />
+    </conditional>
+    <conditional systemName="IX08C9" userName="Left to West Double 1 after Points Settle" antecedent="R1 and R2" logicType="1" triggerOnChange="yes">
+      <systemName>IX08C9</systemName>
+      <userName>Left to West Double 1 after Points Settle</userName>
+      <conditionalStateVariable operator="4" negated="no" type="2" systemName="West Double Track_points" dataString="" num1="0" num2="0" triggersCalc="yes" />
+      <conditionalStateVariable operator="1" negated="no" type="1" systemName="Signal Lamp West DoubleL" dataString="" num1="0" num2="0" triggersCalc="no" />
+      <conditionalAction option="1" type="37" systemName="WestEN" data="-1" delay="0" string="Diverging Clear" />
+    </conditional>
+    <conditional systemName="IX11C1" userName="Lever Normal" antecedent="R1 and R2" logicType="1" triggerOnChange="yes">
+      <systemName>IX11C1</systemName>
+      <userName>Lever Normal</userName>
+      <conditionalStateVariable operator="4" negated="no" type="1" systemName="East Double Track Lever" dataString="" num1="0" num2="0" triggersCalc="no" />
+      <conditionalStateVariable operator="1" negated="no" type="1" systemName="East Double Track Code Button" dataString="" num1="0" num2="0" triggersCalc="yes" />
+      <conditionalAction option="1" type="2" systemName="East Double Track" data="2" delay="0" string="" />
+    </conditional>
+    <conditional systemName="IX11C2" userName="Lever Reversed" antecedent="R1 and R2" logicType="1" triggerOnChange="yes">
+      <systemName>IX11C2</systemName>
+      <userName>Lever Reversed</userName>
+      <conditionalStateVariable operator="4" negated="no" type="2" systemName="East Double Track Lever" dataString="" num1="0" num2="0" triggersCalc="no" />
+      <conditionalStateVariable operator="1" negated="no" type="1" systemName="East Double Track Code Button" dataString="" num1="0" num2="0" triggersCalc="yes" />
+      <conditionalAction option="1" type="2" systemName="East Double Track" data="4" delay="0" string="" />
+    </conditional>
+    <conditional systemName="IX12C1" userName="Stop" antecedent="R1 and R2" logicType="1" triggerOnChange="yes">
+      <systemName>IX12C1</systemName>
+      <userName>Stop</userName>
+      <conditionalStateVariable operator="4" negated="no" type="1" systemName="Signal Lever East DoubleC" dataString="" num1="0" num2="0" triggersCalc="no" />
+      <conditionalStateVariable operator="1" negated="no" type="1" systemName="East Double Track Code Button" dataString="" num1="0" num2="0" triggersCalc="yes" />
+      <conditionalAction option="1" type="9" systemName="Signal Lamp East DoubleC" data="2" delay="0" string="" />
+      <conditionalAction option="1" type="37" systemName="EastFM" data="-1" delay="0" string="Stop" />
+      <conditionalAction option="1" type="37" systemName="EastF1" data="-1" delay="0" string="Stop" />
+      <conditionalAction option="1" type="37" systemName="EastEN" data="-1" delay="0" string="Stop" />
+    </conditional>
+    <conditional systemName="IX12C2" userName="Right to East Double 1" antecedent="R1 and R2 and R3" logicType="1" triggerOnChange="yes">
+      <systemName>IX12C2</systemName>
+      <userName>Right to East Double 1</userName>
+      <conditionalStateVariable operator="4" negated="no" type="1" systemName="East Double Track_points" dataString="" num1="0" num2="0" triggersCalc="no" />
+      <conditionalStateVariable operator="1" negated="no" type="1" systemName="Signal Lever East DoubleR" dataString="" num1="0" num2="0" triggersCalc="no" />
+      <conditionalStateVariable operator="1" negated="no" type="1" systemName="East Double Track Code Button" dataString="" num1="0" num2="0" triggersCalc="yes" />
+      <conditionalAction option="1" type="9" systemName="Signal Lamp East DoubleR" data="2" delay="0" string="" />
+      <conditionalAction option="1" type="37" systemName="EastFM" data="-1" delay="0" string="Stop" />
+      <conditionalAction option="1" type="37" systemName="EastF1" data="-1" delay="0" string="Stop" />
+      <conditionalAction option="1" type="37" systemName="EastEN" data="-1" delay="0" string="Clear" />
+    </conditional>
+    <conditional systemName="IX12C3" userName="Right from East Double 1 After Points Settle" antecedent="R1 and R2" logicType="1" triggerOnChange="yes">
+      <systemName>IX12C3</systemName>
+      <userName>Right from East Double 1 After Points Settle</userName>
+      <conditionalStateVariable operator="4" negated="no" type="1" systemName="East Double Track_points" dataString="" num1="0" num2="0" triggersCalc="yes" />
+      <conditionalStateVariable operator="1" negated="no" type="1" systemName="Signal Lamp East DoubleR" dataString="" num1="0" num2="0" triggersCalc="no" />
+      <conditionalAction option="1" type="37" systemName="EastEN" data="-1" delay="0" string="Clear" />
+    </conditional>
+    <conditional systemName="IX12C4" userName="Right to East Double 2" antecedent="R1 and R2 and R3" logicType="1" triggerOnChange="yes">
+      <systemName>IX12C4</systemName>
+      <userName>Right to East Double 2</userName>
+      <conditionalStateVariable operator="4" negated="no" type="1" systemName="Signal Lever East DoubleR" dataString="" num1="0" num2="0" triggersCalc="no" />
+      <conditionalStateVariable operator="1" negated="no" type="2" systemName="East Double Track_points" dataString="" num1="0" num2="0" triggersCalc="no" />
+      <conditionalStateVariable operator="1" negated="no" type="1" systemName="East Double Track Code Button" dataString="" num1="0" num2="0" triggersCalc="yes" />
+      <conditionalAction option="1" type="9" systemName="Signal Lamp East DoubleR" data="2" delay="0" string="" />
+      <conditionalAction option="1" type="37" systemName="EastF1" data="-1" delay="0" string="Stop" />
+      <conditionalAction option="1" type="37" systemName="EastFM" data="-1" delay="0" string="Stop" />
+      <conditionalAction option="1" type="37" systemName="EastEN" data="-1" delay="0" string="Diverging Clear" />
+    </conditional>
+    <conditional systemName="IX12C5" userName="Right to East Double 2 After Points Settle" antecedent="R1 and R2" logicType="1" triggerOnChange="yes">
+      <systemName>IX12C5</systemName>
+      <userName>Right to East Double 2 After Points Settle</userName>
+      <conditionalStateVariable operator="4" negated="no" type="2" systemName="East Double Track_points" dataString="" num1="0" num2="0" triggersCalc="yes" />
+      <conditionalStateVariable operator="1" negated="no" type="1" systemName="Signal Lamp East DoubleR" dataString="" num1="0" num2="0" triggersCalc="no" />
+      <conditionalAction option="1" type="37" systemName="EastEN" data="-1" delay="0" string="Diverging Clear" />
+    </conditional>
+    <conditional systemName="IX12C6" userName="Left from West Double 2" antecedent="R1 and R2 and R3" logicType="1" triggerOnChange="yes">
+      <systemName>IX12C6</systemName>
+      <userName>Left from West Double 2</userName>
+      <conditionalStateVariable operator="4" negated="no" type="1" systemName="Signal Lever East DoubleL" dataString="" num1="0" num2="0" triggersCalc="no" />
+      <conditionalStateVariable operator="1" negated="no" type="2" systemName="East Double Track_points" dataString="" num1="0" num2="0" triggersCalc="no" />
+      <conditionalStateVariable operator="1" negated="no" type="1" systemName="East Double Track Code Button" dataString="" num1="0" num2="0" triggersCalc="yes" />
+      <conditionalAction option="1" type="9" systemName="Signal Lamp East DoubleL" data="2" delay="0" string="" />
+      <conditionalAction option="1" type="37" systemName="EastF1" data="-1" delay="0" string="Clear" />
+      <conditionalAction option="1" type="37" systemName="EastFM" data="-1" delay="0" string="Stop" />
+      <conditionalAction option="1" type="37" systemName="EastEN" data="-1" delay="0" string="Stop" />
+    </conditional>
+    <conditional systemName="IX12C7" userName="Left from East Double 2 after Points Settle" antecedent="R1 and R2" logicType="1" triggerOnChange="yes">
+      <systemName>IX12C7</systemName>
+      <userName>Left from East Double 2 after Points Settle</userName>
+      <conditionalStateVariable operator="4" negated="no" type="2" systemName="East Double Track_points" dataString="" num1="0" num2="0" triggersCalc="yes" />
+      <conditionalStateVariable operator="1" negated="no" type="1" systemName="Signal Lamp East DoubleL" dataString="" num1="0" num2="0" triggersCalc="no" />
+      <conditionalAction option="1" type="37" systemName="EastF1" data="-1" delay="0" string="Clear" />
+      <conditionalAction option="1" type="37" systemName="EastFM" data="-1" delay="0" string="Stop" />
+    </conditional>
+    <conditional systemName="IX12C8" userName="Left from East Double 1" antecedent="R1 and R2 and R3" logicType="1" triggerOnChange="yes">
+      <systemName>IX12C8</systemName>
+      <userName>Left from East Double 1</userName>
+      <conditionalStateVariable operator="4" negated="no" type="1" systemName="Signal Lever East DoubleL" dataString="" num1="0" num2="0" triggersCalc="no" />
+      <conditionalStateVariable operator="1" negated="no" type="2" systemName="East Double Track_points" dataString="" num1="0" num2="0" triggersCalc="no" />
+      <conditionalStateVariable operator="1" negated="no" type="1" systemName="East Double Track Code Button" dataString="" num1="0" num2="0" triggersCalc="yes" />
+      <conditionalAction option="1" type="9" systemName="Signal Lamp West DoubleL" data="2" delay="0" string="" />
+      <conditionalAction option="1" type="37" systemName="EastF1" data="-1" delay="0" string="Stop" />
+      <conditionalAction option="1" type="37" systemName="EastFM" data="-1" delay="0" string="Clear" />
+      <conditionalAction option="1" type="37" systemName="EastEN" data="-1" delay="0" string="Stop" />
+    </conditional>
+    <conditional systemName="IX12C9" userName="Left from East Double 1 after Points Settle" antecedent="R1 and R2" logicType="1" triggerOnChange="yes">
+      <systemName>IX12C9</systemName>
+      <userName>Left from East Double 1 after Points Settle</userName>
+      <conditionalStateVariable operator="4" negated="no" type="1" systemName="East Double Track_points" dataString="" num1="0" num2="0" triggersCalc="yes" />
+      <conditionalStateVariable operator="1" negated="no" type="1" systemName="Signal Lamp East DoubleL" dataString="" num1="0" num2="0" triggersCalc="no" />
+      <conditionalAction option="1" type="37" systemName="EastFM" data="-1" delay="0" string="Clear" />
+      <conditionalAction option="1" type="37" systemName="EastF1" data="-1" delay="0" string="Stop" />
+    </conditional>
+    <conditional systemName="IX13C1" userName="Lever Normal" antecedent="R1 and R2" logicType="1" triggerOnChange="yes">
+      <systemName>IX13C1</systemName>
+      <userName>Lever Normal</userName>
+      <conditionalStateVariable operator="4" negated="no" type="1" systemName="Stage East 1-3 Lever" dataString="" num1="0" num2="0" triggersCalc="no" />
+      <conditionalStateVariable operator="1" negated="no" type="1" systemName="Stage East 1-3 Code Button" dataString="" num1="0" num2="0" triggersCalc="yes" />
+      <conditionalAction option="1" type="2" systemName="Stage East 1-3" data="2" delay="0" string="" />
+    </conditional>
+    <conditional systemName="IX13C2" userName="Lever Reversed" antecedent="R1 and R2" logicType="1" triggerOnChange="yes">
+      <systemName>IX13C2</systemName>
+      <userName>Lever Reversed</userName>
+      <conditionalStateVariable operator="4" negated="no" type="2" systemName="Stage East 1-3 Lever" dataString="" num1="0" num2="0" triggersCalc="no" />
+      <conditionalStateVariable operator="1" negated="no" type="1" systemName="Stage East 1-3 Code Button" dataString="" num1="0" num2="0" triggersCalc="yes" />
+      <conditionalAction option="1" type="2" systemName="Stage East 1-3" data="4" delay="0" string="" />
+    </conditional>
+    <conditional systemName="IX14C1" userName="Stop" antecedent="R1 and R2" logicType="1" triggerOnChange="yes">
+      <systemName>IX14C1</systemName>
+      <userName>Stop</userName>
+      <conditionalStateVariable operator="4" negated="no" type="1" systemName="Signal Lever Stage East 1-3C" dataString="" num1="0" num2="0" triggersCalc="no" />
+      <conditionalStateVariable operator="1" negated="no" type="1" systemName="Stage East 1-3 Code Button" dataString="" num1="0" num2="0" triggersCalc="yes" />
+      <conditionalAction option="1" type="9" systemName="Signal Lamp Stage East 1-3C" data="2" delay="0" string="" />
+      <conditionalAction option="1" type="37" systemName="EastExit1 (Dwarf)" data="-1" delay="0" string="Stop" />
+      <conditionalAction option="1" type="37" systemName="EastExit3 (Dwarf)" data="-1" delay="0" string="Stop" />
+      <conditionalAction option="1" type="37" systemName="EastYardEntry1-3" data="-1" delay="0" string="Stop" />
+    </conditional>
+    <conditional systemName="IX14C2" userName="Right to Stage 1" antecedent="R1 and R2 and R3" logicType="1" triggerOnChange="yes">
+      <systemName>IX14C2</systemName>
+      <userName>Right to Stage 1</userName>
+      <conditionalStateVariable operator="4" negated="no" type="1" systemName="Stage East 1-3_points" dataString="" num1="0" num2="0" triggersCalc="no" />
+      <conditionalStateVariable operator="1" negated="no" type="1" systemName="Signal Lever Stage East 1-3R" dataString="" num1="0" num2="0" triggersCalc="no" />
+      <conditionalStateVariable operator="1" negated="no" type="1" systemName="Stage East 1-3 Code Button" dataString="" num1="0" num2="0" triggersCalc="yes" />
+      <conditionalAction option="1" type="9" systemName="Signal Lamp Stage East 1-3R" data="2" delay="0" string="" />
+      <conditionalAction option="1" type="37" systemName="EastExit1 (Dwarf)" data="-1" delay="0" string="Stop" />
+      <conditionalAction option="1" type="37" systemName="EastExit3 (Dwarf)" data="-1" delay="0" string="Stop" />
+      <conditionalAction option="1" type="37" systemName="EastYardEntry1-3" data="-1" delay="0" string="Clear" />
+    </conditional>
+    <conditional systemName="IX14C3" userName="Right to Stage 1 After Points Settle" antecedent="R1 and R2" logicType="1" triggerOnChange="yes">
+      <systemName>IX14C3</systemName>
+      <userName>Right to Stage 1 After Points Settle</userName>
+      <conditionalStateVariable operator="4" negated="no" type="1" systemName="Stage East 1-3_points" dataString="" num1="0" num2="0" triggersCalc="yes" />
+      <conditionalStateVariable operator="1" negated="no" type="1" systemName="Signal Lamp Stage East 1-3R" dataString="" num1="0" num2="0" triggersCalc="no" />
+      <conditionalAction option="1" type="37" systemName="EastYardEntry1-3" data="-1" delay="0" string="Clear" />
+    </conditional>
+    <conditional systemName="IX14C4" userName="Right to Stage 3" antecedent="R1 and R2 and R3" logicType="1" triggerOnChange="yes">
+      <systemName>IX14C4</systemName>
+      <userName>Right to Stage 3</userName>
+      <conditionalStateVariable operator="4" negated="no" type="1" systemName="Signal Lever Stage East 1-3R" dataString="" num1="0" num2="0" triggersCalc="no" />
+      <conditionalStateVariable operator="1" negated="no" type="2" systemName="Stage East 1-3_points" dataString="" num1="0" num2="0" triggersCalc="no" />
+      <conditionalStateVariable operator="1" negated="no" type="1" systemName="Stage East 1-3 Code Button" dataString="" num1="0" num2="0" triggersCalc="yes" />
+      <conditionalAction option="1" type="9" systemName="Signal Lamp Stage East 1-3R" data="2" delay="0" string="" />
+      <conditionalAction option="1" type="37" systemName="EastExit3 (Dwarf)" data="-1" delay="0" string="Stop" />
+      <conditionalAction option="1" type="37" systemName="EastExit1 (Dwarf)" data="-1" delay="0" string="Stop" />
+      <conditionalAction option="1" type="37" systemName="EastYardEntry1-3" data="-1" delay="0" string="Diverging Clear" />
+    </conditional>
+    <conditional systemName="IX14C5" userName="Right to Stage 3 After Points Settle" antecedent="R1 and R2" logicType="1" triggerOnChange="yes">
+      <systemName>IX14C5</systemName>
+      <userName>Right to Stage 3 After Points Settle</userName>
+      <conditionalStateVariable operator="4" negated="no" type="2" systemName="Stage East 1-3_points" dataString="" num1="0" num2="0" triggersCalc="yes" />
+      <conditionalStateVariable operator="1" negated="no" type="1" systemName="Signal Lamp Stage East 1-3R" dataString="" num1="0" num2="0" triggersCalc="no" />
+      <conditionalAction option="1" type="37" systemName="EastYardEntry1-3" data="-1" delay="0" string="Diverging Clear" />
+    </conditional>
+    <conditional systemName="IX14C6" userName="Left from Stage 1" antecedent="R1 and R2 and R3" logicType="1" triggerOnChange="yes">
+      <systemName>IX14C6</systemName>
+      <userName>Left from Stage 1</userName>
+      <conditionalStateVariable operator="4" negated="no" type="1" systemName="Signal Lever Stage East 1-3L" dataString="" num1="0" num2="0" triggersCalc="no" />
+      <conditionalStateVariable operator="1" negated="no" type="1" systemName="Stage East 1-3_points" dataString="" num1="0" num2="0" triggersCalc="no" />
+      <conditionalStateVariable operator="1" negated="no" type="1" systemName="Stage East 1-3 Code Button" dataString="" num1="0" num2="0" triggersCalc="yes" />
+      <conditionalAction option="1" type="9" systemName="Signal Lamp Stage East 1-3L" data="2" delay="0" string="" />
+      <conditionalAction option="1" type="37" systemName="EastExit1 (Dwarf)" data="-1" delay="0" string="Clear" />
+      <conditionalAction option="1" type="37" systemName="EastExit3 (Dwarf)" data="-1" delay="0" string="Stop" />
+      <conditionalAction option="1" type="37" systemName="EastYardEntry1-3" data="-1" delay="0" string="Stop" />
+    </conditional>
+    <conditional systemName="IX14C7" userName="Left from Stage 1 after Points Settle" antecedent="R1 and R2" logicType="1" triggerOnChange="yes">
+      <systemName>IX14C7</systemName>
+      <userName>Left from Stage 1 after Points Settle</userName>
+      <conditionalStateVariable operator="4" negated="no" type="1" systemName="Stage East 1-3_points" dataString="" num1="0" num2="0" triggersCalc="yes" />
+      <conditionalStateVariable operator="1" negated="no" type="1" systemName="Signal Lamp Stage East 1-3L" dataString="" num1="0" num2="0" triggersCalc="no" />
+      <conditionalAction option="1" type="37" systemName="EastExit1 (Dwarf)" data="-1" delay="0" string="Clear" />
+      <conditionalAction option="1" type="37" systemName="EastExit3 (Dwarf)" data="-1" delay="0" string="Stop" />
+    </conditional>
+    <conditional systemName="IX14C8" userName="Left from Stage 3" antecedent="R1 and R2 and R3" logicType="1" triggerOnChange="yes">
+      <systemName>IX14C8</systemName>
+      <userName>Left from Stage 3</userName>
+      <conditionalStateVariable operator="4" negated="no" type="1" systemName="Signal Lever Stage East 1-3L" dataString="" num1="0" num2="0" triggersCalc="no" />
+      <conditionalStateVariable operator="1" negated="no" type="2" systemName="Stage East 1-3_points" dataString="" num1="0" num2="0" triggersCalc="no" />
+      <conditionalStateVariable operator="1" negated="no" type="1" systemName="Stage East 1-3 Code Button" dataString="" num1="0" num2="0" triggersCalc="yes" />
+      <conditionalAction option="1" type="9" systemName="Signal Lamp Stage East 1-3L" data="2" delay="0" string="" />
+      <conditionalAction option="1" type="37" systemName="EastExit1 (Dwarf)" data="-1" delay="0" string="Stop" />
+      <conditionalAction option="1" type="37" systemName="EastExit3 (Dwarf)" data="-1" delay="0" string="Clear" />
+      <conditionalAction option="1" type="37" systemName="EastYardEntry1-3" data="-1" delay="0" string="Stop" />
+    </conditional>
+    <conditional systemName="IX14C9" userName="Left from Stage 3 after Points Settle" antecedent="R1 and R2" logicType="1" triggerOnChange="yes">
+      <systemName>IX14C9</systemName>
+      <userName>Left from Stage 3 after Points Settle</userName>
+      <conditionalStateVariable operator="4" negated="no" type="2" systemName="Stage East 1-3_points" dataString="" num1="0" num2="0" triggersCalc="yes" />
+      <conditionalStateVariable operator="1" negated="no" type="1" systemName="Signal Lamp Stage East 1-3L" dataString="" num1="0" num2="0" triggersCalc="no" />
+      <conditionalAction option="1" type="37" systemName="EastExit1 (Dwarf)" data="-1" delay="0" string="Stop" />
+      <conditionalAction option="1" type="37" systemName="EastExit3 (Dwarf)" data="-1" delay="0" string="Clear" />
+    </conditional>
+    <conditional systemName="IX15C1" userName="Lever Normal" antecedent="R1 and R2" logicType="1" triggerOnChange="yes">
+      <systemName>IX15C1</systemName>
+      <userName>Lever Normal</userName>
+      <conditionalStateVariable operator="4" negated="no" type="1" systemName="Stage East 2-4 Lever" dataString="" num1="0" num2="0" triggersCalc="no" />
+      <conditionalStateVariable operator="1" negated="no" type="2" systemName="Stage East 2-4 Code Button" dataString="" num1="0" num2="0" triggersCalc="yes" />
+      <conditionalAction option="1" type="2" systemName="Stage East 2-4" data="2" delay="0" string="" />
+    </conditional>
+    <conditional systemName="IX15C2" userName="Lever Reversed" antecedent="R1 and R2" logicType="1" triggerOnChange="yes">
+      <systemName>IX15C2</systemName>
+      <userName>Lever Reversed</userName>
+      <conditionalStateVariable operator="4" negated="no" type="2" systemName="Stage East 2-4 Lever" dataString="" num1="0" num2="0" triggersCalc="no" />
+      <conditionalStateVariable operator="1" negated="no" type="1" systemName="Stage East 2-4 Code Button" dataString="" num1="0" num2="0" triggersCalc="yes" />
+      <conditionalAction option="1" type="2" systemName="Stage East 2-4" data="4" delay="0" string="" />
+    </conditional>
+    <conditional systemName="IX16C1" userName="Stop" antecedent="R1 and R2" logicType="1" triggerOnChange="yes">
+      <systemName>IX16C1</systemName>
+      <userName>Stop</userName>
+      <conditionalStateVariable operator="4" negated="no" type="1" systemName="Signal Lever Stage East 2-4C" dataString="" num1="0" num2="0" triggersCalc="no" />
+      <conditionalStateVariable operator="1" negated="no" type="1" systemName="Stage East 2-4 Code Button" dataString="" num1="0" num2="0" triggersCalc="yes" />
+      <conditionalAction option="1" type="9" systemName="Signal Lamp Stage East 2-4C" data="2" delay="0" string="" />
+      <conditionalAction option="1" type="37" systemName="EastExit2 (Dwarf)" data="-1" delay="0" string="Stop" />
+      <conditionalAction option="1" type="37" systemName="EastExit4 (Dwarf)" data="-1" delay="0" string="Stop" />
+      <conditionalAction option="1" type="37" systemName="EastYardEntry2-4" data="-1" delay="0" string="Stop" />
+    </conditional>
+    <conditional systemName="IX16C2" userName="Right to Stage 2" antecedent="R1 and R2 and R3" logicType="1" triggerOnChange="yes">
+      <systemName>IX16C2</systemName>
+      <userName>Right to Stage 2</userName>
+      <conditionalStateVariable operator="4" negated="no" type="1" systemName="Stage East 2-4_points" dataString="" num1="0" num2="0" triggersCalc="no" />
+      <conditionalStateVariable operator="1" negated="no" type="1" systemName="Signal Lever Stage East 2-4R" dataString="" num1="0" num2="0" triggersCalc="no" />
+      <conditionalStateVariable operator="1" negated="no" type="1" systemName="Stage East 2-4 Code Button" dataString="" num1="0" num2="0" triggersCalc="yes" />
+      <conditionalAction option="1" type="9" systemName="Signal Lamp STage East 2-4R" data="2" delay="0" string="" />
+      <conditionalAction option="1" type="37" systemName="EastExit2 (Dwarf)" data="-1" delay="0" string="Stop" />
+      <conditionalAction option="1" type="37" systemName="EastExit4 (Dwarf)" data="-1" delay="0" string="Stop" />
+      <conditionalAction option="1" type="37" systemName="EastYardEntry2-4" data="-1" delay="0" string="Clear" />
+    </conditional>
+    <conditional systemName="IX16C3" userName="Right to Stage 2 After Points Settle" antecedent="R1 and R2" logicType="1" triggerOnChange="yes">
+      <systemName>IX16C3</systemName>
+      <userName>Right to Stage 2 After Points Settle</userName>
+      <conditionalStateVariable operator="4" negated="no" type="1" systemName="Stage East 2-4_points" dataString="" num1="0" num2="0" triggersCalc="yes" />
+      <conditionalStateVariable operator="1" negated="no" type="1" systemName="Signal Lamp STage East 2-4R" dataString="" num1="0" num2="0" triggersCalc="no" />
+      <conditionalAction option="1" type="37" systemName="EastYardEntry2-4" data="-1" delay="0" string="Clear" />
+    </conditional>
+    <conditional systemName="IX16C4" userName="Right from Stage 4" antecedent="R1 and R2 and R3" logicType="1" triggerOnChange="yes">
+      <systemName>IX16C4</systemName>
+      <userName>Right from Stage 4</userName>
+      <conditionalStateVariable operator="4" negated="no" type="1" systemName="Signal Lever Stage East 2-4R" dataString="" num1="0" num2="0" triggersCalc="no" />
+      <conditionalStateVariable operator="1" negated="no" type="2" systemName="Stage East 2-4_points" dataString="" num1="0" num2="0" triggersCalc="no" />
+      <conditionalStateVariable operator="1" negated="no" type="1" systemName="Stage East 2-4 Code Button" dataString="" num1="0" num2="0" triggersCalc="yes" />
+      <conditionalAction option="1" type="9" systemName="Signal Lamp STage East 2-4R" data="2" delay="0" string="" />
+      <conditionalAction option="1" type="37" systemName="EastExit4 (Dwarf)" data="-1" delay="0" string="Stop" />
+      <conditionalAction option="1" type="37" systemName="EastExit2 (Dwarf)" data="-1" delay="0" string="Stop" />
+      <conditionalAction option="1" type="37" systemName="EastYardEntry2-4" data="-1" delay="0" string="Diverging Clear" />
+    </conditional>
+    <conditional systemName="IX16C5" userName="Right from Stage 4 After Points Settle" antecedent="R1 and R2" logicType="1" triggerOnChange="yes">
+      <systemName>IX16C5</systemName>
+      <userName>Right from Stage 4 After Points Settle</userName>
+      <conditionalStateVariable operator="4" negated="no" type="2" systemName="Stage East 2-4_points" dataString="" num1="0" num2="0" triggersCalc="yes" />
+      <conditionalStateVariable operator="1" negated="no" type="1" systemName="Signal Lamp STage East 2-4R" dataString="" num1="0" num2="0" triggersCalc="no" />
+      <conditionalAction option="1" type="37" systemName="EastYardEntry2-4" data="-1" delay="0" string="Diverging Clear" />
+    </conditional>
+    <conditional systemName="IX16C6" userName="Left from Stage 2" antecedent="R1 and R2 and R3" logicType="1" triggerOnChange="yes">
+      <systemName>IX16C6</systemName>
+      <userName>Left from Stage 2</userName>
+      <conditionalStateVariable operator="4" negated="no" type="1" systemName="Signal Lever Stage East 2-4L" dataString="" num1="0" num2="0" triggersCalc="no" />
+      <conditionalStateVariable operator="1" negated="no" type="1" systemName="Stage East 2-4_points" dataString="" num1="0" num2="0" triggersCalc="no" />
+      <conditionalStateVariable operator="1" negated="no" type="1" systemName="Stage East 2-4 Code Button" dataString="" num1="0" num2="0" triggersCalc="yes" />
+      <conditionalAction option="1" type="9" systemName="Signal Lamp Stage East 2-4L" data="2" delay="0" string="" />
+      <conditionalAction option="1" type="37" systemName="EastExit2 (Dwarf)" data="-1" delay="0" string="Clear" />
+      <conditionalAction option="1" type="37" systemName="EastExit4 (Dwarf)" data="-1" delay="0" string="Stop" />
+      <conditionalAction option="1" type="37" systemName="EastYardEntry2-4" data="-1" delay="0" string="Stop" />
+    </conditional>
+    <conditional systemName="IX16C7" userName="Left from Stage 2 after Points Settle" antecedent="R1 and R2" logicType="1" triggerOnChange="yes">
+      <systemName>IX16C7</systemName>
+      <userName>Left from Stage 2 after Points Settle</userName>
+      <conditionalStateVariable operator="4" negated="no" type="1" systemName="Stage East 2-4_points" dataString="" num1="0" num2="0" triggersCalc="yes" />
+      <conditionalStateVariable operator="1" negated="no" type="1" systemName="Signal Lamp Stage East 2-4L" dataString="" num1="0" num2="0" triggersCalc="no" />
+      <conditionalAction option="1" type="37" systemName="EastExit2 (Dwarf)" data="-1" delay="0" string="Clear" />
+      <conditionalAction option="1" type="37" systemName="EastExit4 (Dwarf)" data="-1" delay="0" string="Stop" />
+    </conditional>
+    <conditional systemName="IX16C8" userName="Left from Stage 4" antecedent="R1 and R2 and R3" logicType="1" triggerOnChange="yes">
+      <systemName>IX16C8</systemName>
+      <userName>Left from Stage 4</userName>
+      <conditionalStateVariable operator="4" negated="no" type="1" systemName="Signal Lever Stage East 2-4L" dataString="" num1="0" num2="0" triggersCalc="no" />
+      <conditionalStateVariable operator="1" negated="no" type="2" systemName="Stage East 2-4_points" dataString="" num1="0" num2="0" triggersCalc="no" />
+      <conditionalStateVariable operator="1" negated="no" type="1" systemName="Stage East 2-4 Code Button" dataString="" num1="0" num2="0" triggersCalc="yes" />
+      <conditionalAction option="1" type="9" systemName="Signal Lamp Stage East 2-4L" data="2" delay="0" string="" />
+      <conditionalAction option="1" type="37" systemName="EastExit2 (Dwarf)" data="-1" delay="0" string="Stop" />
+      <conditionalAction option="1" type="37" systemName="EastExit4 (Dwarf)" data="-1" delay="0" string="Clear" />
+      <conditionalAction option="1" type="37" systemName="EastYardEntry2-4" data="-1" delay="0" string="Stop" />
+    </conditional>
+    <conditional systemName="IX16C9" userName="Left from Stage 4 after Points Settle" antecedent="R1 and R2" logicType="1" triggerOnChange="yes">
+      <systemName>IX16C9</systemName>
+      <userName>Left from Stage 4 after Points Settle</userName>
+      <conditionalStateVariable operator="4" negated="no" type="2" systemName="Stage East 2-4_points" dataString="" num1="0" num2="0" triggersCalc="yes" />
+      <conditionalStateVariable operator="1" negated="no" type="1" systemName="Signal Lamp Stage East 2-4L" dataString="" num1="0" num2="0" triggersCalc="no" />
+      <conditionalAction option="1" type="37" systemName="EastExit4 (Dwarf)" data="-1" delay="0" string="Clear" />
+      <conditionalAction option="1" type="37" systemName="EastExit2 (Dwarf)" data="-1" delay="0" string="Stop" />
+    </conditional>
+    <conditional systemName="IX:SYS_SGC_Sig 04" userName="Sensor Group Sig 04" antecedent="" logicType="2" triggerOnChange="yes">
+      <systemName>IX:SYS_SGC_Sig 04</systemName>
+      <userName>Sensor Group Sig 04</userName>
+      <conditionalStateVariable operator="5" negated="no" type="1" systemName="Signal Lamp Stage West 1-3L" dataString="" num1="0" num2="0" triggersCalc="yes" />
+      <conditionalStateVariable operator="5" negated="no" type="1" systemName="Signal Lamp Stage West 1-3C" dataString="" num1="0" num2="0" triggersCalc="yes" />
+      <conditionalStateVariable operator="5" negated="no" type="1" systemName="Signal Lamp Stage West 1-3R" dataString="" num1="0" num2="0" triggersCalc="yes" />
+      <conditionalAction option="1" type="9" systemName="Signal Lamp Stage West 1-3L" data="4" delay="0" string="" />
+      <conditionalAction option="1" type="9" systemName="Signal Lamp Stage West 1-3C" data="4" delay="0" string="" />
+      <conditionalAction option="1" type="9" systemName="Signal Lamp Stage West 1-3R" data="4" delay="0" string="" />
+    </conditional>
+    <conditional systemName="IX:SYS_SGC_Sig 06" userName="Sensor Group Sig 06" antecedent="" logicType="2" triggerOnChange="yes">
+      <systemName>IX:SYS_SGC_Sig 06</systemName>
+      <userName>Sensor Group Sig 06</userName>
+      <conditionalStateVariable operator="5" negated="no" type="1" systemName="Signal Lamp Stage West 2-4L" dataString="" num1="0" num2="0" triggersCalc="yes" />
+      <conditionalStateVariable operator="5" negated="no" type="1" systemName="Signal Lamp Stage West 2-4C" dataString="" num1="0" num2="0" triggersCalc="yes" />
+      <conditionalStateVariable operator="5" negated="no" type="1" systemName="Signal Lamp Stage West 2-4R" dataString="" num1="0" num2="0" triggersCalc="yes" />
+      <conditionalAction option="1" type="9" systemName="Signal Lamp Stage West 2-4L" data="4" delay="0" string="" />
+      <conditionalAction option="1" type="9" systemName="Signal Lamp Stage West 2-4C" data="4" delay="0" string="" />
+      <conditionalAction option="1" type="9" systemName="Signal Lamp Stage West 2-4R" data="4" delay="0" string="" />
+    </conditional>
+    <conditional systemName="IX:SYS_SGC_Sig 08" userName="Sensor Group Sig 08" antecedent="" logicType="2" triggerOnChange="yes">
+      <systemName>IX:SYS_SGC_Sig 08</systemName>
+      <userName>Sensor Group Sig 08</userName>
+      <conditionalStateVariable operator="5" negated="no" type="1" systemName="Signal Lamp West DoubleL" dataString="" num1="0" num2="0" triggersCalc="yes" />
+      <conditionalStateVariable operator="5" negated="no" type="1" systemName="Signal Lamp West DoubleC" dataString="" num1="0" num2="0" triggersCalc="yes" />
+      <conditionalStateVariable operator="5" negated="no" type="1" systemName="Signal Lamp West DoubleR" dataString="" num1="0" num2="0" triggersCalc="yes" />
+      <conditionalAction option="1" type="9" systemName="Signal Lamp West DoubleL" data="4" delay="0" string="" />
+      <conditionalAction option="1" type="9" systemName="Signal Lamp West DoubleC" data="4" delay="0" string="" />
+      <conditionalAction option="1" type="9" systemName="Signal Lamp West DoubleR" data="4" delay="0" string="" />
+    </conditional>
+    <conditional systemName="IX:SYS_SGC_Sig 12" userName="Sensor Group Sig 12" antecedent="" logicType="2" triggerOnChange="yes">
+      <systemName>IX:SYS_SGC_Sig 12</systemName>
+      <userName>Sensor Group Sig 12</userName>
+      <conditionalStateVariable operator="5" negated="no" type="1" systemName="Signal Lamp East DoubleL" dataString="" num1="0" num2="0" triggersCalc="yes" />
+      <conditionalStateVariable operator="5" negated="no" type="1" systemName="Signal Lamp East DoubleC" dataString="" num1="0" num2="0" triggersCalc="yes" />
+      <conditionalStateVariable operator="5" negated="no" type="1" systemName="Signal Lamp East DoubleR" dataString="" num1="0" num2="0" triggersCalc="yes" />
+      <conditionalAction option="1" type="9" systemName="Signal Lamp East DoubleL" data="4" delay="0" string="" />
+      <conditionalAction option="1" type="9" systemName="Signal Lamp East DoubleC" data="4" delay="0" string="" />
+      <conditionalAction option="1" type="9" systemName="Signal Lamp East DoubleR" data="4" delay="0" string="" />
+    </conditional>
+    <conditional systemName="IX:SYS_SGC_Sig 14" userName="Sensor Group Sig 14" antecedent="" logicType="2" triggerOnChange="yes">
+      <systemName>IX:SYS_SGC_Sig 14</systemName>
+      <userName>Sensor Group Sig 14</userName>
+      <conditionalStateVariable operator="5" negated="no" type="1" systemName="Signal Lamp Stage East 1-3L" dataString="" num1="0" num2="0" triggersCalc="yes" />
+      <conditionalStateVariable operator="5" negated="no" type="1" systemName="Signal Lamp Stage East 1-3C" dataString="" num1="0" num2="0" triggersCalc="yes" />
+      <conditionalStateVariable operator="5" negated="no" type="1" systemName="Signal Lamp Stage East 1-3R" dataString="" num1="0" num2="0" triggersCalc="yes" />
+      <conditionalAction option="1" type="9" systemName="Signal Lamp Stage East 1-3L" data="4" delay="0" string="" />
+      <conditionalAction option="1" type="9" systemName="Signal Lamp Stage East 1-3C" data="4" delay="0" string="" />
+      <conditionalAction option="1" type="9" systemName="Signal Lamp Stage East 1-3R" data="4" delay="0" string="" />
+    </conditional>
+    <conditional systemName="IX:SYS_SGC_Sig 16" userName="Sensor Group Sig 16" antecedent="" logicType="2" triggerOnChange="yes">
+      <systemName>IX:SYS_SGC_Sig 16</systemName>
+      <userName>Sensor Group Sig 16</userName>
+      <conditionalStateVariable operator="5" negated="no" type="1" systemName="Signal Lamp Stage East 2-4L" dataString="" num1="0" num2="0" triggersCalc="yes" />
+      <conditionalStateVariable operator="5" negated="no" type="1" systemName="Signal Lamp Stage East 2-4C" dataString="" num1="0" num2="0" triggersCalc="yes" />
+      <conditionalStateVariable operator="5" negated="no" type="1" systemName="Signal Lamp STage East 2-4R" dataString="" num1="0" num2="0" triggersCalc="yes" />
+      <conditionalAction option="1" type="9" systemName="Signal Lamp Stage East 2-4L" data="4" delay="0" string="" />
+      <conditionalAction option="1" type="9" systemName="Signal Lamp Stage East 2-4C" data="4" delay="0" string="" />
+      <conditionalAction option="1" type="9" systemName="Signal Lamp STage East 2-4R" data="4" delay="0" string="" />
+    </conditional>
+  </conditionals>
+  <paneleditor class="jmri.jmrit.display.panelEditor.configurexml.PanelEditorXml" name="Panel" x="1" y="199" height="776" width="629" editable="yes" positionable="yes" showtooltips="yes" controlling="yes" hide="yes" panelmenu="yes" scrollable="none" redBackground="255" greenBackground="255" blueBackground="255">
+    <positionablelabel x="0" y="0" level="2" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" icon="yes" class="jmri.jmrit.display.configurexml.PositionableLabelXml">
+      <icon url="program:resources/icons/USS/background/Panel-left-7.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </icon>
+    </positionablelabel>
+    <positionablelabel x="12" y="0" level="2" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" icon="yes" class="jmri.jmrit.display.configurexml.PositionableLabelXml">
+      <icon url="program:resources/icons/USS/background/Panel-blank-7.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </icon>
+    </positionablelabel>
+    <positionablelabel x="142" y="0" level="2" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" icon="yes" class="jmri.jmrit.display.configurexml.PositionableLabelXml">
+      <icon url="program:resources/icons/USS/background/Panel-blank-7.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </icon>
+    </positionablelabel>
+    <positionablelabel x="77" y="0" level="2" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" icon="yes" class="jmri.jmrit.display.configurexml.PositionableLabelXml">
+      <icon url="program:resources/icons/USS/background/Panel-blank-7.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </icon>
+    </positionablelabel>
+    <positionablelabel x="532" y="0" level="2" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" icon="yes" class="jmri.jmrit.display.configurexml.PositionableLabelXml">
+      <icon url="program:resources/icons/USS/background/Panel-blank-7.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </icon>
+    </positionablelabel>
+    <positionablelabel x="467" y="0" level="2" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" icon="yes" class="jmri.jmrit.display.configurexml.PositionableLabelXml">
+      <icon url="program:resources/icons/USS/background/Panel-blank-7.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </icon>
+    </positionablelabel>
+    <positionablelabel x="402" y="0" level="2" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" icon="yes" class="jmri.jmrit.display.configurexml.PositionableLabelXml">
+      <icon url="program:resources/icons/USS/background/Panel-blank-7.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </icon>
+    </positionablelabel>
+    <positionablelabel x="337" y="0" level="2" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" icon="yes" class="jmri.jmrit.display.configurexml.PositionableLabelXml">
+      <icon url="program:resources/icons/USS/background/Panel-blank-7.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </icon>
+    </positionablelabel>
+    <positionablelabel x="272" y="0" level="2" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" icon="yes" class="jmri.jmrit.display.configurexml.PositionableLabelXml">
+      <icon url="program:resources/icons/USS/background/Panel-blank-7.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </icon>
+    </positionablelabel>
+    <positionablelabel x="207" y="0" level="2" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" icon="yes" class="jmri.jmrit.display.configurexml.PositionableLabelXml">
+      <icon url="program:resources/icons/USS/background/Panel-blank-7.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </icon>
+    </positionablelabel>
+    <positionablelabel x="597" y="0" level="2" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" icon="yes" class="jmri.jmrit.display.configurexml.PositionableLabelXml">
+      <icon url="program:resources/icons/USS/background/Panel-right-7.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </icon>
+    </positionablelabel>
+    <positionablelabel x="77" y="337" level="3" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" icon="yes" class="jmri.jmrit.display.configurexml.PositionableLabelXml">
+      <icon url="program:resources/icons/USS/plate/numbered-plates/turnout/sw-3.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </icon>
+    </positionablelabel>
+    <positionablelabel x="142" y="337" level="3" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" icon="yes" class="jmri.jmrit.display.configurexml.PositionableLabelXml">
+      <icon url="program:resources/icons/USS/plate/numbered-plates/turnout/sw-5.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </icon>
+    </positionablelabel>
+    <positionablelabel x="207" y="337" level="3" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" icon="yes" class="jmri.jmrit.display.configurexml.PositionableLabelXml">
+      <icon url="program:resources/icons/USS/plate/numbered-plates/turnout/sw-7.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </icon>
+    </positionablelabel>
+    <positionablelabel x="337" y="337" level="3" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" icon="yes" class="jmri.jmrit.display.configurexml.PositionableLabelXml">
+      <icon url="program:resources/icons/USS/plate/numbered-plates/turnout/sw-11.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </icon>
+    </positionablelabel>
+    <positionablelabel x="467" y="337" level="3" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" icon="yes" class="jmri.jmrit.display.configurexml.PositionableLabelXml">
+      <icon url="program:resources/icons/USS/plate/numbered-plates/turnout/sw-15.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </icon>
+    </positionablelabel>
+    <positionablelabel x="402" y="337" level="3" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" icon="yes" class="jmri.jmrit.display.configurexml.PositionableLabelXml">
+      <icon url="program:resources/icons/USS/plate/numbered-plates/turnout/sw-13.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </icon>
+    </positionablelabel>
+    <positionablelabel x="77" y="435" level="3" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" icon="yes" class="jmri.jmrit.display.configurexml.PositionableLabelXml">
+      <icon url="program:resources/icons/USS/plate/numbered-plates/signal/si-4.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </icon>
+    </positionablelabel>
+    <positionablelabel x="142" y="435" level="3" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" icon="yes" class="jmri.jmrit.display.configurexml.PositionableLabelXml">
+      <icon url="program:resources/icons/USS/plate/numbered-plates/signal/si-6.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </icon>
+    </positionablelabel>
+    <positionablelabel x="207" y="435" level="3" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" icon="yes" class="jmri.jmrit.display.configurexml.PositionableLabelXml">
+      <icon url="program:resources/icons/USS/plate/numbered-plates/signal/si-8.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </icon>
+    </positionablelabel>
+    <positionablelabel x="337" y="435" level="3" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" icon="yes" class="jmri.jmrit.display.configurexml.PositionableLabelXml">
+      <icon url="program:resources/icons/USS/plate/numbered-plates/signal/si-12.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </icon>
+    </positionablelabel>
+    <positionablelabel x="402" y="439" level="3" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" icon="yes" class="jmri.jmrit.display.configurexml.PositionableLabelXml">
+      <icon url="program:resources/icons/USS/plate/numbered-plates/signal/si-14.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </icon>
+    </positionablelabel>
+    <positionablelabel x="467" y="435" level="3" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" icon="yes" class="jmri.jmrit.display.configurexml.PositionableLabelXml">
+      <icon url="program:resources/icons/USS/plate/numbered-plates/signal/si-16.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </icon>
+    </positionablelabel>
+    <positionablelabel x="6" y="286" level="3" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" icon="yes" class="jmri.jmrit.display.configurexml.PositionableLabelXml">
+      <icon url="program:resources/icons/USS/plate/base-plates/misc/USS-plate.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </icon>
+    </positionablelabel>
+    <positionablelabel x="206" y="619" level="3" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" icon="yes" class="jmri.jmrit.display.configurexml.PositionableLabelXml">
+      <icon url="program:resources/icons/USS/plate/base-plates/misc/code.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </icon>
+    </positionablelabel>
+    <positionablelabel x="558" y="668" level="3" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" icon="yes" class="jmri.jmrit.display.configurexml.PositionableLabelXml">
+      <icon url="program:resources/jmri48x48.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </icon>
+    </positionablelabel>
+    <sensoricon sensor="Stage West 1-3 Lever" x="94" y="381" level="10" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" momentary="false" icon="yes" class="jmri.jmrit.display.configurexml.SensorIconXml">
+      <active url="program:resources/icons/USS/plate/levers/l-right.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </active>
+      <inactive url="program:resources/icons/USS/plate/levers/l-left.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inactive>
+      <unknown url="program:resources/icons/USS/plate/levers/l-unknown.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </unknown>
+      <inconsistent url="program:resources/icons/USS/plate/levers/l-inconsistent.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inconsistent>
+      <iconmaps />
+    </sensoricon>
+    <sensoricon sensor="Stage West 2-4 Lever" x="159" y="378" level="10" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" momentary="false" icon="yes" class="jmri.jmrit.display.configurexml.SensorIconXml">
+      <active url="program:resources/icons/USS/plate/levers/l-right.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </active>
+      <inactive url="program:resources/icons/USS/plate/levers/l-left.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inactive>
+      <unknown url="program:resources/icons/USS/plate/levers/l-unknown.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </unknown>
+      <inconsistent url="program:resources/icons/USS/plate/levers/l-inconsistent.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inconsistent>
+      <iconmaps />
+    </sensoricon>
+    <sensoricon sensor="West Double Track Lever" x="223" y="380" level="10" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" momentary="false" icon="yes" class="jmri.jmrit.display.configurexml.SensorIconXml">
+      <active url="program:resources/icons/USS/plate/levers/l-right.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </active>
+      <inactive url="program:resources/icons/USS/plate/levers/l-left.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inactive>
+      <unknown url="program:resources/icons/USS/plate/levers/l-unknown.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </unknown>
+      <inconsistent url="program:resources/icons/USS/plate/levers/l-inconsistent.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inconsistent>
+      <iconmaps />
+    </sensoricon>
+    <sensoricon sensor="East Double Track Lever" x="354" y="381" level="10" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" momentary="false" icon="yes" class="jmri.jmrit.display.configurexml.SensorIconXml">
+      <active url="program:resources/icons/USS/plate/levers/l-right.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </active>
+      <inactive url="program:resources/icons/USS/plate/levers/l-left.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inactive>
+      <unknown url="program:resources/icons/USS/plate/levers/l-unknown.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </unknown>
+      <inconsistent url="program:resources/icons/USS/plate/levers/l-inconsistent.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inconsistent>
+      <iconmaps />
+    </sensoricon>
+    <sensoricon sensor="Stage East 1-3 Lever" x="418" y="380" level="10" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" momentary="false" icon="yes" class="jmri.jmrit.display.configurexml.SensorIconXml">
+      <active url="program:resources/icons/USS/plate/levers/l-right.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </active>
+      <inactive url="program:resources/icons/USS/plate/levers/l-left.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inactive>
+      <unknown url="program:resources/icons/USS/plate/levers/l-unknown.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </unknown>
+      <inconsistent url="program:resources/icons/USS/plate/levers/l-inconsistent.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inconsistent>
+      <iconmaps />
+    </sensoricon>
+    <sensoricon sensor="Stage East 2-4 Lever" x="483" y="379" level="10" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" momentary="false" icon="yes" class="jmri.jmrit.display.configurexml.SensorIconXml">
+      <active url="program:resources/icons/USS/plate/levers/l-right.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </active>
+      <inactive url="program:resources/icons/USS/plate/levers/l-left.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inactive>
+      <unknown url="program:resources/icons/USS/plate/levers/l-unknown.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </unknown>
+      <inconsistent url="program:resources/icons/USS/plate/levers/l-inconsistent.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inconsistent>
+      <iconmaps />
+    </sensoricon>
+    <sensoricon sensor="Stage West 1-3 Code Button" x="98" y="541" level="10" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" momentary="true" icon="yes" class="jmri.jmrit.display.configurexml.SensorIconXml">
+      <active url="program:resources/icons/USS/plate/levers/code-press.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </active>
+      <inactive url="program:resources/icons/USS/plate/levers/code.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inactive>
+      <unknown url="program:resources/icons/USS/plate/levers/code-unknown.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </unknown>
+      <inconsistent url="program:resources/icons/USS/plate/levers/code-inconsistent.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inconsistent>
+      <iconmaps />
+    </sensoricon>
+    <sensoricon sensor="Stage West 2-4 Code Button" x="164" y="541" level="10" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" momentary="true" icon="yes" class="jmri.jmrit.display.configurexml.SensorIconXml">
+      <active url="program:resources/icons/USS/plate/levers/code-press.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </active>
+      <inactive url="program:resources/icons/USS/plate/levers/code.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inactive>
+      <unknown url="program:resources/icons/USS/plate/levers/code-unknown.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </unknown>
+      <inconsistent url="program:resources/icons/USS/plate/levers/code-inconsistent.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inconsistent>
+      <iconmaps />
+    </sensoricon>
+    <sensoricon sensor="West Double Track Code Button" x="227" y="541" level="10" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" momentary="true" icon="yes" class="jmri.jmrit.display.configurexml.SensorIconXml">
+      <active url="program:resources/icons/USS/plate/levers/code-press.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </active>
+      <inactive url="program:resources/icons/USS/plate/levers/code.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inactive>
+      <unknown url="program:resources/icons/USS/plate/levers/code-unknown.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </unknown>
+      <inconsistent url="program:resources/icons/USS/plate/levers/code-inconsistent.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inconsistent>
+      <iconmaps />
+    </sensoricon>
+    <sensoricon sensor="East Double Track Code Button" x="356" y="541" level="10" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" momentary="true" icon="yes" class="jmri.jmrit.display.configurexml.SensorIconXml">
+      <active url="program:resources/icons/USS/plate/levers/code-press.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </active>
+      <inactive url="program:resources/icons/USS/plate/levers/code.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inactive>
+      <unknown url="program:resources/icons/USS/plate/levers/code-unknown.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </unknown>
+      <inconsistent url="program:resources/icons/USS/plate/levers/code-inconsistent.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inconsistent>
+      <iconmaps />
+    </sensoricon>
+    <sensoricon sensor="Stage East 1-3 Code Button" x="422" y="540" level="10" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" momentary="true" icon="yes" class="jmri.jmrit.display.configurexml.SensorIconXml">
+      <active url="program:resources/icons/USS/plate/levers/code-press.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </active>
+      <inactive url="program:resources/icons/USS/plate/levers/code.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inactive>
+      <unknown url="program:resources/icons/USS/plate/levers/code-unknown.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </unknown>
+      <inconsistent url="program:resources/icons/USS/plate/levers/code-inconsistent.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inconsistent>
+      <iconmaps />
+    </sensoricon>
+    <sensoricon sensor="Stage East 2-4 Code Button" x="488" y="541" level="10" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" momentary="true" icon="yes" class="jmri.jmrit.display.configurexml.SensorIconXml">
+      <active url="program:resources/icons/USS/plate/levers/code-press.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </active>
+      <inactive url="program:resources/icons/USS/plate/levers/code.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inactive>
+      <unknown url="program:resources/icons/USS/plate/levers/code-unknown.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </unknown>
+      <inconsistent url="program:resources/icons/USS/plate/levers/code-inconsistent.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inconsistent>
+      <iconmaps />
+    </sensoricon>
+    <sensoricon sensor="Stage West 1-3_points" x="82" y="342" level="10" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" momentary="false" icon="yes" class="jmri.jmrit.display.configurexml.SensorIconXml">
+      <active url="program:resources/icons/USS/sensor/green-on.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </active>
+      <inactive url="program:resources/icons/USS/sensor/green-off.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inactive>
+      <unknown url="program:resources/icons/USS/sensor/s-unknown.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </unknown>
+      <inconsistent url="program:resources/icons/USS/sensor/s-inconsistent.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inconsistent>
+      <iconmaps />
+    </sensoricon>
+    <sensoricon sensor="Stage West 2-4_points" x="147" y="343" level="10" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" momentary="false" icon="yes" class="jmri.jmrit.display.configurexml.SensorIconXml">
+      <active url="program:resources/icons/USS/sensor/green-on.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </active>
+      <inactive url="program:resources/icons/USS/sensor/green-off.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inactive>
+      <unknown url="program:resources/icons/USS/sensor/s-unknown.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </unknown>
+      <inconsistent url="program:resources/icons/USS/sensor/s-inconsistent.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inconsistent>
+      <iconmaps />
+    </sensoricon>
+    <sensoricon sensor="West Double Track_points" x="209" y="339" level="10" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" momentary="false" icon="yes" class="jmri.jmrit.display.configurexml.SensorIconXml">
+      <active url="program:resources/icons/USS/sensor/green-on.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </active>
+      <inactive url="program:resources/icons/USS/sensor/green-off.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inactive>
+      <unknown url="program:resources/icons/USS/sensor/s-unknown.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </unknown>
+      <inconsistent url="program:resources/icons/USS/sensor/s-inconsistent.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inconsistent>
+      <iconmaps />
+    </sensoricon>
+    <sensoricon sensor="East Double Track_points" x="339" y="341" level="10" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" momentary="false" icon="yes" class="jmri.jmrit.display.configurexml.SensorIconXml">
+      <active url="program:resources/icons/USS/sensor/green-on.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </active>
+      <inactive url="program:resources/icons/USS/sensor/green-off.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inactive>
+      <unknown url="program:resources/icons/USS/sensor/s-unknown.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </unknown>
+      <inconsistent url="program:resources/icons/USS/sensor/s-inconsistent.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inconsistent>
+      <iconmaps />
+    </sensoricon>
+    <sensoricon sensor="Stage East 1-3_points" x="406" y="343" level="10" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" momentary="false" icon="yes" class="jmri.jmrit.display.configurexml.SensorIconXml">
+      <active url="program:resources/icons/USS/sensor/green-on.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </active>
+      <inactive url="program:resources/icons/USS/sensor/green-off.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inactive>
+      <unknown url="program:resources/icons/USS/sensor/s-unknown.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </unknown>
+      <inconsistent url="program:resources/icons/USS/sensor/s-inconsistent.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inconsistent>
+      <iconmaps />
+    </sensoricon>
+    <sensoricon sensor="Stage East 2-4_points" x="470" y="341" level="10" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" momentary="false" icon="yes" class="jmri.jmrit.display.configurexml.SensorIconXml">
+      <active url="program:resources/icons/USS/sensor/green-on.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </active>
+      <inactive url="program:resources/icons/USS/sensor/green-off.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inactive>
+      <unknown url="program:resources/icons/USS/sensor/s-unknown.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </unknown>
+      <inconsistent url="program:resources/icons/USS/sensor/s-inconsistent.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inconsistent>
+      <iconmaps />
+    </sensoricon>
+    <sensoricon sensor="Stage West 1-3_points" x="111" y="342" level="10" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" momentary="false" icon="yes" class="jmri.jmrit.display.configurexml.SensorIconXml">
+      <active url="program:resources/icons/USS/sensor/amber-off.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </active>
+      <inactive url="program:resources/icons/USS/sensor/amber-on.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inactive>
+      <unknown url="program:resources/icons/USS/sensor/s-unknown.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </unknown>
+      <inconsistent url="program:resources/icons/USS/sensor/s-inconsistent.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inconsistent>
+      <iconmaps />
+    </sensoricon>
+    <sensoricon sensor="Stage West 2-4_points" x="179" y="341" level="10" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" momentary="false" icon="yes" class="jmri.jmrit.display.configurexml.SensorIconXml">
+      <active url="program:resources/icons/USS/sensor/amber-off.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </active>
+      <inactive url="program:resources/icons/USS/sensor/amber-on.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inactive>
+      <unknown url="program:resources/icons/USS/sensor/s-unknown.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </unknown>
+      <inconsistent url="program:resources/icons/USS/sensor/s-inconsistent.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inconsistent>
+      <iconmaps />
+    </sensoricon>
+    <sensoricon sensor="West Double Track_points" x="244" y="342" level="10" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" momentary="false" icon="yes" class="jmri.jmrit.display.configurexml.SensorIconXml">
+      <active url="program:resources/icons/USS/sensor/amber-off.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </active>
+      <inactive url="program:resources/icons/USS/sensor/amber-on.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inactive>
+      <unknown url="program:resources/icons/USS/sensor/s-unknown.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </unknown>
+      <inconsistent url="program:resources/icons/USS/sensor/s-inconsistent.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inconsistent>
+      <iconmaps />
+    </sensoricon>
+    <sensoricon sensor="East Double Track_points" x="372" y="341" level="10" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" momentary="false" icon="yes" class="jmri.jmrit.display.configurexml.SensorIconXml">
+      <active url="program:resources/icons/USS/sensor/amber-off.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </active>
+      <inactive url="program:resources/icons/USS/sensor/amber-on.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inactive>
+      <unknown url="program:resources/icons/USS/sensor/s-unknown.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </unknown>
+      <inconsistent url="program:resources/icons/USS/sensor/s-inconsistent.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inconsistent>
+      <iconmaps />
+    </sensoricon>
+    <sensoricon sensor="Stage East 1-3_points" x="438" y="343" level="10" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" momentary="false" icon="yes" class="jmri.jmrit.display.configurexml.SensorIconXml">
+      <active url="program:resources/icons/USS/sensor/amber-off.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </active>
+      <inactive url="program:resources/icons/USS/sensor/amber-on.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inactive>
+      <unknown url="program:resources/icons/USS/sensor/s-unknown.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </unknown>
+      <inconsistent url="program:resources/icons/USS/sensor/s-inconsistent.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inconsistent>
+      <iconmaps />
+    </sensoricon>
+    <sensoricon sensor="Stage East 2-4_points" x="503" y="341" level="10" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" momentary="false" icon="yes" class="jmri.jmrit.display.configurexml.SensorIconXml">
+      <active url="program:resources/icons/USS/sensor/amber-off.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </active>
+      <inactive url="program:resources/icons/USS/sensor/amber-on.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inactive>
+      <unknown url="program:resources/icons/USS/sensor/s-unknown.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </unknown>
+      <inconsistent url="program:resources/icons/USS/sensor/s-inconsistent.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inconsistent>
+      <iconmaps />
+    </sensoricon>
+    <positionablelabel x="43" y="61" level="3" forcecontroloff="false" hidden="no" positionable="false" showtooltip="true" editable="true" icon="yes" class="jmri.jmrit.display.configurexml.PositionableLabelXml">
+      <icon url="program:resources/icons/USS/track/block/block.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </icon>
+    </positionablelabel>
+    <positionablelabel x="116" y="143" level="3" forcecontroloff="false" hidden="no" positionable="false" showtooltip="true" editable="true" icon="yes" class="jmri.jmrit.display.configurexml.PositionableLabelXml">
+      <icon url="program:resources/icons/USS/track/block/block.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </icon>
+    </positionablelabel>
+    <positionablelabel x="43" y="177" level="3" forcecontroloff="false" hidden="no" positionable="false" showtooltip="true" editable="true" icon="yes" class="jmri.jmrit.display.configurexml.PositionableLabelXml">
+      <icon url="program:resources/icons/USS/track/block/block.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </icon>
+    </positionablelabel>
+    <sensoricon sensor="Stage West 1-3_points" x="73" y="70" level="10" forcecontroloff="false" hidden="no" positionable="false" showtooltip="true" editable="true" momentary="false" icon="yes" text="" size="12" style="1" red="51" green="51" blue="51" hasBackground="no" justification="centre" class="jmri.jmrit.display.configurexml.SensorIconXml">
+      <active url="program:resources/icons/USS/track/turnout/right/west/os-r-w-closed.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </active>
+      <inactive url="program:resources/icons/USS/track/turnout/right/west/os-r-w-thrown.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inactive>
+      <unknown url="program:resources/icons/USS/track/turnout/right/west/os-r-w-unknown.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </unknown>
+      <inconsistent url="program:resources/icons/USS/track/turnout/right/west/os-r-w-inconsistent.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inconsistent>
+      <iconmaps />
+      <activeText red="255" green="0" blue="0" />
+      <inactiveText red="255" green="255" blue="0" />
+      <unknownText red="0" green="0" blue="255" />
+      <inconsistentText red="0" green="0" blue="0" />
+    </sensoricon>
+    <positionablelabel x="43" y="94" level="3" forcecontroloff="false" hidden="no" positionable="false" showtooltip="true" editable="true" icon="yes" class="jmri.jmrit.display.configurexml.PositionableLabelXml">
+      <icon url="program:resources/icons/USS/track/block/block.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </icon>
+    </positionablelabel>
+    <positionablelabel x="68" y="65" level="3" forcecontroloff="false" hidden="no" positionable="false" showtooltip="true" editable="true" icon="yes" class="jmri.jmrit.display.configurexml.PositionableLabelXml">
+      <icon url="program:resources/icons/USS/track/block/b-45-short.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </icon>
+    </positionablelabel>
+    <sensoricon sensor="Stage West 2-4_points" x="73" y="142" level="10" forcecontroloff="false" hidden="no" positionable="false" showtooltip="true" editable="true" momentary="false" icon="yes" class="jmri.jmrit.display.configurexml.SensorIconXml">
+      <active url="program:resources/icons/USS/track/turnout/left/west/os-l-w-closed.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </active>
+      <inactive url="program:resources/icons/USS/track/turnout/left/west/os-l-w-thrown.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inactive>
+      <unknown url="program:resources/icons/USS/track/turnout/left/west/os-l-w-unknown.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </unknown>
+      <inconsistent url="program:resources/icons/USS/track/turnout/left/west/os-l-w-inconsistent.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inconsistent>
+      <iconmaps />
+    </sensoricon>
+    <positionablelabel x="68" y="172" level="3" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" degrees="90" icon="yes" class="jmri.jmrit.display.configurexml.PositionableLabelXml">
+      <icon url="program:resources/icons/USS/track/block/b-45-short.gif" degrees="90" scale="1.0">
+        <rotation>0</rotation>
+      </icon>
+    </positionablelabel>
+    <sensoricon sensor="West Double Track_points" x="180" y="119" level="10" forcecontroloff="false" hidden="no" positionable="false" showtooltip="true" editable="true" momentary="false" icon="yes" class="jmri.jmrit.display.configurexml.SensorIconXml">
+      <active url="program:resources/icons/USS/track/turnout/right/west/os-r-w-closed.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </active>
+      <inactive url="program:resources/icons/USS/track/turnout/right/west/os-r-w-thrown.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inactive>
+      <unknown url="program:resources/icons/USS/track/turnout/right/west/os-r-w-unknown.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </unknown>
+      <inconsistent url="program:resources/icons/USS/track/turnout/right/west/os-r-w-inconsistent.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inconsistent>
+      <iconmaps />
+    </sensoricon>
+    <positionablelabel x="150" y="143" level="3" forcecontroloff="false" hidden="no" positionable="false" showtooltip="true" editable="true" icon="yes" class="jmri.jmrit.display.configurexml.PositionableLabelXml">
+      <icon url="program:resources/icons/USS/track/block/block.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </icon>
+    </positionablelabel>
+    <positionablelabel x="160" y="99" level="3" forcecontroloff="false" hidden="no" positionable="false" showtooltip="true" editable="true" icon="yes" class="jmri.jmrit.display.configurexml.PositionableLabelXml">
+      <icon url="program:resources/icons/USS/track/block/b-45.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </icon>
+    </positionablelabel>
+    <positionablelabel x="154" y="95" level="3" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" icon="yes" class="jmri.jmrit.display.configurexml.PositionableLabelXml">
+      <icon url="program:resources/icons/USS/track/block/b-short.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </icon>
+    </positionablelabel>
+    <positionablelabel x="537" y="109" level="3" forcecontroloff="false" hidden="no" positionable="false" showtooltip="true" editable="true" icon="yes" class="jmri.jmrit.display.configurexml.PositionableLabelXml">
+      <icon url="program:resources/icons/USS/track/block/block.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </icon>
+    </positionablelabel>
+    <positionablelabel x="527" y="229" level="3" forcecontroloff="false" hidden="no" positionable="false" showtooltip="true" editable="true" icon="yes" class="jmri.jmrit.display.configurexml.PositionableLabelXml">
+      <icon url="program:resources/icons/USS/track/block/block.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </icon>
+    </positionablelabel>
+    <positionablelabel x="524" y="195" level="3" forcecontroloff="false" hidden="no" positionable="false" showtooltip="true" editable="true" icon="yes" class="jmri.jmrit.display.configurexml.PositionableLabelXml">
+      <icon url="program:resources/icons/USS/track/block/block.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </icon>
+    </positionablelabel>
+    <positionablelabel x="534" y="143" level="3" forcecontroloff="false" hidden="no" positionable="false" showtooltip="true" editable="true" icon="yes" class="jmri.jmrit.display.configurexml.PositionableLabelXml">
+      <icon url="program:resources/icons/USS/track/block/block.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </icon>
+    </positionablelabel>
+    <sensoricon sensor="East Double Track_points" x="376" y="142" level="10" forcecontroloff="false" hidden="no" positionable="false" showtooltip="true" editable="true" momentary="false" icon="yes" class="jmri.jmrit.display.configurexml.SensorIconXml">
+      <active url="program:resources/icons/USS/track/turnout/right/east/os-r-e-closed.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </active>
+      <inactive url="program:resources/icons/USS/track/turnout/right/east/os-r-e-thrown.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inactive>
+      <unknown url="program:resources/icons/USS/track/turnout/right/east/os-r-e-unknown.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </unknown>
+      <inconsistent url="program:resources/icons/USS/track/turnout/right/east/os-r-e-inconsistent.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inconsistent>
+      <iconmaps />
+    </sensoricon>
+    <positionablelabel x="10" y="61" level="3" forcecontroloff="false" hidden="no" positionable="false" showtooltip="true" editable="true" icon="yes" class="jmri.jmrit.display.configurexml.PositionableLabelXml">
+      <icon url="program:resources/icons/USS/track/block/block.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </icon>
+    </positionablelabel>
+    <positionablelabel x="416" y="143" level="3" forcecontroloff="false" hidden="no" positionable="false" showtooltip="true" editable="true" icon="yes" class="jmri.jmrit.display.configurexml.PositionableLabelXml">
+      <icon url="program:resources/icons/USS/track/block/block.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </icon>
+    </positionablelabel>
+    <positionablelabel x="254" y="143" level="3" forcecontroloff="false" hidden="no" positionable="false" showtooltip="true" editable="true" icon="yes" class="jmri.jmrit.display.configurexml.PositionableLabelXml">
+      <icon url="program:resources/icons/USS/track/block/block.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </icon>
+    </positionablelabel>
+    <positionablelabel x="314" y="143" level="3" forcecontroloff="false" hidden="no" positionable="false" showtooltip="true" editable="true" icon="yes" class="jmri.jmrit.display.configurexml.PositionableLabelXml">
+      <icon url="program:resources/icons/USS/track/block/block.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </icon>
+    </positionablelabel>
+    <positionablelabel x="284" y="143" level="3" forcecontroloff="false" hidden="no" positionable="false" showtooltip="true" editable="true" icon="yes" class="jmri.jmrit.display.configurexml.PositionableLabelXml">
+      <icon url="program:resources/icons/USS/track/block/block.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </icon>
+    </positionablelabel>
+    <positionablelabel x="406" y="172" level="3" forcecontroloff="false" hidden="no" positionable="false" showtooltip="true" editable="true" icon="yes" class="jmri.jmrit.display.configurexml.PositionableLabelXml">
+      <icon url="program:resources/icons/USS/track/block/b-45.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </icon>
+    </positionablelabel>
+    <positionablelabel x="434" y="194" level="3" forcecontroloff="false" hidden="no" positionable="false" showtooltip="true" editable="true" icon="yes" class="jmri.jmrit.display.configurexml.PositionableLabelXml">
+      <icon url="program:resources/icons/USS/track/block/b-short.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </icon>
+    </positionablelabel>
+    <positionablelabel x="10" y="94" level="3" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" icon="yes" class="jmri.jmrit.display.configurexml.PositionableLabelXml">
+      <icon url="program:resources/icons/USS/track/block/block.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </icon>
+    </positionablelabel>
+    <positionablelabel x="10" y="177" level="3" forcecontroloff="false" hidden="no" positionable="false" showtooltip="true" editable="true" icon="yes" class="jmri.jmrit.display.configurexml.PositionableLabelXml">
+      <icon url="program:resources/icons/USS/track/block/block.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </icon>
+    </positionablelabel>
+    <positionablelabel x="10" y="144" level="3" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" icon="yes" class="jmri.jmrit.display.configurexml.PositionableLabelXml">
+      <icon url="program:resources/icons/USS/track/block/block.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </icon>
+    </positionablelabel>
+    <sensoricon sensor="Stage East 2-4_points" x="484" y="194" level="10" forcecontroloff="false" hidden="no" positionable="false" showtooltip="true" editable="true" momentary="false" icon="yes" class="jmri.jmrit.display.configurexml.SensorIconXml">
+      <active url="program:resources/icons/USS/track/turnout/right/east/os-r-e-closed.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </active>
+      <inactive url="program:resources/icons/USS/track/turnout/right/east/os-r-e-thrown.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inactive>
+      <unknown url="program:resources/icons/USS/track/turnout/right/east/os-r-e-unknown.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </unknown>
+      <inconsistent url="program:resources/icons/USS/track/turnout/right/east/os-r-e-inconsistent.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inconsistent>
+      <iconmaps />
+    </sensoricon>
+    <positionablelabel x="514" y="224" level="3" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" icon="yes" class="jmri.jmrit.display.configurexml.PositionableLabelXml">
+      <icon url="program:resources/icons/USS/track/block/b-45-short.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </icon>
+    </positionablelabel>
+    <positionablelabel x="562" y="196" level="3" forcecontroloff="false" hidden="no" positionable="false" showtooltip="true" editable="true" icon="yes" class="jmri.jmrit.display.configurexml.PositionableLabelXml">
+      <icon url="program:resources/icons/USS/track/block/block.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </icon>
+    </positionablelabel>
+    <positionablelabel x="567" y="230" level="3" forcecontroloff="false" hidden="no" positionable="false" showtooltip="true" editable="true" icon="yes" class="jmri.jmrit.display.configurexml.PositionableLabelXml">
+      <icon url="program:resources/icons/USS/track/block/block.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </icon>
+    </positionablelabel>
+    <sensoricon sensor="Stage East 1-3_points" x="494" y="119" level="10" forcecontroloff="false" hidden="no" positionable="false" showtooltip="true" editable="true" momentary="false" icon="yes" class="jmri.jmrit.display.configurexml.SensorIconXml">
+      <active url="program:resources/icons/USS/track/turnout/left/east/os-l-e-closed.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </active>
+      <inactive url="program:resources/icons/USS/track/turnout/left/east/os-l-e-thrown.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inactive>
+      <unknown url="program:resources/icons/USS/track/turnout/left/east/os-l-e-unknown.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </unknown>
+      <inconsistent url="program:resources/icons/USS/track/turnout/left/east/os-l-e-inconsistent.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inconsistent>
+      <iconmaps />
+    </sensoricon>
+    <positionablelabel x="524" y="114" level="3" forcecontroloff="false" hidden="no" positionable="false" showtooltip="true" editable="true" degrees="90" icon="yes" class="jmri.jmrit.display.configurexml.PositionableLabelXml">
+      <icon url="program:resources/icons/USS/track/block/b-45-short.gif" degrees="90" scale="1.0">
+        <rotation>0</rotation>
+      </icon>
+    </positionablelabel>
+    <positionablelabel x="570" y="143" level="3" forcecontroloff="false" hidden="no" positionable="false" showtooltip="true" editable="true" icon="yes" class="jmri.jmrit.display.configurexml.PositionableLabelXml">
+      <icon url="program:resources/icons/USS/track/block/block.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </icon>
+    </positionablelabel>
+    <positionablelabel x="568" y="109" level="3" forcecontroloff="false" hidden="no" positionable="false" showtooltip="true" editable="true" icon="yes" class="jmri.jmrit.display.configurexml.PositionableLabelXml">
+      <icon url="program:resources/icons/USS/track/block/block.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </icon>
+    </positionablelabel>
+    <positionablelabel x="93" y="53" level="4" forcecontroloff="false" hidden="no" positionable="false" showtooltip="true" editable="true" text="3" size="12" style="1" red="255" green="255" blue="255" hasBackground="yes" redBack="64" greenBack="64" blueBack="64" justification="centre" class="jmri.jmrit.display.configurexml.PositionableLabelXml" />
+    <positionablelabel x="87" y="186" level="4" forcecontroloff="false" hidden="no" positionable="false" showtooltip="true" editable="true" text="5" size="12" style="1" red="255" green="255" blue="255" hasBackground="yes" redBack="64" greenBack="64" blueBack="64" justification="centre" class="jmri.jmrit.display.configurexml.PositionableLabelXml" />
+    <positionablelabel x="199" y="100" level="4" forcecontroloff="false" hidden="no" positionable="false" showtooltip="true" editable="true" text="7" size="12" style="1" red="255" green="255" blue="255" hasBackground="yes" redBack="64" greenBack="64" blueBack="64" justification="centre" class="jmri.jmrit.display.configurexml.PositionableLabelXml" />
+    <positionablelabel x="369" y="176" level="4" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" text="11" size="12" style="1" red="255" green="255" blue="255" hasBackground="yes" redBack="64" greenBack="64" blueBack="64" justification="centre" class="jmri.jmrit.display.configurexml.PositionableLabelXml" />
+    <positionablelabel x="440" y="105" level="4" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" text="13" size="12" style="1" red="255" green="255" blue="255" hasBackground="yes" redBack="64" greenBack="64" blueBack="64" justification="centre" class="jmri.jmrit.display.configurexml.PositionableLabelXml" />
+    <positionablelabel x="433" y="221" level="4" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" text="15" size="12" style="1" red="255" green="255" blue="255" hasBackground="yes" redBack="64" greenBack="64" blueBack="64" justification="centre" class="jmri.jmrit.display.configurexml.PositionableLabelXml" />
+    <positionablelabel x="269" y="125" level="4" forcecontroloff="false" hidden="no" positionable="false" showtooltip="true" editable="true" text="Wendell Depot" size="10" style="1" red="255" green="255" blue="0" hasBackground="no" justification="centre" class="jmri.jmrit.display.configurexml.PositionableLabelXml" />
+    <sensoricon sensor="Signal Lamp Stage West 1-3L" x="79" y="453" level="10" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" momentary="false" icon="yes" class="jmri.jmrit.display.configurexml.SensorIconXml">
+      <active url="program:resources/icons/USS/sensor/green-on.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </active>
+      <inactive url="program:resources/icons/USS/sensor/green-off.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inactive>
+      <unknown url="program:resources/icons/USS/sensor/s-unknown.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </unknown>
+      <inconsistent url="program:resources/icons/USS/sensor/s-inconsistent.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inconsistent>
+      <iconmaps />
+    </sensoricon>
+    <sensoricon sensor="Signal Lamp Stage West 1-3R" x="112" y="454" level="10" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" momentary="false" icon="yes" class="jmri.jmrit.display.configurexml.SensorIconXml">
+      <active url="program:resources/icons/USS/sensor/green-on.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </active>
+      <inactive url="program:resources/icons/USS/sensor/green-off.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inactive>
+      <unknown url="program:resources/icons/USS/sensor/s-unknown.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </unknown>
+      <inconsistent url="program:resources/icons/USS/sensor/s-inconsistent.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inconsistent>
+      <iconmaps />
+    </sensoricon>
+    <sensoricon sensor="Signal Lamp Stage West 2-4L" x="145" y="454" level="10" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" momentary="false" icon="yes" class="jmri.jmrit.display.configurexml.SensorIconXml">
+      <active url="program:resources/icons/USS/sensor/green-on.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </active>
+      <inactive url="program:resources/icons/USS/sensor/green-off.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inactive>
+      <unknown url="program:resources/icons/USS/sensor/s-unknown.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </unknown>
+      <inconsistent url="program:resources/icons/USS/sensor/s-inconsistent.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inconsistent>
+      <iconmaps />
+    </sensoricon>
+    <sensoricon sensor="Signal Lamp Stage West 2-4R" x="177" y="453" level="10" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" momentary="false" icon="yes" class="jmri.jmrit.display.configurexml.SensorIconXml">
+      <active url="program:resources/icons/USS/sensor/green-on.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </active>
+      <inactive url="program:resources/icons/USS/sensor/green-off.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inactive>
+      <unknown url="program:resources/icons/USS/sensor/s-unknown.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </unknown>
+      <inconsistent url="program:resources/icons/USS/sensor/s-inconsistent.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inconsistent>
+      <iconmaps />
+    </sensoricon>
+    <sensoricon sensor="Signal Lamp West DoubleL" x="210" y="453" level="10" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" momentary="false" icon="yes" class="jmri.jmrit.display.configurexml.SensorIconXml">
+      <active url="program:resources/icons/USS/sensor/green-on.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </active>
+      <inactive url="program:resources/icons/USS/sensor/green-off.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inactive>
+      <unknown url="program:resources/icons/USS/sensor/s-unknown.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </unknown>
+      <inconsistent url="program:resources/icons/USS/sensor/s-inconsistent.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inconsistent>
+      <iconmaps />
+    </sensoricon>
+    <sensoricon sensor="Signal Lamp West DoubleR" x="242" y="454" level="10" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" momentary="false" icon="yes" class="jmri.jmrit.display.configurexml.SensorIconXml">
+      <active url="program:resources/icons/USS/sensor/green-on.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </active>
+      <inactive url="program:resources/icons/USS/sensor/green-off.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inactive>
+      <unknown url="program:resources/icons/USS/sensor/s-unknown.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </unknown>
+      <inconsistent url="program:resources/icons/USS/sensor/s-inconsistent.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inconsistent>
+      <iconmaps />
+    </sensoricon>
+    <sensoricon sensor="Signal Lamp East DoubleL" x="339" y="453" level="10" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" momentary="false" icon="yes" class="jmri.jmrit.display.configurexml.SensorIconXml">
+      <active url="program:resources/icons/USS/sensor/green-on.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </active>
+      <inactive url="program:resources/icons/USS/sensor/green-off.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inactive>
+      <unknown url="program:resources/icons/USS/sensor/s-unknown.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </unknown>
+      <inconsistent url="program:resources/icons/USS/sensor/s-inconsistent.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inconsistent>
+      <iconmaps />
+    </sensoricon>
+    <sensoricon sensor="Signal Lamp East DoubleR" x="372" y="454" level="10" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" momentary="false" icon="yes" class="jmri.jmrit.display.configurexml.SensorIconXml">
+      <active url="program:resources/icons/USS/sensor/green-on.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </active>
+      <inactive url="program:resources/icons/USS/sensor/green-off.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inactive>
+      <unknown url="program:resources/icons/USS/sensor/s-unknown.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </unknown>
+      <inconsistent url="program:resources/icons/USS/sensor/s-inconsistent.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inconsistent>
+      <iconmaps />
+    </sensoricon>
+    <sensoricon sensor="Signal Lamp Stage East 1-3L" x="407" y="457" level="10" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" momentary="false" icon="yes" class="jmri.jmrit.display.configurexml.SensorIconXml">
+      <active url="program:resources/icons/USS/sensor/green-on.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </active>
+      <inactive url="program:resources/icons/USS/sensor/green-off.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inactive>
+      <unknown url="program:resources/icons/USS/sensor/s-unknown.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </unknown>
+      <inconsistent url="program:resources/icons/USS/sensor/s-inconsistent.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inconsistent>
+      <iconmaps />
+    </sensoricon>
+    <sensoricon sensor="Signal Lamp Stage East 1-3R" x="437" y="456" level="10" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" momentary="false" icon="yes" class="jmri.jmrit.display.configurexml.SensorIconXml">
+      <active url="program:resources/icons/USS/sensor/green-on.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </active>
+      <inactive url="program:resources/icons/USS/sensor/green-off.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inactive>
+      <unknown url="program:resources/icons/USS/sensor/s-unknown.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </unknown>
+      <inconsistent url="program:resources/icons/USS/sensor/s-inconsistent.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inconsistent>
+      <iconmaps />
+    </sensoricon>
+    <sensoricon sensor="Signal Lamp Stage East 2-4L" x="470" y="453" level="10" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" momentary="false" icon="yes" class="jmri.jmrit.display.configurexml.SensorIconXml">
+      <active url="program:resources/icons/USS/sensor/green-on.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </active>
+      <inactive url="program:resources/icons/USS/sensor/green-off.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inactive>
+      <unknown url="program:resources/icons/USS/sensor/s-unknown.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </unknown>
+      <inconsistent url="program:resources/icons/USS/sensor/s-inconsistent.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inconsistent>
+      <iconmaps />
+    </sensoricon>
+    <sensoricon sensor="Signal Lamp STage East 2-4R" x="501" y="453" level="10" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" momentary="false" icon="yes" class="jmri.jmrit.display.configurexml.SensorIconXml">
+      <active url="program:resources/icons/USS/sensor/green-on.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </active>
+      <inactive url="program:resources/icons/USS/sensor/green-off.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inactive>
+      <unknown url="program:resources/icons/USS/sensor/s-unknown.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </unknown>
+      <inconsistent url="program:resources/icons/USS/sensor/s-inconsistent.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inconsistent>
+      <iconmaps />
+    </sensoricon>
+    <sensoricon sensor="Signal Lamp Stage West 1-3C" x="96" y="438" level="10" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" momentary="false" icon="yes" class="jmri.jmrit.display.configurexml.SensorIconXml">
+      <active url="program:resources/icons/USS/sensor/red-on.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </active>
+      <inactive url="program:resources/icons/USS/sensor/red-off.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inactive>
+      <unknown url="program:resources/icons/USS/sensor/s-unknown.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </unknown>
+      <inconsistent url="program:resources/icons/USS/sensor/s-inconsistent.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inconsistent>
+      <iconmaps />
+    </sensoricon>
+    <sensoricon sensor="Signal Lamp Stage West 2-4C" x="160" y="438" level="10" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" momentary="false" icon="yes" class="jmri.jmrit.display.configurexml.SensorIconXml">
+      <active url="program:resources/icons/USS/sensor/red-on.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </active>
+      <inactive url="program:resources/icons/USS/sensor/red-off.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inactive>
+      <unknown url="program:resources/icons/USS/sensor/s-unknown.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </unknown>
+      <inconsistent url="program:resources/icons/USS/sensor/s-inconsistent.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inconsistent>
+      <iconmaps />
+    </sensoricon>
+    <sensoricon sensor="Signal Lamp West DoubleC" x="225" y="440" level="10" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" momentary="false" icon="yes" class="jmri.jmrit.display.configurexml.SensorIconXml">
+      <active url="program:resources/icons/USS/sensor/red-on.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </active>
+      <inactive url="program:resources/icons/USS/sensor/red-off.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inactive>
+      <unknown url="program:resources/icons/USS/sensor/s-unknown.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </unknown>
+      <inconsistent url="program:resources/icons/USS/sensor/s-inconsistent.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inconsistent>
+      <iconmaps />
+    </sensoricon>
+    <sensoricon sensor="Signal Lamp East DoubleC" x="355" y="438" level="10" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" momentary="false" icon="yes" class="jmri.jmrit.display.configurexml.SensorIconXml">
+      <active url="program:resources/icons/USS/sensor/red-on.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </active>
+      <inactive url="program:resources/icons/USS/sensor/red-off.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inactive>
+      <unknown url="program:resources/icons/USS/sensor/s-unknown.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </unknown>
+      <inconsistent url="program:resources/icons/USS/sensor/s-inconsistent.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inconsistent>
+      <iconmaps />
+    </sensoricon>
+    <sensoricon sensor="Signal Lamp Stage East 1-3C" x="421" y="444" level="10" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" momentary="false" icon="yes" class="jmri.jmrit.display.configurexml.SensorIconXml">
+      <active url="program:resources/icons/USS/sensor/red-on.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </active>
+      <inactive url="program:resources/icons/USS/sensor/red-off.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inactive>
+      <unknown url="program:resources/icons/USS/sensor/s-unknown.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </unknown>
+      <inconsistent url="program:resources/icons/USS/sensor/s-inconsistent.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inconsistent>
+      <iconmaps />
+    </sensoricon>
+    <sensoricon sensor="Signal Lamp Stage East 2-4C" x="485" y="438" level="10" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" momentary="false" icon="yes" class="jmri.jmrit.display.configurexml.SensorIconXml">
+      <active url="program:resources/icons/USS/sensor/red-on.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </active>
+      <inactive url="program:resources/icons/USS/sensor/red-off.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inactive>
+      <unknown url="program:resources/icons/USS/sensor/s-unknown.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </unknown>
+      <inconsistent url="program:resources/icons/USS/sensor/s-inconsistent.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inconsistent>
+      <iconmaps />
+    </sensoricon>
+    <multisensoricon x="94" y="490" level="10" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" updown="false" class="jmri.jmrit.display.configurexml.MultiSensorIconXml">
+      <active url="program:resources/icons/USS/plate/levers/l-left.gif" degrees="0" scale="1.0" sensor="Signal Lever Stage West 1-3L">
+        <rotation>0</rotation>
+      </active>
+      <active url="program:resources/icons/USS/plate/levers/l-vertical.gif" degrees="0" scale="1.0" sensor="Signal Lever Stage West 1-3C">
+        <rotation>0</rotation>
+      </active>
+      <active url="program:resources/icons/USS/plate/levers/l-right.gif" degrees="0" scale="1.0" sensor="Signal Lever Stage West 1-3R">
+        <rotation>0</rotation>
+      </active>
+      <inactive url="program:resources/icons/USS/plate/levers/l-inactive.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inactive>
+      <unknown url="program:resources/icons/USS/plate/levers/l-unknown.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </unknown>
+      <inconsistent url="program:resources/icons/USS/plate/levers/l-inconsistent.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inconsistent>
+    </multisensoricon>
+    <multisensoricon x="159" y="492" level="10" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" updown="false" class="jmri.jmrit.display.configurexml.MultiSensorIconXml">
+      <active url="program:resources/icons/USS/plate/levers/l-left.gif" degrees="0" scale="1.0" sensor="IS61">
+        <rotation>0</rotation>
+      </active>
+      <active url="program:resources/icons/USS/plate/levers/l-vertical.gif" degrees="0" scale="1.0" sensor="Signal Lever Stage West 2-4C">
+        <rotation>0</rotation>
+      </active>
+      <active url="program:resources/icons/USS/plate/levers/l-right.gif" degrees="0" scale="1.0" sensor="Signal Lever Stage West 2-4R">
+        <rotation>0</rotation>
+      </active>
+      <inactive url="program:resources/icons/USS/plate/levers/l-inactive.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inactive>
+      <unknown url="program:resources/icons/USS/plate/levers/l-unknown.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </unknown>
+      <inconsistent url="program:resources/icons/USS/plate/levers/l-inconsistent.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inconsistent>
+    </multisensoricon>
+    <multisensoricon x="224" y="491" level="10" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" updown="false" class="jmri.jmrit.display.configurexml.MultiSensorIconXml">
+      <active url="program:resources/icons/USS/plate/levers/l-left.gif" degrees="0" scale="1.0" sensor="Signal Lever West DoubleL">
+        <rotation>0</rotation>
+      </active>
+      <active url="program:resources/icons/USS/plate/levers/l-vertical.gif" degrees="0" scale="1.0" sensor="Signal Lever West DoubleC">
+        <rotation>0</rotation>
+      </active>
+      <active url="program:resources/icons/USS/plate/levers/l-right.gif" degrees="0" scale="1.0" sensor="Signal Lever West DoubleR">
+        <rotation>0</rotation>
+      </active>
+      <inactive url="program:resources/icons/USS/plate/levers/l-inactive.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inactive>
+      <unknown url="program:resources/icons/USS/plate/levers/l-unknown.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </unknown>
+      <inconsistent url="program:resources/icons/USS/plate/levers/l-inconsistent.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inconsistent>
+    </multisensoricon>
+    <multisensoricon x="353" y="492" level="10" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" updown="false" class="jmri.jmrit.display.configurexml.MultiSensorIconXml">
+      <active url="program:resources/icons/USS/plate/levers/l-left.gif" degrees="0" scale="1.0" sensor="Signal Lever East DoubleL">
+        <rotation>0</rotation>
+      </active>
+      <active url="program:resources/icons/USS/plate/levers/l-vertical.gif" degrees="0" scale="1.0" sensor="Signal Lever East DoubleC">
+        <rotation>0</rotation>
+      </active>
+      <active url="program:resources/icons/USS/plate/levers/l-right.gif" degrees="0" scale="1.0" sensor="Signal Lever East DoubleR">
+        <rotation>0</rotation>
+      </active>
+      <inactive url="program:resources/icons/USS/plate/levers/l-inactive.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inactive>
+      <unknown url="program:resources/icons/USS/plate/levers/l-unknown.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </unknown>
+      <inconsistent url="program:resources/icons/USS/plate/levers/l-inconsistent.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inconsistent>
+    </multisensoricon>
+    <multisensoricon x="419" y="495" level="10" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" updown="false" class="jmri.jmrit.display.configurexml.MultiSensorIconXml">
+      <active url="program:resources/icons/USS/plate/levers/l-left.gif" degrees="0" scale="1.0" sensor="Signal Lever Stage East 1-3L">
+        <rotation>0</rotation>
+      </active>
+      <active url="program:resources/icons/USS/plate/levers/l-vertical.gif" degrees="0" scale="1.0" sensor="Signal Lever Stage East 1-3C">
+        <rotation>0</rotation>
+      </active>
+      <active url="program:resources/icons/USS/plate/levers/l-right.gif" degrees="0" scale="1.0" sensor="Signal Lever Stage East 1-3R">
+        <rotation>0</rotation>
+      </active>
+      <inactive url="program:resources/icons/USS/plate/levers/l-inactive.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inactive>
+      <unknown url="program:resources/icons/USS/plate/levers/l-unknown.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </unknown>
+      <inconsistent url="program:resources/icons/USS/plate/levers/l-inconsistent.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inconsistent>
+    </multisensoricon>
+    <multisensoricon x="483" y="490" level="10" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" updown="false" class="jmri.jmrit.display.configurexml.MultiSensorIconXml">
+      <active url="program:resources/icons/USS/plate/levers/l-left.gif" degrees="0" scale="1.0" sensor="Signal Lever Stage East 2-4L">
+        <rotation>0</rotation>
+      </active>
+      <active url="program:resources/icons/USS/plate/levers/l-vertical.gif" degrees="0" scale="1.0" sensor="Signal Lever Stage East 2-4C">
+        <rotation>0</rotation>
+      </active>
+      <active url="program:resources/icons/USS/plate/levers/l-right.gif" degrees="0" scale="1.0" sensor="Signal Lever Stage East 2-4R">
+        <rotation>0</rotation>
+      </active>
+      <inactive url="program:resources/icons/USS/plate/levers/l-inactive.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inactive>
+      <unknown url="program:resources/icons/USS/plate/levers/l-unknown.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </unknown>
+      <inconsistent url="program:resources/icons/USS/plate/levers/l-inconsistent.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inconsistent>
+    </multisensoricon>
+    <signalmasticon signalmast="WestExit1 (Dwarf)" x="43" y="106" level="9" forcecontroloff="false" hidden="no" positionable="false" showtooltip="true" editable="true" degrees="90" clickmode="0" litmode="false" scale="1.0" imageset="default" class="jmri.jmrit.display.configurexml.SignalMastIconXml" />
+    <signalmasticon signalmast="WestExit3 (Dwarf)" x="43" y="74" level="9" forcecontroloff="false" hidden="no" positionable="false" showtooltip="true" editable="true" degrees="90" clickmode="0" litmode="false" scale="1.0" imageset="default" class="jmri.jmrit.display.configurexml.SignalMastIconXml" />
+    <signalmasticon signalmast="WestYardEntry1-3" x="111" y="83" level="9" forcecontroloff="false" hidden="no" positionable="false" showtooltip="true" editable="true" degrees="270" clickmode="0" litmode="false" scale="1.0" imageset="default" class="jmri.jmrit.display.configurexml.SignalMastIconXml" />
+    <signalmasticon signalmast="WestExit2 (Dwarf)" x="45" y="157" level="9" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" degrees="90" clickmode="0" litmode="false" scale="1.0" imageset="default" class="jmri.jmrit.display.configurexml.SignalMastIconXml" />
+    <signalmasticon signalmast="WestExit4 (Dwarf)" x="44" y="189" level="9" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" degrees="90" clickmode="0" litmode="false" scale="1.0" imageset="default" class="jmri.jmrit.display.configurexml.SignalMastIconXml" />
+    <signalmasticon signalmast="WestYardEntry2-4" x="112" y="130" level="9" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" degrees="270" clickmode="0" litmode="false" scale="1.0" imageset="default" class="jmri.jmrit.display.configurexml.SignalMastIconXml" />
+    <signalmasticon signalmast="WestF1" x="112" y="108" level="9" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" degrees="90" clickmode="0" litmode="false" scale="1.0" imageset="default" class="jmri.jmrit.display.configurexml.SignalMastIconXml" />
+    <signalmasticon signalmast="WestFM" x="153" y="157" level="9" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" degrees="90" clickmode="0" litmode="false" scale="1.0" imageset="default" class="jmri.jmrit.display.configurexml.SignalMastIconXml" />
+    <signalmasticon signalmast="WestEN" x="216" y="130" level="9" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" degrees="270" clickmode="0" litmode="false" scale="1.0" imageset="default" class="jmri.jmrit.display.configurexml.SignalMastIconXml" />
+    <signalmasticon signalmast="EastExit4 (Dwarf)" x="532" y="222" level="9" forcecontroloff="false" hidden="no" positionable="false" showtooltip="true" editable="true" degrees="270" clickmode="0" litmode="false" scale="1.0" imageset="default" class="jmri.jmrit.display.configurexml.SignalMastIconXml" />
+    <signalmasticon signalmast="EastExit2 (Dwarf)" x="533" y="184" level="9" forcecontroloff="false" hidden="no" positionable="false" showtooltip="true" editable="true" degrees="270" clickmode="0" litmode="false" scale="1.0" imageset="default" class="jmri.jmrit.display.configurexml.SignalMastIconXml" />
+    <signalmasticon signalmast="EastExit1 (Dwarf)" x="540" y="131" level="9" forcecontroloff="false" hidden="no" positionable="false" showtooltip="true" editable="true" degrees="270" clickmode="0" litmode="false" scale="1.0" imageset="default" class="jmri.jmrit.display.configurexml.SignalMastIconXml" />
+    <signalmasticon signalmast="EastExit3 (Dwarf)" x="539" y="96" level="9" forcecontroloff="false" hidden="no" positionable="false" showtooltip="true" editable="true" degrees="270" clickmode="0" litmode="false" scale="1.0" imageset="default" class="jmri.jmrit.display.configurexml.SignalMastIconXml" />
+    <signalmasticon signalmast="EastF1" x="441" y="183" level="9" forcecontroloff="false" hidden="no" positionable="false" showtooltip="true" editable="true" degrees="270" clickmode="0" litmode="false" scale="1.0" imageset="default" class="jmri.jmrit.display.configurexml.SignalMastIconXml" />
+    <signalmasticon signalmast="EastFM" x="402" y="128" level="9" forcecontroloff="false" hidden="no" positionable="false" showtooltip="true" editable="true" degrees="270" clickmode="0" litmode="false" scale="1.0" imageset="default" class="jmri.jmrit.display.configurexml.SignalMastIconXml" />
+    <signalmasticon signalmast="EastYardEntry1-3" x="476" y="159" level="9" forcecontroloff="false" hidden="no" positionable="false" showtooltip="true" editable="true" degrees="90" clickmode="0" litmode="false" scale="1.0" imageset="default" class="jmri.jmrit.display.configurexml.SignalMastIconXml" />
+    <signalmasticon signalmast="EastYardEntry2-4" x="456" y="215" level="9" forcecontroloff="false" hidden="no" positionable="false" showtooltip="true" editable="true" degrees="90" clickmode="0" litmode="false" scale="1.0" imageset="default" class="jmri.jmrit.display.configurexml.SignalMastIconXml" />
+    <signalmasticon signalmast="EastEN" x="331" y="162" level="9" forcecontroloff="false" hidden="no" positionable="false" showtooltip="true" editable="true" degrees="90" clickmode="0" litmode="false" scale="1.0" imageset="default" class="jmri.jmrit.display.configurexml.SignalMastIconXml" />
+    <positionablelabel x="118" y="94" level="3" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" icon="yes" class="jmri.jmrit.display.configurexml.PositionableLabelXml">
+      <icon url="program:resources/icons/USS/track/block/block.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </icon>
+    </positionablelabel>
+    <positionablelabel x="43" y="143" level="3" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" icon="yes" class="jmri.jmrit.display.configurexml.PositionableLabelXml">
+      <icon url="program:resources/icons/USS/track/block/block.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </icon>
+    </positionablelabel>
+    <positionablelabel x="224" y="143" level="3" forcecontroloff="false" hidden="no" positionable="false" showtooltip="true" editable="true" icon="yes" class="jmri.jmrit.display.configurexml.PositionableLabelXml">
+      <icon url="program:resources/icons/USS/track/block/block.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </icon>
+    </positionablelabel>
+    <positionablelabel x="449" y="143" level="3" forcecontroloff="false" hidden="no" positionable="false" showtooltip="true" editable="true" icon="yes" class="jmri.jmrit.display.configurexml.PositionableLabelXml">
+      <icon url="program:resources/icons/USS/track/block/block.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </icon>
+    </positionablelabel>
+    <positionablelabel x="344" y="143" level="3" forcecontroloff="false" hidden="no" positionable="false" showtooltip="true" editable="true" icon="yes" class="jmri.jmrit.display.configurexml.PositionableLabelXml">
+      <icon url="program:resources/icons/USS/track/block/block.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </icon>
+    </positionablelabel>
+    <positionablelabel x="447" y="195" level="3" forcecontroloff="false" hidden="no" positionable="false" showtooltip="true" editable="true" icon="yes" class="jmri.jmrit.display.configurexml.PositionableLabelXml">
+      <icon url="program:resources/icons/USS/track/block/block.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </icon>
+    </positionablelabel>
+  </paneleditor>
+  <filehistory>
+    <operation>
+      <type>app</type>
+      <date>Fri Apr 25 08:53:25 EDT 2025</date>
+      <filename>PanelPro (v5.11.2)</filename>
+    </operation>
+    <operation>
+      <type>Load OK</type>
+      <date>Fri Apr 25 08:53:54 EDT 2025</date>
+      <filename>/home/heller/WendellDepotMusuem/WendellDepot-JMRI-withPanel.xml</filename>
+      <filehistory>
+        <operation>
+          <type>app</type>
+          <date>Thu Apr 24 19:42:17 EDT 2025</date>
+          <filename>PanelPro (v5.11.2)</filename>
+        </operation>
+        <operation>
+          <type>Load OK</type>
+          <date>Thu Apr 24 19:42:44 EDT 2025</date>
+          <filename>/home/heller/WendellDepotMusuem/WendellDepot-JMRI-withPanel.xml</filename>
+          <filehistory>
+            <operation>
+              <type>app</type>
+              <date>Thu Apr 24 08:35:49 EDT 2025</date>
+              <filename>PanelPro (v5.11.2)</filename>
+            </operation>
+            <operation>
+              <type>Load OK</type>
+              <date>Thu Apr 24 08:36:13 EDT 2025</date>
+              <filename>/home/heller/WendellDepotMusuem/WendellDepot-JMRI-withPanel.xml</filename>
+              <filehistory>
+                <operation>
+                  <type>app</type>
+                  <date>Wed Apr 23 17:13:28 EDT 2025</date>
+                  <filename>PanelPro (v5.11.2)</filename>
+                </operation>
+                <operation>
+                  <type>Load OK</type>
+                  <date>Wed Apr 23 17:13:54 EDT 2025</date>
+                  <filename>/home/heller/WendellDepotMusuem/WendellDepot-JMRI.xml</filename>
+                  <filehistory>
+                    <operation>
+                      <type>app</type>
+                      <date>Tue Apr 22 09:12:19 EDT 2025</date>
+                      <filename>CATS (v5.11.2)</filename>
+                    </operation>
+                    <operation>
+                      <type>Load OK</type>
+                      <date>Tue Apr 22 09:12:24 EDT 2025</date>
+                      <filename>/home/heller/WendellDepotMusuem/WendellDepot-JMRI.xml</filename>
+                      <filehistory>
+                        <operation>
+                          <type>app</type>
+                          <date>Sat Apr 19 12:04:06 EDT 2025</date>
+                          <filename>PanelPro (v5.11.2)</filename>
+                        </operation>
+                        <operation>
+                          <type>Load OK</type>
+                          <date>Sat Apr 19 12:04:35 EDT 2025</date>
+                          <filename>/home/heller/WendellDepotMusuem/WendellDepot-JMRI.xml</filename>
+                        </operation>
+                        <operation>
+                          <type>Store</type>
+                          <date>Sat Apr 19 12:31:57 EDT 2025</date>
+                          <filename>/home/heller/WendellDepotMusuem/WendellDepot-JMRI.xml</filename>
+                        </operation>
+                      </filehistory>
+                    </operation>
+                    <operation>
+                      <type>Store</type>
+                      <date>Tue Apr 22 09:21:19 EDT 2025</date>
+                      <filename>/home/heller/WendellDepotMusuem/WendellDepot-JMRI.xml</filename>
+                    </operation>
+                  </filehistory>
+                </operation>
+                <operation>
+                  <type>Store</type>
+                  <date>Thu Apr 24 08:30:56 EDT 2025</date>
+                  <filename>/home/heller/WendellDepotMusuem/WendellDepot-JMRI-withPanel.xml</filename>
+                </operation>
+              </filehistory>
+            </operation>
+            <operation>
+              <type>Store</type>
+              <date>Thu Apr 24 16:50:03 EDT 2025</date>
+              <filename>/home/heller/WendellDepotMusuem/WendellDepot-JMRI-withPanel.xml</filename>
+            </operation>
+          </filehistory>
+        </operation>
+        <operation>
+          <type>Store</type>
+          <date>Thu Apr 24 20:15:40 EDT 2025</date>
+          <filename>/home/heller/WendellDepotMusuem/WendellDepot-JMRI-withPanel.xml</filename>
+        </operation>
+      </filehistory>
+    </operation>
+    <operation>
+      <type>Store</type>
+      <date>Fri Apr 25 17:06:31 EDT 2025</date>
+      <filename>/home/heller/WendellDepotMusuem/WendellDepot-JMRI-withPanel.xml</filename>
+    </operation>
+  </filehistory>
+  <!--Written by JMRI version 5.11.2+R741bb1427e on Fri Apr 25 17:06:31 EDT 2025-->
+</layout-config>
