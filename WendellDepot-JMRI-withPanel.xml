@@ -232,6 +232,66 @@
       <userName>Signal Lamp West DoubleR</userName>
     </sensor>
     <sensor inverted="false">
+      <systemName>IS100</systemName>
+      <userName>Stage_1</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>IS101</systemName>
+      <userName>Stage_2</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>IS102</systemName>
+      <userName>Stage_3</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>IS103</systemName>
+      <userName>Stage_4</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>IS104</systemName>
+      <userName>WestMainTrack1</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>IS105</systemName>
+      <userName>WestMainTrack2</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>IS106</systemName>
+      <userName>WendellDepot</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>IS107</systemName>
+      <userName>EastMainTrack1</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>IS108</systemName>
+      <userName>EastMainTrack2</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>IS109</systemName>
+      <userName>OS West_Double_Track</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>IS110</systemName>
+      <userName>OS East_Double_Track</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>IS111</systemName>
+      <userName>OS Stage_West_1_3</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>IS112</systemName>
+      <userName>OS Stage_West_2_4</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>IS113</systemName>
+      <userName>OS Stage_East_1_3</userName>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>IS114</systemName>
+      <userName>OS Stage_East_2_4</userName>
+    </sensor>
+    <sensor inverted="false">
       <systemName>IS121</systemName>
       <userName>Signal Lever East DoubleL</userName>
     </sensor>
@@ -904,6 +964,159 @@
       </disabledAspects>
     </olcbsignalmast>
   </signalmasts>
+  <blocks class="jmri.configurexml.BlockManagerXml">
+    <defaultspeed>Normal</defaultspeed>
+    <block systemName="IB100">
+      <systemName>IB100</systemName>
+      <userName>Stage_1</userName>
+    </block>
+    <block systemName="IB101">
+      <systemName>IB101</systemName>
+      <userName>Stage_2</userName>
+    </block>
+    <block systemName="IB102">
+      <systemName>IB102</systemName>
+      <userName>Stage_3</userName>
+    </block>
+    <block systemName="IB103">
+      <systemName>IB103</systemName>
+      <userName>Stage_4</userName>
+    </block>
+    <block systemName="IB104">
+      <systemName>IB104</systemName>
+      <userName>WestMainTrack1</userName>
+    </block>
+    <block systemName="IB105">
+      <systemName>IB105</systemName>
+      <userName>WestMainTrack2</userName>
+    </block>
+    <block systemName="IB106">
+      <systemName>IB106</systemName>
+      <userName>WendellDepot</userName>
+    </block>
+    <block systemName="IB107">
+      <systemName>IB107</systemName>
+      <userName>EastMainTrack1</userName>
+    </block>
+    <block systemName="IB108">
+      <systemName>IB108</systemName>
+      <userName>EastMainTrack2</userName>
+    </block>
+    <block systemName="IB109">
+      <systemName>IB109</systemName>
+      <userName>OS West_Double_Track</userName>
+    </block>
+    <block systemName="IB110">
+      <systemName>IB110</systemName>
+      <userName>OS East_Double_Track</userName>
+    </block>
+    <block systemName="IB111">
+      <systemName>IB111</systemName>
+      <userName>OS Stage_West_1_3</userName>
+    </block>
+    <block systemName="IB112">
+      <systemName>IB112</systemName>
+      <userName>OS Stage_West_2_4</userName>
+    </block>
+    <block systemName="IB113">
+      <systemName>IB113</systemName>
+      <userName>OS Stage_East_1_3</userName>
+    </block>
+    <block systemName="IB114">
+      <systemName>IB114</systemName>
+      <userName>OS Stage_East_2_4</userName>
+    </block>
+    <block systemName="IB100" length="0.0" curve="0">
+      <systemName>IB100</systemName>
+      <userName>Stage_1</userName>
+      <permissive>no</permissive>
+      <occupancysensor>Stage_1</occupancysensor>
+    </block>
+    <block systemName="IB101" length="0.0" curve="0">
+      <systemName>IB101</systemName>
+      <userName>Stage_2</userName>
+      <permissive>no</permissive>
+      <occupancysensor>Stage_2</occupancysensor>
+    </block>
+    <block systemName="IB102" length="0.0" curve="0">
+      <systemName>IB102</systemName>
+      <userName>Stage_3</userName>
+      <permissive>no</permissive>
+      <occupancysensor>Stage_3</occupancysensor>
+    </block>
+    <block systemName="IB103" length="0.0" curve="0">
+      <systemName>IB103</systemName>
+      <userName>Stage_4</userName>
+      <permissive>no</permissive>
+      <occupancysensor>Stage_4</occupancysensor>
+    </block>
+    <block systemName="IB104" length="0.0" curve="0">
+      <systemName>IB104</systemName>
+      <userName>WestMainTrack1</userName>
+      <permissive>no</permissive>
+      <occupancysensor>WestMainTrack1</occupancysensor>
+    </block>
+    <block systemName="IB105" length="0.0" curve="0">
+      <systemName>IB105</systemName>
+      <userName>WestMainTrack2</userName>
+      <permissive>no</permissive>
+      <occupancysensor>WestMainTrack2</occupancysensor>
+    </block>
+    <block systemName="IB106" length="0.0" curve="0">
+      <systemName>IB106</systemName>
+      <userName>WendellDepot</userName>
+      <permissive>no</permissive>
+      <occupancysensor>WendellDepot</occupancysensor>
+    </block>
+    <block systemName="IB107" length="0.0" curve="0">
+      <systemName>IB107</systemName>
+      <userName>EastMainTrack1</userName>
+      <permissive>no</permissive>
+      <occupancysensor>EastMainTrack1</occupancysensor>
+    </block>
+    <block systemName="IB108" length="0.0" curve="0">
+      <systemName>IB108</systemName>
+      <userName>EastMainTrack2</userName>
+      <permissive>no</permissive>
+      <occupancysensor>EastMainTrack2</occupancysensor>
+    </block>
+    <block systemName="IB109" length="0.0" curve="0">
+      <systemName>IB109</systemName>
+      <userName>OS West_Double_Track</userName>
+      <permissive>no</permissive>
+      <occupancysensor>OS West_Double_Track</occupancysensor>
+    </block>
+    <block systemName="IB110" length="0.0" curve="0">
+      <systemName>IB110</systemName>
+      <userName>OS East_Double_Track</userName>
+      <permissive>no</permissive>
+      <occupancysensor>OS East_Double_Track</occupancysensor>
+    </block>
+    <block systemName="IB111" length="0.0" curve="0">
+      <systemName>IB111</systemName>
+      <userName>OS Stage_West_1_3</userName>
+      <permissive>no</permissive>
+      <occupancysensor>OS Stage_West_1_3</occupancysensor>
+    </block>
+    <block systemName="IB112" length="0.0" curve="0">
+      <systemName>IB112</systemName>
+      <userName>OS Stage_West_2_4</userName>
+      <permissive>no</permissive>
+      <occupancysensor>OS Stage_West_2_4</occupancysensor>
+    </block>
+    <block systemName="IB113" length="0.0" curve="0">
+      <systemName>IB113</systemName>
+      <userName>OS Stage_East_1_3</userName>
+      <permissive>no</permissive>
+      <occupancysensor>OS Stage_East_1_3</occupancysensor>
+    </block>
+    <block systemName="IB114" length="0.0" curve="0">
+      <systemName>IB114</systemName>
+      <userName>OS Stage_East_2_4</userName>
+      <permissive>no</permissive>
+      <occupancysensor>OS Stage_East_2_4</occupancysensor>
+    </block>
+  </blocks>
   <signalmastlogics class="jmri.managers.configurexml.DefaultSignalMastLogicManagerXml">
     <logicDelay>500</logicDelay>
   </signalmastlogics>
@@ -2862,104 +3075,121 @@
   <filehistory>
     <operation>
       <type>app</type>
-      <date>Fri Apr 25 08:53:25 EDT 2025</date>
+      <date>Sat Apr 26 08:54:56 EDT 2025</date>
       <filename>PanelPro (v5.11.2)</filename>
     </operation>
     <operation>
       <type>Load OK</type>
-      <date>Fri Apr 25 08:53:54 EDT 2025</date>
+      <date>Sat Apr 26 08:55:24 EDT 2025</date>
       <filename>/home/heller/WendellDepotMusuem/WendellDepot-JMRI-withPanel.xml</filename>
       <filehistory>
         <operation>
           <type>app</type>
-          <date>Thu Apr 24 19:42:17 EDT 2025</date>
+          <date>Fri Apr 25 08:53:25 EDT 2025</date>
           <filename>PanelPro (v5.11.2)</filename>
         </operation>
         <operation>
           <type>Load OK</type>
-          <date>Thu Apr 24 19:42:44 EDT 2025</date>
+          <date>Fri Apr 25 08:53:54 EDT 2025</date>
           <filename>/home/heller/WendellDepotMusuem/WendellDepot-JMRI-withPanel.xml</filename>
           <filehistory>
             <operation>
               <type>app</type>
-              <date>Thu Apr 24 08:35:49 EDT 2025</date>
+              <date>Thu Apr 24 19:42:17 EDT 2025</date>
               <filename>PanelPro (v5.11.2)</filename>
             </operation>
             <operation>
               <type>Load OK</type>
-              <date>Thu Apr 24 08:36:13 EDT 2025</date>
+              <date>Thu Apr 24 19:42:44 EDT 2025</date>
               <filename>/home/heller/WendellDepotMusuem/WendellDepot-JMRI-withPanel.xml</filename>
               <filehistory>
                 <operation>
                   <type>app</type>
-                  <date>Wed Apr 23 17:13:28 EDT 2025</date>
+                  <date>Thu Apr 24 08:35:49 EDT 2025</date>
                   <filename>PanelPro (v5.11.2)</filename>
                 </operation>
                 <operation>
                   <type>Load OK</type>
-                  <date>Wed Apr 23 17:13:54 EDT 2025</date>
-                  <filename>/home/heller/WendellDepotMusuem/WendellDepot-JMRI.xml</filename>
+                  <date>Thu Apr 24 08:36:13 EDT 2025</date>
+                  <filename>/home/heller/WendellDepotMusuem/WendellDepot-JMRI-withPanel.xml</filename>
                   <filehistory>
                     <operation>
                       <type>app</type>
-                      <date>Tue Apr 22 09:12:19 EDT 2025</date>
-                      <filename>CATS (v5.11.2)</filename>
+                      <date>Wed Apr 23 17:13:28 EDT 2025</date>
+                      <filename>PanelPro (v5.11.2)</filename>
                     </operation>
                     <operation>
                       <type>Load OK</type>
-                      <date>Tue Apr 22 09:12:24 EDT 2025</date>
+                      <date>Wed Apr 23 17:13:54 EDT 2025</date>
                       <filename>/home/heller/WendellDepotMusuem/WendellDepot-JMRI.xml</filename>
                       <filehistory>
                         <operation>
                           <type>app</type>
-                          <date>Sat Apr 19 12:04:06 EDT 2025</date>
-                          <filename>PanelPro (v5.11.2)</filename>
+                          <date>Tue Apr 22 09:12:19 EDT 2025</date>
+                          <filename>CATS (v5.11.2)</filename>
                         </operation>
                         <operation>
                           <type>Load OK</type>
-                          <date>Sat Apr 19 12:04:35 EDT 2025</date>
+                          <date>Tue Apr 22 09:12:24 EDT 2025</date>
                           <filename>/home/heller/WendellDepotMusuem/WendellDepot-JMRI.xml</filename>
                         </operation>
                         <operation>
                           <type>Store</type>
-                          <date>Sat Apr 19 12:31:57 EDT 2025</date>
+                          <date>Tue Apr 22 09:21:19 EDT 2025</date>
                           <filename>/home/heller/WendellDepotMusuem/WendellDepot-JMRI.xml</filename>
                         </operation>
                       </filehistory>
                     </operation>
                     <operation>
                       <type>Store</type>
-                      <date>Tue Apr 22 09:21:19 EDT 2025</date>
-                      <filename>/home/heller/WendellDepotMusuem/WendellDepot-JMRI.xml</filename>
+                      <date>Thu Apr 24 08:30:56 EDT 2025</date>
+                      <filename>/home/heller/WendellDepotMusuem/WendellDepot-JMRI-withPanel.xml</filename>
                     </operation>
                   </filehistory>
                 </operation>
                 <operation>
                   <type>Store</type>
-                  <date>Thu Apr 24 08:30:56 EDT 2025</date>
+                  <date>Thu Apr 24 16:50:03 EDT 2025</date>
                   <filename>/home/heller/WendellDepotMusuem/WendellDepot-JMRI-withPanel.xml</filename>
                 </operation>
               </filehistory>
             </operation>
             <operation>
               <type>Store</type>
-              <date>Thu Apr 24 16:50:03 EDT 2025</date>
+              <date>Thu Apr 24 20:15:40 EDT 2025</date>
               <filename>/home/heller/WendellDepotMusuem/WendellDepot-JMRI-withPanel.xml</filename>
             </operation>
           </filehistory>
         </operation>
         <operation>
           <type>Store</type>
-          <date>Thu Apr 24 20:15:40 EDT 2025</date>
+          <date>Fri Apr 25 17:06:31 EDT 2025</date>
           <filename>/home/heller/WendellDepotMusuem/WendellDepot-JMRI-withPanel.xml</filename>
         </operation>
       </filehistory>
     </operation>
     <operation>
+      <type>Load OK</type>
+      <date>Sat Apr 26 08:55:42 EDT 2025</date>
+      <filename>/home/heller/WendellDepotMusuem/WendellDepot-Blocks.xml</filename>
+      <filehistory>
+        <operation>
+          <type>app</type>
+          <date>Sat Apr 26 08:33:18 EDT 2025</date>
+          <filename>PanelPro (v5.11.2)</filename>
+        </operation>
+        <operation>
+          <type>Store</type>
+          <date>Sat Apr 26 08:52:59 EDT 2025</date>
+          <filename>/home/heller/WendellDepotMusuem/WendellDepot-Blocks.xml</filename>
+        </operation>
+      </filehistory>
+    </operation>
+    <operation>
       <type>Store</type>
-      <date>Fri Apr 25 17:06:31 EDT 2025</date>
+      <date>Sat Apr 26 08:56:24 EDT 2025</date>
       <filename>/home/heller/WendellDepotMusuem/WendellDepot-JMRI-withPanel.xml</filename>
     </operation>
   </filehistory>
-  <!--Written by JMRI version 5.11.2+R741bb1427e on Fri Apr 25 17:06:31 EDT 2025-->
+  <!--Written by JMRI version 5.11.2+R741bb1427e on Sat Apr 26 08:56:24 EDT 2025-->
 </layout-config>
