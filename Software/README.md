@@ -25,4 +25,4 @@ This directory contains the various pieces of software involved in the layout:
 
 - Static HTML for the OpenMRN program's web interface: [static](static)
 
-- Target build directory for the OpenMRN program" [targets][(targets)
+- Target build directory for the OpenMRN program" [targets](targets)
