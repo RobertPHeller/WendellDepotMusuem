@@ -8,7 +8,7 @@
 #  Author        : $Author$
 #  Created By    : Robert Heller
 #  Created       : Sat Apr 26 10:20:35 2025
-#  Last Modified : <250426.1815>
+#  Last Modified : <250427.0806>
 #
 #  Description	
 #
@@ -158,7 +158,7 @@ class opticalSensorToBlockOccupancy(jmri.jmrit.automat.AbstractAutomaton):
                         blockname = self.sensorStates[name]
                         del self.sensorStates[name]
                         block = blocks.getBlock(blockname)
-                        print "Exiting:",blockname,block
+                        #print "Exiting:",blockname,block
                         block.getSensor().setKnownState(INACTIVE)
                 #break
         #* Wait for more
