@@ -20,3 +20,9 @@ This directory contains the various pieces of software involved in the layout:
   PointSensor.cxx, PointSensor.hxx, RunATrain.cxx, RunATrain.hxx, Sensor.cxx,
   Sensor.hxx, Signal.cxx, Signal.hxx, Turnout.cxx, Turnout.hxx, 
   WendellDepotWebserver.cxx, WendellDepotWebserver.hxx
+
+- Helper library for the OpenMRN program: [httpd](httpd)
+
+- Static HTML for the OpenMRN program's web interface: [static](static)
+
+- Target build directory for the OpenMRN program" [targets][(targets)
