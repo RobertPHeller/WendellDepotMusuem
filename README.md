@@ -16,11 +16,11 @@ yard, where up to 4 trains (two eastbound and two westbound) can be made up.
 The layout will be set up with automated operation, with the 4 trains running 
 one at a time through the "visible" section in alterniting directions.
 
-- Satelite Map View: ![Satelite View](https://github.com/RobertPHeller/WendellDepotMusuem/blob/main/WendellDepotSateliteMap.png)
+- Satelite Map View: ![Satelite View](WendellDepotSateliteMap.png)
 
-- OpenRailway Map: ![Map View](https://github.com/RobertPHeller/WendellDepotMusuem/blob/main/WendellDepot.png)
+- OpenRailway Map: ![Map View](WendellDepot.png)
 
-- Actual layout (XtrakCAD): ![Layout](https://github.com/RobertPHeller/WendellDepotMusuem/blob/main/WendellDepotLayout.png)
+- Actual layout (XtrakCAD): ![Layout](WendellDepotLayout.png)
 
 ## Files
 
