@@ -21,3 +21,17 @@ one at a time through the "visible" section in alterniting directions.
 - OpenRailway Map: ![Map View](https://github.com/RobertPHeller/WendellDepotMusuem/blob/main/WendellDepot.png)
 
 - Actual layout (XtrakCAD): ![Layout](https://github.com/RobertPHeller/WendellDepotMusuem/blob/main/WendellDepotLayout.png)
+
+## Files
+
+- XtrakCAD file: WendellDepot.xtc 
+
+- MRR System Layout Control DB file: WendellDepot.xml
+
+- Benchwork (FreeCAD): Benchwork.py
+
+- Software directory: [Software](Software/README.md) 
+
+- JMRI PanelPro CTC Panel: [PanelPro](PanelPro/README.md)
+
+- CATS CTC Panel: [CATS](CATS/README.md)
