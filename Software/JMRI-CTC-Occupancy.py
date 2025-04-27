@@ -8,7 +8,7 @@
 #  Author        : $Author$
 #  Created By    : Robert Heller
 #  Created       : Sat Apr 26 10:20:35 2025
-#  Last Modified : <250427.0806>
+#  Last Modified : <250427.0811>
 #
 #  Description	
 #
@@ -152,6 +152,7 @@ class opticalSensorToBlockOccupancy(jmri.jmrit.automat.AbstractAutomaton):
                                     self.sensorStates[o] = blockname
                             else:
                                 self.sensorStates[otherends] = blockname
+                            break  
                 else:
                     #* Sensor cleared, unoccupy the block, if we are waiting
                     if self.sensorStates.has_key(name):
