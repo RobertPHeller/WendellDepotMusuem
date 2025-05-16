@@ -8,7 +8,7 @@
 #  Author        : $Author$
 #  Created By    : Robert Heller
 #  Created       : Fri May 16 10:25:57 2025
-#  Last Modified : <250516.1049>
+#  Last Modified : <250516.1435>
 #
 #  Description	
 #
@@ -52,11 +52,11 @@ Clamps = ["Signal Lamp Stage West 1-3C", "Signal Lamp Stage West 2-4C",
           "Signal Lamp Stage East 1-3C", "Signal Lamp Stage East 2-4C"]
           
 for lev in Clevers:
-    print(lev)
+    #print(lev)
     sensors.getSensor(lev).setKnownState(ACTIVE)
     
 for lamp in Clamps:
-    print(lamp)
+    #print(lamp)
     sensors.getSensor(lamp).setKnownState(ACTIVE)
 
 Signals = ["EastExit4 (Dwarf)", "EastExit2 (Dwarf)", "EastExit1 (Dwarf)", 
@@ -67,6 +67,6 @@ Signals = ["EastExit4 (Dwarf)", "EastExit2 (Dwarf)", "EastExit1 (Dwarf)",
            "EastEN"]
 
 for sig in Signals:
-    print(sig)
+    #print(sig)
     mast = masts.getSignalMast(sig)
     mast.setAspect("Stop")
